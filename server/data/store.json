@@ -1,0 +1,763 @@
+{
+  "farms": [
+    {
+      "id": "farm-barind-01",
+      "name": "Godagari Agricultural Research Hub (বরেন্দ্র ট্র্যাক্ট, রাজশাহী)",
+      "district": "Rajshahi",
+      "division": "Rajshahi",
+      "latitude": 24.469,
+      "longitude": 88.33,
+      "elevation_m": 28,
+      "timezone": "Asia/Dhaka",
+      "groundwaterZone": "Barind High Risk (Critically Depleting Aquifer)",
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "farm-rangpur-02",
+      "name": "Mithapukur Climate-Smart Demonstration Field (মিঠাপুকুর, রংপুর)",
+      "district": "Rangpur",
+      "division": "Rangpur",
+      "latitude": 25.58,
+      "longitude": 89.28,
+      "elevation_m": 32,
+      "timezone": "Asia/Dhaka",
+      "groundwaterZone": "Tista Floodplain (Moderate)",
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "farm-bogura-03",
+      "name": "Sherpur Diversified Horticulture Farm (শেরপুর, বগুড়া)",
+      "district": "Bogura",
+      "division": "Rajshahi",
+      "latitude": 24.673,
+      "longitude": 89.418,
+      "elevation_m": 20,
+      "timezone": "Asia/Dhaka",
+      "groundwaterZone": "Karatoya Basin (Stable)",
+      "createdAt": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "fields": [
+    {
+      "id": "field-godagari-a",
+      "farm_id": "farm-barind-01",
+      "name": "Plot A-1: High Terrace Loam",
+      "area_m2": 12000,
+      "soil_type": "clay_loam",
+      "soil_type_label": "Barind Red Clay Loam (ভারী এঁটেল দোআঁশ)",
+      "theta_fc": 0.32,
+      "theta_wp": 0.14,
+      "root_depth_m": 0.4,
+      "current_crop": "Mustard (Relay Sowing)",
+      "previous_crops": [
+        "T_AMAN_RICE"
+      ],
+      "target_rotations": [
+        "rot-legume-pulse-water-smart",
+        "rot-maize-mung-aman"
+      ]
+    },
+    {
+      "id": "field-mithapukur-b",
+      "farm_id": "farm-rangpur-02",
+      "name": "Plot B-2: Sandy Alluvial Silt",
+      "area_m2": 8500,
+      "soil_type": "silt_loam",
+      "soil_type_label": "Tista Alluvial Silt Loam (পলি দোআঁশ)",
+      "theta_fc": 0.28,
+      "theta_wp": 0.1,
+      "root_depth_m": 0.35,
+      "current_crop": "Fallow / Pre-seeding",
+      "previous_crops": [
+        "BORO_RICE",
+        "T_AMAN_RICE"
+      ],
+      "target_rotations": [
+        "rot-potato-mung-aman",
+        "rot-maize-mung-aman"
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "name": "AgriSense ESP32 Field Probe #1",
+      "firmware_version": "v2.4.1-esp32-freertos",
+      "is_active": true,
+      "calibration_version": "cal-fdr-2026.1",
+      "last_seen_at": "2026-10-10T17:18:50.648Z"
+    }
+  ],
+  "readings": [
+    {
+      "id": 1,
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-seed-1001-rajshahi",
+      "observed_at": "2026-10-10T15:18:50.649Z",
+      "received_at": "2026-10-10T15:18:50.649Z",
+      "soil_moisture_vwc": 0.224,
+      "soil_temp_c": 26.8,
+      "air_temp_c": 29.5,
+      "relative_humidity_pct": 74.2,
+      "soil_ph": 6.4,
+      "quality_status": "valid",
+      "calibration_version": "cal-fdr-2026.1",
+      "is_simulated": true,
+      "raw_payload": {
+        "adc_val": 1845,
+        "sensor_type": "Capacitive_FDR_v2"
+      }
+    },
+    {
+      "id": 2,
+      "received_at": "2026-10-10T17:18:50.659Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "test-evt-1791652730659-0.7858598572783998",
+      "observed_at": "2026-10-10T17:18:50.659Z",
+      "soil_moisture_vwc": 0.245,
+      "soil_temp_c": 27.5,
+      "air_temp_c": 30.1,
+      "relative_humidity_pct": 71,
+      "soil_ph": 6.5,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    },
+    {
+      "id": 3,
+      "received_at": "2026-10-10T17:18:50.660Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "duplicate-test-1791652730660",
+      "observed_at": "2026-10-10T17:18:50.660Z",
+      "soil_moisture_vwc": 0.2,
+      "soil_temp_c": null,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": false,
+      "raw_payload": null
+    },
+    {
+      "id": 4,
+      "received_at": "2026-10-10T17:23:57.395Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-test-1791653037394",
+      "observed_at": "2026-10-10T17:23:57.395Z",
+      "soil_moisture_vwc": 0.28,
+      "soil_temp_c": 25.5,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    },
+    {
+      "id": 5,
+      "received_at": "2026-10-10T17:26:38.733Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-test-1791653198732",
+      "observed_at": "2026-10-10T17:26:38.733Z",
+      "soil_moisture_vwc": 0.28,
+      "soil_temp_c": 25.5,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    },
+    {
+      "id": 6,
+      "received_at": "2026-10-10T17:31:33.739Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-test-1791653493739",
+      "observed_at": "2026-10-10T17:31:33.739Z",
+      "soil_moisture_vwc": 0.28,
+      "soil_temp_c": 25.5,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    },
+    {
+      "id": 7,
+      "received_at": "2026-10-10T17:34:27.611Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-test-1791653667611",
+      "observed_at": "2026-10-10T17:34:27.611Z",
+      "soil_moisture_vwc": 0.28,
+      "soil_temp_c": 25.5,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    },
+    {
+      "id": 8,
+      "received_at": "2026-10-10T17:45:28.481Z",
+      "device_id": "esp32-node-raj-01",
+      "field_id": "field-godagari-a",
+      "event_id": "evt-test-1791654328481",
+      "observed_at": "2026-10-10T17:45:28.481Z",
+      "soil_moisture_vwc": 0.28,
+      "soil_temp_c": 25.5,
+      "air_temp_c": null,
+      "relative_humidity_pct": null,
+      "soil_ph": null,
+      "calibration_version": "cal-fdr-2026.1",
+      "quality_status": "valid",
+      "is_simulated": true,
+      "raw_payload": null
+    }
+  ],
+  "nasa_weather_cache": {
+    "nasa_24.469_88.330_20260927_20261007": {
+      "cachedAt": "2026-10-10T17:23:03.158Z",
+      "data": {
+        "source": "NASA_POWER",
+        "isRealNasaData": true,
+        "sourceStatus": "valid",
+        "attribution": "NASA Langley Research Center POWER Project (Agroclimatology Daily Methodology)",
+        "latitude": 24.469,
+        "longitude": 88.33,
+        "elevation_m": null,
+        "fetchedAt": "2026-10-10T17:23:03.158Z",
+        "recordCount": 11,
+        "records": [
+          {
+            "date": "2026-09-27",
+            "rawDate": "20260927",
+            "t2m": 27.98,
+            "t2m_max": 32.14,
+            "t2m_min": 24.66,
+            "rh2m": 86.82,
+            "solar_mj": 17.32,
+            "precip_mm": 1.46,
+            "ws10m": 1.66,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-28",
+            "rawDate": "20260928",
+            "t2m": 27.87,
+            "t2m_max": 32.08,
+            "t2m_min": 24.38,
+            "rh2m": 84.75,
+            "solar_mj": 18.53,
+            "precip_mm": 0.74,
+            "ws10m": 2.01,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-29",
+            "rawDate": "20260929",
+            "t2m": 27.45,
+            "t2m_max": 31.69,
+            "t2m_min": 23.89,
+            "rh2m": 83.97,
+            "solar_mj": 18.61,
+            "precip_mm": 0.14,
+            "ws10m": 2.24,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-30",
+            "rawDate": "20260930",
+            "t2m": 27.53,
+            "t2m_max": 31.67,
+            "t2m_min": 24.14,
+            "rh2m": 84.39,
+            "solar_mj": 18.05,
+            "precip_mm": 0.55,
+            "ws10m": 2.4,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-01",
+            "rawDate": "20261001",
+            "t2m": 27.81,
+            "t2m_max": 31.97,
+            "t2m_min": 23.96,
+            "rh2m": 80.83,
+            "solar_mj": 17.08,
+            "precip_mm": 0.71,
+            "ws10m": 1.73,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-02",
+            "rawDate": "20261002",
+            "t2m": 27.81,
+            "t2m_max": 31.96,
+            "t2m_min": 24.29,
+            "rh2m": 80.26,
+            "solar_mj": 17.67,
+            "precip_mm": 0.62,
+            "ws10m": 1.68,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-03",
+            "rawDate": "20261003",
+            "t2m": 27.19,
+            "t2m_max": 31.71,
+            "t2m_min": 23.32,
+            "rh2m": 80.87,
+            "solar_mj": 18.59,
+            "precip_mm": 0.16,
+            "ws10m": 2.17,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-04",
+            "rawDate": "20261004",
+            "t2m": 27.52,
+            "t2m_max": 32.18,
+            "t2m_min": 23.28,
+            "rh2m": 78.62,
+            "solar_mj": 18.85,
+            "precip_mm": 0.48,
+            "ws10m": 1.74,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-05",
+            "rawDate": "20261005",
+            "t2m": 27.81,
+            "t2m_max": 32.25,
+            "t2m_min": 24.1,
+            "rh2m": 74.02,
+            "solar_mj": 17.26,
+            "precip_mm": 0.78,
+            "ws10m": 0.99,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-06",
+            "rawDate": "20261006",
+            "t2m": 26.62,
+            "t2m_max": 31.1,
+            "t2m_min": 22.86,
+            "rh2m": 82.63,
+            "solar_mj": null,
+            "precip_mm": 2.89,
+            "ws10m": 2.2,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-07",
+            "rawDate": "20261007",
+            "t2m": 26.81,
+            "t2m_max": 30.92,
+            "t2m_min": 22.7,
+            "rh2m": 81.66,
+            "solar_mj": null,
+            "precip_mm": 3.22,
+            "ws10m": 1.58,
+            "source_status": "valid"
+          }
+        ],
+        "latest": {
+          "date": "2026-10-07",
+          "rawDate": "20261007",
+          "t2m": 26.81,
+          "t2m_max": 30.92,
+          "t2m_min": 22.7,
+          "rh2m": 81.66,
+          "solar_mj": null,
+          "precip_mm": 3.22,
+          "ws10m": 1.58,
+          "source_status": "valid"
+        },
+        "units": {
+          "t2m": "°C",
+          "rh2m": "%",
+          "solar_mj": "MJ/m²/day",
+          "precip_mm": "mm/day",
+          "ws10m": "m/s"
+        },
+        "warnings": []
+      }
+    },
+    "nasa_25.580_89.280_20260927_20261007": {
+      "cachedAt": "2026-10-10T17:32:42.842Z",
+      "data": {
+        "source": "NASA_POWER",
+        "isRealNasaData": true,
+        "sourceStatus": "valid",
+        "attribution": "NASA Langley Research Center POWER Project (Agroclimatology Daily Methodology)",
+        "latitude": 25.58,
+        "longitude": 89.28,
+        "elevation_m": null,
+        "fetchedAt": "2026-10-10T17:32:42.842Z",
+        "recordCount": 11,
+        "records": [
+          {
+            "date": "2026-09-27",
+            "rawDate": "20260927",
+            "t2m": 28.22,
+            "t2m_max": 32.04,
+            "t2m_min": 24.87,
+            "rh2m": 84.48,
+            "solar_mj": 18.54,
+            "precip_mm": 1.09,
+            "ws10m": 1.76,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-28",
+            "rawDate": "20260928",
+            "t2m": 28.36,
+            "t2m_max": 32.67,
+            "t2m_min": 24.66,
+            "rh2m": 83.05,
+            "solar_mj": 18.88,
+            "precip_mm": 0.22,
+            "ws10m": 2.14,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-29",
+            "rawDate": "20260929",
+            "t2m": 27.87,
+            "t2m_max": 32.47,
+            "t2m_min": 24.21,
+            "rh2m": 83.8,
+            "solar_mj": 19.39,
+            "precip_mm": 0.12,
+            "ws10m": 1.99,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-30",
+            "rawDate": "20260930",
+            "t2m": 27.98,
+            "t2m_max": 32.51,
+            "t2m_min": 23.9,
+            "rh2m": 82.92,
+            "solar_mj": 19.49,
+            "precip_mm": 0.18,
+            "ws10m": 1.72,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-01",
+            "rawDate": "20261001",
+            "t2m": 28.02,
+            "t2m_max": 32.3,
+            "t2m_min": 24.74,
+            "rh2m": 82.03,
+            "solar_mj": 19.35,
+            "precip_mm": 0.66,
+            "ws10m": 2.06,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-02",
+            "rawDate": "20261002",
+            "t2m": 27.79,
+            "t2m_max": 32.03,
+            "t2m_min": 24.18,
+            "rh2m": 81.42,
+            "solar_mj": 18.39,
+            "precip_mm": 1.03,
+            "ws10m": 1.8,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-03",
+            "rawDate": "20261003",
+            "t2m": 27.24,
+            "t2m_max": 31.57,
+            "t2m_min": 23.5,
+            "rh2m": 80.72,
+            "solar_mj": 17.75,
+            "precip_mm": 0.8,
+            "ws10m": 2.41,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-04",
+            "rawDate": "20261004",
+            "t2m": 27.5,
+            "t2m_max": 31.9,
+            "t2m_min": 23.14,
+            "rh2m": 77.72,
+            "solar_mj": 18.59,
+            "precip_mm": 0.99,
+            "ws10m": 1.88,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-05",
+            "rawDate": "20261005",
+            "t2m": 27.15,
+            "t2m_max": 31.63,
+            "t2m_min": 23.1,
+            "rh2m": 77.42,
+            "solar_mj": 18.43,
+            "precip_mm": 1.67,
+            "ws10m": 1.65,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-06",
+            "rawDate": "20261006",
+            "t2m": 26.88,
+            "t2m_max": 31.53,
+            "t2m_min": 23.16,
+            "rh2m": 79.09,
+            "solar_mj": null,
+            "precip_mm": 2.46,
+            "ws10m": 2.35,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-07",
+            "rawDate": "20261007",
+            "t2m": 27.38,
+            "t2m_max": 31.67,
+            "t2m_min": 22.92,
+            "rh2m": 77,
+            "solar_mj": null,
+            "precip_mm": 2.81,
+            "ws10m": 1.28,
+            "source_status": "valid"
+          }
+        ],
+        "latest": {
+          "date": "2026-10-07",
+          "rawDate": "20261007",
+          "t2m": 27.38,
+          "t2m_max": 31.67,
+          "t2m_min": 22.92,
+          "rh2m": 77,
+          "solar_mj": null,
+          "precip_mm": 2.81,
+          "ws10m": 1.28,
+          "source_status": "valid"
+        },
+        "units": {
+          "t2m": "°C",
+          "rh2m": "%",
+          "solar_mj": "MJ/m²/day",
+          "precip_mm": "mm/day",
+          "ws10m": "m/s"
+        },
+        "warnings": []
+      }
+    },
+    "nasa_24.673_89.418_20260927_20261007": {
+      "cachedAt": "2026-10-10T17:32:43.913Z",
+      "data": {
+        "source": "NASA_POWER",
+        "isRealNasaData": true,
+        "sourceStatus": "valid",
+        "attribution": "NASA Langley Research Center POWER Project (Agroclimatology Daily Methodology)",
+        "latitude": 24.673,
+        "longitude": 89.418,
+        "elevation_m": null,
+        "fetchedAt": "2026-10-10T17:32:43.913Z",
+        "recordCount": 11,
+        "records": [
+          {
+            "date": "2026-09-27",
+            "rawDate": "20260927",
+            "t2m": 28.61,
+            "t2m_max": 32.9,
+            "t2m_min": 24.65,
+            "rh2m": 82.67,
+            "solar_mj": 18.34,
+            "precip_mm": 1.16,
+            "ws10m": 1.37,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-28",
+            "rawDate": "20260928",
+            "t2m": 28.7,
+            "t2m_max": 33.01,
+            "t2m_min": 25.03,
+            "rh2m": 81.55,
+            "solar_mj": 18.63,
+            "precip_mm": 0.74,
+            "ws10m": 1.93,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-29",
+            "rawDate": "20260929",
+            "t2m": 28.19,
+            "t2m_max": 32.78,
+            "t2m_min": 24.36,
+            "rh2m": 81.85,
+            "solar_mj": 19.59,
+            "precip_mm": 0.09,
+            "ws10m": 2.29,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-09-30",
+            "rawDate": "20260930",
+            "t2m": 28.29,
+            "t2m_max": 32.79,
+            "t2m_min": 24.28,
+            "rh2m": 81.29,
+            "solar_mj": 19.38,
+            "precip_mm": 0.27,
+            "ws10m": 2.03,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-01",
+            "rawDate": "20261001",
+            "t2m": 28.52,
+            "t2m_max": 32.69,
+            "t2m_min": 25.09,
+            "rh2m": 79.21,
+            "solar_mj": 18.87,
+            "precip_mm": 0.61,
+            "ws10m": 1.96,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-02",
+            "rawDate": "20261002",
+            "t2m": 27.93,
+            "t2m_max": 31.43,
+            "t2m_min": 25.01,
+            "rh2m": 82.04,
+            "solar_mj": 17.53,
+            "precip_mm": 1.6,
+            "ws10m": 1.55,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-03",
+            "rawDate": "20261003",
+            "t2m": 27.73,
+            "t2m_max": 32.13,
+            "t2m_min": 23.98,
+            "rh2m": 78.74,
+            "solar_mj": 18.21,
+            "precip_mm": 0.4,
+            "ws10m": 2.17,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-04",
+            "rawDate": "20261004",
+            "t2m": 28.14,
+            "t2m_max": 32.46,
+            "t2m_min": 23.45,
+            "rh2m": 72.86,
+            "solar_mj": 19.33,
+            "precip_mm": 0.1,
+            "ws10m": 1.6,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-05",
+            "rawDate": "20261005",
+            "t2m": 27.86,
+            "t2m_max": 32.41,
+            "t2m_min": 23.71,
+            "rh2m": 72.82,
+            "solar_mj": 17.6,
+            "precip_mm": 0.36,
+            "ws10m": 1.41,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-06",
+            "rawDate": "20261006",
+            "t2m": 27.6,
+            "t2m_max": 31.93,
+            "t2m_min": 23.69,
+            "rh2m": 77.19,
+            "solar_mj": null,
+            "precip_mm": 2.65,
+            "ws10m": 1.91,
+            "source_status": "valid"
+          },
+          {
+            "date": "2026-10-07",
+            "rawDate": "20261007",
+            "t2m": 27.72,
+            "t2m_max": 31.69,
+            "t2m_min": 23.72,
+            "rh2m": 76.74,
+            "solar_mj": null,
+            "precip_mm": 2.43,
+            "ws10m": 1.13,
+            "source_status": "valid"
+          }
+        ],
+        "latest": {
+          "date": "2026-10-07",
+          "rawDate": "20261007",
+          "t2m": 27.72,
+          "t2m_max": 31.69,
+          "t2m_min": 23.72,
+          "rh2m": 76.74,
+          "solar_mj": null,
+          "precip_mm": 2.43,
+          "ws10m": 1.13,
+          "source_status": "valid"
+        },
+        "units": {
+          "t2m": "°C",
+          "rh2m": "%",
+          "solar_mj": "MJ/m²/day",
+          "precip_mm": "mm/day",
+          "ws10m": "m/s"
+        },
+        "warnings": []
+      }
+    }
+  },
+  "groundwater_readings": [
+    {
+      "id": 1,
+      "farm_id": "farm-barind-01",
+      "well_identifier": "DTW-BMDA-GODAGARI-42",
+      "observed_at": "2026-10-10T05:18:50.649Z",
+      "depth_below_surface_m": 26.4,
+      "critical_threshold_m": 28,
+      "warning_level": "warning",
+      "annual_drawdown_rate_m": 0.65,
+      "is_simulated": true
+    },
+    {
+      "id": 2,
+      "farm_id": "farm-rangpur-02",
+      "well_identifier": "DTW-TISTA-MITHA-18",
+      "observed_at": "2026-10-10T05:18:50.649Z",
+      "depth_below_surface_m": 9.8,
+      "critical_threshold_m": 16,
+      "warning_level": "normal",
+      "annual_drawdown_rate_m": 0.12,
+      "is_simulated": true
+    }
+  ]
+}

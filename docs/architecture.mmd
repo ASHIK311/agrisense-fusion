@@ -1,0 +1,68 @@
+graph TB
+  %% ============================================================================
+  %% AgriSense Fusion - Full System Architecture & Data Flow
+  %% NASA Space Apps Challenge 2026: Field Shift
+  %% Target Region: Northern Bangladesh (Barind Tract)
+  %% ============================================================================
+
+  %% Class Definitions with Distinct Colors
+  classDef edgeLayer fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
+  classDef satLayer fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+  classDef ingressLayer fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
+  classDef storeLayer fill:#3b0764,stroke:#c084fc,stroke-width:2px,color:#f8fafc;
+  classDef scienceLayer fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#f8fafc;
+  classDef uiLayer fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#f8fafc;
+  classDef supportLayer fill:#1c1917,stroke:#a8a29e,stroke-width:2px,stroke-dasharray: 4 4,color:#f8fafc;
+
+  subgraph Layer1["1. EDGE HARDWARE & SENSING LAYER"]
+    ESP32["<b>ESP32 Agro-Sensor Node</b><br/>• Capacitive FDR Soil Moisture (VWC)<br/>• DS18B20 Soil Temp Probe<br/>• SHT31 Ambient Humidity/Temp<br/><i>[TLS 1.3 / HTTPS REST Client]</i>"]:::edgeLayer
+  end
+
+  subgraph Layer2["2. SATELLITE EARTH OBSERVATION LAYER"]
+    NASA["<b>NASA POWER Agroclimatology API</b><br/>• T2M, T2M_MAX, T2M_MIN (°C)<br/>• RH2M Relative Humidity (%)<br/>• ALLSKY_SFC_SW_DWN Solar (MJ/m²/day)<br/>• WS10M Wind Speed (m/s) & PRECTOTCORR<br/><i>[NASA Langley Research Center]</i>"]:::satLayer
+  end
+
+  subgraph Layer3["3. INGRESS & BACKEND GATEWAY LAYER (Node.js / Express 5)"]
+    IngressAPI["<b>HTTPS Sensor Ingestion Gateway</b><br/>• Physical Range Validation: VWC ∈ [0.0, 1.0]<br/>• Idempotency Deduplication (UUID Event-ID)<br/>• Audit Tagging: is_simulated Enforcer"]:::ingressLayer
+    NASAWorker["<b>NASA Ingestion & Cache Worker</b><br/>• -999 Missing Value Filter → null<br/>• 1-Hour Rolling In-Memory & File Cache<br/>• Lat/Long Spatial Binding (24.469°N, 88.330°E)"]:::ingressLayer
+    GWWorker["<b>BMDA Groundwater Tracker</b><br/>• Piezometric Water Level Monitor<br/>• 28.0m Critical Suction Limit Warning"]:::ingressLayer
+  end
+
+  subgraph Layer4["4. PERSISTENCE & STORAGE LAYER"]
+    DB[("<b>PostgreSQL 16 Production Target</b><br/><code>farms</code> | <code>fields</code> | <code>sensor_readings</code><br/><code>nasa_daily_weather</code> | <code>crop_catalog</code><br/><code>model_runs</code> | <code>recommendations</code><br/><i>(Atomic File Store Fallback Active)</i>")]:::storeLayer
+  end
+
+  subgraph Layer5["5. SCIENTIFIC COMPUTATION & DECISION ENGINES"]
+    FAO56["<b>FAO-56 Penman-Monteith Physics Engine</b><br/>• 10m → 2m Wind Profile Log Transformation<br/>• Reference Evapotranspiration (ET₀ mm/day)<br/>• Crop Evapotranspiration (ETc = Kc × ET₀)<br/>• Root-Zone Depletion (Dr) vs TAW"]:::scienceLayer
+    MCDA["<b>Crop-Rotation MCDA Decision Engine</b><br/>• Dynamic 4-Slider Weights Normalization<br/>• 💧 Water • 🌱 Soil • ☀️ Heat • 💰 Profit<br/>• Barind Agronomic Catalog Evaluation<br/>• Machine Reason Codes & Explanations"]:::scienceLayer
+  end
+
+  subgraph Layer6["6. PRESENTATION & FARMER ACTION LAYER (React 18 SPA)"]
+    Dashboard["<b>AgriSense Fusion Interactive Dashboard</b><br/>• Real-Time Crop Rotation Explorer<br/>• Dark Scientific Visual Theme<br/>• Live SVG Atmospheric Trend Charts<br/>• /architecture Visual Canvas"]:::uiLayer
+    AlertSystem["<b>Farmer Action & Aquifer Alert Engine</b><br/>• ⚠️ Root-Zone Stress Trigger (Dr > 50% TAW)<br/>• 🚨 Deep Tubewell Drawdown Alert<br/>• 📋 Recommended Resilient Crop Plan"]:::uiLayer
+  end
+
+  subgraph LayerSupport["SUPPORTING MONITORING BRANCH"]
+    BMDA["<b>BMDA Tubewell Piezometer</b><br/>• Piezometric Water Table Sensor<br/><i>[Barind Multipurpose Dev. Authority]</i>"]:::supportLayer
+  end
+
+  %% Data Pipelines
+  ESP32 -- "HTTPS POST (VWC, Temp, pH, event_id)" --> IngressAPI
+  NASA -- "HTTPS GET (Agroclimatology Point Series)" --> NASAWorker
+  BMDA -. "Piezometric Depth (m)" .-> GWWorker
+
+  IngressAPI -- "Validated Records" --> DB
+  NASAWorker -- "Normalized Weather Upsert" --> DB
+  GWWorker -. "Well Telemetry" .-> DB
+
+  DB -- "Soil Moisture & Water Level" --> FAO56
+  DB -- "Historical Weather Series" --> FAO56
+  DB -- "Crop Catalog & Constraints" --> MCDA
+
+  FAO56 -- "ET₀, ETc, Water Deficit (Dr)" --> MCDA
+  FAO56 -- "Atmospheric Demand Metrics" --> Dashboard
+
+  MCDA -- "Ranked Rotations & Reason Codes" --> Dashboard
+  GWWorker -. "Aquifer Depletion State" .-> Dashboard
+
+  Dashboard --> AlertSystem

@@ -1,0 +1,31 @@
+{
+  "name": "agrisense-fusion",
+  "version": "1.0.0",
+  "description": "AgriSense Fusion - NASA Space Apps Challenge 2026: Field Shift",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test server/tests/unit.test.js",
+    "build:frontend": "npm --prefix frontend run build",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "node server/index.js"
+  },
+  "keywords": [
+    "nasa",
+    "space-apps-2026",
+    "field-shift",
+    "crop-rotation",
+    "iot",
+    "esp32",
+    "fao-56",
+    "bangladesh",
+    "barind-tract"
+  ],
+  "author": "AgriSense Fusion Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  }
+}
