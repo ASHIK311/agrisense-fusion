@@ -100,6 +100,16 @@ describe('Physics Engine: Soil Water Balance & Depletion', () => {
     assert.strictEqual(severe.depletionMm, taw); // clamped to TAW
   });
 
+  test('calculateRootZoneDepletion handles null or non-positive TAW without false wilting_danger', () => {
+    for (const invalidTaw of [null, undefined, 0, -10]) {
+      const res = calculateRootZoneDepletion(0.32, 0.23, 0.40, invalidTaw);
+      assert.strictEqual(res.waterStatus, 'unknown');
+      assert.strictEqual(res.depletionMm, null);
+      assert.strictEqual(res.depletionPct, null);
+      assert.ok(res.warnings.length > 0);
+    }
+  });
+
   test('calculateDailyWaterBalance accounts for rainfall infiltration and percolation', () => {
     const bal = calculateDailyWaterBalance({
       drPrevious: 30,
@@ -169,6 +179,50 @@ describe('ESP32 Sensor Ingestion Service', () => {
     assert.strictEqual(invalidResult.success, false);
     assert.strictEqual(invalidResult.statusCode, 422);
     assert.ok(invalidResult.errors.length >= 2);
+  });
+
+  test('validates payload before duplicate check and scopes event_id deduplication per device_id', () => {
+    const sharedEvent = `shared-evt-${Date.now()}-${Math.random()}`;
+    const devA = sensorService.ingestReading({
+      device_id: 'esp32-node-raj-01',
+      event_id: sharedEvent,
+      observed_at: new Date().toISOString(),
+      soil_moisture_vwc: 0.25
+    });
+    assert.strictEqual(devA.success, true);
+    assert.strictEqual(devA.statusCode, 201);
+
+    // Invalid physical reading carrying an already-seen (device_id, event_id) must still fail validation (422, not 409)
+    const invalidReuse = sensorService.ingestReading({
+      device_id: 'esp32-node-raj-01',
+      event_id: sharedEvent,
+      observed_at: new Date().toISOString(),
+      soil_moisture_vwc: 3.5
+    });
+    assert.strictEqual(invalidReuse.success, false);
+    assert.strictEqual(invalidReuse.statusCode, 422);
+    assert.strictEqual(invalidReuse.error, 'VALIDATION_FAILED');
+
+    // A different device using the same local event_id must NOT be rejected
+    const devB = sensorService.ingestReading({
+      device_id: 'esp32-node-raj-02',
+      event_id: sharedEvent,
+      observed_at: new Date().toISOString(),
+      soil_moisture_vwc: 0.28
+    });
+    assert.strictEqual(devB.success, true);
+    assert.strictEqual(devB.statusCode, 201);
+
+    // Repeating the same (device_id, event_id) on devB must reject with 409
+    const dupDevB = sensorService.ingestReading({
+      device_id: 'esp32-node-raj-02',
+      event_id: sharedEvent,
+      observed_at: new Date().toISOString(),
+      soil_moisture_vwc: 0.28
+    });
+    assert.strictEqual(dupDevB.success, false);
+    assert.strictEqual(dupDevB.statusCode, 409);
+    assert.strictEqual(dupDevB.error, 'DUPLICATE_EVENT_ID');
   });
 });
 

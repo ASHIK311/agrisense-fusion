@@ -305,7 +305,7 @@ class StorageService {
         id INTEGER PRIMARY KEY,
         device_id TEXT NOT NULL,
         field_id TEXT,
-        event_id TEXT UNIQUE,
+        event_id TEXT,
         observed_at TEXT,
         received_at TEXT,
         soil_moisture_vwc REAL,
@@ -316,10 +316,11 @@ class StorageService {
         quality_status TEXT,
         calibration_status TEXT DEFAULT 'UNCALIBRATED',
         is_simulated INTEGER NOT NULL DEFAULT 1,
-        payload_json TEXT NOT NULL
+        payload_json TEXT NOT NULL,
+        UNIQUE(device_id, event_id)
       );
       CREATE INDEX IF NOT EXISTS idx_readings_field ON sensor_readings(field_id, id DESC);
-      CREATE INDEX IF NOT EXISTS idx_readings_event ON sensor_readings(event_id);
+      CREATE INDEX IF NOT EXISTS idx_readings_event ON sensor_readings(device_id, event_id);
 
       CREATE TABLE IF NOT EXISTS alerts (
         id TEXT PRIMARY KEY,
@@ -1249,13 +1250,17 @@ class StorageService {
     return list.length > 0 ? list[0] : null;
   }
 
-  hasEventId(eventId) {
+  hasEventId(eventId, deviceId = null) {
     if (!eventId) return false;
     if (this.db) {
-      const row = this.db.prepare('SELECT 1 AS found FROM sensor_readings WHERE event_id = ? LIMIT 1').get(eventId);
+      const row = deviceId
+        ? this.db.prepare('SELECT 1 AS found FROM sensor_readings WHERE event_id = ? AND device_id = ? LIMIT 1').get(eventId, deviceId)
+        : this.db.prepare('SELECT 1 AS found FROM sensor_readings WHERE event_id = ? LIMIT 1').get(eventId);
       return Boolean(row);
     }
-    return (this.state.readings || []).some((r) => r.event_id === eventId);
+    return (this.state.readings || []).some((r) =>
+      deviceId ? (r.event_id === eventId && r.device_id === deviceId) : r.event_id === eventId
+    );
   }
 
   addReading(reading) {

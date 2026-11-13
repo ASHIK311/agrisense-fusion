@@ -89,7 +89,7 @@ graph TB
   * Capacitive FDR (Frequency-Domain Reflectometry) Soil Moisture Probe v1.2 (analog output to ADC1_CH6, GPIO 34).
   * Waterproof DS18B20 digital temperature probe (Dallas 1-Wire protocol on GPIO 4 with 4.7kΩ pull-up).
   * Sensirion SHT31 precision ambient temperature and humidity sensor (I2C on GPIO 21 SDA / GPIO 22 SCL).
-* **Power Management:** 18650 3.2V LiFePO4 battery (2,500mAh) paired with a 5V 2W monocrystalline solar panel and TP4056 lithium charge controller. 55-minute deep sleep / 5-minute active burst cycle ($I_{\text{sleep}} \approx 15\,\mu\text{A}$).
+* **Power Management:** 18650 3.7V nominal (3.0V–4.2V) Li-Ion cell (3,000mAh) paired with a 6V 3W monocrystalline solar panel, CN3065 / TP4056 Li-Ion solar charge controller (4.20V CV + DW01A protection), and Holtek HT7333-A ultra-low quiescent 3.3V LDO regulator ($I_q \approx 4\,\mu\text{A}$, ~100mV dropout @ 100mA). ~15-minute deep sleep / active burst cycle ($I_{\text{sleep}} \approx 35\,\mu\text{A}$ engineered node).
 * **Groundwater Branch:** Tracks BMDA deep tubewell water tables against the 28.0m centrifugal suction limit.
 
 ### Layer 2: Satellite Earth Observation (NASA POWER)
@@ -287,10 +287,10 @@ graph TB
   classDef commNode fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
 
   subgraph PowerSubsystem["1. Renewable Power & Energy Harvesting"]
-    Solar["<b>5V 2W Solar Panel</b><br/>Monocrystalline Photovoltaic"]:::powerNode
-    TP4056["<b>TP4056 Solar Charger</b><br/>Lithium Charge Controller + Protection"]:::powerNode
-    Battery["<b>18650 LiFePO4 Cell</b><br/>3.2V 2500mAh (~2,000 cycles)"]:::powerNode
-    LDO["<b>ME6211 Ultra-Low LDO</b><br/>3.3V Output, 15µA Quiescent Current"]:::powerNode
+    Solar["<b>6V 3W Solar Panel</b><br/>Monocrystalline Photovoltaic"]:::powerNode
+    TP4056["<b>CN3065 / TP4056 Solar Charger</b><br/>Li-Ion 4.20V Charge Controller + DW01A Protection"]:::powerNode
+    Battery["<b>18650 Li-Ion Cell</b><br/>3.7V Nominal (3.0V–4.2V), 3000mAh"]:::powerNode
+    LDO["<b>HT7333-A Ultra-Low LDO</b><br/>3.3V Output, 4µA Quiescent Current (~100mV Dropout)"]:::powerNode
   end
 
   subgraph MCU["2. Microcontroller Unit (Core Processing)"]

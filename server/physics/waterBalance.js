@@ -38,9 +38,24 @@ function calculateRootZoneDepletion(thetaFC, theta, rootDepthM, taw) {
   if (theta === undefined || theta === null || isNaN(theta)) {
     return {
       depletionMm: null,
+      rawDepletionMm: null,
       depletionPct: null,
       waterStatus: 'unknown',
       warnings: ['Current soil moisture reading theta is missing']
+    };
+  }
+
+  if (
+    thetaFC === undefined || thetaFC === null || isNaN(thetaFC) ||
+    rootDepthM === undefined || rootDepthM === null || isNaN(rootDepthM) || Number(rootDepthM) <= 0 ||
+    taw === undefined || taw === null || isNaN(taw) || Number(taw) <= 0
+  ) {
+    return {
+      depletionMm: null,
+      rawDepletionMm: null,
+      depletionPct: null,
+      waterStatus: 'unknown',
+      warnings: ['Valid positive TAW, thetaFC, and rootDepthM are required to compute root-zone depletion']
     };
   }
 

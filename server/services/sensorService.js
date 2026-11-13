@@ -44,18 +44,7 @@ class SensorService {
       errors.push('Missing or invalid event_id (string or UUID expected)');
     }
 
-    // 2. Duplicate Detection (Idempotency)
-    if (event_id && storage.hasEventId(event_id)) {
-      return {
-        success: false,
-        statusCode: 409,
-        error: 'DUPLICATE_EVENT_ID',
-        message: `Reading with event_id '${event_id}' has already been ingested.`,
-        duplicates: 1
-      };
-    }
-
-    // 3. Observed Timestamp Validation
+    // 2. Observed Timestamp Validation
     let observedDate;
     if (!observed_at) {
       observedDate = new Date();
@@ -66,7 +55,7 @@ class SensorService {
       }
     }
 
-    // 4. Physical Numeric Range Checks
+    // 3. Physical Numeric Range Checks
     if (soil_moisture_vwc !== undefined && soil_moisture_vwc !== null) {
       const vwc = Number(soil_moisture_vwc);
       if (isNaN(vwc) || vwc < 0.0 || vwc > 1.0) {
@@ -102,13 +91,24 @@ class SensorService {
       }
     }
 
-    // If validation failed, reject with 422 Unprocessable Entity
+    // If validation failed, reject with 422 Unprocessable Entity before idempotency check
     if (errors.length > 0) {
       return {
         success: false,
         statusCode: 422,
         error: 'VALIDATION_FAILED',
         errors
+      };
+    }
+
+    // 4. Per-Device Duplicate Detection (Idempotency)
+    if (event_id && storage.hasEventId(event_id, device_id)) {
+      return {
+        success: false,
+        statusCode: 409,
+        error: 'DUPLICATE_EVENT_ID',
+        message: `Reading with event_id '${event_id}' for device '${device_id}' has already been ingested.`,
+        duplicates: 1
       };
     }
 

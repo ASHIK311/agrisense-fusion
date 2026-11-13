@@ -9,7 +9,7 @@
   <a href="https://www.spaceappschallenge.org/"><img alt="NASA Space Apps 2026" src="https://img.shields.io/badge/NASA%20SPACE%20APPS-2026%20%C2%B7%20FIELD%20SHIFT-0B3D91?style=for-the-badge&logo=nasa&logoColor=white"></a>
   <a href="https://huggingface.co/datasets/ashik1236/nasatest"><img alt="Open Dataset on Hugging Face" src="https://img.shields.io/badge/OPEN%20DATA-Hugging%20Face%20(2.8%20GB)-F59E0B?style=for-the-badge&logo=huggingface&logoColor=white"></a>
   <a href="https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ASHIK311/agrisense-fusion/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI"></a>
-  <a href="documentation/TESTING.md"><img alt="Automated Tests" src="https://img.shields.io/badge/Tests-91%2F91%20Passed-10B981?style=for-the-badge&logo=node.js&logoColor=white"></a>
+  <a href="documentation/TESTING.md"><img alt="Automated Tests" src="https://img.shields.io/badge/Tests-93%2F93%20Passed-10B981?style=for-the-badge&logo=node.js&logoColor=white"></a>
   <a href="documentation/SECURITY.md"><img alt="Security" src="https://img.shields.io/badge/Security-Timing--Safe%20%26%20Isolated-6366F1?style=for-the-badge&logo=shield&logoColor=white"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-38BDF8?style=for-the-badge"></a>
 </p>
@@ -35,7 +35,7 @@
   <a href="#-executive-summary--problem-statement"><b>Overview</b></a> ·
   <a href="#-visual-product-tour--verified-ui"><b>Visual Tour</b></a> ·
   <a href="#-10-minute-local-quickstart-windows-powershell"><b>Quickstart</b></a> ·
-  <a href="#-testing--verification-summary"><b>Tests (91/91)</b></a> ·
+  <a href="#-testing--verification-summary"><b>Tests (93/93)</b></a> ·
   <a href="#-technical-architecture--system-engineering"><b>Architecture</b></a> ·
   <a href="#-complete-documentation-index"><b>Documentation</b></a> ·
   <a href="#-team-agrisense-fusion"><b>Team</b></a>
@@ -65,7 +65,7 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 | Metric | Measured Value | Provenance / Verification |
 |---|---|---|
 | **Live Production Deployment** | **[`https://adspro.online/`](https://adspro.online/)** | Hosted full-stack Express 5 + React 18 + SQLite WAL (`/api/health`) |
-| **Automated Test Suite** | **`91 / 91` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`, includes SQLite + RF ensemble) |
+| **Automated Test Suite** | **`93 / 93` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`, SQLite WAL + 6,000-vector RF walk) · [GitHub Actions CI](https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml) |
 | **Live E2E Workflow Audit** | **`11 / 11` workflows + `3` gates** | `node server/tests/live_workflow_audit.js` |
 | **LULC Holdout (Offline Full `.pkl`)** | **`85.77%` Block C overall (`N=6,000`)** | Full `optimized_model.pkl` (`250` trees, full depth): `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior (`85.28%` for full `180`-tree 15-feat) |
 | **LULC Live Endpoint (`35`-Tree Subset)** | **`85.47%` (21-feat) · `83.98%` (15-feat)** | `POST /api/v1/satellite/classify` runs `35/250` (21-feat) & `35/180` (15-feat) trees (`max_depth=9`, `97.00%` / `96.40%` agreement with full `.pkl`); all `6,000` holdout feature vectors in `block_c_holdout_6000_features.csv` are re-evaluated live in `npm test` & CI |
@@ -172,22 +172,22 @@ hf download ashik1236/nasatest --repo-type dataset --local-dir ./research/hf_dat
 
 ## 🧪 Testing & Verification Summary
 
-Every critical workflow, security boundary, and physics formula is verified across **7 top-level automated suites (`91 / 91` passed in `~3.9s`)**, an isolated live E2E harness, and an offline RAG evaluation benchmark:
+Every critical workflow, security boundary, and physics formula is verified across **7 top-level automated suites (`93 / 93` passed in `~3.9s`)**, an isolated live E2E harness, and an offline RAG evaluation benchmark — verified cleanly on [GitHub Actions CI (`ubuntu-latest`, Node 22 + Python 3.11)](https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml):
 
 | Test Suite / Harness | Command | Result | What It Verifies |
 |---|---|:---:|---|
-| **Core API Integration** | `server/tests/api_integration.test.js` | **20 / 20 PASS** | Health, auth, farms/fields, NASA POWER history, compound weather risk, ESP32 POST, satellite classify/meta, BARC suitability, FAO-56 water balance, 17 diseases, 60 DOIs, alerts, groundwater, reports, dashboard. |
-| **RAG & AI Assistant** | `server/tests/assistant.test.js` | **13 / 13 PASS** | 9 deterministic tools, EN & বাংলা chat, disease disclaimer, 0.65 m/yr Jahan citation, uncalibrated ESP32 disclosure, SSE stream, `P0-01` metric guard, `P0-02` input guard, `P1-03` multi-tenant auth. |
+| **Core API Integration** | `server/tests/api_integration.test.js` | **21 / 21 PASS** | Health, auth, farms/fields, NASA POWER history, compound weather risk, ESP32 POST, satellite classify/meta + 6,000-vector RF tree-walk, 407-scene CSV catalog, BARC suitability, FAO-56 water balance, 17 diseases, 60 DOIs, alerts, groundwater, reports, dashboard. |
+| **RAG & AI Assistant** | `server/tests/assistant.test.js` | **14 / 14 PASS** | 9 deterministic tools, EN & বাংলা chat, disease disclaimer, 0.65 m/yr Jahan citation, uncalibrated ESP32 disclosure, SSE stream, `P0-01` metric guard, `P0-02` input guard, `P1-03` multi-tenant auth, SQLite multi-turn persistence. |
 | **Option 1 Patch Regression** | `server/tests/patch_regression.test.js` | **10 / 10 PASS** | Signup `'farmer'` role lock, security headers, `/favicon.ico != 500`, cross-tenant `404` isolation, canonical `79.0 mm` TAW / `39.5 mm` RAW parity, `RandomForest_21Feat_Deep`, `4000`-char limit + `429`, `1,827`-row Member 2 parity, soil provenance. |
 | **Security & Multi-Tenant** | `server/tests/security_regression.test.js` | **12 / 12 PASS** | Production `JWT_SECRET >= 32` check, forged JWT `403`, auth barriers `401`, immutable demo farms `403`, rate limit `429`, honest `422` / `501` model gates, zero-denominator spectral protection. |
-| **Physics, IoT & MCDA Units** | `server/tests/unit.test.js` | **13 / 13 PASS** | Penman-Monteith $ET_0$, $ET_c$, TAW, $D_r$ water balance, ESP32 physical bounds (`422`) & duplicate `event_id` (`409`), dynamic MCDA water vs. profit re-ranking. |
-| **Persistence & Recovery** | `server/tests/persistence_safety.test.js` | **7 / 7 PASS** | Atomic writes, automatic `.bak` snapshot recovery, lock-safe rename without non-atomic corruption, clean seed recovery. |
+| **Physics, IoT & MCDA Units** | `server/tests/unit.test.js` | **15 / 15 PASS** | Penman-Monteith $ET_0$, $ET_c$, TAW, $D_r$ water balance (`null`/non-positive TAW guard), ESP32 validation-before-dedup (`422`) & per-device `(device_id, event_id)` (`409`), dynamic MCDA water vs. profit re-ranking. |
+| **Persistence & Recovery** | `server/tests/persistence_safety.test.js` | **8 / 8 PASS** | Native `node:sqlite` WAL relational parity, atomic writes, automatic `.bak` snapshot recovery, lock-safe rename without non-atomic corruption, clean seed recovery. |
 | **ESP32 Hardware Auth** | `server/tests/device_auth.test.js` | **4 / 4 PASS** | Missing auth `401`, forged `x-device-key` rejection with valid `device_id`, timing-safe system key `201`, Bearer token `201`. |
 | **Node–Python FAO-56 Parity** | `server/tests/fao56_parity.test.js` | **4 / 4 PASS** | Cross-language verification against Member 5 Python across 4 seasonal Godagari benchmarks (`7.49`, `2.41`, `2.94`, `3.80 mm/day`). |
 | **Hydrology Terrain API** | `server/tests/hydrologyApi.test.js` | **2 / 2 PASS** | Terrarium RGB PNG elevation decoding and West➔East slope transect binning. |
-| **Live E2E + RAG Harness** | `live_workflow_audit.js`, `run_rag_benchmark.js` | **11/11 + 30/30** | End-to-end live server workflows, 3 scientific gates (`422`/`501`), and `81.82%` RAG Hit@4 (`12.99 ms` mean). |
+| **Live E2E + RAG + Holdout CSV** | `live_workflow_audit.js`, `run_rag_benchmark.js`, `evaluate_runtime_subset.py --verify-csv` | **11/11 + 30/30 + 6,000** | End-to-end live server workflows, 3 scientific gates (`422`/`501`), `81.82%` RAG Hit@4, and full 6,000-vector 35-tree verification. |
 
-*(Full test case trace & reproduction steps: [`documentation/TESTING.md`](documentation/TESTING.md))*
+*(Full test case trace, clean store isolation & public CI logs: [`documentation/TESTING.md`](documentation/TESTING.md) · [`AgriSense Fusion CI`](https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml))*
 
 ---
 
@@ -354,7 +354,7 @@ agrisense-fusion/                                  # Clean GitHub repository roo
 ├── .gitattributes                                 # Linguist language classification & cross-OS EOL normalization
 ├── .gitignore                                     # Excludes node_modules, .venv, .env*, .bak & heavy GeoTIFFs
 ├── .env.example                                   # Environment variable template (JWT, NASA, optional LLM keys)
-├── .github/workflows/ci.yml                       # Automated CI: 91 Node tests, RAG benchmark, Python & Vite build
+├── .github/workflows/ci.yml                       # Automated CI: 93 Node tests, RAG benchmark, Python & Vite build
 ├── start.bat                                      # 1-Click Windows launcher (Express :5000 + Vite :5173)
 ├── package.json                                   # Backend dependencies (Express 5, bcryptjs, jwt, pg) & test runner
 ├── audit_phase0.py                                # Forensic cross-member verification generator
