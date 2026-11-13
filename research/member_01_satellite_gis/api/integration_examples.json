@@ -1,0 +1,126 @@
+{
+  "api_base_url": "http://localhost:8000",
+  "project": "Field Shift — Adapting Farms with NASA Data",
+  "version": "1.0.0",
+  "endpoints": [
+    {
+      "name": "Health Check",
+      "method": "GET",
+      "path": "/health",
+      "curl_example": "curl -X GET 'http://localhost:8000/health'",
+      "expected_response": {
+        "status": "healthy",
+        "service": "AgriSense Fusion Remote Sensing & GIS Backend",
+        "version": "1.0.0",
+        "study_area": "Godagari Upazila, Rajshahi (Barind Tract)",
+        "timestamp": "2026-03-29T12:00:00Z"
+      }
+    },
+    {
+      "name": "Satellite Metadata Catalog",
+      "method": "GET",
+      "path": "/satellite/metadata",
+      "curl_example": "curl -X GET 'http://localhost:8000/satellite/metadata'",
+      "expected_response": {
+        "study_area": "Godagari Upazila, Rajshahi (Barind Tract)",
+        "total_sentinel2_scenes_cataloged": 407,
+        "total_landsat_scenes_cataloged": 209,
+        "local_processed_scenes_count": 4,
+        "available_dates": ["2023-10-26", "2023-12-25", "2024-02-28", "2024-04-13"]
+      }
+    },
+    {
+      "name": "Vegetation Indices",
+      "method": "GET",
+      "path": "/vegetation/indices?date=2024-02-28",
+      "curl_example": "curl -X GET 'http://localhost:8000/vegetation/indices?date=2024-02-28'",
+      "expected_response": {
+        "date": "2024-02-28",
+        "season": "Rabi_Winter",
+        "study_area": "Godagari Upazila, Rajshahi (Barind Tract)",
+        "NDVI": { "mean": 0.2756, "median": 0.2705, "std": 0.1271, "min": -0.1959, "max": 0.6329, "p10": 0.1144, "p90": 0.4514 },
+        "NDWI_McFeeters": { "mean": -0.2591, "median": -0.2609, "std": 0.1138, "min": -0.577, "max": 0.2515, "p10": -0.4085, "p90": -0.1193 },
+        "NDMI_Gao_Moisture": { "mean": 0.1141, "median": 0.1244, "std": 0.1017, "min": -0.3314, "max": 0.446, "p10": -0.029, "p90": 0.2375 },
+        "EVI": { "mean": 0.2867, "median": 0.2699, "std": 0.1481, "min": -0.2044, "max": 1.5, "p10": 0.109, "p90": 0.4959 }
+      }
+    },
+    {
+      "name": "Vegetation Phenology Timeseries",
+      "method": "GET",
+      "path": "/vegetation/timeseries",
+      "curl_example": "curl -X GET 'http://localhost:8000/vegetation/timeseries'",
+      "expected_response": {
+        "total_observations": 4,
+        "timeseries": [
+          { "date": "2023-10-26", "season": "Kharif_Aman", "NDVI_mean": 0.3951, "EVI_mean": 0.4459, "NDWI_McFeeters_mean": -0.3589, "NDMI_Gao_mean": 0.1585 },
+          { "date": "2023-12-25", "season": "Post_Harvest_Rabi", "NDVI_mean": 0.2911, "EVI_mean": 0.3241, "NDWI_McFeeters_mean": -0.2865, "NDMI_Gao_mean": 0.0405 },
+          { "date": "2024-02-28", "season": "Rabi_Winter", "NDVI_mean": 0.2756, "EVI_mean": 0.2867, "NDWI_McFeeters_mean": -0.2591, "NDMI_Gao_mean": 0.1141 },
+          { "date": "2024-04-13", "season": "Pre_Kharif_Aus", "NDVI_mean": 0.3446, "EVI_mean": 0.3971, "NDWI_McFeeters_mean": -0.3345, "NDMI_Gao_mean": 0.0786 }
+        ],
+        "trend_summary": {
+          "peak_biomass_season": "Kharif_Aman",
+          "peak_biomass_date": "2023-10-26",
+          "peak_ndvi": 0.3951,
+          "lowest_biomass_season": "Rabi_Winter",
+          "lowest_biomass_date": "2024-02-28",
+          "lowest_ndvi": 0.2756,
+          "seasonal_ndvi_amplitude": 0.1195,
+          "moisture_stress_period": "December to March (Rabi season, NDMI drops to < 0.12)"
+        }
+      }
+    },
+    {
+      "name": "Field Vegetation & Aquifer Stress Analysis",
+      "method": "POST",
+      "path": "/vegetation/analyze",
+      "curl_example": "curl -X POST 'http://localhost:8000/vegetation/analyze' -H 'Content-Type: application/json' -d '{\"lat\": 24.469, \"lon\": 88.330, \"target_date\": \"2024-02-28\", \"crop_interest\": \"Wheat\"}'",
+      "expected_response": {
+        "location": { "latitude": 24.469, "longitude": 88.33 },
+        "nearest_observation_date": "2024-02-28",
+        "season": "Rabi_Winter",
+        "ndvi_canopy_vigor": 0.2756,
+        "evi_biomass_density": 0.2867,
+        "ndmi_moisture_level": 0.1141,
+        "ndwi_surface_water": -0.2591,
+        "canopy_condition": "Moderate Vegetative Cover (Typical Rabi Wheat/Maize Stage)",
+        "water_stress_status": "Moderate Moisture Deficit (Active Transpiration)",
+        "aquifer_depletion_risk": "MODERATE (Tubewell irrigation active)",
+        "agronomic_recommendation": "For Wheat, monitor FAO-56 root-zone depletion. Implement alternate wetting and drying (AWD) if growing Boro rice."
+      }
+    },
+    {
+      "name": "Crop & Land Cover Classification Inference",
+      "method": "POST",
+      "path": "/crop/classify",
+      "curl_example": "curl -X POST 'http://localhost:8000/crop/classify' -H 'Content-Type: application/json' -d '{\"features\": {\"Blue_B02\": 0.12, \"Green_B03\": 0.16, \"Red_B04\": 0.14, \"NIR_B08\": 0.38, \"SWIR1_B11\": 0.22, \"NDVI_Rabi\": 0.46, \"NDWI_McFeeters\": -0.40, \"NDMI_Moisture\": 0.26, \"EVI_Rabi\": 0.48, \"Delta_NDVI_Kharif_Rabi\": 0.18}}'",
+      "expected_response": {
+        "predicted_class_id": 1,
+        "predicted_class_name": "Cropland",
+        "confidence": 0.82,
+        "probabilities": {
+          "Cropland": 0.82,
+          "Tree_Cover": 0.08,
+          "Permanent_Water": 0.02,
+          "Built_Up": 0.08
+        },
+        "model_type": "ExtraTreesClassifier (Spatial Block Evaluated: 79.8% Accuracy)",
+        "ground_truth_status": "VALIDATED for Agricultural Cropland vs Tree/Water/Built-Up. Field-level crop species (Rice/Wheat/Maize) BLOCKED.",
+        "note": "In strict compliance with scientific integrity rules, crop species (Rice vs Wheat vs Maize) are not fabricated without verified DAE field GPS boundary survey data. Model reliably identifies active Cropland boundaries for AgriSense crop rotation planning."
+      }
+    },
+    {
+      "name": "Available Cartographic Maps & GIS Vectors",
+      "method": "GET",
+      "path": "/maps/available",
+      "curl_example": "curl -X GET 'http://localhost:8000/maps/available'",
+      "expected_response": {
+        "total_maps": 9,
+        "maps": [
+          { "id": "study_area_interactive", "title": "Interactive Study Area & Basemap (Godagari)", "category": "Interactive Map", "format": "HTML (Leaflet/Folium)", "url_path": "/static/maps/study_area_interactive.html" },
+          { "id": "land_cover_distribution", "title": "10m Land Cover Distribution & Area Statistics", "category": "Land Cover Analysis", "format": "PNG", "url_path": "/static/exports/visualizations/land_cover_distribution.png" },
+          { "id": "study_area_geojson", "title": "Godagari Upazila Authoritative Boundary Vector", "category": "Vector GIS", "format": "GeoJSON", "url_path": "/static/exports/geojson/study_area.geojson" }
+        ]
+      }
+    }
+  ]
+}

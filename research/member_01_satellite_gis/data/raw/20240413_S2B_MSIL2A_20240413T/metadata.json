@@ -1,0 +1,15 @@
+{
+  "scene_id": "S2B_MSIL2A_20240413T043659_R033_T45RXH_20240413T083818",
+  "date": "2024-04-13",
+  "season": "Pre_Kharif_Aus",
+  "cloud_cover_pct": 0.002976,
+  "sun_elevation": null,
+  "bands": {
+    "B03": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\B03.tif",
+    "B11": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\B11.tif",
+    "SCL": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\SCL.tif",
+    "B04": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\B04.tif",
+    "B02": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\B02.tif",
+    "B08": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240413_S2B_MSIL2A_20240413T\\B08.tif"
+  }
+}

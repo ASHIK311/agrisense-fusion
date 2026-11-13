@@ -1,0 +1,230 @@
+[
+  {
+    "year_cycle": "2022-2023",
+    "season": "Kharif_II_Aman",
+    "target_window": "2022-10-15/2022-11-20",
+    "scene_id": "S2B_MSIL2A_20221021T043819_R033_T45RXH_20221022T074752",
+    "acquisition_date": "2022-10-21",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45RXH",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2022-2023",
+    "season": "Post_Harvest_Early_Boro",
+    "target_window": "2022-12-15/2023-01-20",
+    "scene_id": "S2B_MSIL2A_20230109T044139_R033_T45RXH_20240810T123409",
+    "acquisition_date": "2023-01-09",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45RXH",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2022-2023",
+    "season": "Rabi_Winter_Wheat_Boro",
+    "target_window": "2023-02-15/2023-03-20",
+    "scene_id": "S2A_MSIL2A_20230305T043701_R033_T45QXG_20230305T092251",
+    "acquisition_date": "2023-03-05",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2A",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2022-2023",
+    "season": "Pre_Kharif_Aus",
+    "target_window": "2023-04-01/2023-05-05",
+    "scene_id": "S2B_MSIL2A_20230419T043659_R033_T45QXG_20230419T173254",
+    "acquisition_date": "2023-04-19",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2023-2024",
+    "season": "Kharif_II_Aman",
+    "target_window": "2023-10-15/2023-11-20",
+    "scene_id": "S2A_MSIL2A_20231110T044021_R033_T45QXG_20241018T034024",
+    "acquisition_date": "2023-11-10",
+    "cloud_cover_pct": 0.01,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2A",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2023-2024",
+    "season": "Post_Harvest_Early_Boro",
+    "target_window": "2023-12-15/2024-01-20",
+    "scene_id": "S2B_MSIL2A_20231225T044219_R033_T45RXH_20231225T081826",
+    "acquisition_date": "2023-12-25",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45RXH",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2023-2024",
+    "season": "Rabi_Winter_Wheat_Boro",
+    "target_window": "2024-02-15/2024-03-20",
+    "scene_id": "S2A_MSIL2A_20240309T043701_R033_T45QXG_20240309T091652",
+    "acquisition_date": "2024-03-09",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2A",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2023-2024",
+    "season": "Pre_Kharif_Aus",
+    "target_window": "2024-04-01/2024-05-05",
+    "scene_id": "S2B_MSIL2A_20240413T043659_R033_T45RXH_20240413T083818",
+    "acquisition_date": "2024-04-13",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45RXH",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2024-2025",
+    "season": "Kharif_II_Aman",
+    "target_window": "2024-10-15/2024-11-20",
+    "scene_id": "S2B_MSIL2A_20241119T044009_R033_T45QXG_20241119T065622",
+    "acquisition_date": "2024-11-19",
+    "cloud_cover_pct": 0.83,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2024-2025",
+    "season": "Post_Harvest_Early_Boro",
+    "target_window": "2024-12-15/2025-01-20",
+    "scene_id": "S2A_MSIL2A_20241224T044211_R033_T45QXG_20241224T071557",
+    "acquisition_date": "2024-12-24",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2A",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2024-2025",
+    "season": "Rabi_Winter_Wheat_Boro",
+    "target_window": "2025-02-15/2025-03-20",
+    "scene_id": "S2B_MSIL2A_20250319T043709_R033_T45QXG_20250319T072326",
+    "acquisition_date": "2025-03-19",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45QXG",
+    "platform": "Sentinel-2B",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  },
+  {
+    "year_cycle": "2024-2025",
+    "season": "Pre_Kharif_Aus",
+    "target_window": "2025-04-01/2025-05-05",
+    "scene_id": "S2A_MSIL2A_20250405T044231_R033_T45RXH_20250405T095713",
+    "acquisition_date": "2025-04-05",
+    "cloud_cover_pct": 0.0,
+    "sun_elevation": 0.0,
+    "mgrs_tile": "45RXH",
+    "platform": "Sentinel-2A",
+    "required_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "SCL"
+    ]
+  }
+]

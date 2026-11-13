@@ -1,0 +1,15 @@
+{
+  "scene_id": "S2B_MSIL2A_20231026T043849_R033_T45RXH_20241121T122521",
+  "date": "2023-10-26",
+  "season": "Kharif_Aman",
+  "cloud_cover_pct": 0.358629,
+  "sun_elevation": null,
+  "bands": {
+    "B04": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\B04.tif",
+    "B02": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\B02.tif",
+    "B08": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\B08.tif",
+    "SCL": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\SCL.tif",
+    "B11": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\B11.tif",
+    "B03": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231026_S2B_MSIL2A_20231026T\\B03.tif"
+  }
+}

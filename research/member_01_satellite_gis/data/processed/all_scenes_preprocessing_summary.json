@@ -1,0 +1,74 @@
+[
+  {
+    "scene_id": "S2B_MSIL2A_20231026T043849_R033_T45RXH_20241121T122521",
+    "date": "2023-10-26",
+    "season": "Kharif_Aman",
+    "total_bbox_pixels": 6630338,
+    "godagari_polygon_pixels": 4456968,
+    "cloud_shadow_masked_pixels": 9270,
+    "valid_clear_study_pixels": 4455180,
+    "valid_coverage_pct": 99.96,
+    "spectral_mean_reflectance": {
+      "Blue_B02": 0.1509,
+      "Green_B03": 0.1714,
+      "Red_B04": 0.1581,
+      "NIR_B08": 0.3708,
+      "SWIR1_B11": 0.2695
+    },
+    "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20231026_godagari_preprocessed.tif"
+  },
+  {
+    "scene_id": "S2B_MSIL2A_20231225T044219_R033_T45RXH_20231225T081826",
+    "date": "2023-12-25",
+    "season": "Post_Harvest_Rabi",
+    "total_bbox_pixels": 6630338,
+    "godagari_polygon_pixels": 4456968,
+    "cloud_shadow_masked_pixels": 3294,
+    "valid_clear_study_pixels": 4456959,
+    "valid_coverage_pct": 100.0,
+    "spectral_mean_reflectance": {
+      "Blue_B02": 0.1655,
+      "Green_B03": 0.1929,
+      "Red_B04": 0.1915,
+      "NIR_B08": 0.3566,
+      "SWIR1_B11": 0.3278
+    },
+    "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20231225_godagari_preprocessed.tif"
+  },
+  {
+    "scene_id": "S2A_MSIL2A_20240228T043731_R033_T45RXH_20240228T101839",
+    "date": "2024-02-28",
+    "season": "Rabi_Winter",
+    "total_bbox_pixels": 6630338,
+    "godagari_polygon_pixels": 4456968,
+    "cloud_shadow_masked_pixels": 3034,
+    "valid_clear_study_pixels": 4456963,
+    "valid_coverage_pct": 100.0,
+    "spectral_mean_reflectance": {
+      "Blue_B02": 0.1556,
+      "Green_B03": 0.1849,
+      "Red_B04": 0.1791,
+      "NIR_B08": 0.3218,
+      "SWIR1_B11": 0.2592
+    },
+    "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20240228_godagari_preprocessed.tif"
+  },
+  {
+    "scene_id": "S2B_MSIL2A_20240413T043659_R033_T45RXH_20240413T083818",
+    "date": "2024-04-13",
+    "season": "Pre_Kharif_Aus",
+    "total_bbox_pixels": 6630338,
+    "godagari_polygon_pixels": 4456968,
+    "cloud_shadow_masked_pixels": 3058,
+    "valid_clear_study_pixels": 4456967,
+    "valid_coverage_pct": 100.0,
+    "spectral_mean_reflectance": {
+      "Blue_B02": 0.1647,
+      "Green_B03": 0.1918,
+      "Red_B04": 0.1898,
+      "NIR_B08": 0.3922,
+      "SWIR1_B11": 0.3371
+    },
+    "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20240413_godagari_preprocessed.tif"
+  }
+]

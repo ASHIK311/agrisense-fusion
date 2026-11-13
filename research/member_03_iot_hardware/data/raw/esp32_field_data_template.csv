@@ -1,0 +1,1 @@
+timestamp_utc,device_id,sensor_id,latitude,longitude,site_id,depth_cm,soil_moisture_raw,soil_moisture_vwc,soil_temperature_c,air_temperature_c,air_humidity_percent,source,data_source,calibration_status,quality_flag

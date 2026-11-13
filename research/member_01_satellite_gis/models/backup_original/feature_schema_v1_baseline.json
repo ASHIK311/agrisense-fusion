@@ -1,0 +1,31 @@
+{
+  "model_type": "RandomForestClassifier",
+  "target_task": "Agricultural Land Cover & Cropland Delineation",
+  "classes": {
+    "1": "Cropland",
+    "2": "Tree_Cover",
+    "3": "Permanent_Water",
+    "4": "Built_Up"
+  },
+  "accuracy": 0.7923,
+  "weighted_f1": 0.7929,
+  "features": [
+    "Blue_B02",
+    "Green_B03",
+    "Red_B04",
+    "NIR_B08",
+    "SWIR1_B11",
+    "NDVI_Rabi",
+    "NDWI_McFeeters",
+    "NDMI_Moisture",
+    "EVI_Rabi",
+    "Delta_NDVI_Kharif_Rabi"
+  ],
+  "feature_count": 10,
+  "expected_input_shape": [
+    null,
+    10
+  ],
+  "study_area": "Godagari Upazila, Rajshahi, Bangladesh (Barind Tract)",
+  "ground_truth_status": "VALIDATED for Land Cover / Cropland. Field-level Crop Species (Rice, Wheat, Maize) BLOCKED pending DAE cadastral survey data."
+}

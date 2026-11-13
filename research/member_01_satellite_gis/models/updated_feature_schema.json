@@ -1,0 +1,30 @@
+{
+  "model_version": "v2.2-ExtraTrees-MultiTemporal15",
+  "num_features": 15,
+  "features": [
+    "Blue_B02",
+    "Green_B03",
+    "Red_B04",
+    "NIR_B08",
+    "SWIR1_B11",
+    "NDVI_Rabi",
+    "NDWI_McFeeters",
+    "NDMI_Moisture",
+    "EVI_Rabi",
+    "Delta_NDVI_Kharif_Rabi",
+    "NDVI_Seasonal_Min",
+    "NDVI_Seasonal_Max",
+    "NDVI_Seasonal_Amplitude",
+    "NDMI_Seasonal_Mean",
+    "EVI_Temporal_Change"
+  ],
+  "classes": {
+    "1": "Cropland",
+    "2": "Tree_Cover",
+    "3": "Permanent_Water",
+    "4": "Built_Up"
+  },
+  "training_resolution": "10m",
+  "target_crs": "EPSG:32645",
+  "weak_class_mitigation": "Multi-temporal phenological amplitude (NDVI_min, NDVI_amplitude, NDMI_mean) + balanced subsample weighting"
+}

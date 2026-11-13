@@ -1,0 +1,5 @@
+,Pred_Cropland,Pred_Tree_Cover,Pred_Permanent_Water,Pred_Built_Up
+True_Cropland,825,86,26,20
+True_Tree_Cover,180,846,8,208
+True_Permanent_Water,61,19,2529,137
+True_Built_Up,3,106,0,946

@@ -1,0 +1,15 @@
+{
+  "scene_id": "S2B_MSIL2A_20231225T044219_R033_T45RXH_20231225T081826",
+  "date": "2023-12-25",
+  "season": "Post_Harvest_Rabi",
+  "cloud_cover_pct": 0.004207,
+  "sun_elevation": null,
+  "bands": {
+    "B02": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\B02.tif",
+    "B11": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\B11.tif",
+    "SCL": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\SCL.tif",
+    "B04": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\B04.tif",
+    "B03": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\B03.tif",
+    "B08": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20231225_S2B_MSIL2A_20231225T\\B08.tif"
+  }
+}

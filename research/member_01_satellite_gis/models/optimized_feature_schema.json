@@ -1,0 +1,73 @@
+{
+  "model_name": "RandomForest_21Feat_Deep",
+  "description": "Optimized Multi-Temporal Sentinel-2 Classifier with Enhanced Spectral Indices for Barind Tract",
+  "features": [
+    "Blue_B02",
+    "Green_B03",
+    "Red_B04",
+    "NIR_B08",
+    "SWIR1_B11",
+    "NDVI_Rabi",
+    "NDWI_McFeeters",
+    "NDMI_Moisture",
+    "EVI_Rabi",
+    "Delta_NDVI_Kharif_Rabi",
+    "NDVI_Seasonal_Min",
+    "NDVI_Seasonal_Max",
+    "NDVI_Seasonal_Amplitude",
+    "NDMI_Seasonal_Mean",
+    "EVI_Temporal_Change",
+    "NDBI_Rabi",
+    "BSI_Rabi",
+    "MNDWI_Rabi",
+    "NDVI_Seasonal_Std",
+    "NDWI_Seasonal_Max",
+    "NDMI_Seasonal_Min"
+  ],
+  "classes": {
+    "0": "Cropland",
+    "1": "Tree_Cover",
+    "2": "Permanent_Water",
+    "3": "Built_Up"
+  },
+  "target_mapping": {
+    "Cropland": 0,
+    "Tree_Cover": 1,
+    "Permanent_Water": 2,
+    "Built_Up": 3
+  },
+  "spatial_partition": "Strict Latitudinal: Block A Train, Block B Val/Selection, Block C Development Holdout",
+  "metrics_block_b": {
+    "val_accuracy": 86.09,
+    "val_balanced_acc": 84.31,
+    "val_macro_f1": 0.8436,
+    "val_log_loss": 0.4344
+  },
+  "metrics_holdout_block_c": {
+    "overall_accuracy": 85.77,
+    "ci95_overall_accuracy": [
+      84.86,
+      86.63
+    ],
+    "pure_interior_accuracy": 90.64,
+    "ci95_pure_interior_accuracy": [
+      89.69,
+      91.5
+    ],
+    "pure_interior_sample_count": 4015,
+    "mixed_boundary_accuracy": 75.92,
+    "ci95_mixed_boundary_accuracy": [
+      73.99,
+      77.75
+    ],
+    "mixed_boundary_sample_count": 1985,
+    "balanced_accuracy": 84.02,
+    "macro_f1": 0.8257,
+    "weighted_f1": 0.8589,
+    "log_loss": 0.455,
+    "f1_cropland": 0.8144,
+    "f1_tree_cover": 0.736,
+    "f1_permanent_water": 0.9527,
+    "f1_built_up": 0.7997
+  }
+}

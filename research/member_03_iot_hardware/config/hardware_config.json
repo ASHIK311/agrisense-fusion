@@ -1,0 +1,155 @@
+{
+  "system": {
+    "name": "AgriSense Fusion Field Node",
+    "member": "Member 3 - IoT Soil Monitoring Subsystem",
+    "project": "Field Shift: Adapting Farms with NASA Data",
+    "study_area": {
+      "upazila": "Godagari",
+      "district": "Rajshahi",
+      "country": "Bangladesh",
+      "agro_ecological_zone": "AEZ-26 (High Barind Tract)",
+      "centroid_lat": 24.469,
+      "centroid_lon": 88.330,
+      "crs": "EPSG:32645"
+    },
+    "version": "1.0.0-PROD",
+    "status": "ENGINEERING_DESIGN_COMPLETE_PHYSICAL_DEPLOYMENT_PENDING"
+  },
+  "microcontroller": {
+    "model": "ESP32 DevKit v1",
+    "architecture": "Xtensa dual-core 32-bit LX6",
+    "flash_mb": 4,
+    "operating_voltage_v": 3.3,
+    "clock_mhz": 80
+  },
+  "pin_mapping": {
+    "soil_moisture_analog": {
+      "gpio": 34,
+      "type": "ADC1_CH6",
+      "attenuation": "ADC_11db",
+      "resolution_bits": 12,
+      "max_input_voltage_v": 3.3,
+      "warning": "ADC1 must be used. ADC2 is blocked during active Wi-Fi."
+    },
+    "soil_temperature_1wire": {
+      "gpio": 4,
+      "type": "OneWire Bus",
+      "pullup_resistor_kohm": 4.7,
+      "sensor": "DS18B20 Waterproof Probe"
+    },
+    "ambient_temp_humidity": {
+      "gpio": 15,
+      "type": "Single-Bus Digital",
+      "pullup_resistor_kohm": 10.0,
+      "sensor": "DHT22 / AM2302"
+    },
+    "sensor_power_gate": {
+      "gpio": 25,
+      "type": "Digital Output (Active LOW)",
+      "circuit": "Si2301 P-Channel MOSFET high-side switch"
+    },
+    "battery_voltage_divider": {
+      "gpio": 35,
+      "type": "ADC1_CH7",
+      "attenuation": "ADC_11db",
+      "voltage_divider_ratio": 2.0,
+      "resistors": "100k / 100k 1% metal film"
+    },
+    "status_led": {
+      "gpio": 2,
+      "type": "Active HIGH indicator"
+    }
+  },
+  "telemetry": {
+    "sampling_interval_seconds": 900,
+    "samples_per_day": 96,
+    "adc_oversampling_count": 64,
+    "adc_discard_warmup_samples": 5,
+    "power_stabilization_delay_ms": 50,
+    "wifi_timeout_seconds": 15,
+    "deep_sleep_duration_seconds": 900,
+    "offline_storage": {
+      "filesystem": "SPIFFS",
+      "max_offline_records": 1000,
+      "circular_buffer": true
+    }
+  },
+  "validation_ranges": {
+    "soil_moisture_raw_adc": {
+      "min": 1000,
+      "max": 4095
+    },
+    "soil_moisture_vwc_percent": {
+      "min": 0.0,
+      "max": 60.0
+    },
+    "soil_temperature_celsius": {
+      "min": 5.0,
+      "max": 50.0,
+      "fault_sentinel": -127.0
+    },
+    "air_temperature_celsius": {
+      "min": 0.0,
+      "max": 55.0,
+      "fault_sentinel": -999.0
+    },
+    "air_humidity_percent": {
+      "min": 0.0,
+      "max": 100.0,
+      "fault_sentinel": -999.0
+    },
+    "battery_voltage_volts": {
+      "min": 3.0,
+      "max": 4.3,
+      "shutdown_threshold": 3.3
+    }
+  },
+  "calibration": {
+    "status": "UNCALIBRATED",
+    "classification": "PROVISIONAL_BENCHMARK_TEMPLATE",
+    "soil_type": "Barind Silty Clay Loam",
+    "scientific_caveat": "Polynomial coefficients represent mathematical fit to synthetic benchmark points. Certified field calibration requires physical ASTM D2216 core drying.",
+    "linear_coefficients": {
+      "slope": -0.00025736,
+      "intercept": 0.88111,
+      "equation": "VWC = -0.00025736 * ADC + 0.88111",
+      "internal_fit_r2": 0.9932,
+      "internal_fit_rmse": 0.0104
+    },
+    "quadratic_coefficients": {
+      "a": 3.18255e-08,
+      "b": -0.00041846,
+      "c": 1.0793,
+      "equation": "VWC = 3.18255e-8 * ADC^2 - 0.00041846 * ADC + 1.0793",
+      "internal_fit_r2": 0.9959,
+      "internal_fit_rmse": 0.0081
+    },
+    "agronomic_thresholds_vwc_percent": {
+      "classification": "LITERATURE_DERIVED_PROVISIONAL_ESTIMATES",
+      "source_reference": "Saxton & Rawls (2006) PTF and FAO-56 based on SRDI Barind texture surveys",
+      "permanent_wilting_point_pwp": 16.5,
+      "irrigation_trigger_threshold": 24.4,
+      "field_capacity_fc": 32.3,
+      "saturation": 43.5,
+      "management_allowed_depletion_mad": 0.50
+    }
+  },
+  "api_interface": {
+    "endpoint_path": "/api/sensors/readings",
+    "method": "POST",
+    "content_type": "application/json",
+    "expected_keys": [
+      "event_id",
+      "node_id",
+      "timestamp",
+      "soil_moisture_raw",
+      "soil_moisture_vwc",
+      "soil_temperature",
+      "air_temperature",
+      "air_humidity",
+      "battery_voltage",
+      "sensor_depth_cm",
+      "status_flags"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+ablation_experiment,feature_count,holdout_accuracy,balanced_accuracy,macro_f1,f1_cropland,f1_tree_cover,f1_water,f1_built_up,delta_acc_vs_full
+Full_21_Features,21,88.13,85.55,0.8473,0.8254,0.753,0.9755,0.835,0.13
+Ablate_Raw_Bands_Only_16Feat,16,86.97,84.08,0.8329,0.8132,0.7246,0.9731,0.821,-1.03
+Ablate_Seasonal_Temporal_Only_12Feat,12,70.57,71.02,0.6786,0.6474,0.6284,0.8236,0.6151,-17.43
+Ablate_Enhanced_Indices_15Feat_Baseline,15,87.63,84.9,0.8405,0.8142,0.7408,0.975,0.8319,-0.37
+Ablate_BuiltUp_Soil_Indices_18Feat,18,87.97,85.32,0.8451,0.8222,0.7479,0.9753,0.8347,-0.03

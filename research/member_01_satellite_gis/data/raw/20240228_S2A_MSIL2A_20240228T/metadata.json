@@ -1,0 +1,15 @@
+{
+  "scene_id": "S2A_MSIL2A_20240228T043731_R033_T45RXH_20240228T101839",
+  "date": "2024-02-28",
+  "season": "Rabi_Winter",
+  "cloud_cover_pct": 0.00285,
+  "sun_elevation": null,
+  "bands": {
+    "B04": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\B04.tif",
+    "B02": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\B02.tif",
+    "SCL": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\SCL.tif",
+    "B11": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\B11.tif",
+    "B08": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\B08.tif",
+    "B03": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\raw\\20240228_S2A_MSIL2A_20240228T\\B03.tif"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scene_id": "S2B_MSIL2A_20231026T043849_R033_T45RXH_20241121T122521",
+  "date": "2023-10-26",
+  "season": "Kharif_Aman",
+  "total_bbox_pixels": 6630338,
+  "godagari_polygon_pixels": 4456968,
+  "cloud_shadow_masked_pixels": 9270,
+  "valid_clear_study_pixels": 4455180,
+  "valid_coverage_pct": 99.96,
+  "spectral_mean_reflectance": {
+    "Blue_B02": 0.1509,
+    "Green_B03": 0.1714,
+    "Red_B04": 0.1581,
+    "NIR_B08": 0.3708,
+    "SWIR1_B11": 0.2695
+  },
+  "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20231026_godagari_preprocessed.tif"
+}

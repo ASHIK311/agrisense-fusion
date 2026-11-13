@@ -1,0 +1,54 @@
+{
+  "model_name": "RandomForestClassifier_15Feat",
+  "description": "Multi-temporal Sentinel-2 15-Feature Random Forest Land-Cover Classifier for Barind Tract",
+  "features": [
+    "Blue_B02",
+    "Green_B03",
+    "Red_B04",
+    "NIR_B08",
+    "SWIR1_B11",
+    "NDVI_Rabi",
+    "NDWI_McFeeters",
+    "NDMI_Moisture",
+    "EVI_Rabi",
+    "Delta_NDVI_Kharif_Rabi",
+    "NDVI_Seasonal_Min",
+    "NDVI_Seasonal_Max",
+    "NDVI_Seasonal_Amplitude",
+    "NDMI_Seasonal_Mean",
+    "EVI_Temporal_Change"
+  ],
+  "classes": {
+    "0": "Cropland",
+    "1": "Tree_Cover",
+    "2": "Permanent_Water",
+    "3": "Built_Up"
+  },
+  "class_mapping_source": "ESA WorldCover v200 (40->Cropland, 10->Tree_Cover, 80->Permanent_Water, 50->Built_Up)",
+  "spatial_partition": "Strict 3-Way Latitudinal: Block A Train (North), Block B Val (Central), Block C Holdout (South)",
+  "metrics": {
+    "overall_holdout_accuracy": 85.28,
+    "ci95_holdout_accuracy": [
+      84.38,
+      86.18
+    ],
+    "pure_interior_accuracy": 90.17,
+    "mixed_boundary_accuracy": 74.99,
+    "representative_landscape_accuracy": 83.59,
+    "macro_f1": 0.854,
+    "built_up_f1": 0.6657,
+    "water_f1": 0.9597,
+    "cropland_f1": 0.8882,
+    "tree_cover_f1": 0.8436
+  },
+  "study_area": {
+    "name": "Godagari Upazila, Rajshahi, Bangladesh",
+    "crs": "EPSG:32645",
+    "area_sq_km": 445.69
+  },
+  "limitations": [
+    "Cannot classify crop species (Rice vs Wheat vs Maize) without georeferenced ground truth parcel surveys.",
+    "10m mixed pixels along rural homestead borders constrain built-up boundary precision.",
+    "Monsoon cloud obscuration requires multi-year phenological compositing."
+  ]
+}

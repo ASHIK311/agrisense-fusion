@@ -1,0 +1,18 @@
+{
+  "scene_id": "S2A_MSIL2A_20240228T043731_R033_T45RXH_20240228T101839",
+  "date": "2024-02-28",
+  "season": "Rabi_Winter",
+  "total_bbox_pixels": 6630338,
+  "godagari_polygon_pixels": 4456968,
+  "cloud_shadow_masked_pixels": 3034,
+  "valid_clear_study_pixels": 4456963,
+  "valid_coverage_pct": 100.0,
+  "spectral_mean_reflectance": {
+    "Blue_B02": 0.1556,
+    "Green_B03": 0.1849,
+    "Red_B04": 0.1791,
+    "NIR_B08": 0.3218,
+    "SWIR1_B11": 0.2592
+  },
+  "output_file": "F:\\nasa project\\data set that we test\\Member_1_Satellite_GIS\\data\\processed\\20240228_godagari_preprocessed.tif"
+}

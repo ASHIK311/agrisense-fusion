@@ -1,0 +1,13 @@
+Month Number,Month Name,Season,Total Days Observed,Mean Tmax (C),Peak Tmax (C),Mean Tmin (C),Lowest Tmin (C),Mean Monthly Rainfall (mm),Total Rainfall (mm),Max Daily Rainfall (mm),Mean Humidity (%),Min Humidity (%),Mean Solar Rad (MJ/m2),Hot Dry Days (Risk=1),Risk Pct of Month (%),Days Rain <= 1mm,Dry Day Frequency (%)
+1,January,Rabi (Winter Dry),156,23.94,29.59,10.87,6.21,9.5,56.9,13.6,67.4,38.5,11.34,0,0.0,143,91.7
+2,February,Rabi (Winter Dry),141,27.81,35.14,13.22,6.71,17.8,89.2,33.3,54.2,30.6,15.57,2,1.42,126,89.4
+3,March,Kharif-1 (Pre-Monsoon Summer),155,34.47,40.83,19.22,11.53,29.6,148.2,21.7,46.3,19.9,18.56,57,36.77,128,82.6
+4,April,Kharif-1 (Pre-Monsoon Summer),150,38.55,44.34,23.75,18.81,69.8,348.8,40.5,47.6,18.9,19.85,68,45.33,85,56.7
+5,May,Kharif-1 (Pre-Monsoon Summer),155,36.12,42.68,25.49,21.91,256.5,1282.7,65.9,66.9,33.4,19.08,11,7.1,38,24.5
+6,June,Kharif-2 (Monsoon Wet),150,33.86,43.88,26.62,24.72,280.2,1401.1,60.8,80.5,42.7,17.22,1,0.67,24,16.0
+7,July,Kharif-2 (Monsoon Wet),155,32.54,36.56,26.56,25.06,280.5,1402.5,40.9,85.6,70.5,16.72,0,0.0,24,15.5
+8,August,Kharif-2 (Monsoon Wet),155,32.08,35.53,26.25,24.65,257.6,1288.1,58.1,86.8,74.0,15.78,0,0.0,16,10.3
+9,September,Kharif-2 (Monsoon Wet),150,30.96,33.72,25.81,23.07,289.2,1446.0,54.4,88.8,78.2,14.52,0,0.0,15,10.0
+10,October,Kharif-2 (Monsoon Wet),155,30.03,32.73,22.9,17.02,201.0,1005.1,86.8,84.8,66.4,14.99,0,0.0,77,49.7
+11,November,Rabi (Winter Dry),150,27.05,30.42,16.7,11.12,7.3,36.6,10.4,81.1,65.6,13.89,0,0.0,142,94.7
+12,December,Rabi (Winter Dry),155,23.78,27.73,12.28,4.83,16.6,83.2,27.7,78.1,57.8,10.86,0,0.0,145,93.5
