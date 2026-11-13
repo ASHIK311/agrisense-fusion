@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="320">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050b0a"/>
+      <stop offset="50%" stop-color="#071915"/>
+      <stop offset="100%" stop-color="#06121b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="78%" cy="45%" r="42%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#050b0a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10b981" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="320" rx="16" fill="url(#grid)"/>
+  <rect width="1200" height="320" rx="16" fill="url(#glow1)"/>
+  <rect x="1" y="1" width="1198" height="318" rx="15" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- Orbital Satellite Wireframe Accent (Right) -->
+  <g transform="translate(960, 155)" opacity="0.88">
+    <ellipse cx="0" cy="0" rx="145" ry="52" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.2" transform="rotate(-18)"/>
+    <ellipse cx="0" cy="0" rx="115" ry="38" fill="none" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="4 4" transform="rotate(14)"/>
+    <!-- 3D Stratigraphic Wireframe Cube -->
+    <polygon points="-55,-20 5,-45 65,-20 5,5" fill="#10b981" fill-opacity="0.14" stroke="#34d399" stroke-width="1.4"/>
+    <polygon points="-55,15 5,-10 65,15 5,40" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="1.2"/>
+    <polygon points="-55,50 5,25 65,50 5,75" fill="#fbbf24" fill-opacity="0.08" stroke="#fbbf24" stroke-width="1.2"/>
+    <line x1="-55" y1="-20" x2="-55" y2="50" stroke="#34d399" stroke-opacity="0.6" stroke-width="1"/>
+    <line x1="65" y1="-20" x2="65" y2="50" stroke="#34d399" stroke-opacity="0.6" stroke-width="1"/>
+    <line x1="5" y1="5" x2="5" y2="75" stroke="#34d399" stroke-opacity="0.6" stroke-width="1"/>
+    <circle cx="5" cy="-70" r="5" fill="#38bdf8"/>
+    <line x1="5" y1="-70" x2="5" y2="-20" stroke="#38bdf8" stroke-dasharray="3 3" stroke-opacity="0.7" stroke-width="1.2"/>
+  </g>
+
+  <!-- Top Eyebrow Pill -->
+  <rect x="64" y="48" width="445" height="28" rx="14" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.35" stroke-width="1"/>
+  <circle cx="82" cy="62" r="4" fill="#34d399"/>
+  <text x="96" y="67" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1.4" fill="#a7f3d0">NASA SPACE APPS 2026 · FIELD SHIFT · HIGH BARIND AEZ-26</text>
+
+  <!-- Main Title -->
+  <text x="64" y="138" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="60" font-weight="800" letter-spacing="-1" fill="#f8fafc">AgriSense <tspan fill="url(#accent)">Fusion</tspan></text>
+
+  <!-- Tagline -->
+  <text x="64" y="182" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="500" fill="#cbd5e1">Understand the Field. Protect the Water. Plan the Future.</text>
+
+  <!-- Subtitle -->
+  <text x="64" y="216" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14.5" fill="#94a3b8">Sentinel-2 Spectral Imagery · NASA POWER Agroclimatology · FAO-56 Penman-Monteith Physics · Bilingual RAG</text>
+
+  <!-- Bottom Telemetry Strip -->
+  <line x1="64" y1="246" x2="780" y2="246" stroke="#1e293b" stroke-width="1"/>
+  <text x="64" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#34d399">GODAGARI PILOT (24.469°N, 88.330°E)</text>
+  <text x="355" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#38bdf8">88/88 AUTOMATED TESTS PASS</text>
+  <text x="585" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#fbbf24">NODE–PYTHON PARITY VERIFIED</text>
+</svg>

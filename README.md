@@ -1,628 +1,451 @@
-# AgriSense Fusion 🛰️🌾
-### *NASA Space Apps Challenge 2026 — Challenge: Field Shift (Adapting Farms with NASA Data)*
-**Target Region:** Northern Bangladesh (*Barind Tract: Rajshahi, Rangpur, Bogura, Chapai Nawabganj*)
+<p align="center">
+  <a href="https://github.com/ASHIK311/agrisense-fusion">
+    <img src="documentation/readme/banner.svg" alt="AgriSense Fusion — Understand the Field. Protect the Water. Plan the Future." width="100%" />
+  </a>
+</p>
 
-[![NASA Space Apps Challenge](https://img.shields.io/badge/NASA%20Space%20Apps-2026%20Field%20Shift-0B3D91?style=for-the-badge&logo=nasa&logoColor=white)](https://www.spaceappschallenge.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-v18%2B%20%7C%20v26-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Express 5](https://img.shields.io/badge/Express-v5.3-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![React 18](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Vite 5](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![PostgreSQL Schema](https://img.shields.io/badge/PostgreSQL-16%20Ready-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![FAO-56 Water Model](https://img.shields.io/badge/Science-FAO--56%20Penman--Monteith-10B981?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://www.fao.org/land-water/databases-and-software/cropwat/en/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge)](LICENSE)
+<p align="center">
+  <a href="https://www.spaceappschallenge.org/"><img alt="NASA Space Apps 2026" src="https://img.shields.io/badge/NASA%20SPACE%20APPS-2026%20%C2%B7%20FIELD%20SHIFT-0B3D91?style=for-the-badge&logo=nasa&logoColor=white"></a>
+  <a href="https://huggingface.co/datasets/ashik1236/nasatest"><img alt="Open Dataset on Hugging Face" src="https://img.shields.io/badge/OPEN%20DATA-Hugging%20Face%20(2.8%20GB)-F59E0B?style=for-the-badge&logo=huggingface&logoColor=white"></a>
+  <a href="https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ASHIK311/agrisense-fusion/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI"></a>
+  <a href="documentation/TESTING.md"><img alt="Automated Tests" src="https://img.shields.io/badge/Tests-88%2F88%20Passed-10B981?style=for-the-badge&logo=node.js&logoColor=white"></a>
+  <a href="documentation/SECURITY.md"><img alt="Security" src="https://img.shields.io/badge/Security-Timing--Safe%20%26%20Isolated-6366F1?style=for-the-badge&logo=shield&logoColor=white"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-38BDF8?style=for-the-badge"></a>
+</p>
 
----
+<p align="center">
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-v18%2B%20%7C%20v26-10B981?style=flat-square&logo=node.js&logoColor=white">
+  <img alt="Express 5" src="https://img.shields.io/badge/Express-5.3-0F172A?style=flat-square&logo=express&logoColor=white">
+  <img alt="React 18" src="https://img.shields.io/badge/React-18.3-38BDF8?style=flat-square&logo=react&logoColor=white">
+  <img alt="Three.js" src="https://img.shields.io/badge/Three.js-WebGL%203D%20Twin-0F172A?style=flat-square&logo=threedotjs&logoColor=white">
+  <img alt="Vite 5" src="https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white">
+  <img alt="FAO-56 Physics" src="https://img.shields.io/badge/Science-FAO--56%20Parity%20Verified-10B981?style=flat-square">
+</p>
 
-## 📖 Table of Contents
-1. [Executive Summary & Problem Statement](#-executive-summary--problem-statement)
-2. [High-Level System Architecture (Color-Coded Topology)](#-high-level-system-architecture)
-3. [End-to-End Data Pipeline Flow](#-end-to-end-data-pipeline-flow)
-4. [Scientific Physics & Mathematical Engine (FAO-56 Penman-Monteith)](#-scientific-physics--mathematical-engine)
-5. [Crop-Rotation Multi-Criteria Decision Engine (MCDA)](#-crop-rotation-multi-criteria-decision-engine-mcda)
-6. [Edge Hardware & IoT Sensor Circuit Architecture](#-edge-hardware--iot-sensor-circuit-architecture)
-7. [Database Relational Architecture (ER Diagram)](#-database-relational-architecture)
-8. [Security, Ingress & Idempotency Pipeline](#-security-ingress--idempotency-pipeline)
-9. [Key Features & Capabilities](#-key-features--capabilities)
-10. [Repository Structure](#-repository-structure)
-11. [Quick Start & Local Deployment](#-quick-start--local-deployment)
-12. [Verification & Automated Test Suite](#-verification--automated-test-suite)
-13. [Scientific Transparency & Ethical Principles](#-scientific-transparency--ethical-principles)
+<p align="center">
+  <b>Can spaceborne NASA data save Northern Bangladesh's shrinking groundwater aquifers?</b><br/>
+  AgriSense Fusion unifies Sentinel-2 spectral imagery, NASA POWER agroclimatology, simulated ESP32 soil telemetry,<br/>
+  and deterministic FAO-56 Penman-Monteith physics into an explainable 3D Digital Twin for <b>Godagari, High Barind Tract (AEZ-26)</b>.
+</p>
+
+<p align="center">
+  <a href="#-executive-summary--problem-statement"><b>Overview</b></a> ·
+  <a href="#-visual-product-tour--verified-ui"><b>Visual Tour</b></a> ·
+  <a href="#-10-minute-local-quickstart-windows-powershell"><b>Quickstart</b></a> ·
+  <a href="#-testing--verification-summary"><b>Tests (88/88)</b></a> ·
+  <a href="#-technical-architecture--system-engineering"><b>Architecture</b></a> ·
+  <a href="#-complete-documentation-index"><b>Documentation</b></a> ·
+  <a href="#-team-agrisense-fusion"><b>Team</b></a>
+</p>
 
 ---
 
 ## 🌍 Executive Summary & Problem Statement
 
-In the drought-prone **Barind Tract of Northern Bangladesh**, agricultural survival faces a compounding crisis:
-* Over **80% of boro dry-season rice** relies exclusively on deep-aquifer groundwater extraction.
-* Regional tubewell water tables are dropping by up to **0.65 meters every year**, approaching the critical **28-meter suction lift limit** of conventional surface-mounted centrifugal irrigation pumps.
-* Smallholder farmers lack hyper-local atmospheric evaporative demand metrics, causing either catastrophic crop water stress or severe over-irrigation.
+In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari Upazila, Rajshahi · `24.4690°N, 88.3300°E` · AEZ-26*), smallholder farming faces an acute hydrological crisis:
 
-**AgriSense Fusion** solves this systemic challenge by fusing **spaceborne NASA Earth Observations (NASA POWER)** with **in-situ ESP32 edge telemetry** and the rigorous, physics-grounded **FAO-56 Penman-Monteith reference evapotranspiration ($ET_0$) equation**. 
+* Dry-season **Boro rice monoculture** demands intensive deep-tubewell irrigation across a semi-arid pre-monsoon window.
+* Regional piezometric literature documents groundwater tables declining at **~0.65 m/year** (*Jahan et al., 2010*), pushing monitoring proxies (`26.4 m` / `27.8 m`) dangerously close to the **28.0 m critical suction limit** of surface-mounted centrifugal pumps.
+* Generic agricultural chatbots hallucinate irrigation advice and crop numbers without hydrological grounding or provenance.
 
-Its centerpiece is the **Crop-Rotation Explorer** — an explainable, deterministic Multi-Criteria Decision Analysis (MCDA) engine that allows farmers, agronomists, and policymakers to model climate-smart crop rotations (Mustard, Lentils, Mungbeans, Maize, Sesame, Potatoes) that reduce aquifer depletion while maximizing farmer livelihood and soil health.
+**AgriSense Fusion** transforms multi-agency Earth observations into **honest, physics-grounded crop decisions**:
+1. **Satellite LULC Classification (`RandomForest_21Feat_Deep`):** Multi-temporal Sentinel-2 L2A scenes (`12` acquisitions, `2022–2025`, NDVI/NDWI/NDMI/EVI) classifying 4 broad land-cover classes with explicit scientific gates (`HTTP 422` against unvalidated species overclaims).
+2. **FAO-56 Penman-Monteith Physics Engine:** Cross-language parity verified (`Node.js` ↔ `Python` across 4 seasonal Barind vectors) with canonical Silty Clay Loam root-zone defaults (`79.0 mm` TAW, `39.5 mm` RAW).
+3. **Crop-Rotation MCDA Decision Explorer:** Dynamic 4-slider Multi-Criteria Decision Analysis (*Water Conservation, Soil Health, Heat Resilience, Farmer Profit*) comparing alternative sequences (e.g., *Lentil → Aus Rice → T. Aman*, *Mustard → Mungbean → T. Aman*) against conventional baselines.
+4. **3D Stratigraphic & Dual-Canopy WebGL Digital Twin:** Interactive Three.js terrain strata synchronized pixel-for-pixel with Leaflet Sentinel-2 parcel polygons.
+5. **Bilingual RAG Copilot (English & বাংলা):** Offline-capable hybrid BM25 + 3-gram RRF retrieval over `87` audited chunks (`100%` tool & disclosure pass) backed by `17` Bangladesh crop diseases and `60` DOI-verified papers.
 
 ---
 
-## 🏛️ High-Level System Architecture
+## 📊 Verified Platform Metrics (In Numbers)
 
-The AgriSense Fusion platform is engineered across **6 decoupled, resilient layers**. Satellite feeds, physical sensor streams, scientific modeling engines, and client interfaces communicate through strict typed schemas with comprehensive failover isolation:
+| Metric | Measured Value | Provenance / Verification |
+|---|---|---|
+| **Automated Test Suite** | **`88 / 88` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`) |
+| **Live E2E Workflow Audit** | **`11 / 11` workflows + `3` gates** | `node server/tests/live_workflow_audit.js` |
+| **LULC Classifier Holdout** | **`85.77%` Block C overall (`N=6,000`)** | `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior |
+| **Spatial 5-Fold CV** | **`84.63% ± 3.81%` (`N=20,000`)** | `RandomForest_21Feat_Deep` (`4` broad LULC classes) |
+| **NASA POWER Daily Series** | **`1,827` rows (`2019–2024`) + Live API** | `-999` null guard + `Tmax >= 35°C` compound risk rule |
+| **Node–Python Physics Parity** | **`4 / 4` Godagari seasonal profiles** | Exact `ET₀` parity (`7.49`, `2.41`, `2.94`, `3.80 mm/day`) |
+| **Bilingual RAG Benchmark** | **`30/30` tool & disclosure (`81.82%` Hit@4)** | `87` curated chunks (`v2.1.2`), `12.99 ms` mean latency |
+| **Pathology Literature Base** | **`17` diseases · `60` DOI papers** | `48` full-text, `5` abstract, `7` metadata confirmed |
+| **Open Satellite Dataset** | **`~2.80 GB` GeoTIFFs & Climate CSV** | Hosted openly on Hugging Face ([`ashik1236/nasatest`](https://huggingface.co/datasets/ashik1236/nasatest)) |
+
+---
+
+## 📸 Visual Product Tour & Verified UI
+
+Every screenshot below captures the compiled React + Vite + Three.js application executing against the live Node.js backend:
+
+<p align="center">
+  <img src="documentation/readme/01_hero_digital_twin.png" alt="AgriSense Fusion 3D Digital Twin Hero" width="100%" />
+</p>
+
+<table>
+  <tr>
+    <td width="50%"><img src="documentation/readme/02_command_hub_cockpit.png" alt="Command Hub Tactical Cockpit"/><br/><sub><b>Tactical Command Hub.</b> Live FAO-56 depletion triage (<code>49.5 / 79 mm</code>), BMDA aquifer suction proxy (<code>26.4 / 28.0 m</code>), and explicit <code>SIMULATED</code> ESP32 badge.</sub></td>
+    <td width="50%"><img src="documentation/readme/03_spatial_twin_earth_lab.png" alt="Earth Lab 2D GIS & 3D WebGL Split"/><br/><sub><b>Synchronized 2D / 3D Earth Lab.</b> Esri/Sentinel-2 parcel cartography paired side-by-side with the 4-layer WebGL Barind stratigraphic twin.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="documentation/readme/04_fao56_water_budget.png" alt="NASA POWER & FAO-56 Water Budget"/><br/><sub><b>FAO-56 Water Budget & NASA POWER.</b> Daily rainfall vs. atmospheric <code>ET₀</code> and crop demand <code>ETc</code> trajectories for Godagari (<code>24.469°N, 88.330°E</code>).</sub></td>
+    <td><img src="documentation/readme/05_dual_3d_crop_compare.png" alt="Side-by-Side 3D Crop Canopies"/><br/><sub><b>Dual-3D Crop Canopy Compare.</b> Lockstep WebGL comparison of root depth, seasonal water demand, and BARC suitability (e.g., <i>T. Aman</i> vs. <i>Boro Monoculture</i>).</sub></td>
+  </tr>
+  <tr>
+    <td><img src="documentation/readme/06_methods_validation.png" alt="Methods Validation & Provenance"/><br/><sub><b>Scientific Provenance & Methods.</b> Open governance view surfacing spatial CV splits, soil thresholds, and explicit <code>HTTP 422 / 501</code> validation gates.</sub></td>
+    <td><img src="documentation/readme/07_ai_copilot_rag.png" alt="Bilingual RAG AI Copilot"/><br/><sub><b>Bilingual AI Copilot (English &amp; বাংলা).</b> Deterministic tool execution paired with grounded DOI citations and honest model scope disclosures.</sub></td>
+  </tr>
+</table>
+
+---
+
+## ⚡ 10-Minute Local Quickstart (Windows PowerShell)
+
+### Option A: 1-Click Windows Launcher
+```powershell
+git clone https://github.com/ASHIK311/agrisense-fusion.git
+cd "agrisense-fusion"
+.\start.bat
+```
+*Automatically installs dependencies if missing, launches the Express API (`:5000`) and Vite SPA (`:5173`), and opens `http://localhost:5173`.*
+
+### Option B: Manual PowerShell Step-by-Step
+```powershell
+# 1. Install backend & frontend dependencies
+npm.cmd install
+npm.cmd --prefix frontend install
+
+# 2. Configure local environment
+Copy-Item .env.example .env
+
+# 3. Run the 88-test verification suite
+npm.cmd test
+
+# 4. Start backend API (Terminal 1) and Vite frontend (Terminal 2)
+node server/index.js
+npm.cmd --prefix frontend run dev
+```
+
+<details>
+<summary>
+<h3>
+  <img src="https://img.shields.io/badge/%F0%9F%93%96_Linux_%2F_macOS_%26_Hugging_Face-Setup_%26_Dataset_Download-0ea5e9?style=for-the-badge" alt="Setup Guide" />
+  &nbsp;👉 <b>CLICK TO EXPAND: Cross-Platform Setup, Open Dataset Download & Troubleshooting</b>
+</h3>
+</summary>
+
+### Linux / macOS Setup
+```bash
+git clone https://github.com/ASHIK311/agrisense-fusion.git
+cd agrisense-fusion
+npm ci
+npm --prefix frontend ci
+cp .env.example .env
+npm test
+npm --prefix frontend run build
+node server/index.js &
+npm --prefix frontend run dev
+```
+
+### Pull Heavy Satellite GeoTIFFs from Hugging Face (`~2.80 GB`)
+```bash
+pip install huggingface_hub
+python scripts/download_dataset.py
+# Or using HF CLI directly:
+hf download ashik1236/nasatest --repo-type dataset --local-dir ./research/hf_datasets
+```
+
+### Troubleshooting
+* **PowerShell Blocks `npm`:** Use `npm.cmd test` or run via Command Prompt (`cmd /c npm test`).
+* **Port `5000` Already in Use:** Set `$env:PORT=5001; node server/index.js` or terminate orphaned Node processes before testing.
+* **Preserving Clean Demo Store (`server/data/store.json`):** Point `AGRISENSE_STORE_FILE` to a temp path during ad-hoc write scripts (`npm test` isolates automatically).
+
+</details>
+
+---
+
+## 🧪 Testing & Verification Summary
+
+Every critical workflow, security boundary, and physics formula is verified across **7 top-level automated suites (`88 / 88` passed in `~3.9s`)**, an isolated live E2E harness, and an offline RAG evaluation benchmark:
+
+| Test Suite / Harness | Command | Result | What It Verifies |
+|---|---|:---:|---|
+| **Core API Integration** | `server/tests/api_integration.test.js` | **20 / 20 PASS** | Health, auth, farms/fields, NASA POWER history, compound weather risk, ESP32 POST, satellite classify/meta, BARC suitability, FAO-56 water balance, 17 diseases, 60 DOIs, alerts, groundwater, reports, dashboard. |
+| **RAG & AI Assistant** | `server/tests/assistant.test.js` | **13 / 13 PASS** | 9 deterministic tools, EN & বাংলা chat, disease disclaimer, 0.65 m/yr Jahan citation, uncalibrated ESP32 disclosure, SSE stream, `P0-01` metric guard, `P0-02` input guard, `P1-03` multi-tenant auth. |
+| **Option 1 Patch Regression** | `server/tests/patch_regression.test.js` | **10 / 10 PASS** | Signup `'farmer'` role lock, security headers, `/favicon.ico != 500`, cross-tenant `404` isolation, canonical `79.0 mm` TAW / `39.5 mm` RAW parity, `RandomForest_21Feat_Deep`, `4000`-char limit + `429`, `1,827`-row Member 2 parity, soil provenance. |
+| **Security & Multi-Tenant** | `server/tests/security_regression.test.js` | **12 / 12 PASS** | Production `JWT_SECRET >= 32` check, forged JWT `403`, auth barriers `401`, immutable demo farms `403`, rate limit `429`, honest `422` / `501` model gates, zero-denominator spectral protection. |
+| **Physics, IoT & MCDA Units** | `server/tests/unit.test.js` | **13 / 13 PASS** | Penman-Monteith $ET_0$, $ET_c$, TAW, $D_r$ water balance, ESP32 physical bounds (`422`) & duplicate `event_id` (`409`), dynamic MCDA water vs. profit re-ranking. |
+| **Persistence & Recovery** | `server/tests/persistence_safety.test.js` | **7 / 7 PASS** | Atomic writes, automatic `.bak` snapshot recovery, lock-safe rename without non-atomic corruption, clean seed recovery. |
+| **ESP32 Hardware Auth** | `server/tests/device_auth.test.js` | **4 / 4 PASS** | Missing auth `401`, forged `x-device-key` rejection with valid `device_id`, timing-safe system key `201`, Bearer token `201`. |
+| **Node–Python FAO-56 Parity** | `server/tests/fao56_parity.test.js` | **4 / 4 PASS** | Cross-language verification against Member 5 Python across 4 seasonal Godagari benchmarks (`7.49`, `2.41`, `2.94`, `3.80 mm/day`). |
+| **Hydrology Terrain API** | `server/tests/hydrologyApi.test.js` | **2 / 2 PASS** | Terrarium RGB PNG elevation decoding and West➔East slope transect binning. |
+| **Live E2E + RAG Harness** | `live_workflow_audit.js`, `run_rag_benchmark.js` | **11/11 + 30/30** | End-to-end live server workflows, 3 scientific gates (`422`/`501`), and `81.82%` RAG Hit@4 (`12.99 ms` mean). |
+
+*(Full test case trace & reproduction steps: [`documentation/TESTING.md`](documentation/TESTING.md))*
+
+---
+
+## 🔒 Security Posture & Honest Engineering Disclosures
+
+* **Zero Privilege Escalation (`P1-01` Closed):** Public registration (`POST /api/v1/auth/register`) strictly enforces `role: "farmer"`, discarding any client-supplied privilege escalation fields.
+* **Timing-Safe Hardware Auth:** ESP32 edge telemetry enforces `crypto.timingSafeEqual` on `x-device-key` headers (`HTTP 401` on forged keys even when paired with registered `device_id`s).
+* **Strict Tenant Isolation:** Cross-tenant farm, field, report, sensor export, and assistant conversation requests fail closed (`HTTP 404` / `401` / `403`).
+* **Crash-Safe Atomic Storage:** `storageService.js` executes temp-file atomic replacement with exponential backoff and verified `.bak` snapshot recovery.
+
+<details>
+<summary>
+<h3>
+  <img src="https://img.shields.io/badge/%E2%9A%A0%EF%B8%8F_Disclosures-Honest_Engineering_Limits-f59e0b?style=for-the-badge" alt="Disclosures" />
+  &nbsp;👉 <b>CLICK TO EXPAND: Honest Engineering Disclosures & Scientific Scope Boundaries</b>
+</h3>
+</summary>
+
+1. **Simulated Edge IoT Hardware:** Physical ESP32 sensors are pending field calibration. Baseline telemetry (`esp32-node-raj-01`, `5,760`-row offline dataset) carries `is_simulated: true` and `calibration_status: "UNCALIBRATED"`.
+2. **Synthetic Groundwater Proxy:** Regional piezometer rows (`26.4 m` / `27.8 m` depths) serve `SYNTHETIC_REGIONAL_PROXY` data (`has_physical_piezometers: false`) anchored on Jahan et al. (2010) rather than live BMDA SCADA feeds.
+3. **LULC Holdout vs. Species Gates:** `RandomForest_21Feat_Deep` (`85.77%` Block C holdout) was validated across contiguous latitudinal blocks for 4 broad LULC classes; fine crop-species classification (`HTTP 422`), multi-season yield prediction (`HTTP 501`), and NWP forecasting (`HTTP 501`) remain gated rather than fabricated.
+4. **Provisional Soil & Rotation Modeling:** Barind Silty Clay Loam defaults (`79.0 mm` TAW, `39.5 mm` RAW) use Saxton & Rawls (2006) pedotransfer defaults, and crop-rotation comparisons represent modeled MCDA scenarios rather than multi-season field guarantees.
+5. **PostgreSQL & Cloud LLMs:** `database/schema.sql` provides full PostgreSQL 16 + PostGIS DDL (`P2-02` deferred for local-first edge portability on `store.json`). Live Gemini/OpenAI modes remain `NOT_EVALUATED_NO_API_KEY_IN_ENV` in offline CI; offline deterministic synthesis runs cleanly with zero keys.
+
+*(Full scientific disclosure matrix: [`documentation/KNOWN_LIMITATIONS.md`](documentation/KNOWN_LIMITATIONS.md))*
+
+</details>
+
+---
+
+## 🏛️ Technical Architecture & System Engineering
+
+### 1. High-Level 6-Layer System Architecture Topology
 
 ```mermaid
 graph TB
-  %% Class Definitions with Distinct Colors
   classDef edgeLayer fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
   classDef satLayer fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
   classDef ingressLayer fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
   classDef storeLayer fill:#3b0764,stroke:#c084fc,stroke-width:2px,color:#f8fafc;
   classDef scienceLayer fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#f8fafc;
   classDef uiLayer fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#f8fafc;
-  classDef supportLayer fill:#1c1917,stroke:#a8a29e,stroke-width:2px,stroke-dasharray: 4 4,color:#f8fafc;
 
-  subgraph Layer1["1. EDGE HARDWARE & FIELD SENSING LAYER"]
-    ESP32["<b>ESP32 Agro-Sensor Node</b><br/>• Capacitive FDR Soil Moisture (VWC)<br/>• DS18B20 Soil Temp Probe<br/>• SHT31 Ambient Humidity/Temp<br/><i>[TLS 1.3 / HTTPS REST Client]</i>"]:::edgeLayer
+  subgraph L1["1. EDGE HARDWARE & IOT LAYER"]
+    ESP32["<b>ESP32 Agro-Sensor Node</b><br/>• Capacitive FDR v2 VWC &amp; Soil Temp<br/>• <i>[is_simulated: true / UNCALIBRATED]</i>"]:::edgeLayer
   end
 
-  subgraph Layer2["2. SATELLITE EARTH OBSERVATION LAYER"]
-    NASA["<b>NASA POWER Agroclimatology API</b><br/>• T2M, T2M_MAX, T2M_MIN (°C)<br/>• RH2M Relative Humidity (%)<br/>• ALLSKY_SFC_SW_DWN Solar (MJ/m²/day)<br/>• WS10M Wind Speed (m/s) & PRECTOTCORR<br/><i>[NASA Langley Research Center]</i>"]:::satLayer
+  subgraph L2["2. EARTH OBSERVATION & CLIMATE LAYER"]
+    NASA["<b>NASA POWER &amp; Sentinel-2 L2A</b><br/>• T2M, RH2M, SW_DWN, WS10M, Rain<br/>• 12 Multi-Year GeoTIFF Scenes (HF)"]:::satLayer
   end
 
-  subgraph Layer3["3. INGRESS & BACKEND GATEWAY LAYER (Node.js / Express 5)"]
-    IngressAPI["<b>HTTPS Sensor Ingestion Gateway</b><br/>• Physical Range Validation: VWC ∈ [0.0, 1.0]<br/>• Idempotency Deduplication (UUID Event-ID)<br/>• Audit Tagging: is_simulated Enforcer"]:::ingressLayer
-    NASAWorker["<b>NASA Ingestion & Cache Worker</b><br/>• -999 Missing Value Filter → null<br/>• 1-Hour Rolling In-Memory & File Cache<br/>• Lat/Long Spatial Binding (24.469°N, 88.330°E)"]:::ingressLayer
-    GWWorker["<b>BMDA Groundwater Tracker</b><br/>• Piezometric Water Level Monitor<br/>• 28.0m Critical Suction Limit Warning"]:::ingressLayer
+  subgraph L3["3. EXPRESS 5 API & SECURITY GATEWAY"]
+    GW["<b>Auth, Rate Limiter &amp; Routes</b><br/>• Public Signup Role Lock ('farmer')<br/>• Timing-Safe x-device-key Check<br/>• -999 Missing Value Sentinel Guard"]:::ingressLayer
   end
 
-  subgraph Layer4["4. PERSISTENCE & STORAGE LAYER"]
-    DB[("<b>PostgreSQL 16 Production Target</b><br/><code>farms</code> | <code>fields</code> | <code>sensor_readings</code><br/><code>nasa_daily_weather</code> | <code>crop_catalog</code><br/><code>model_runs</code> | <code>recommendations</code><br/><i>(Atomic File Store Fallback Active)</i>")]:::storeLayer
+  subgraph L4["4. ATOMIC PERSISTENCE & SEED LAYER"]
+    DB[("<b>Atomic JSON Store + .bak</b><br/>• Multi-Tenant Scoped Reads/Writes<br/>• <i>PostgreSQL 16 + PostGIS DDL Ready</i>")]:::storeLayer
   end
 
-  subgraph Layer5["5. SCIENTIFIC COMPUTATION & DECISION ENGINES"]
-    FAO56["<b>FAO-56 Penman-Monteith Physics Engine</b><br/>• 10m → 2m Wind Profile Log Transformation<br/>• Reference Evapotranspiration (ET₀ mm/day)<br/>• Crop Evapotranspiration (ETc = Kc × ET₀)<br/>• Root-Zone Depletion (Dr) vs TAW"]:::scienceLayer
-    MCDA["<b>Crop-Rotation MCDA Decision Engine</b><br/>• Dynamic 4-Slider Weights Normalization<br/>• 💧 Water • 🌱 Soil • ☀️ Heat • 💰 Profit<br/>• Barind Agronomic Catalog Evaluation<br/>• Machine Reason Codes & Explanations"]:::scienceLayer
+  subgraph L5["5. PHYSICS, MCDA & BILINGUAL RAG ENGINES"]
+    FAO["<b>FAO-56 Penman-Monteith</b><br/>• Node-Python Verified Parity<br/>• TAW 79.0mm / RAW 39.5mm"]:::scienceLayer
+    MCDA["<b>Crop-Rotation MCDA &amp; RAG</b><br/>• 4-Slider Weights + 87 Chunks<br/>• 60 DOI Pathology Registry"]:::scienceLayer
   end
 
-  subgraph Layer6["6. PRESENTATION & FARMER ACTION LAYER (React 18 SPA)"]
-    Dashboard["<b>AgriSense Fusion Interactive Dashboard</b><br/>• Real-Time Crop Rotation Explorer<br/>• Dark Scientific Visual Theme<br/>• Live SVG Atmospheric Trend Charts<br/>• /architecture Visual Canvas"]:::uiLayer
-    AlertSystem["<b>Farmer Action & Aquifer Alert Engine</b><br/>• ⚠️ Root-Zone Stress Trigger (Dr > 50% TAW)<br/>• 🚨 Deep Tubewell Drawdown Alert<br/>• 📋 Recommended Resilient Crop Plan"]:::uiLayer
+  subgraph L6["6. REACT 18 + THREE.JS 3D DIGITAL TWIN"]
+    UI["<b>Command Hub, Earth Lab &amp; Copilot</b><br/>• 3D Stratigraphic Terrain &amp; Canopies<br/>• Synchronized Leaflet GIS &amp; বাংলা HUD"]:::uiLayer
   end
 
-  subgraph LayerSupport["SUPPORTING MONITORING BRANCH"]
-    BMDA["<b>BMDA Tubewell Piezometer</b><br/>• Piezometric Water Table Sensor<br/><i>[Barind Multipurpose Dev. Authority]</i>"]:::supportLayer
-  end
-
-  %% Data Pipelines
-  ESP32 -- "HTTPS POST (VWC, Temp, pH, event_id)" --> IngressAPI
-  NASA -- "HTTPS GET (Agroclimatology Point Series)" --> NASAWorker
-  BMDA -. "Piezometric Depth (m)" .-> GWWorker
-
-  IngressAPI -- "Validated Records" --> DB
-  NASAWorker -- "Normalized Weather Upsert" --> DB
-  GWWorker -. "Well Telemetry" .-> DB
-
-  DB -- "Soil Moisture & Water Level" --> FAO56
-  DB -- "Historical Weather Series" --> FAO56
-  DB -- "Crop Catalog & Constraints" --> MCDA
-
-  FAO56 -- "ET₀, ETc, Water Deficit (Dr)" --> MCDA
-  FAO56 -- "Atmospheric Demand Metrics" --> Dashboard
-
-  MCDA -- "Ranked Rotations & Reason Codes" --> Dashboard
-  GWWorker -. "Aquifer Depletion State" .-> Dashboard
-
-  Dashboard --> AlertSystem
+  ESP32 -- "HTTPS POST (x-device-key)" --> GW
+  NASA -- "Point Series + LULC Metadata" --> GW
+  GW --> DB
+  DB --> FAO
+  DB --> MCDA
+  FAO --> UI
+  MCDA --> UI
 ```
 
-### 🎨 Layer Color Mapping & Roles
-| Color | Layer Name | Technology | Core Mission |
-|:---:|:---|:---|:---|
-| 🟣 **Indigo** (`#818cf8`) | **1. Edge Hardware** | ESP32, Capacitive FDR, DS18B20, SHT31 | High-precision in-situ soil & micro-climate sensing |
-| 🔵 **Sky Blue** (`#38bdf8`) | **2. Earth Observation** | NASA POWER Daily Point API | Spaceborne solar irradiance, temperature, humidity, wind |
-| 🟢 **Emerald** (`#34d399`) | **3. Ingress & Backend** | Node.js, Express 5, TLS 1.3 | Strict range validation, idempotency, missing-value filters |
-| 🟪 **Purple** (`#c084fc`) | **4. Persistence** | PostgreSQL 16 DDL & Atomic JSON Store | Relational time-series and agronomic rule persistence |
-| 🌸 **Rose** (`#f472b6`) | **5. Science & Decision** | FAO-56 Penman-Monteith, MCDA Engine | Deterministic water balance & 4-factor rotation ranking |
-| 🟡 **Amber** (`#fbbf24`) | **6. Presentation** | React 18, Vite 5, SVG Charts | Dynamic sliders, explainable cards, farmer alerts |
+### 2. FAO-56 Penman-Monteith Physics & Soil Water Balance Flow
 
----
+```mermaid
+flowchart LR
+  classDef inp fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#fff;
+  classDef calc fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#fff;
+  classDef soil fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+  classDef out fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#fff;
 
-## 🔄 End-to-End Data Pipeline Flow
+  W["NASA POWER Weather<br/>Tmax, Tmin, RH, Rs, u₁₀"]:::inp --> GUARD{"Null / -999<br/>Check"}:::calc
+  GUARD -->|Valid| WIND["Log Wind Conversion<br/>u₂ = u₁₀ · 4.87 / ln(67.8z - 5.42)"]:::calc
+  GUARD -->|Missing| FAIL["Reject Silently-Defaulted<br/>Calculation (P0-02)"]:::out
+  WIND --> ET0["Penman-Monteith ET₀<br/>Full Stefan-Boltzmann Rnl"]:::calc
+  ET0 --> ETC["Crop Demand<br/>ETc = Kc × ET₀ (Es = null)"]:::calc
+  ETC --> BAL["Root-Zone Balance (Silty Clay Loam)<br/>TAW = 79.0mm | RAW = 39.5mm"]:::soil
+  BAL --> TRIG{"Dr > RAW<br/>(VWC < 0.244)?"}:::soil
+  TRIG -->|Yes| ALERT["Trigger Irrigation Alert<br/>&amp; Stress Coefficient Ks < 1"]:::out
+  TRIG -->|No| OK["Optimal Root-Zone Status"]:::soil
+```
+
+### 3. Crop-Rotation Multi-Criteria Decision Analysis (MCDA) Pipeline
+
+```mermaid
+flowchart TD
+  classDef sliders fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#fff;
+  classDef data fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+  classDef rank fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#fff;
+
+  S["Farmer / Agronomist 4-Slider Preferences<br/>💧 Water | 🌱 Soil | ☀️ Heat | 💰 Profit"]:::sliders --> NORM["Normalize Weights (Σ w'ᵢ = 1.0)"]:::rank
+  CAT["6 Provisional Barind Rotations<br/>+ BARC AEZ-26 Suitability Matrix"]:::data --> EVAL["Weighted Composite Scoring<br/>Score = Σ (w'ᵢ × Sᵢ)"]:::rank
+  NORM --> EVAL
+  EVAL --> OUT["Dynamic Live Re-Ranking<br/>• Rank #1 Sequence (e.g., Lentil → Aus → T. Aman)<br/>• Machine Reason Codes &amp; Provisional Caveats"]:::data
+```
+
+### 4. ESP32 Edge Telemetry Security & Idempotency Pipeline
 
 ```mermaid
 sequenceDiagram
   autonumber
-  actor Farmer as 👨‍🌾 Farmer / Agronomist
-  participant WebUI as 🖥️ React SPA (Vite)
-  participant API as 🚀 Express 5 Backend
-  participant NASA as 🛰️ NASA POWER API
-  participant Store as 🗄️ PostgreSQL / Store
-  participant Physics as 🔬 FAO-56 Water Engine
-  participant MCDA as 🧠 Crop Rotation MCDA
+  participant Node as ESP32 FDR v2 Node
+  participant Auth as timingSafeEqual Auth
+  participant Svc as Sensor Service
+  participant Store as Atomic Store (.json)
 
-  Note over NASA,API: Satellite Synchronization Cycle
-  API->>NASA: Query Agroclimatology (24.469°N, 88.330°E)
-  NASA-->>API: Solar Irradiance, T2M, RH2M, WS10M, Precip
-  API->>API: Filter -999 missing values & convert units
-  API->>Store: Upsert cached daily weather series
-
-  Note over WebUI,API: Farmer Priority Adjustment
-  Farmer->>WebUI: Adjusts Sliders: [Water: 80%, Soil: 70%, Heat: 60%, Profit: 50%]
-  WebUI->>API: GET /api/rotation/compare?water=0.8&soil=0.7&heat=0.6&profit=0.5
-  API->>Store: Retrieve latest soil VWC & weather snapshot
-  Store-->>API: Soil moisture θ=0.18, T2M=32.4°C, Solar=21.2 MJ/m²
-
-  Note over API,Physics: Physics Evapotranspiration Step
-  API->>Physics: Compute ET₀ & Soil Water Deficit
-  Physics->>Physics: Transform wind: u₂ = 0.748 × u₁₀
-  Physics->>Physics: Solve Penman-Monteith equation (ET₀ = 4.82 mm/day)
-  Physics->>Physics: Calculate Root-Zone Depletion (Dr) vs TAW
-  Physics-->>API: Returns ET₀, ETc, Water Deficit & Irrigation Stress Status
-
-  Note over API,MCDA: Multi-Criteria Agronomic Ranking
-  API->>MCDA: Evaluate Candidate Rotations with Farmer Weights
-  MCDA->>MCDA: Normalize slider weights to sum = 1.0
-  MCDA->>MCDA: Score Water, Soil, Heat, Profit per rotation sequence
-  MCDA->>MCDA: Generate agronomic reason codes & cautions
-  MCDA-->>API: Ranked Rotations: #1 Lentil-Sesame-Aman (Score: 88.4/100)
-
-  API-->>WebUI: JSON { success: true, rankedRotations, physicsSummary }
-  WebUI-->>Farmer: Visual Card Reranking + SVG Water Balance Trend + Irrigation Alert
+  Node->>Auth: POST /api/v1/sensor-readings (x-device-key, event_id, VWC)
+  Auth->>Auth: Constant-time key verification
+  alt Invalid or Missing Key
+    Auth-->>Node: HTTP 401 Unauthorized
+  else Authorized Key / Bearer JWT
+    Auth->>Svc: Forward telemetry payload
+    Svc->>Svc: Physical bounds check (VWC ∈ [0,1], Temp <= 65°C)
+    alt Out of Physical Bounds
+      Svc-->>Node: HTTP 422 Unprocessable Entity
+    else Duplicate event_id
+      Svc-->>Node: HTTP 409 Conflict (Idempotency enforced)
+    else Valid New Reading
+      Svc->>Store: Atomic write (is_simulated: true, UNCALIBRATED)
+      Store-->>Node: HTTP 201 Created
+    end
+  end
 ```
 
----
-
-## 🔬 Scientific Physics & Mathematical Engine
-
-The core evaporative engine implements the international standard **FAO-56 Penman-Monteith equation** (Allen et al., 1998) to calculate daily Reference Evapotranspiration ($ET_0$) without empirical shortcuts:
+### 5. Bilingual Hybrid RAG Decision & Scientific Guardrail Pipeline
 
 ```mermaid
-graph LR
-  classDef inputNode fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
-  classDef stepNode fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
-  classDef mathNode fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#f8fafc;
-  classDef outNode fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
+flowchart LR
+  classDef q fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#fff;
+  classDef ret fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+  classDef tool fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#fff;
+  classDef resp fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#fff;
 
-  subgraph Inputs["1. Upstream Observations"]
-    SW["NASA Solar Radiation<br/><code>ALLSKY_SFC_SW_DWN</code><br/><i>(MJ/m²/day)</i>"]:::inputNode
-    TEMP["NASA Air Temperature<br/><code>T2M, T2M_MAX, T2M_MIN</code><br/><i>(°C)</i>"]:::inputNode
-    HUMID["NASA Relative Humidity<br/><code>RH2M</code><br/><i>(%)</i>"]:::inputNode
-    WIND["NASA 10m Wind Velocity<br/><code>WS10M</code><br/><i>(m/s)</i>"]:::inputNode
-    SOIL["In-Situ Soil Moisture<br/><code>VWC θ (m³/m³)</code><br/><i>(ESP32 FDR Probe)</i>"]:::inputNode
-  end
-
-  subgraph Transformations["2. Atmospheric Transformations"]
-    U2["Logarithmic Wind Conversion<br/><b>u₂ = 0.748 × u₁₀</b>"]:::stepNode
-    RN["Net Radiation Estimator<br/><b>Rn ≈ 0.75 × (1 - 0.23) × Rs</b><br/><i>G ≈ 0 (Daily step)</i>"]:::stepNode
-    VAPOR["Vapor Pressure Deficit<br/><b>es(T) = 0.6108 exp(17.27T / [T+237.3])</b><br/><b>ea = es × (RH / 100)</b><br/><b>VPD = es - ea</b>"]:::stepNode
-    DELTA["Vapor Pressure Slope & Psychrometric<br/><b>Δ = 4098 es / (T+237.3)²</b><br/><b>γ ≈ 0.0673 kPa/°C</b>"]:::stepNode
-  end
-
-  subgraph Engine["3. FAO-56 Penman-Monteith Solver"]
-    ET0["<b>Standard Reference ET₀</b><br/><code>ET₀ = [0.408Δ(Rn - G) + γ(900/[T+273])u₂(es - ea)] / [Δ + γ(1 + 0.34u₂)]</code>"]:::mathNode
-  end
-
-  subgraph WaterBalance["4. Soil Moisture & Root Depletion"]
-    ETC["Crop ET Requirement<br/><b>ETc = Kc × ET₀</b>"]:::outNode
-    TAW["Total Available Water<br/><b>TAW = 1000 × (θ_FC - θ_WP) × Zr</b>"]:::outNode
-    DR["Root-Zone Depletion<br/><b>Dr = 1000 × (θ_FC - θ) × Zr</b>"]:::outNode
-    STRESS["Irrigation Stress Trigger<br/><b>Dr > 0.50 × TAW</b>"]:::outNode
-  end
-
-  SW --> RN
-  TEMP --> VAPOR
-  HUMID --> VAPOR
-  TEMP --> DELTA
-  WIND --> U2
-  RN & VAPOR & DELTA & U2 --> ET0
-  ET0 --> ETC
-  SOIL --> DR
-  TAW & DR --> STRESS
-```
-
-### 📐 Mathematical Formulation Breakdown
-1. **10m to 2m Logarithmic Wind Conversion:**
-   $$u_2 = u_{10} \times \frac{4.87}{\ln(67.8 \times 10 - 5.42)} \approx 0.748 \times u_{10}$$
-2. **Net Solar Radiation Calculation ($R_n$):**
-   $$R_{ns} = (1 - \alpha) \times R_s \quad (\alpha = 0.23\text{ for green reference crop})$$
-   $$R_n \approx 0.75 \times R_{ns} \quad (G \approx 0\text{ for 24-hour daily balance})$$
-3. **Reference Evapotranspiration ($ET_0$):**
-   $$ET_0 = \frac{0.408 \Delta (R_n - G) + \gamma \frac{900}{T + 273} u_2 (e_s - e_a)}{\Delta + \gamma (1 + 0.34 u_2)}$$
-4. **Soil Water Balance & Root-Zone Depletion:**
-   $$TAW = 1000 \times (\theta_{FC} - \theta_{WP}) \times Z_r \quad (\text{mm})$$
-   $$D_r = 1000 \times (\theta_{FC} - \theta) \times Z_r \quad (\text{mm})$$
-   $$\text{Irrigation Alert Triggered if } D_r > 0.50 \times TAW$$
-
----
-
-## 🌾 Crop-Rotation Multi-Criteria Decision Engine (MCDA)
-
-```mermaid
-graph TD
-  classDef sliderNode fill:#0f172a,stroke:#fbbf24,stroke-width:2px,color:#f8fafc;
-  classDef evalNode fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
-  classDef sequenceNode fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
-  classDef cautionNode fill:#451a03,stroke:#ef4444,stroke-width:2px,color:#f8fafc;
-
-  subgraph Weights["1. User-Adjustable Priority Weights"]
-    W1["💧 Water Conservation Weight (w_water)<br/><i>Mitigates deep-aquifer depletion</i>"]:::sliderNode
-    W2["🌱 Soil Health & Legumes (w_soil)<br/><i>Biological N-fixation & SOM</i>"]:::sliderNode
-    W3["☀️ Heat & Drought Resilience (w_heat)<br/><i>Tolerance to dry Barind pre-monsoon</i>"]:::sliderNode
-    W4["💰 Farmer Economic Profit (w_profit)<br/><i>High-value commercial cash yield</i>"]:::sliderNode
-  end
-
-  subgraph Normalizer["2. MCDA Scoring Algorithm"]
-    NORM["<b>Deterministic MCDA Formula</b><br/>Score = (w_w·S_w + w_s·S_s + w_h·S_h + w_p·S_p) / ∑w<br/><i>Scores normalized on scale 0 to 100</i>"]:::evalNode
-  end
-
-  subgraph Rotations["3. Evaluated Barind Rotation Patterns"]
-    R1["<b>Seq A: Lentil → Sesame → T. Aman</b><br/>• Water Score: 95/100 | Soil: 90/100<br/>• Reason: <code>LEGUME_N_FIXATION</code>, <code>LOW_WATER_AQUIFER_FRIENDLY</code>"]:::sequenceNode
-    R2["<b>Seq B: Mustard → Boro Rice → T. Aman</b><br/>• Water Score: 60/100 | Profit: 85/100<br/>• Reason: <code>COMMERCIAL_CASH_CROP</code>, <code>STANDARD_ROTATION</code>"]:::sequenceNode
-    R3["<b>Seq C: Potato → Mungbean → T. Aman</b><br/>• Water Score: 78/100 | Profit: 92/100<br/>• Reason: <code>HIGH_VALUE_CASH_CROP</code>, <code>SOIL_ORGANIC_MATTER</code>"]:::sequenceNode
-    R4["<b>Seq D: Maize → Mungbean → T. Aman</b><br/>• Water Score: 72/100 | Heat: 88/100<br/>• Reason: <code>BALANCED_GRAIN_LEGUME</code>, <code>DROUGHT_TOLERANT</code>"]:::sequenceNode
-    R5["<b>Seq E: Boro Rice Monoculture (Baseline)</b><br/>• Water Score: 20/100 | Aquifer Impact: Severe<br/>• Status: Depletes 1,200mm groundwater/season"]:::cautionNode
-  end
-
-  W1 & W2 & W3 & W4 --> NORM
-  NORM --> R1 & R2 & R3 & R4 & R5
-```
-
-### 📊 Barind Crop Sequence Matrix
-| Sequence | Crop Pattern | Water Demand | N-Fixation | Profit Potential | Best Used When |
-|:---|:---|:---:|:---:|:---:|:---|
-| **Lentil → Sesame → T. Aman** | Legume + Oilseed + Rainfed Rice | 🟢 Very Low (<400 mm) | 🟢 +35 kg N/ha | 🟡 Medium | Extreme water crisis; severe tubewell drawdown |
-| **Mustard → Boro Rice → T. Aman** | Oilseed + Irrigated Rice + Rainfed Rice | 🟡 Moderate (~900 mm) | ⚪ Neutral | 🟢 High | Farmer transitioning off pure Boro monoculture |
-| **Potato → Mungbean → T. Aman** | Tuber + Legume + Rainfed Rice | 🟢 Low-Mod (~550 mm) | 🟢 +25 kg N/ha | 🟢 Very High | Well-drained sandy loam; high capital available |
-| **Maize → Mungbean → T. Aman** | Grain + Legume + Rainfed Rice | 🟡 Moderate (~600 mm) | 🟢 +20 kg N/ha | 🟢 High | High summer heat tolerance required |
-| **Boro Rice Monoculture (Baseline)** | Flooded Rice Monoculture | 🔴 Extreme (>1,200 mm) | 🔴 Depleting | 🟡 Moderate | **Unsustainable**: Triggers critical aquifer alarm |
-
----
-
-## ⚡ Edge Hardware & IoT Sensor Circuit Architecture
-
-```mermaid
-graph TB
-  classDef mcuNode fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
-  classDef sensorNode fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
-  classDef powerNode fill:#451a03,stroke:#f59e0b,stroke-width:2px,color:#f8fafc;
-  classDef commNode fill:#0c4a6e,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
-
-  subgraph PowerSubsystem["1. Renewable Power & Energy Harvesting"]
-    Solar["<b>5V 2W Solar Panel</b><br/>Monocrystalline Photovoltaic"]:::powerNode
-    TP4056["<b>TP4056 Solar Charger</b><br/>Lithium Charge Controller + Protection"]:::powerNode
-    Battery["<b>18650 LiFePO4 Cell</b><br/>3.2V 2500mAh (~2,000 cycles)"]:::powerNode
-    LDO["<b>ME6211 Ultra-Low LDO</b><br/>3.3V Output, 15µA Quiescent Current"]:::powerNode
-  end
-
-  subgraph MCU["2. Microcontroller Unit (Core Processing)"]
-    ESP32Core["<b>ESP32-WROOM-32 MCU</b><br/>• Xtensa Dual-Core 32-bit @ 240MHz<br/>• 520 KB SRAM / 4 MB SPI Flash<br/>• Hardware Cryptographic Accelerator (AES/SHA)<br/>• RTC Sleep Timer (55-min sleep / 5-min duty)"]:::mcuNode
-  end
-
-  subgraph SensorBus["3. In-Situ Precision Probes"]
-    FDR["<b>Capacitive FDR V1.2 Probe</b><br/>• Analog Soil Moisture (VWC)<br/>• Corrosion-resistant dielectric sensing<br/>• <i>Connected to GPIO 34 (ADC1_CH6)</i>"]:::sensorNode
-    DS18B20["<b>DS18B20 Temp Probe</b><br/>• Waterproof Stainless Steel Probe<br/>• -55°C to +125°C range (±0.5°C)<br/>• <i>GPIO 4 via 1-Wire Bus (4.7kΩ pull-up)</i>"]:::sensorNode
-    SHT31["<b>SHT31 Ambient Sensor</b><br/>• Air Temp & Relative Humidity<br/>• ±2% RH, ±0.2°C accuracy<br/>• <i>GPIO 21 (SDA) & GPIO 22 (SCL) via I2C</i>"]:::sensorNode
-  end
-
-  subgraph TelemetryComm["4. Field Gateway Transmission"]
-    WiFi["<b>802.11 b/g/n or NB-IoT</b><br/>TLS 1.3 HTTPS POST<br/>JSON payload with unique UUID event_id"]:::commNode
-    Endpoint["<b>AgriSense Express Ingress</b><br/><code>POST /api/sensor-readings</code>"]:::commNode
-  end
-
-  Solar --> TP4056 --> Battery --> LDO --> ESP32Core
-  ESP32Core -->|ADC Read| FDR
-  ESP32Core -->|1-Wire Protocol| DS18B20
-  ESP32Core -->|I2C Protocol| SHT31
-  ESP32Core -->|Burst Radio Packet| WiFi --> Endpoint
-```
-
-### 📡 Telemetry Packet Specification (HTTPS JSON)
-```json
-{
-  "device_id": "esp32-barind-alpha-01",
-  "event_id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
-  "observed_at": "2026-10-10T12:00:00.000Z",
-  "soil_moisture_vwc": 0.225,
-  "air_temp_c": 31.4,
-  "relative_humidity_pct": 58.2,
-  "soil_ph": 6.8,
-  "soil_temp_c": 26.5,
-  "is_simulated": false
-}
+  U["Query (EN / বাংলা)<br/>Bound <= 4000 chars + Rate Limit"]:::q --> PARSE["Intent & Language Classifier<br/>+ Prompt-Injection Neutralizer"]:::ret
+  PARSE --> HYBRID["Hybrid Retrieval (87 Chunks v2.1.2)<br/>BM25 + 3-Gram RRF (12.99ms mean)"]:::ret
+  PARSE --> TOOLS["9 Deterministic Backend Tools<br/>(ET₀, Water Balance, LULC, Diseases)"]:::tool
+  HYBRID --> SYNTH["Grounded Synthesizer<br/>Mandatory Disclaimers + 60 DOIs"]:::resp
+  TOOLS --> SYNTH
 ```
 
 ---
 
-## 🗄️ Database Relational Architecture
+## 📂 Repository Directory Architecture
 
-The system features a **PostgreSQL 16 relational production schema** ([`database/schema.sql`](database/schema.sql)) with strict type constraints, foreign-key cascade hierarchies, check constraints, and B-Tree indexes:
-
-```mermaid
-erDiagram
-  FARMS ||--o{ FIELDS : contains
-  FARMS ||--o{ NASA_DAILY_WEATHER : caches
-  FIELDS ||--o{ SENSOR_DEVICES : deploys
-  FIELDS ||--o{ MODEL_RUNS : executes
-  SENSOR_DEVICES ||--o{ SENSOR_READINGS : ingests
-  CROP_CATALOG ||--o{ CROP_COEFFICIENTS : specifies
-  MODEL_RUNS ||--o{ RECOMMENDATIONS : produces
-  CROP_CATALOG ||--o{ RECOMMENDATIONS : references
-
-  FARMS {
-    uuid id PK
-    text name
-    text district
-    text division
-    double_precision latitude
-    double_precision longitude
-    double_precision elevation_m
-    text timezone
-    timestamptz created_at
-  }
-
-  FIELDS {
-    uuid id PK
-    uuid farm_id FK
-    text name
-    numeric area_m2
-    text soil_type
-    numeric theta_fc
-    numeric theta_wp
-    numeric root_depth_m
-    timestamptz created_at
-  }
-
-  SENSOR_DEVICES {
-    uuid id PK
-    uuid field_id FK
-    text device_key_hash
-    text name
-    text firmware_version
-    boolean is_active
-    timestamptz last_seen_at
-    timestamptz created_at
-  }
-
-  SENSOR_READINGS {
-    bigint id PK
-    uuid device_id FK
-    uuid event_id "UNIQUE per device"
-    timestamptz observed_at
-    timestamptz received_at
-    numeric soil_moisture_vwc "CHECK [0, 1]"
-    numeric air_temp_c
-    numeric relative_humidity_pct "CHECK [0, 100]"
-    numeric soil_ph "CHECK [0, 14]"
-    numeric soil_temp_c
-    text quality_status
-    boolean is_simulated
-    jsonb raw_payload
-  }
-
-  NASA_DAILY_WEATHER {
-    bigint id PK
-    uuid farm_id FK
-    text source
-    date source_date
-    text time_standard
-    numeric t2m_c
-    numeric t2m_max_c
-    numeric t2m_min_c
-    numeric rh2m_pct
-    numeric solar_mj_m2_day
-    numeric precipitation_mm
-    numeric wind_speed_m_s
-    jsonb source_units
-    timestamptz fetched_at
-  }
-
-  CROP_CATALOG {
-    uuid id PK
-    text crop_code UK
-    text crop_name
-    text scientific_name
-    text season
-    integer typical_duration_days
-    numeric water_demand_category
-    boolean is_legume
-    boolean drought_tolerant
-  }
-
-  CROP_COEFFICIENTS {
-    uuid id PK
-    uuid crop_id FK
-    text stage_name
-    numeric kc_value
-    integer stage_duration_days
-  }
-
-  MODEL_RUNS {
-    uuid id PK
-    uuid field_id FK
-    timestamptz run_at
-    text model_name
-    jsonb input_parameters
-    jsonb outputs_summary
-    text status
-  }
-
-  RECOMMENDATIONS {
-    uuid id PK
-    uuid model_run_id FK
-    uuid crop_id FK
-    integer rank_order
-    numeric composite_score
-    text reason_code
-    text agronomic_caution
-    jsonb sub_scores
-  }
-```
-
----
-
-## 🛡️ Security, Ingress & Idempotency Pipeline
-
-Every edge packet undergoes strict multi-stage verification before database commit to prevent denial-of-service, duplicate counting, or corrupted model calculations:
-
-```mermaid
-flowchart TD
-  classDef startNode fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
-  classDef checkNode fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
-  classDef rejectNode fill:#451a03,stroke:#ef4444,stroke-width:2px,color:#f8fafc;
-  classDef acceptNode fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#f8fafc;
-
-  Packet["Incoming HTTPS Request<br/><code>POST /api/sensor-readings</code>"]:::startNode
-  TLS["TLS 1.3 Decryption & JSON Deserialization"]:::checkNode
-
-  SchemaCheck{"Valid Schema?<br/>(device_id, event_id, observed_at)"}:::checkNode
-  Err400["HTTP 400 Bad Request<br/><i>Missing mandatory attributes</i>"]:::rejectNode
-
-  RangeCheck{"Physical Numeric Bounds?<br/>• VWC ∈ [0.0, 1.0]<br/>• Soil Temp ∈ [-10°C, 65°C]<br/>• pH ∈ [0, 14]"}:::checkNode
-  Err422["HTTP 422 Unprocessable Entity<br/><i>Physics boundary violation</i>"]:::rejectNode
-
-  DupeCheck{"Deduplication Hash Check<br/>(device_id + event_id in store?)"}:::checkNode
-  Err409["HTTP 409 Conflict<br/><i>Duplicate event_id rejected (Idempotent)</i>"]:::rejectNode
-
-  AuditTag["Synthetic Audit Enforcement<br/><code>is_simulated: true | false</code>"]:::checkNode
-  CommitStore["Atomic Persistent Store Commit<br/><code>sensor_readings</code> table / JSON store"]:::acceptNode
-  Success201["HTTP 201 Created<br/><i>Acknowledged & Broadcast to Engines</i>"]:::acceptNode
-
-  Packet --> TLS --> SchemaCheck
-  SchemaCheck -- "No" --> Err400
-  SchemaCheck -- "Yes" --> RangeCheck
-  RangeCheck -- "Out of Bounds" --> Err422
-  RangeCheck -- "Valid" --> DupeCheck
-  DupeCheck -- "Duplicate Exists" --> Err409
-  DupeCheck -- "Unique Event" --> AuditTag --> CommitStore --> Success201
-```
-
----
-
-## 🌟 Key Features & Capabilities
-
-1. **Crop-Rotation Explorer (Explainable Decision Support)**
-   - Real-time Multi-Criteria Decision Analysis with instant client-side weight rebalancing.
-   - Transparent sub-score explanations: Water Conservation, Soil Health, Heat Resilience, Farmer Profit.
-   - Machine reason codes (e.g., `LEGUME_BIOLOGICAL_N_FIXATION`, `LOW_WATER_AQUIFER_FRIENDLY`).
-
-2. **Live NASA POWER Satellite Ingestion**
-   - Direct integration with NASA Langley Research Center Agroclimatology point API.
-   - Automated conversion from 10m to 2m wind speeds using standard logarithmic wind equations.
-   - Missing-value filtering (`-999` strictly converted to `null`, never substituted with zero).
-
-3. **FAO-56 Penman-Monteith Physics Water Engine**
-   - Pure physical equations for reference evapotranspiration ($ET_0$) and crop water requirement ($ET_c$).
-   - Calculates Total Available Water ($TAW$) and Root-Zone Depletion ($D_r$).
-   - Automated irrigation stress warnings when soil moisture drops below 50% $TAW$.
-
-4. **Interactive Architecture Canvas (`/architecture`)**
-   - Live visual diagram in the web application displaying all 6 system layers.
-   - Interactive Node Inspector: Click any component to inspect protocols, inputs, outputs, and verification status.
-
-5. **Edge IoT Telemetry Ingress with Idempotency**
-   - High-throughput REST API with physical range bounds checks and duplicate `event_id` rejection (HTTP 409).
-   - Labelled simulation console allowing judges to test telemetry without physical hardware.
-
-6. **Barind Groundwater Aquifer Monitor**
-   - Monitors deep tubewell water tables against the critical 28m suction threshold.
-   - Alerts users when unsustainable monoculture irrigation threatens regional water tables.
-
----
-
-## 📁 Repository Structure
-
-```
-agrisense-fusion/
+```text
+agrisense-fusion/                                  # Clean GitHub repository root (~39 MB)
+├── README.md                                      # Executive overview, visual tour, quickstart & architecture
+├── LICENSE                                        # MIT Open Source License
+├── .gitattributes                                 # Linguist language classification & cross-OS EOL normalization
+├── .gitignore                                     # Excludes node_modules, .venv, .env*, .bak & heavy GeoTIFFs
+├── .env.example                                   # Environment variable template (JWT, NASA, optional LLM keys)
+├── .github/workflows/ci.yml                       # Automated CI: 88 Node tests, RAG benchmark, Python & Vite build
+├── start.bat                                      # 1-Click Windows launcher (Express :5000 + Vite :5173)
+├── package.json                                   # Backend dependencies (Express 5, bcryptjs, jwt, pg) & test runner
+├── audit_phase0.py                                # Forensic cross-member verification generator
+├── generate_fao56_benchmark.py                    # Cross-language Node-Python FAO-56 benchmark generator
+├── test_endpoints.js                              # Rapid endpoint health & contract smoke script
+│
 ├── database/
-│   └── schema.sql                  # PostgreSQL 16 production schema (DDL & Indexes)
-├── docs/
-│   ├── ARCHITECTURE.md             # In-depth architectural blueprint & specifications
-│   ├── architecture.mmd            # Exportable, editable Mermaid architecture diagram
-│   ├── DEMO_SCRIPT.md              # 3-minute hackathon judge walkthrough
-│   └── IMPLEMENTATION_STATUS.md    # Component audit & verification report
-├── frontend/                       # React 18 + Vite 5 single-page application
-│   ├── src/
-│   │   ├── components/             # Explorer, ArchitectureView, MetricCards, Charts, Modals
-│   │   ├── App.jsx                 # Dashboard state, navigation, and API synchronization
-│   │   └── index.css               # Scientific dark navy & emerald design tokens
-│   ├── public/                     # Static media assets & video backgrounds
-│   └── dist/                       # Compiled production bundle
-├── server/                         # Node.js + Express 5 backend
-│   ├── data/                       # Local persistent store (store.json)
-│   ├── decision/                   # Deterministic MCDA Crop-Rotation Scoring Engine
-│   ├── physics/                    # Standardized FAO-56 Penman-Monteith & Water Balance
-│   ├── services/                   # NASA POWER fetcher & ESP32 telemetry ingestion
-│   ├── tests/                      # Automated unit test suite (unit.test.js)
-│   └── index.js                    # Core Express server & API routes
-├── video/                          # Demonstration & challenge video assets
-├── .env.example                    # Non-secret environment configuration
-├── .gitignore                      # Clean ignore rules (node_modules, logs, secrets)
-├── package.json                    # Scripts, metadata, and dependencies
-├── test_endpoints.js               # End-to-end API verification script
-└── README.md                       # Comprehensive documentation & architecture guide
+│   └── schema.sql                                 # PostgreSQL 16 + PostGIS DDL (aligned Barind soil defaults)
+│
+├── documentation/                                 # Complete engineering, audit, review & submission documentation
+│   ├── ENGINEERING.md                             # Improvement matrix, benchmarks, parity & repo hygiene report
+│   ├── ARCHITECTURE.md                            # System topology & multiscale fusion architecture
+│   ├── HANDOFF.md                                 # Developer onboarding, operational rules & gotchas
+│   ├── PROJECT_PLAN.md                            # Field Shift alignment, metrics & post-hackathon roadmap
+│   ├── SUBMISSION.md                              # Space Apps submission text, 5-min pitch & 10-step demo script
+│   ├── TESTING.md                                 # Canonical breakdown of all 88 tests & E2E harnesses
+│   ├── SECURITY.md                                # Auth hardening, timing-safe keys, multi-tenant isolation
+│   ├── API_REFERENCE.md                           # Exhaustive REST API specification + 422/501 gates
+│   ├── KNOWN_LIMITATIONS.md                       # Honest engineering disclosures & scientific boundaries
+│   ├── SRS.md                                     # Full Software Requirements Specification
+│   ├── readme/                                    # Custom SVG banner + 7 high-res verified UI screenshots
+│   ├── review/                                    # External BARC/BMDA expert review kit & CSV scorecard
+│   └── ui-ux/                                     # Interface design notes & accessibility guidelines
+│
+├── frontend/                                      # React 18 + Vite 5 + Three.js + Leaflet SPA
+│   ├── public/team/                               # Official 6-member squad portraits
+│   ├── public/models/                             # 3D GPM satellite GLB model & Draco decoders
+│   └── src/                                       # Workspaces: Command Hub, Earth Lab, Water, Crops, What-If, Methods
+│
+├── server/                                        # Express 5 Backend & Scientific Engines
+│   ├── index.js                                   # Security headers, CORS allowlist, v1 route mounting
+│   ├── adapters/ingest_all.py                     # Harmonizes research/member_01..06 into master seed JSON
+│   ├── assistant/                                 # Bilingual RAG service, 9 deterministic tools & system prompts
+│   ├── data/                                      # master_database_seed.json, rag_knowledge_base.json, clean store.json
+│   ├── decision/                                  # Crop-Rotation MCDA engine & Barind crop catalog
+│   ├── middleware/                                # JWT auth, timing-safe device key, rate limiter, error handler
+│   ├── physics/                                   # FAO-56 Penman-Monteith ET₀ & root-zone water balance
+│   ├── routes/                                    # 13 modular API v1 route controllers
+│   ├── services/                                  # Auth, NASA POWER fetcher, hydrology PNG decoder, sensor service
+│   ├── storage/                                   # Crash-safe atomic JSON + .bak engine & Postgres pool
+│   └── tests/                                     # 88 automated Node tests + live workflow + RAG benchmarks
+│
+├── research/                                      # Consolidated 6-Member Scientific Modules & Forensic Audits
+│   ├── README.md                                  # Guide across Member 01–06 deliverables
+│   ├── dataset_card.md                            # Hugging Face open dataset metadata card (ashik1236/nasatest)
+│   ├── member_01_satellite_gis/                   # Sentinel-2 preprocessing scripts, schemas, spatial holdout audits
+│   ├── member_02_weather_risk/                    # 1,827-day NASA POWER Godagari risk model & charts
+│   ├── member_03_iot_hardware/                    # ESP32 C++ firmware, schematics, BOM, 5,760-row calibration audits
+│   ├── member_04_agronomy_mcda/                   # BARC AEZ-26 crop suitability, calendars & rotation datasets
+│   ├── member_05_hydrology_physics/               # Python FAO-56 water balance reference implementation
+│   └── member_06_crop_pathology/                  # 17 Bangladesh crop diseases & 60 DOI-verified papers
+│
+└── scripts/
+    └── download_dataset.py                        # Pulls ~2.80 GB GeoTIFF rasters from Hugging Face (ashik1236/nasatest)
 ```
 
 ---
 
-## 🚀 Quick Start & Local Deployment
+## 📚 Complete Documentation Index
 
-### Prerequisites
-* **Node.js** (v18.0.0 or higher; tested on Node.js v20 & v26)
-* **npm** (v9.0.0 or higher)
-
-### 1. Installation
-```bash
-# Clone the repository
-git clone https://github.com/ASHIK311/agrisense-fusion.git
-cd agrisense-fusion
-
-# Install backend dependencies
-npm install
-
-# (Optional) Build frontend from source if modifying React code
-npm run build:frontend
-```
-
-### 2. Launch Application
-```bash
-npm start
-```
-
-Open your browser to:
-* 🌾 **Main Dashboard & Crop-Rotation Explorer:** [`http://localhost:5000`](http://localhost:5000)
-* 🏛️ **Interactive Architecture Canvas:** [`http://localhost:5000/architecture`](http://localhost:5000/architecture)
-* 🩺 **Backend Health & Feature Endpoint:** [`http://localhost:5000/api/health`](http://localhost:5000/api/health)
+| Documentation Book | Purpose & Contents |
+| :--- | :--- |
+| 🛠️ [`documentation/ENGINEERING.md`](documentation/ENGINEERING.md) | 25-item Improvement Matrix (`P0–P3`), performance benchmarks, parity & repo audit |
+| 🏗️ [`documentation/ARCHITECTURE.md`](documentation/ARCHITECTURE.md) | Multi-layer system topology, data pipelines, and storage architecture |
+| 🤝 [`documentation/HANDOFF.md`](documentation/HANDOFF.md) | Developer onboarding guide, operational rules, and clean-store isolation tips |
+| 🗺️ [`documentation/PROJECT_PLAN.md`](documentation/PROJECT_PLAN.md) | Challenge requirements, quantitative baselines, and post-hackathon roadmap |
+| 🏆 [`documentation/SUBMISSION.md`](documentation/SUBMISSION.md) | Ready-to-paste Space Apps submission text, 5-min speaker pitch, 10-step demo |
+| 🧪 [`documentation/TESTING.md`](documentation/TESTING.md) | Canonical breakdown of all `88` Node tests, E2E audits & RAG benchmarks |
+| 🛡️ [`documentation/SECURITY.md`](documentation/SECURITY.md) | Role locks, `timingSafeEqual` ESP32 auth, tenant isolation, and headers |
+| 🔌 [`documentation/API_REFERENCE.md`](documentation/API_REFERENCE.md) | Exhaustive REST API catalog across all routes plus `HTTP 422 / 501` gates |
+| ⚠️ [`documentation/KNOWN_LIMITATIONS.md`](documentation/KNOWN_LIMITATIONS.md) | Honest disclosures of simulated IoT, groundwater proxies & model boundaries |
+| 🌾 [`documentation/review/EXPERT_REVIEW_KIT.md`](documentation/review/EXPERT_REVIEW_KIT.md) | External BARC / BMDA agronomic validation rubric and [`review_sheet.csv`](documentation/review/review_sheet.csv) |
+| 🛰️ [`research/dataset_card.md`](research/dataset_card.md) | Hugging Face open dataset specification for [`ashik1236/nasatest`](https://huggingface.co/datasets/ashik1236/nasatest) |
+| 📜 [`documentation/SRS.md`](documentation/SRS.md) | Complete Software Requirements Specification & cross-subsystem traceability |
 
 ---
 
-## 🧪 Verification & Automated Test Suite
+## 👩‍🚀 Team AgriSense Fusion
 
-### 1. Run Unit Tests (FAO-56, Water Balance, Validation, MCDA)
-```bash
-npm test
-```
-*Executes 13 automated unit tests covering:*
-* `saturationVapourPressure` calculation against thermodynamic tables
-* FAO-56 Penman-Monteith reference $ET_0$ across realistic Barind Tract temperatures
-* Missing weather input handling (graceful null fallbacks)
-* Total Available Water ($TAW$) and Root-Zone Depletion ($D_r$)
-* ESP32 sensor payload boundary checks ($0.0 \le \theta \le 1.0$)
-* Duplicate event rejection (HTTP 409 idempotency)
-* Dynamic MCDA weight rebalancing and reason code generation
+<table>
+  <tr>
+    <td align="center" width="16.6%"><img src="frontend/public/team/nakib-md-ashik.png" width="105" alt="Nakib Md Ashik"/><br/><b>Nakib Md Ashik</b><br/><sub>Team Lead &amp; System Architect</sub></td>
+    <td align="center" width="16.6%"><img src="frontend/public/team/shah-ismat-mahmud-tanim.png" width="105" alt="Shah Ismat Mahmud Tanim"/><br/><b>Shah Ismat Mahmud Tanim</b><br/><sub>Research &amp; Pathology Ops</sub></td>
+    <td align="center" width="16.6%"><img src="frontend/public/team/md-riazul-islam-tusar.png" width="105" alt="Md. Riazul Islam Tusar"/><br/><b>Md. Riazul Islam Tusar</b><br/><sub>Backend &amp; API Integration</sub></td>
+    <td align="center" width="16.6%"><img src="frontend/public/team/mynuddin-ahmed.png" width="105" alt="Mynuddin Ahmed"/><br/><b>Mynuddin Ahmed</b><br/><sub>Frontend &amp; 3D Spatial UX</sub></td>
+    <td align="center" width="16.6%"><img src="frontend/public/team/tanvir-kabir.png" width="105" alt="Tanvir Kabir"/><br/><b>Tanvir Kabir</b><br/><sub>IoT &amp; ESP32 Hardware</sub></td>
+    <td align="center" width="16.6%"><img src="frontend/public/team/md-mizanur-rahman.png" width="105" alt="Md Mizanur Rahman"/><br/><b>Md Mizanur Rahman</b><br/><sub>Vadose Hydrology &amp; Physics</sub></td>
+  </tr>
+</table>
 
-### 2. Run End-to-End API Integration Verification
-```bash
-node test_endpoints.js
-```
-*Validates `/api/health`, `/api/farms`, `/api/weather/nasa`, `/api/water-balance`, `/api/rotation/compare`, and `/api/sensor-readings`.*
+<p align="center"><sub>Engineered in Dhaka, Bangladesh 🇧🇩 for the 2026 NASA International Space Apps Challenge (*Field Shift* Track).</sub></p>
 
 ---
 
-## 🔬 Scientific Transparency & Ethical Principles
+## 📜 Scientific Attribution & License
 
-* **No Synthetic Radar Claims:** We explicitly state what comes from NASA POWER (surface irradiance, 2m temperature, 10m wind, relative humidity) and do not fabricate hypothetical continuous SAR radar feeds.
-* **Physics Over Guesswork:** We employ the internationally validated FAO-56 Penman-Monteith equation. Where parameters cannot be calibrated without physical lysimeters (such as direct soil evaporation $E_s$), we leave them as `null` rather than generating speculative figures.
-* **Provisional Agronomic Guidance:** Crop rotation sequences reflect proven agronomic practices in Northern Bangladesh (Bangladesh Agricultural Research Institute - BARI guidelines) and are explicitly flagged as *provisional decision support* pending field validation by Department of Agricultural Extension (DAE) officers.
+* **Earth Observation & Weather Data:** NASA POWER Project (Langley Research Center), Copernicus Sentinel-2 L2A (ESA), ESA WorldCover 10m, ISRIC SoilGrids.
+* **Agronomic & Hydrological Standards:** FAO Irrigation & Drainage Paper No. 56 (Allen et al., 1998), Saxton & Rawls (2006) Soil Water Characteristics, Bangladesh Agricultural Research Council (BARC AEZ-26), Jahan et al. (2010) Barind Aquifer Drawdown Studies.
+* **Disclaimer:** NASA does not endorse this project. Regional groundwater monitoring records and ESP32 sensor feeds operate as explicitly labeled simulation/proxy baselines until physical field deployment and gravimetric calibration occur.
 
----
-
-## 📜 License
-This project is open-source and distributed under the **[MIT License](LICENSE)**.
-Developed for the **NASA Space Apps Challenge 2026: Field Shift**.
+Released under the **[MIT License](LICENSE)**.
