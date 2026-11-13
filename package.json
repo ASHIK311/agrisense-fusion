@@ -2,6 +2,7 @@
   "name": "agrisense-fusion",
   "version": "1.0.0",
   "description": "AgriSense Fusion - NASA Space Apps Challenge 2026: Field Shift",
+  "homepage": "https://adspro.online/",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",

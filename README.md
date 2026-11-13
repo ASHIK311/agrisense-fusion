@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <a href="https://adspro.online/"><img alt="Live Demo" src="https://img.shields.io/badge/LIVE%20DEMO-adspro.online-10B981?style=for-the-badge&logo=googlechrome&logoColor=white"></a>
   <a href="https://www.spaceappschallenge.org/"><img alt="NASA Space Apps 2026" src="https://img.shields.io/badge/NASA%20SPACE%20APPS-2026%20%C2%B7%20FIELD%20SHIFT-0B3D91?style=for-the-badge&logo=nasa&logoColor=white"></a>
   <a href="https://huggingface.co/datasets/ashik1236/nasatest"><img alt="Open Dataset on Hugging Face" src="https://img.shields.io/badge/OPEN%20DATA-Hugging%20Face%20(2.8%20GB)-F59E0B?style=for-the-badge&logo=huggingface&logoColor=white"></a>
   <a href="https://github.com/ASHIK311/agrisense-fusion/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ASHIK311/agrisense-fusion/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI"></a>
@@ -30,6 +31,7 @@
 </p>
 
 <p align="center">
+  <a href="https://adspro.online/"><b>🌐 Live Demo (adspro.online)</b></a> ·
   <a href="#-executive-summary--problem-statement"><b>Overview</b></a> ·
   <a href="#-visual-product-tour--verified-ui"><b>Visual Tour</b></a> ·
   <a href="#-10-minute-local-quickstart-windows-powershell"><b>Quickstart</b></a> ·
@@ -62,6 +64,7 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 
 | Metric | Measured Value | Provenance / Verification |
 |---|---|---|
+| **Live Production Deployment** | **[`https://adspro.online/`](https://adspro.online/)** | Hosted full-stack Express 5 + React 18 + SQLite WAL (`/api/health`) |
 | **Automated Test Suite** | **`91 / 91` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`, includes SQLite + RF ensemble) |
 | **Live E2E Workflow Audit** | **`11 / 11` workflows + `3` gates** | `node server/tests/live_workflow_audit.js` |
 | **LULC Holdout (Offline Full `.pkl`)** | **`85.77%` Block C overall (`N=6,000`)** | Full `optimized_model.pkl` (`250` trees, full depth): `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior (`85.28%` for full `180`-tree 15-feat) |
