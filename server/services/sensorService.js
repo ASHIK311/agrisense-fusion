@@ -130,7 +130,7 @@ class SensorService {
       soil_ph: soil_ph !== undefined ? Number(soil_ph) : null,
       calibration_version: calibration_version || 'cal-fdr-2026.1',
       quality_status: quality_status || 'valid',
-      is_simulated: Boolean(is_simulated), // Always enforce honest boolean label
+      is_simulated: true, // Always enforce honest simulation flag as prototype telemetry
       raw_payload: payload.raw_payload || null
     };
 
