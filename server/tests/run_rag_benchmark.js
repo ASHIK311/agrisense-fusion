@@ -188,6 +188,12 @@ async function runBenchmark() {
   };
 
   console.log(JSON.stringify(summary, null, 2));
+
+  if (hitAt4Count < 18 || toolMatchCount < 30 || langMatchCount < 30 || scientificDisclosurePassCount < 30) {
+    throw new Error(
+      `Category A RAG benchmark regression detected: Hit@4=${hitAt4Count}/${retrievalQueriesCount}, Tools=${toolMatchCount}/30, Lang=${langMatchCount}/30, Disclosure=${scientificDisclosurePassCount}/30`
+    );
+  }
   } finally {
     fs.rmSync(__tmpBenchDir, { recursive: true, force: true });
   }

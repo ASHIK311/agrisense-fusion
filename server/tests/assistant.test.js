@@ -477,4 +477,63 @@ test('AgriSense AI Assistant & RAG Subsystem Integration Suite', async (t) => {
     });
     assert.strictEqual(spoofAttempt.status, 403);
   });
+
+  await t.test('14. Authenticated persistent chat executes tools, retrieves RAG chunks, and preserves SQLite multi-turn history', async () => {
+    const regRes = await fetch(`${baseUrl}/api/v1/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: `rag_sqlite_${Date.now()}@agrisense.test`,
+        password: 'Password123!',
+        fullName: 'SQLite RAG Tester',
+        role: 'farmer'
+      })
+    });
+    assert.strictEqual(regRes.status, 201);
+    const { token } = await regRes.json();
+
+    // Turn 1: Authenticated query requiring tool execution + grounded sources
+    const turn1Res = await fetch(`${baseUrl}/api/v1/assistant/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify({
+        message: 'What is the daily reference evapotranspiration ET0 in Godagari and how should I irrigate?',
+        farm_id: 'farm-barind-01',
+        field_id: 'field-godagari-a'
+      })
+    });
+    assert.strictEqual(turn1Res.status, 200);
+    const turn1Body = await turn1Res.json();
+    assert.strictEqual(turn1Body.mode, 'authenticated_persistent');
+    assert.ok(turn1Body.conversation_id && turn1Body.conversation_id.startsWith('conv-'));
+    assert.ok(
+      Array.isArray(turn1Body.tool_calls) &&
+      turn1Body.tool_calls.some((tc) => (tc.tool || tc.name) === 'calculate_et0')
+    );
+    assert.ok(Array.isArray(turn1Body.sources) && turn1Body.sources.length > 0);
+
+    // Turn 2: Bengali follow-up on the same persisted SQLite thread
+    const turn2Res = await fetch(`${baseUrl}/api/v1/assistant/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+      body: JSON.stringify({
+        conversation_id: turn1Body.conversation_id,
+        message: 'বাংলায় বোরো ধানের সেচ পরামর্শ দিন।',
+        farm_id: 'farm-barind-01',
+        field_id: 'field-godagari-a'
+      })
+    });
+    assert.strictEqual(turn2Res.status, 200);
+    const turn2Body = await turn2Res.json();
+    assert.strictEqual(turn2Body.conversation_id, turn1Body.conversation_id);
+    assert.strictEqual(turn2Body.language, 'bn');
+
+    // Verify SQLite-backed conversation contains all 4 messages (2 user + 2 assistant)
+    const convRes = await fetch(`${baseUrl}/api/v1/assistant/conversations/${turn1Body.conversation_id}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    assert.strictEqual(convRes.status, 200);
+    const convBody = await convRes.json();
+    assert.strictEqual((convBody.conversation?.messages || []).length, 4);
+  });
 });

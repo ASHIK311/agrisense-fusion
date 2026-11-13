@@ -193,4 +193,31 @@ test('Storage Service Persistence Safety & Backup Recovery Suite', async (t) => 
     assert.doesNotThrow(() => JSON.parse(fs.readFileSync(CORRUPT_STORE, 'utf-8')));
     assert.doesNotThrow(() => JSON.parse(fs.readFileSync(CORRUPT_BAK, 'utf-8')));
   });
+
+  await t.test('08. Native SQLite relational engine (node:sqlite WAL) persists and queries domain tables in parity with atomic store', async () => {
+    const dbLayer = require('../storage/db');
+    await dbLayer.initDb();
+    const status = dbLayer.getDbStatus();
+    assert.strictEqual(status.mode, 'sqlite');
+    assert.strictEqual(status.isConnected, true);
+
+    const diag = storage.getSqliteDiagnostics();
+    assert.ok(diag, 'SQLite diagnostics must be available');
+    assert.strictEqual(diag.journal_mode, 'wal');
+    assert.ok(diag.table_counts.farms >= 3, 'SQLite farms table must contain seeded farms');
+    assert.ok(diag.table_counts.fields >= 3, 'SQLite fields table must contain seeded fields');
+    assert.ok(diag.table_counts.devices >= 1, 'SQLite devices table must contain seeded device');
+    assert.ok(diag.table_counts.users >= 2, 'SQLite users table must contain persisted test users');
+
+    // Parameterized SQL JOIN query verification
+    const joined = storage.querySqlite(
+      `SELECT f.id AS field_id, fm.district AS district
+       FROM fields f
+       JOIN farms fm ON f.farm_id = fm.id
+       WHERE fm.id = ?`,
+      ['farm-barind-01']
+    );
+    assert.ok(Array.isArray(joined) && joined.length >= 2, 'SQLite JOIN query must return Barind plots');
+    assert.strictEqual(joined[0].district, 'Rajshahi');
+  });
 });

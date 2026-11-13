@@ -65,10 +65,13 @@ async function request(endpoint, options = {}) {
 
 describe('AgriSense Fusion Core API v1 Integration Suite', () => {
 
-  test('01. GET /api/health reports healthy and active member features', async () => {
+  test('01. GET /api/health reports healthy, SQLite WAL engine, and active member features', async () => {
     const res = await request('/api/health');
     assert.equal(res.status, 200);
     assert.equal(res.body.status, 'healthy');
+    assert.match(res.body.storageMode, /SQLite|PostgreSQL/i);
+    assert.equal(res.body.dbConnected, true);
+    assert.ok(res.body.sqliteDiagnostics?.table_counts?.farms >= 3);
     assert.equal(res.body.features.member1_satellite_gis, true);
     assert.equal(res.body.features.member2_weather_risk, true);
     assert.equal(res.body.features.member5_fao56_physics_water_balance, true);
@@ -182,20 +185,36 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
     assert.equal(res.body.metadata.verified_performance.block_c_pure_interior_accuracy, 90.64);
   });
 
-  test('11. POST /api/v1/satellite/classify predicts LULC class from 15 features', async () => {
-    const dummyFeatures = [
+  test('11. POST /api/v1/satellite/classify executes serialized Random Forest ensemble (15-feat & 21-feat)', async () => {
+    const croplandFeatures = [
       0.045, 0.078, 0.062, 0.345, 0.182, // B02, B03, B04, B08, B11
       0.695, -0.631, 0.309, 0.542, 0.285, // Indices
       0.180, 0.720, 0.540, 0.245, 0.190  // Temporal stats
     ];
     const res = await request('/api/v1/satellite/classify', {
       method: 'POST',
-      body: JSON.stringify({ features: dummyFeatures, parcel_id: 'field-godagari-a' })
+      body: JSON.stringify({ features: croplandFeatures, parcel_id: 'field-godagari-a' })
     });
     assert.equal(res.status, 200);
     assert.equal(res.body.success, true);
-    assert.ok(res.body.prediction.class_label);
+    assert.ok(res.body.source === 'MEMBER_1_RANDOM_FOREST_ENSEMBLE_ENGINE' || res.body.source === 'MEMBER_1_FASTAPI_LIVE');
+    assert.equal(res.body.prediction.class_label, 'Cropland');
     assert.ok(res.body.prediction.confidence > 0.5);
+    assert.ok(res.body.provenance?.trees_evaluated >= 30);
+
+    // Permanent water vector check through trained decision trees
+    const waterFeatures = [
+      0.068, 0.095, 0.055, 0.038, 0.025,
+      -0.43, 0.428, 0.206, -0.061, -0.08,
+      -0.25, 0.05, 0.30, 0.12, -0.04
+    ];
+    const waterRes = await request('/api/v1/satellite/classify', {
+      method: 'POST',
+      body: JSON.stringify({ features: waterFeatures, parcel_id: 'pond-01' })
+    });
+    assert.equal(waterRes.status, 200);
+    assert.equal(waterRes.body.prediction.class_label, 'Permanent_Water');
+    assert.ok(waterRes.body.prediction.confidence > 0.85);
   });
 
   test('12. GET /api/v1/agronomy/suitability returns BARC AEZ 26 crop ratings', async () => {
@@ -293,6 +312,16 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
     assert.ok(res.body.weather);
     assert.ok(res.body.physics);
     assert.ok(res.body.sensor);
+  });
+
+  test('21. GET /api/v1/satellite/scenes loads Sentinel-2 metadata from 407-scene CSV catalog', async () => {
+    const res = await request('/api/v1/satellite/scenes?limit=8&max_cloud_pct=10');
+    assert.equal(res.status, 200);
+    assert.equal(res.body.success, true);
+    assert.ok(res.body.total_catalog_scenes >= 400, `Expected >=400 scenes, got ${res.body.total_catalog_scenes}`);
+    assert.equal(res.body.scenes.length, 8);
+    assert.ok(res.body.scenes[0].scene_id.startsWith('S2'));
+    assert.ok(res.body.scenes[0].cloud_pct <= 10);
   });
 
 });
