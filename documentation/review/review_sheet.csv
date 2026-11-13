@@ -1,0 +1,8 @@
+target_id,category,system_parameter_or_recommendation,location_context,ground_physics,crop_feasibility,water_impact,adoption_access,overall_verdict,notes
+ROT-01,Crop Rotation,"Lentil -> Aus Rice -> T. Aman (MCDA Water Priority Score 81.4)",Godagari AEZ-26 High Barind,,,,,,
+ROT-02,Crop Rotation,"Mustard -> Mungbean -> T. Aman",Godagari AEZ-26 High Barind,,,,,,
+ROT-03,Crop Rotation,"Rabi Maize -> Mungbean -> T. Aman (Economic Priority)",Godagari AEZ-26 High Barind,,,,,,
+SOIL-01,FAO-56 Physics,"Silty Clay Loam Defaults: sat=0.435, FC=0.323, trig=0.244, WP=0.165, Zr=0.50m (TAW 79.0mm, RAW 39.5mm)",Godagari Plot A-1,,,,,,
+GW-01,Hydrology,"Aquifer Suction Limit Watch: 26.4m current proxy vs 28.0m threshold (0.65 m/yr decline)",Godagari BMDA Proxy,,,,,,
+SAT-01,Remote Sensing,"RandomForest_21Feat_Deep 4-Class LULC (85.77% Block C; Crop Species gated HTTP 422)",Godagari Sentinel-2 Footprint,,,,,,
+PATH-01,Plant Pathology,"17 Bangladesh Crop Diseases & Soil-Borne Rule (Potato Wilt leaf_wetness_applicable=false)",Rajshahi Microclimate,,,,,,
