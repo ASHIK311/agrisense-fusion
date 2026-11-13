@@ -143,8 +143,10 @@ function calculateDailyWaterBalance(params) {
     drNew = taw;
   }
 
+  const roundedDr = Math.round(drNew * 100) / 100;
   return {
-    drNext: Math.round(drNew * 100) / 100,
+    drNext: roundedDr,
+    drNew: roundedDr,
     peff: Math.round(peff * 100) / 100,
     irrigationMm: Math.round(irrigationMm * 100) / 100,
     deepPercolation: Math.round(deepPercolation * 100) / 100,

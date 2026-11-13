@@ -146,7 +146,7 @@ const CANDIDATE_ROTATIONS = [
     cycleType: 'triple_crop_sustainable',
     description: 'Replaces water-depleting Boro rice with short-duration oilseed and legume. Drastic groundwater conservation in Barind aquifer.',
     pros: [
-      'Reduces groundwater extraction by up to 65% compared to Boro monoculture',
+      'Estimated lower irrigation requirement than flooded Boro monoculture (provisional scenario model, unverified in field trials)',
       'Mungbean biological nitrogen fixation enriches soil and cuts chemical N fertilizer',
       'Continuous soil cover prevents dry-season crusting'
     ],
@@ -164,7 +164,7 @@ const CANDIDATE_ROTATIONS = [
     cycleType: 'triple_crop_feed_grain',
     description: 'Diversified cereal-legume rotation with high commercial return from poultry feed maize.',
     pros: [
-      'Uses 50% less irrigation water than Boro rice with significantly higher gross margin',
+      'Estimated lower seasonal irrigation water demand than flooded Boro rice in provisional scenario comparisons',
       'C4 crop (maize) offers high heat resilience in late dry season',
       'Residues provide excellent biomass for soil organic carbon'
     ],

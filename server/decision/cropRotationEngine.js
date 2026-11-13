@@ -27,12 +27,22 @@ function evaluateCropRotations(input = {}) {
     weatherContext = { meanTemp: 28.5, recentRainfallMm: 12.4 }
   } = input;
 
-  // 1. Normalize weights deterministically
+  // 1. Normalize weights deterministically (support both canonical keys and shorthand keys)
+  const hasExplicitWeights =
+    weights.waterConservation !== undefined ||
+    weights.water !== undefined ||
+    weights.soilHealth !== undefined ||
+    weights.soil !== undefined ||
+    weights.heatResilience !== undefined ||
+    weights.heat !== undefined ||
+    weights.economicPreference !== undefined ||
+    weights.economic !== undefined;
+
   const rawW = {
-    water: Math.max(0, Number(weights.waterConservation ?? 35)),
-    soil: Math.max(0, Number(weights.soilHealth ?? 25)),
-    heat: Math.max(0, Number(weights.heatResilience ?? 20)),
-    econ: Math.max(0, Number(weights.economicPreference ?? 20))
+    water: Math.max(0, Number(weights.waterConservation ?? weights.water ?? (hasExplicitWeights ? 0 : 35))),
+    soil: Math.max(0, Number(weights.soilHealth ?? weights.soil ?? (hasExplicitWeights ? 0 : 25))),
+    heat: Math.max(0, Number(weights.heatResilience ?? weights.heat ?? (hasExplicitWeights ? 0 : 20))),
+    econ: Math.max(0, Number(weights.economicPreference ?? weights.economic ?? (hasExplicitWeights ? 0 : 20)))
   };
 
   const totalRaw = rawW.water + rawW.soil + rawW.heat + rawW.econ;
@@ -180,10 +190,12 @@ function evaluateCropRotations(input = {}) {
     },
     topRecommendation: scoredCandidates[0],
     rankedRotations: scoredCandidates,
+    rankings: scoredCandidates,
     metadata: {
       methodology: 'Transparent Multi-Criteria Decision Analysis (MCDA) with FAO-56 Agronomic Constraints',
       isProvisional: true,
-      advisoryNote: 'Provisional decision support prototype. Local agricultural extension (DAE Bangladesh / BARI) validation recommended before field implementation.'
+      validationStatus: 'PROVISIONAL_CANDIDATE_SEQUENCES_NOT_FIELD_TRIAL_VALIDATED',
+      advisoryNote: 'Provisional candidate crop rotation sequences generated via deterministic MCDA scoring. Local agricultural extension (DAE Bangladesh / BARI) field validation recommended before adoption.'
     }
   };
 }

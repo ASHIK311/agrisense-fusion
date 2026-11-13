@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Hot-Dry Pre-Monsoon (Godagari April Extreme)",
+    "input": {
+      "date_val": "2023-04-15",
+      "t_max": 39.5,
+      "t_min": 24.0,
+      "rs_mj": 22.8,
+      "rh_mean": 38.0,
+      "wind_speed": 3.2,
+      "wind_height_m": 10.0,
+      "latitude_deg": 24.469,
+      "elevation_m": 28.0
+    },
+    "expected_python": {
+      "et0": 7.49,
+      "ra": 37.58,
+      "rso": 28.21,
+      "rns": 17.56,
+      "rnl": 4.59,
+      "rn": 12.97,
+      "es": 5.083,
+      "ea": 1.931,
+      "vpd": 3.151,
+      "u2": 2.39,
+      "delta": 0.2654,
+      "gamma": 0.0671
+    }
+  },
+  {
+    "name": "Cool-Dry Rabi (Godagari January Wheat/Mustard)",
+    "input": {
+      "date_val": "2023-01-15",
+      "t_max": 23.5,
+      "t_min": 11.2,
+      "rs_mj": 14.5,
+      "rh_mean": 68.0,
+      "wind_speed": 1.8,
+      "wind_height_m": 10.0,
+      "latitude_deg": 24.469,
+      "elevation_m": 28.0
+    },
+    "expected_python": {
+      "et0": 2.41,
+      "ra": 24.29,
+      "rso": 18.23,
+      "rns": 11.17,
+      "rnl": 4.36,
+      "rn": 6.8,
+      "es": 2.113,
+      "ea": 1.437,
+      "vpd": 0.676,
+      "u2": 1.35,
+      "delta": 0.1252,
+      "gamma": 0.0671
+    }
+  },
+  {
+    "name": "Monsoon Overcast (Godagari July High Humidity)",
+    "input": {
+      "date_val": "2023-07-20",
+      "t_max": 32.0,
+      "t_min": 26.5,
+      "rs_mj": 12.0,
+      "rh_mean": 88.0,
+      "wind_speed": 2.5,
+      "wind_height_m": 10.0,
+      "latitude_deg": 24.469,
+      "elevation_m": 28.0
+    },
+    "expected_python": {
+      "et0": 2.94,
+      "ra": 39.8,
+      "rso": 29.87,
+      "rns": 9.24,
+      "rnl": 0.58,
+      "rn": 8.66,
+      "es": 4.108,
+      "ea": 3.615,
+      "vpd": 0.493,
+      "u2": 1.87,
+      "delta": 0.2344,
+      "gamma": 0.0671
+    }
+  },
+  {
+    "name": "Post-Monsoon Aman Heading (Godagari October)",
+    "input": {
+      "date_val": "2023-10-10",
+      "t_max": 31.8,
+      "t_min": 22.4,
+      "rs_mj": 18.2,
+      "rh_mean": 75.0,
+      "wind_speed": 1.5,
+      "wind_height_m": 10.0,
+      "latitude_deg": 24.469,
+      "elevation_m": 28.0
+    },
+    "expected_python": {
+      "et0": 3.8,
+      "ra": 30.79,
+      "rso": 23.11,
+      "rns": 14.01,
+      "rnl": 3.03,
+      "rn": 10.98,
+      "es": 3.705,
+      "ea": 2.779,
+      "vpd": 0.926,
+      "u2": 1.12,
+      "delta": 0.2102,
+      "gamma": 0.0671
+    }
+  }
+]
