@@ -20,6 +20,21 @@ const {
   calculateDailyWaterBalance
 } = require('../physics/waterBalance');
 
+const __tmpUnitStoreDir = (() => {
+  const fs = require('fs');
+  const os = require('os');
+  const path = require('path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'agrisense-unit-test-'));
+  const file = path.join(dir, 'store.json');
+  fs.copyFileSync(path.join(__dirname, '../data/store.json'), file);
+  process.env.AGRISENSE_STORE_FILE = file;
+  return dir;
+})();
+process.on('exit', () => {
+  try {
+    require('fs').rmSync(__tmpUnitStoreDir, { recursive: true, force: true });
+  } catch {}
+});
 const sensorService = require('../services/sensorService');
 const { evaluateCropRotations } = require('../decision/cropRotationEngine');
 
