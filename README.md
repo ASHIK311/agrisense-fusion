@@ -65,7 +65,7 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 | **Automated Test Suite** | **`91 / 91` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`, includes SQLite + RF ensemble) |
 | **Live E2E Workflow Audit** | **`11 / 11` workflows + `3` gates** | `node server/tests/live_workflow_audit.js` |
 | **LULC Holdout (Offline Full `.pkl`)** | **`85.77%` Block C overall (`N=6,000`)** | Full `optimized_model.pkl` (`250` trees, full depth): `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior (`85.28%` for full `180`-tree 15-feat) |
-| **LULC Live Endpoint (`35`-Tree Subset)** | **`85.47%` (21-feat) · `83.98%` (15-feat)** | `POST /api/v1/satellite/classify` runs `35/250` (21-feat) & `35/180` (15-feat) trees (`max_depth=9`, `97.00%` / `96.40%` agreement with full `.pkl`) |
+| **LULC Live Endpoint (`35`-Tree Subset)** | **`85.47%` (21-feat) · `83.98%` (15-feat)** | `POST /api/v1/satellite/classify` runs `35/250` (21-feat) & `35/180` (15-feat) trees (`max_depth=9`, `97.00%` / `96.40%` agreement with full `.pkl`); all `6,000` holdout feature vectors in `block_c_holdout_6000_features.csv` are re-evaluated live in `npm test` & CI |
 | **Sentinel-2 Scene Index** | **`407` indexed scenes (`374` `<=15%` cloud)** | Metadata CSV index (`GET /api/v1/satellite/scenes`); raw GeoTIFF rasters hosted on Hugging Face |
 | **Local Persistence Engine** | **9 SQLite WAL tables + Atomic JSON `.bak`** | Built-in `node:sqlite` (`DatabaseSync`, experimental in Node 22) + crash-safe JSON mirror |
 | **Spatial 5-Fold CV** | **`84.63% ± 3.81%` (`N=20,000`)** | `RandomForest_21Feat_Deep` (`4` broad LULC classes) |

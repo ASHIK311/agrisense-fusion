@@ -256,6 +256,44 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
       assert.equal(pred21.class_id, vec.pred_runtime_21);
       assert.equal(pred15.class_id, vec.pred_runtime_15);
     }
+
+    // Re-execute serialized 35-tree ensembles in Node.js across ALL 6,000 Block C holdout feature vectors
+    const features6000Path = path.join(
+      __dirname,
+      '../../research/member_01_satellite_gis/reports/final_audit/block_c_holdout_6000_features.csv'
+    );
+    const featLines = fs.readFileSync(features6000Path, 'utf-8').trim().split(/\r?\n/);
+    assert.equal(featLines.length, 6001);
+    const featHeaders = featLines[0].split(',');
+    const idx21 = sampleBundle.feature_names_21.map((fn) => featHeaders.indexOf(fn));
+    const idx15 = sampleBundle.feature_names_15.map((fn) => featHeaders.indexOf(fn));
+    const yTrueCol = featHeaders.indexOf('y_true');
+    const full21Col = featHeaders.indexOf('pred_full_21feat_250t');
+    const full15Col = featHeaders.indexOf('pred_full_15feat_180t');
+
+    let correct21 = 0;
+    let agree21 = 0;
+    let correct15 = 0;
+    let agree15 = 0;
+    for (let i = 1; i < featLines.length; i += 1) {
+      const cells = featLines[i].split(',');
+      const vec21 = idx21.map((c) => Number(cells[c]));
+      const vec15 = idx15.map((c) => Number(cells[c]));
+      const yTrue = Number(cells[yTrueCol]);
+      const full21 = Number(cells[full21Col]);
+      const full15 = Number(cells[full15Col]);
+
+      const pred21 = classifyFeatures(vec21);
+      const pred15 = classifyFeatures(vec15);
+      if (pred21.class_id === yTrue) correct21 += 1;
+      if (pred21.class_id === full21) agree21 += 1;
+      if (pred15.class_id === yTrue) correct15 += 1;
+      if (pred15.class_id === full15) agree15 += 1;
+    }
+    assert.equal(correct21, 5128);
+    assert.equal(agree21, 5820);
+    assert.equal(correct15, 5039);
+    assert.equal(agree15, 5784);
   });
 
   test('12. GET /api/v1/agronomy/suitability returns BARC AEZ 26 crop ratings', async () => {

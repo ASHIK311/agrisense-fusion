@@ -25,6 +25,7 @@ ENSEMBLE_JSON_PATH = os.path.join(REPO_ROOT, 'server', 'data', 'satellite_rf_ens
 PREDICTIONS_CSV_PATH = os.path.join(REPORTS_AUDIT_DIR, 'runtime_subset_block_c_predictions.csv')
 SUMMARY_CSV_PATH = os.path.join(REPORTS_AUDIT_DIR, 'runtime_subset_block_c_summary.csv')
 SAMPLE_VECTORS_JSON_PATH = os.path.join(REPORTS_AUDIT_DIR, 'block_c_holdout_sample_vectors.json')
+FEATURES_6000_CSV_PATH = os.path.join(REPORTS_AUDIT_DIR, 'block_c_holdout_6000_features.csv')
 
 DEFAULT_HF_ARCHIVE_DIR = os.path.join('F:' + os.sep, 'nasa_project_hf_dataset', 'satellite_gis_barind')
 
@@ -255,7 +256,28 @@ def generate_full_evaluation(hf_dir):
             'samples': sample_vectors,
         }, f, indent=2)
 
-    print(f'Generated Block C evaluation artifacts for {len(prediction_rows)} samples + {len(sample_vectors)} feature vectors.')
+    feat_6000_fields = [
+        'sample_idx', 'row', 'col', 'is_pure', 'y_true',
+        'pred_full_21feat_250t', 'pred_full_15feat_180t',
+    ] + list(feats_21)
+    with open(FEATURES_6000_CSV_PATH, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=feat_6000_fields)
+        writer.writeheader()
+        for i in range(len(holdout_df)):
+            row_dict = {
+                'sample_idx': i,
+                'row': int(holdout_df.loc[i, 'row']),
+                'col': int(holdout_df.loc[i, 'col']),
+                'is_pure': 1 if bool(holdout_df.loc[i, 'is_pure']) else 0,
+                'y_true': int(y_ho[i]),
+                'pred_full_21feat_250t': int(pred_full_21[i]),
+                'pred_full_15feat_180t': int(pred_full_15[i]),
+            }
+            for fn, val in zip(feats_21, X_ho_21[i]):
+                row_dict[fn] = f'{float(val):.10g}'
+            writer.writerow(row_dict)
+
+    print(f'Generated Block C evaluation artifacts for {len(prediction_rows)} samples, {len(prediction_rows)}x21 feature matrix, + {len(sample_vectors)} sample vectors.')
 
 
 def verify_csv_and_vectors():
@@ -300,12 +322,57 @@ def verify_csv_and_vectors():
         assert p21 == s['pred_runtime_21'], f"21-feat tree mismatch at sample {s['sample_idx']}"
         assert p15 == s['pred_runtime_15'], f"15-feat tree mismatch at sample {s['sample_idx']}"
 
-    print(f'[OK] Re-verified live JSON tree-walk across {len(samples)} real Block C feature vectors (15-feat & 21-feat).')
+    print(f'[OK] Re-verified live JSON tree-walk across {len(samples)} JSON sample vectors (15-feat & 21-feat).')
+
+    # Full 6,000-vector live tree-walk reproduction without GeoTIFFs/.pkl
+    with open(FEATURES_6000_CSV_PATH, 'r', encoding='utf-8') as f:
+        feat_rows = list(csv.DictReader(f))
+    assert len(feat_rows) == 6000, f'Expected 6000 Block C feature rows, found {len(feat_rows)}'
+
+    feat_names_21 = ens['rf_21feat']['features']
+    feat_names_15 = ens['rf_15feat']['features']
+    live_rows = []
+    for i, frow in enumerate(feat_rows):
+        vec21 = [float(frow[fn]) for fn in feat_names_21]
+        vec15 = [float(frow[fn]) for fn in feat_names_15]
+        p21, _ = predict_json_ensemble(trees_21, vec21)
+        p15, _ = predict_json_ensemble(trees_15, vec15)
+
+        prow = pred_rows[i]
+        assert int(frow['sample_idx']) == int(prow['sample_idx']) == i, f'Row index mismatch at {i}'
+        assert int(frow['y_true']) == int(prow['y_true']), f'y_true mismatch at {i}'
+        assert p21 == int(prow['pred_runtime_21feat_35t']), (
+            f"Live 21-feat 35-tree prediction mismatch at sample {i}: live={p21} != csv={prow['pred_runtime_21feat_35t']}"
+        )
+        assert p15 == int(prow['pred_runtime_15feat_35t']), (
+            f"Live 15-feat 35-tree prediction mismatch at sample {i}: live={p15} != csv={prow['pred_runtime_15feat_35t']}"
+        )
+        live_rows.append({
+            'y_true': frow['y_true'],
+            'is_pure': frow['is_pure'],
+            'pred_full_21feat_250t': frow['pred_full_21feat_250t'],
+            'pred_runtime_21feat_35t': str(p21),
+            'pred_full_15feat_180t': frow['pred_full_15feat_180t'],
+            'pred_runtime_15feat_35t': str(p15),
+        })
+
+    live_21 = compute_metrics_from_rows(live_rows, 'pred_runtime_21feat_35t', 'pred_full_21feat_250t')
+    live_15 = compute_metrics_from_rows(live_rows, 'pred_runtime_15feat_35t', 'pred_full_15feat_180t')
+    for k, v in live_21.items():
+        assert str(v) == str(summary_by_variant['Runtime_21Feat_35Trees_d9'][k]), f'Live 21-feat mismatch on {k}'
+    for k, v in live_15.items():
+        assert str(v) == str(summary_by_variant['Runtime_15Feat_35Trees_d9'][k]), f'Live 15-feat mismatch on {k}'
+
+    print(
+        f"[OK] Re-executed live JSON 35-tree ensembles across ALL 6,000 Block C feature vectors (0 mismatches): "
+        f"21-feat={live_21['n_correct']}/6000 ({live_21['overall_accuracy_pct']}% acc, {live_21['full_pkl_agreement_pct']}% full-pkl agree) | "
+        f"15-feat={live_15['n_correct']}/6000 ({live_15['overall_accuracy_pct']}% acc, {live_15['full_pkl_agreement_pct']}% full-pkl agree)"
+    )
 
 
 def main():
     parser = argparse.ArgumentParser(description='Evaluate or verify Member 1 Block C full vs runtime RF subset.')
-    parser.add_argument('--verify-csv', action='store_true', help='Verify committed CSV predictions and 40 holdout feature vectors using stdlib only.')
+    parser.add_argument('--verify-csv', action='store_true', help='Verify committed CSV predictions and all 6,000 holdout feature vectors using stdlib only.')
     parser.add_argument('--hf-dir', default=DEFAULT_HF_ARCHIVE_DIR, help='Path to satellite_gis_barind GeoTIFF/model directory.')
     args = parser.parse_args()
 
