@@ -51,7 +51,8 @@ class AssistantService {
       if (!conv) {
         conv = conversationService.createConversation(message.slice(0, 45) + '...', userContext);
       }
-      conversationService.appendMessage(conv.id, 'user', message.trim(), {}, userContext);
+      const { conversation: updatedConv } = conversationService.appendMessage(conv.id, 'user', message.trim(), {}, userContext);
+      conv = updatedConv;
       history = (conv.messages || []).slice(-6).map((m) => ({ role: m.role, content: m.content }));
     }
 

@@ -39,13 +39,16 @@ pnpm-debug.log*
 *.sw?
 Thumbs.db
 
-# Temporary and cache files
+# Temporary, backup, and local SQLite runtime files
 .cache/
 .eslintcache
 *.tmp
 *.tmp.*
 *.bak
 *.json.bak
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
 
 # Heavy GeoTIFF rasters & Python virtualenvs (hosted on Hugging Face: ashik1236/nasatest)
 .venv/

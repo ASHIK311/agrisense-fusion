@@ -130,13 +130,18 @@ app.use('/api/assistant', assistantRoutes);
 // 1. Health Endpoint
 app.get(['/api/health', '/api/v1/health'], (req, res) => {
   const dbStatus = getDbStatus();
+  const sqliteDiag = storage.getSqliteDiagnostics();
   res.json({
     status: 'healthy',
     application: 'AgriSense Fusion',
     version: '2.1.0-competition-verified',
     environment: process.env.NODE_ENV || 'development',
-    storageMode: dbStatus.mode === 'postgres' ? 'PostgreSQL Pool' : 'Resilient Local JSON Store (PostgreSQL runtime not verified; schema.sql available)',
+    storageMode: dbStatus.mode === 'postgres'
+      ? 'PostgreSQL Pool'
+      : 'SQLite Relational Engine (node:sqlite WAL) + Atomic JSON Mirror',
+    dbEngine: dbStatus.engine,
     dbConnected: dbStatus.isConnected,
+    sqliteDiagnostics: sqliteDiag,
     timestamp: new Date().toISOString(),
     uptimeSeconds: Math.round(process.uptime()),
     features: {
