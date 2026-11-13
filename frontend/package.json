@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.15.1",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.71.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",

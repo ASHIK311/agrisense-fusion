@@ -1,1 +1,381 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <!-- Brushed Metallic Outer Bezel Gradients -->
+    <linearGradient id="as-metalRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="18%" stop-color="#94a3b8" />
+      <stop offset="35%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="68%" stop-color="#cbd5e1" />
+      <stop offset="85%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <linearGradient id="as-metalInner" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- Cyan to Emerald Neon Ring Gradient -->
+    <linearGradient id="as-neonRing" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="45%" stop-color="#38bdf8" />
+      <stop offset="75%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Deep Cosmos Interior Gradient -->
+    <radialGradient id="as-spaceBg" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#0b2239" />
+      <stop offset="55%" stop-color="#040d1a" />
+      <stop offset="100%" stop-color="#02050a" />
+    </radialGradient>
+
+    <!-- 3D Chrome Gradients for "AS" Monogram -->
+    <linearGradient id="as-chromeFace" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#e2e8f0" />
+      <stop offset="48%" stop-color="#94a3b8" />
+      <stop offset="52%" stop-color="#f8fafc" />
+      <stop offset="78%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+
+    <linearGradient id="as-chromeBevelDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a5f" />
+    </linearGradient>
+
+    <linearGradient id="as-cyanEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="as-greenEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0" />
+      <stop offset="50%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Organic Metallic Leaf Gradients -->
+    <linearGradient id="as-leafLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="45%" stop-color="#6ee7b7" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <linearGradient id="as-leafRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d1fae5" />
+      <stop offset="50%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#065f46" />
+    </linearGradient>
+
+    <linearGradient id="as-stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+
+    <!-- Orbit Ring & Planet Gradients -->
+    <linearGradient id="as-orbitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="35%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#6ee7b7" />
+    </linearGradient>
+
+    <radialGradient id="as-planetBlue" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#bae6fd" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#082f49" />
+    </radialGradient>
+
+    <radialGradient id="as-planetGreen" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#d1fae5" />
+      <stop offset="45%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </radialGradient>
+
+    <!-- Text Metallic Fill -->
+    <linearGradient id="as-textChrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="48%" stop-color="#e2e8f0" />
+      <stop offset="52%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- Glow & Shadow Filters -->
+    <filter id="as-neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1" />
+      <feGaussianBlur stdDeviation="14" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="as-shadow3D" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+
+    <clipPath id="as-cosmosClip">
+      <circle cx="300" cy="300" r="241" />
+    </clipPath>
+  </defs>
+
+  <!-- 1. OUTER BRUSHED METALLIC BEZEL -->
+  <circle cx="300" cy="300" r="286" fill="url(#as-metalRim)" filter="url(#as-shadow3D)" />
+  <circle cx="300" cy="300" r="282" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" />
+  <circle cx="300" cy="300" r="264" fill="url(#as-metalInner)" />
+  <circle cx="300" cy="300" r="254" fill="#030712" />
+
+  <!-- 2. GLOWING CYAN-EMERALD NEON BORDER RING -->
+  <circle
+    cx="300"
+    cy="300"
+    r="246"
+    fill="none"
+    stroke="url(#as-neonRing)"
+    stroke-width="6.5"
+    filter="url(#as-neonGlow)"
+  />
+  <circle
+    cx="300"
+    cy="300"
+    r="246"
+    fill="none"
+    stroke="#e0f2fe"
+    stroke-width="1.5"
+    stroke-opacity="0.75"
+  />
+
+  <!-- 3. COSMOS BACKGROUND, GLOBE & STARS -->
+  <g clip-path="url(#as-cosmosClip)">
+    <circle cx="300" cy="300" r="242" fill="url(#as-spaceBg)" />
+
+    <!-- Ambient Cyan & Emerald Nebula Glows -->
+    <circle cx="150" cy="300" r="160" fill="#0284c7" opacity="0.14" filter="url(#as-neonGlow)" />
+    <circle cx="450" cy="280" r="160" fill="#10b981" opacity="0.12" filter="url(#as-neonGlow)" />
+
+    <!-- Subtle Earth Globe Silhouette -->
+    <g opacity="0.22" transform="translate(300, 260)">
+      <circle cx="0" cy="0" r="148" fill="#1e293b" stroke="#475569" stroke-width="1.2" />
+      <path
+        d="M-95,-75 C-70,-95 -30,-85 -15,-65 C0,-45 -25,-20 -45,-10 C-65,0 -55,30 -35,50 C-15,70 -35,110 -65,95 C-95,80 -115,20 -110,-25 Z
+           M15,-105 C45,-115 95,-85 110,-45 C125,-5 95,35 75,65 C55,95 25,80 15,50 C5,20 35,-10 20,-40 C5,-70 -5,-95 15,-105 Z
+           M-20,-130 C5,-138 35,-130 20,-115 C5,-100 -25,-115 -20,-130 Z"
+        fill="#475569"
+      />
+    </g>
+
+    <!-- Starfield & 4-Point Sparkles -->
+    <g fill="#ffffff">
+      <circle cx="120" cy="180" r="1.5" opacity="0.7" />
+      <circle cx="155" cy="125" r="2" opacity="0.8" />
+      <circle cx="220" cy="95" r="1.3" opacity="0.5" />
+      <circle cx="380" cy="98" r="1.8" opacity="0.7" />
+      <circle cx="455" cy="145" r="1.4" opacity="0.6" />
+      <circle cx="490" cy="215" r="2" opacity="0.75" />
+      <circle cx="105" cy="365" r="1.6" opacity="0.65" />
+      <circle cx="145" cy="415" r="1.2" opacity="0.5" />
+      <circle cx="475" cy="370" r="1.8" opacity="0.8" />
+      <circle cx="430" cy="420" r="1.4" opacity="0.5" />
+
+      <!-- 4-Point Sparkle Stars -->
+      <path d="M168,185 L171,196 L182,199 L171,202 L168,213 L165,202 L154,199 L165,196 Z" fill="#e0f2fe" opacity="0.9" />
+      <path d="M298,132 L302,147 L317,151 L302,155 L298,170 L294,155 L279,151 L294,147 Z" fill="#6ee7b7" opacity="0.95" />
+      <path d="M398,118 L401,128 L411,131 L401,134 L398,144 L395,134 L385,131 L395,128 Z" fill="#a7f3d0" opacity="0.85" />
+      <path d="M408,382 L410,390 L418,392 L410,394 L408,402 L406,394 L398,392 L406,390 Z" fill="#bae6fd" opacity="0.8" />
+    </g>
+
+    <!-- 4. BACK HALF OF ORBIT RING -->
+    <g transform="rotate(-11 300 285)">
+      <path
+        d="M 82 285 A 218 46 0 0 1 518 285"
+        fill="none"
+        stroke="url(#as-orbitGrad)"
+        stroke-width="4"
+        stroke-opacity="0.45"
+      />
+    </g>
+
+    <!-- 5. 3D METALLIC "A" & "S" MONOGRAM -->
+    <g filter="url(#as-shadow3D)">
+      <!-- LETTER "A" -->
+      <g>
+        <path
+          d="M236,146 L136,334 L178,334 L201,286 L252,286 L266,315 L298,298 L236,146 Z
+             M212,256 L234,205 L254,256 Z
+             M234,312 L192,388 L230,388 L263,332 Z"
+          fill="url(#as-chromeBevelDark)"
+          transform="translate(-6, 7)"
+        />
+        <path
+          d="M236,146 L136,334 L178,334 L201,286 L252,286 L266,315 L298,298 L236,146 Z
+             M212,256 L234,205 L254,256 Z"
+          fill="url(#as-chromeFace)"
+          stroke="#ffffff"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M234,312 L192,388 L230,388 L263,332 Z"
+          fill="url(#as-chromeFace)"
+          stroke="url(#as-cyanEdge)"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M236,154 L146,328 L174,328 L198,278 L256,278"
+          fill="none"
+          stroke="url(#as-cyanEdge)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+      </g>
+
+      <!-- LETTER "S" -->
+      <g>
+        <path
+          d="M422,168 C372,158 316,174 314,218 C312,262 396,268 396,312 C396,344 352,350 326,338 L314,366 C332,374 350,376 368,374 L388,412 L416,418 L394,368 C424,356 444,334 442,302 C440,248 358,244 358,210 C358,190 392,190 412,198 Z"
+          fill="url(#as-chromeBevelDark)"
+          transform="translate(6, 7)"
+        />
+        <path
+          d="M422,168 C372,158 316,174 314,218 C312,262 396,268 396,312 C396,344 352,350 326,338 L314,366 C332,374 350,376 368,374 L388,412 L416,418 L394,368 C424,356 444,334 442,302 C440,248 358,244 358,210 C358,190 392,190 412,198 Z"
+          fill="url(#as-chromeFace)"
+          stroke="#ffffff"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M418,172 C374,164 324,178 322,218 C320,256 402,262 402,312 C402,348 360,356 330,344"
+          fill="none"
+          stroke="url(#as-greenEdge)"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </g>
+    </g>
+
+    <!-- 6. CENTRAL METALLIC-ORGANIC SPROUT (7 LEAVES + CURVED STEM) -->
+    <g filter="url(#as-shadow3D)">
+      <path
+        d="M254,404 C282,400 298,370 300,325 C302,288 298,255 294,230"
+        fill="none"
+        stroke="url(#as-stemGrad)"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M254,404 C282,400 298,370 300,325 C302,288 298,255 294,230"
+        fill="none"
+        stroke="#ecfdf5"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.8"
+      />
+
+      <g transform="translate(292, 224) rotate(-8)">
+        <path d="M0,0 C-18,-22 -14,-52 0,-68 C14,-52 18,-22 0,0 Z" fill="url(#as-leafLeft)" stroke="#ecfdf5" stroke-width="1.5" />
+        <path d="M0,-4 L0,-62" stroke="#064e3b" stroke-width="1.5" opacity="0.5" />
+      </g>
+
+      <g transform="translate(295, 262) rotate(-42)">
+        <path d="M0,0 C-16,-18 -14,-44 0,-58 C14,-44 16,-18 0,0 Z" fill="url(#as-leafLeft)" stroke="#d1fae5" stroke-width="1.5" />
+        <path d="M0,-4 L0,-50" stroke="#064e3b" stroke-width="1.4" opacity="0.5" />
+      </g>
+
+      <g transform="translate(299, 266) rotate(44)">
+        <path d="M0,0 C-16,-18 -14,-44 0,-58 C14,-44 16,-18 0,0 Z" fill="url(#as-leafRight)" stroke="#d1fae5" stroke-width="1.5" />
+        <path d="M0,-4 L0,-50" stroke="#064e3b" stroke-width="1.4" opacity="0.5" />
+      </g>
+
+      <g transform="translate(297, 304) rotate(-58)">
+        <path d="M0,0 C-17,-18 -14,-46 0,-60 C14,-46 17,-18 0,0 Z" fill="url(#as-leafLeft)" stroke="#d1fae5" stroke-width="1.5" />
+        <path d="M0,-4 L0,-52" stroke="#064e3b" stroke-width="1.4" opacity="0.5" />
+      </g>
+
+      <g transform="translate(301, 308) rotate(56)">
+        <path d="M0,0 C-17,-18 -14,-46 0,-60 C14,-46 17,-18 0,0 Z" fill="url(#as-leafRight)" stroke="#d1fae5" stroke-width="1.5" />
+        <path d="M0,-4 L0,-52" stroke="#064e3b" stroke-width="1.4" opacity="0.5" />
+      </g>
+
+      <g transform="translate(295, 344) rotate(-68)">
+        <path d="M0,0 C-14,-15 -12,-38 0,-50 C12,-38 14,-15 0,0 Z" fill="url(#as-leafLeft)" stroke="#a7f3d0" stroke-width="1.4" />
+      </g>
+
+      <g transform="translate(299, 346) rotate(66)">
+        <path d="M0,0 C-14,-15 -12,-38 0,-50 C12,-38 14,-15 0,0 Z" fill="url(#as-leafRight)" stroke="#a7f3d0" stroke-width="1.4" />
+      </g>
+    </g>
+
+    <!-- 7. FRONT HALF OF SWEEPING ORBIT RING & PLANETARY NODES -->
+    <g transform="rotate(-11 300 285)">
+      <path
+        d="M 82 285 A 218 46 0 0 0 518 285"
+        fill="none"
+        stroke="url(#as-orbitGrad)"
+        stroke-width="7.5"
+        stroke-linecap="round"
+        filter="url(#as-neonGlow)"
+      />
+      <path
+        d="M 82 285 A 218 46 0 0 0 518 285"
+        fill="none"
+        stroke="#e0f2fe"
+        stroke-width="2.2"
+        stroke-linecap="round"
+      />
+
+      <circle cx="116" cy="308" r="10.5" fill="url(#as-planetGreen)" stroke="#a7f3d0" stroke-width="1.5" filter="url(#as-neonGlow)" />
+      <circle cx="468" cy="314" r="13.5" fill="url(#as-planetBlue)" stroke="#7dd3fc" stroke-width="1.8" filter="url(#as-neonGlow)" />
+      <circle cx="476" cy="264" r="6.5" fill="url(#as-planetBlue)" stroke="#bae6fd" stroke-width="1" />
+    </g>
+
+    <circle cx="436" cy="366" r="8" fill="url(#as-planetGreen)" opacity="0.85" />
+
+    <!-- 8. RESTYLED "AGRISENSE" SLEEK CHROME TYPOGRAPHY -->
+    <g transform="translate(300, 462) rotate(5)" filter="url(#as-shadow3D)">
+      <line x1="-185" y1="-34" x2="-30" y2="-34" stroke="url(#as-neonRing)" stroke-width="2" opacity="0.85" />
+      <polygon points="0,-39 6,-34 0,-29 -6,-34" fill="#34d399" />
+      <line x1="30" y1="-34" x2="185" y2="-34" stroke="url(#as-neonRing)" stroke-width="2" opacity="0.85" />
+
+      <text
+        x="0"
+        y="3"
+        text-anchor="middle"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-weight="800"
+        letter-spacing="0.22em"
+        font-size="34"
+        fill="#020617"
+        stroke="#0f172a"
+        stroke-width="4"
+      >
+        AGRISENSE
+      </text>
+
+      <text
+        x="0"
+        y="0"
+        text-anchor="middle"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-weight="800"
+        letter-spacing="0.22em"
+        font-size="34"
+        fill="url(#as-textChrome)"
+        stroke="#38bdf8"
+        stroke-width="0.6"
+        stroke-opacity="0.6"
+      >
+        AGRISENSE
+      </text>
+
+      <line x1="-125" y1="16" x2="125" y2="16" stroke="url(#as-neonRing)" stroke-width="1.8" opacity="0.75" filter="url(#as-neonGlow)" />
+    </g>
+  </g>
+</svg>
