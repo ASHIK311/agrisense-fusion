@@ -1,4 +1,6 @@
 import React from 'react';
+import { Droplets, AlertTriangle, ShieldAlert } from 'lucide-react';
+import ProvenanceBadge from './ProvenanceBadge';
 
 export default function GroundwaterPanel({ groundwater, farm }) {
   const depth = groundwater?.depth_below_surface_m || 26.4;
@@ -7,99 +9,89 @@ export default function GroundwaterPanel({ groundwater, farm }) {
   const drawdownRate = groundwater?.annual_drawdown_rate_m || 0.65;
 
   return (
-    <div>
-      <div style={{ marginBottom: '1.25rem' }}>
-        <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)' }}>
-          Barind Tract Deep Tubewell Aquifer Monitoring
-        </h2>
-        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-          Groundwater level monitoring for deep irrigation tubewells (DTW) across Barind Multipurpose Development Authority (BMDA) zones.
-        </p>
+    <div className="card" style={{ padding: '1.25rem 1.5rem' }}>
+      <div
+        className="card-title"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+          gap: '0.75rem',
+          marginBottom: '1rem',
+        }}
+      >
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: 700 }}>
+            <Droplets size={16} style={{ color: 'var(--accent-water)' }} />
+            <span>Barind Deep Tubewell Aquifer Monitoring &amp; Drawdown Proxy</span>
+          </div>
+          <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0.2rem 0 0' }}>
+            Groundwater level monitoring for deep irrigation tubewells (DTW) across BMDA zones in Godagari Upazila.
+          </p>
+        </div>
+        <ProvenanceBadge
+          type="SYNTHETIC PROXY"
+          label="BMDA REGIONAL PROXY"
+          source="Jahan et al. (2010) & BMDA Monitoring"
+          calibration="Synthetic proxy based on published regional drawdown rates"
+          compact
+        />
       </div>
 
       {/* Honest Label Banner */}
-      <div className="banner banner-warning">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <div>
-          <strong>Hydrological Caution:</strong> Groundwater water-table measurements are labelled demonstration readings. 
-          Total regional aquifer storage cannot and must not be inferred from a single monitoring point.
-        </div>
+      <div
+        className="surface"
+        style={{
+          padding: '0.9rem 1.1rem',
+          borderLeft: '4px solid var(--accent-amber)',
+          marginBottom: '1.25rem',
+          fontSize: '0.8rem',
+          color: 'var(--text-secondary)',
+          lineHeight: 1.55,
+        }}
+      >
+        <strong>Synthetic Proxy Disclosure:</strong> Groundwater table measurements are synthetic proxy readings derived from published BMDA trend information (<code>is_simulated: true</code>). The 28.0m critical threshold marks the centrifugal pump suction limit in AEZ-26; depths beyond 28m cause pump cavitation and irrigation failure. This is not a live automated telemetry feed.
       </div>
 
-      <div className="grid-cards">
-        <div className="card">
-          <div className="card-title">
-            <span>Water Depth Below Surface</span>
-            <span className="badge badge-demo">Simulated DTW</span>
-          </div>
-          <div className="card-value">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1rem' }}>
+        <div className="surface tilt-card" style={{ padding: '1rem' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Water Depth Below Surface</div>
+          <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', marginTop: '0.2rem' }}>
             {depth} <span className="card-unit">metres</span>
           </div>
-          <div className="card-subtext">
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.2rem' }}>
             Well ID: <strong>{groundwater?.well_identifier || 'DTW-BMDA-GODAGARI-42'}</strong>
           </div>
         </div>
 
-        <div className="card">
-          <div className="card-title">
-            <span>Critical Drawdown Margin</span>
-            <span className="badge badge-danger">Warning Level</span>
-          </div>
-          <div className="card-value" style={{ color: '#fbbf24' }}>
+        <div className="surface tilt-card" style={{ padding: '1rem' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Critical Drawdown Margin</div>
+          <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-amber)', marginTop: '0.2rem' }}>
             {buffer} <span className="card-unit">m to critical</span>
           </div>
-          <div className="card-subtext">
-            Critical suction limit threshold: <strong>{critical} metres</strong>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.2rem' }}>
+            Critical suction limit: <strong>{critical} metres</strong>
           </div>
         </div>
 
-        <div className="card">
-          <div className="card-title">
-            <span>Annual Depletion Rate</span>
-            <span className="badge badge-danger">High Risk</span>
-          </div>
-          <div className="card-value">
+        <div className="surface tilt-card" style={{ padding: '1rem' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Annual Depletion Rate</div>
+          <div className="mono" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-terracotta)', marginTop: '0.2rem' }}>
             +{drawdownRate} <span className="card-unit">m/year</span>
           </div>
-          <div className="card-subtext">
-            Driven by continuous dry-season Boro rice flood irrigation.
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.2rem' }}>
+            Driven by continuous dry-season Boro rice flood irrigation
           </div>
         </div>
 
-        <div className="card">
-          <div className="card-title">
-            <span>Aquifer Sustainability Alert</span>
-            <span className="badge badge-live">Recommendation</span>
-          </div>
-          <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#f87171', marginTop: '0.4rem' }}>
+        <div className="surface tilt-card" style={{ padding: '1rem' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Aquifer Sustainability Alert</div>
+          <div style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--accent-danger)', marginTop: '0.3rem' }}>
             Shift from Boro Monoculture
           </div>
-          <div className="card-subtext">
-            Switching to Mustard-Mungbean-Aman reduces deep extraction by ~65%.
-          </div>
-        </div>
-      </div>
-
-      {/* Visual Depth Gauge */}
-      <div className="card" style={{ marginTop: '1.5rem' }}>
-        <div className="card-title">
-          <span>Aquifer Water Table Profile</span>
-          <span className="badge badge-demo">Illustrative Profile</span>
-        </div>
-        <div style={{ padding: '1rem 0' }}>
-          <div style={{ height: '36px', background: '#1e293b', borderRadius: '8px', overflow: 'hidden', position: 'relative', display: 'flex' }}>
-            <div style={{ width: `${(depth / 35) * 100}%`, background: '#3b82f6', height: '100%', transition: 'width 0.5s ease' }}></div>
-            <div style={{ position: 'absolute', right: `${(1 - (critical / 35)) * 100}%`, top: 0, bottom: 0, width: '3px', background: '#ef4444' }}></div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-            <span>Ground Surface (0m)</span>
-            <span style={{ color: '#60a5fa' }}>Current Depth ({depth}m)</span>
-            <span style={{ color: '#ef4444' }}>Critical Threshold ({critical}m)</span>
-            <span>Bedrock (35m)</span>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', marginTop: '0.2rem' }}>
+            Recommended: Pulse/Mustard/T. Aman rotation
           </div>
         </div>
       </div>

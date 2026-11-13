@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Zap, AlertTriangle, X } from 'lucide-react';
 
 export default function SimulateReadingModal({ isOpen, onClose, onReadingCreated }) {
   if (!isOpen) return null;
@@ -30,15 +31,15 @@ export default function SimulateReadingModal({ isOpen, onClose, onReadingCreated
       is_simulated: true, // HONESTLY LABELED AS SIMULATED
       raw_payload: {
         simulated: true,
-        source: 'Frontend Demonstration Console'
-      }
+        source: 'Frontend Demonstration Console',
+      },
     };
 
     try {
       const res = await fetch('/api/sensor-readings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -56,41 +57,81 @@ export default function SimulateReadingModal({ isOpen, onClose, onReadingCreated
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal-content"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          maxWidth: '520px',
+          padding: '1.5rem',
+          borderRadius: 'var(--radius-md)',
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-subtle)',
+          boxShadow: 'var(--shadow-lg)',
+        }}
+      >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 700 }}>
-            Simulate ESP32 Sensor Telemetry
-          </h3>
-          <button onClick={onClose} style={{ color: 'var(--text-dim)', fontSize: '1.4rem' }}>
-            &times;
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            <Zap size={18} style={{ color: 'var(--accent-terracotta)' }} />
+            <h3 style={{ fontSize: '1.15rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>
+              Simulate ESP32 Sensor Telemetry
+            </h3>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="btn btn-secondary"
+            style={{ padding: '0.3rem 0.5rem' }}
+            aria-label="Close modal"
+          >
+            <X size={16} />
           </button>
         </div>
 
-        <div className="banner banner-warning" style={{ marginBottom: '1rem' }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
+        <div
+          className="surface"
+          style={{
+            padding: '0.8rem 1rem',
+            borderLeft: '4px solid var(--accent-amber)',
+            marginBottom: '1.25rem',
+            fontSize: '0.78rem',
+            color: 'var(--text-secondary)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.6rem',
+          }}
+        >
+          <AlertTriangle size={18} style={{ color: 'var(--accent-amber)', flexShrink: 0 }} />
           <div>
-            <strong>Simulated Telemetry Warning:</strong> This reading will be permanently flagged as 
+            <strong>Simulated Telemetry Notice:</strong> This reading will be permanently flagged as{' '}
             <code>is_simulated: true</code> to maintain scientific integrity and auditability.
           </div>
         </div>
 
         {error && (
-          <div className="banner" style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#fca5a5', border: '1px solid #ef4444' }}>
+          <div
+            style={{
+              padding: '0.75rem',
+              background: 'rgba(214, 95, 88, 0.1)',
+              border: '1px solid var(--accent-danger)',
+              borderRadius: '8px',
+              color: 'var(--accent-danger)',
+              fontSize: '0.8rem',
+              marginBottom: '1rem',
+            }}
+          >
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Soil Moisture VWC (0.0 to 0.65): <strong>{(vwc * 100).toFixed(1)}% VWC</strong></label>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+          <div>
+            <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.3rem' }}>
+              Soil Moisture (VWC: 0.05 to 0.50): <strong className="mono" style={{ color: 'var(--accent-water)' }}>{(vwc * 100).toFixed(1)}% VWC</strong>
+            </label>
             <input
               type="range"
-              min="0.08"
-              max="0.45"
+              min="0.05"
+              max="0.50"
               step="0.01"
               value={vwc}
               onChange={(e) => setVwc(e.target.value)}
@@ -98,60 +139,71 @@ export default function SimulateReadingModal({ isOpen, onClose, onReadingCreated
             />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-            <div className="form-group">
-              <label>Soil Temp (°C):</label>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
+            <div>
+              <label style={{ fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.3rem' }}>
+                Soil Temp (°C)
+              </label>
               <input
                 type="number"
                 step="0.1"
-                className="form-control"
                 value={soilTemp}
                 onChange={(e) => setSoilTemp(e.target.value)}
+                style={{ width: '100%', fontSize: '0.82rem', padding: '0.45rem 0.65rem' }}
               />
             </div>
-
-            <div className="form-group">
-              <label>Soil pH (0-14):</label>
+            <div>
+              <label style={{ fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.3rem' }}>
+                Air Temp (°C)
+              </label>
               <input
                 type="number"
                 step="0.1"
-                className="form-control"
-                value={soilPh}
-                onChange={(e) => setSoilPh(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-            <div className="form-group">
-              <label>Ambient Air Temp (°C):</label>
-              <input
-                type="number"
-                step="0.1"
-                className="form-control"
                 value={airTemp}
                 onChange={(e) => setAirTemp(e.target.value)}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Relative Humidity (%):</label>
-              <input
-                type="number"
-                step="0.1"
-                className="form-control"
-                value={rh}
-                onChange={(e) => setRh(e.target.value)}
+                style={{ width: '100%', fontSize: '0.82rem', padding: '0.45rem 0.65rem' }}
               />
             </div>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginTop: '1.25rem' }}>
-            <button type="button" className="btn btn-secondary" onClick={onClose}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
+            <div>
+              <label style={{ fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.3rem' }}>
+                Relative Humidity (%)
+              </label>
+              <input
+                type="number"
+                step="0.5"
+                value={rh}
+                onChange={(e) => setRh(e.target.value)}
+                style={{ width: '100%', fontSize: '0.82rem', padding: '0.45rem 0.65rem' }}
+              />
+            </div>
+            <div>
+              <label style={{ fontSize: '0.76rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: '0.3rem' }}>
+                Soil pH (4.0 – 9.0)
+              </label>
+              <input
+                type="number"
+                step="0.1"
+                value={soilPh}
+                onChange={(e) => setSoilPh(e.target.value)}
+                style={{ width: '100%', fontSize: '0.82rem', padding: '0.45rem 0.65rem' }}
+              />
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginTop: '0.65rem' }}>
+            <button type="button" onClick={onClose} className="btn btn-secondary" style={{ padding: '0.45rem 1rem' }}>
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary" disabled={submitting}>
-              {submitting ? 'Submitting...' : 'Post Reading (POST /api/sensor-readings)'}
+            <button
+              type="submit"
+              disabled={submitting}
+              className="btn btn-primary"
+              style={{ padding: '0.45rem 1.25rem' }}
+            >
+              {submitting ? 'Persisting Telemetry...' : 'Inject & Persist Reading'}
             </button>
           </div>
         </form>
