@@ -9,7 +9,6 @@ coverage/
 *.lcov
 
 # Production build outputs (can be rebuilt with npm run build:frontend)
-# Keep frontend/dist out of git or include if desired; standard is to ignore
 frontend/dist/
 
 # Local Environment Variables & Secrets
@@ -18,6 +17,8 @@ frontend/dist/
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*
+!.env.example
 
 # Logs
 logs/
@@ -42,4 +43,19 @@ Thumbs.db
 .cache/
 .eslintcache
 *.tmp
+*.tmp.*
 *.bak
+*.json.bak
+
+# Heavy GeoTIFF rasters & Python virtualenvs (hosted on Hugging Face: ashik1236/nasatest)
+.venv/
+venv/
+__pycache__/
+*.pyc
+research/hf_datasets/
+research/**/*.tif
+research/**/*.aux.xml
+research/**/*.pkl
+
+# Ignore generated forensic outputs inside documentation
+documentation/forensic_inventory.json
