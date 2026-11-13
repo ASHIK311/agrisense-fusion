@@ -1,0 +1,9 @@
+division_name,district_count,upazila_count,mean_annual_precip_mm,mean_annual_et0_mm,mean_boro_net_iwr_mm,mean_aman_net_iwr_mm,mean_wheat_net_iwr_mm,mean_maize_net_iwr_mm,dominant_crop,dominant_rotation,primary_agroclimatic_vulnerability
+Barishal,6,38,3201.9,1387.4,462.1,32.0,230.7,388.0,Aman Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Coastal Salinity Intrusion, Tidal Inundation, Cyclone Frequency"
+Chattogram,11,90,3541.5,1412.3,445.2,44.6,253.5,384.8,Boro Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Hilly Topography, Flash Flooding, Coastal Storm Surge"
+Dhaka,13,86,2616.4,1379.2,420.6,56.0,225.1,352.7,Boro Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Riverbank Erosion, Surface Runoff Variations, Rapid Urban Encroachment"
+Khulna,10,59,2169.9,1415.1,502.5,64.6,245.4,417.7,Aman Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Severe Dry-Season Salinity Intrusion (SW Coastal Belt), Mangrove Ecology Buffer"
+Mymensingh,4,34,3212.3,1345.2,376.7,69.9,239.9,341.7,Boro Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Northern Piedmont Flash Flooding, Acidic Basin Soils"
+Rajshahi,9,72,2168.0,1389.6,461.7,82.3,249.2,402.5,Boro Rice,T. Aman Rice -> Winter Wheat -> Mungbean (Water-Conserving),"Barind Tract Severe Groundwater Depletion, High Summer VPD, Rabi Aridity"
+Rangpur,8,58,2601.0,1347.7,429.6,83.6,263.1,393.2,Maize,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Teesta Floodplain Inundation, Cold Wave Sensitivity in Rabi, Sand Casting"
+Sylhet,3,29,4344.5,1347.8,312.2,62.8,233.1,306.6,Boro Rice,T. Aman Rice -> Winter Wheat / Mustard -> Aus Rice,"Haor Early Flash Floods (Pre-Monsoon Boro Inundation Risk), Highest National Rainfall"

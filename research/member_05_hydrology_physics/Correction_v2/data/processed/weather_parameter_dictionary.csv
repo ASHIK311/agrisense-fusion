@@ -1,0 +1,8 @@
+Parameter_Code,Parameter_Name,Units,Physical_Min,Physical_Max,Source_Type,Role_In_FAO56,Missing_Sentinel
+T2M_MAX,Maximum Air Temperature at 2 Meters,deg C,-10.0,55.0,NASA POWER / MERRA-2 assimilation,Vapor pressure e°(Tmax) & longwave radiation,-999.0
+T2M_MIN,Minimum Air Temperature at 2 Meters,deg C,-15.0,40.0,NASA POWER / MERRA-2 assimilation,Vapor pressure e°(Tmin) & longwave radiation,-999.0
+T2M,Mean Air Temperature at 2 Meters,deg C,-10.0,50.0,NASA POWER / MERRA-2 assimilation,Slope Delta & aerodynamic numerator,-999.0
+PRECTOTCORR,Corrected Precipitation (Daily Total),mm/day,0.0,500.0,NASA POWER / MERRA-2 assimilation,Effective rainfall Peff & soil water replenishment,-999.0
+RH2M,Relative Humidity at 2 Meters,%,0.0,100.0,NASA POWER / MERRA-2 assimilation,Actual vapor pressure ea calculation,-999.0
+WS2M,Wind Speed at 2 Meters,m/s,0.0,45.0,NASA POWER / MERRA-2 assimilation,Aerodynamic bulk transfer velocity u2,-999.0
+ALLSKY_SFC_SW_DWN,All Sky Surface Shortwave Downward Irradiance,MJ/m^2/day,0.0,40.0,NASA POWER / MERRA-2 assimilation,Solar radiation Rs & net shortwave Rns,-999.0

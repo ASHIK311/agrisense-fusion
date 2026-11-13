@@ -1,0 +1,47 @@
+# Field Shift - Member 5 Agro-Meteorological Physics & Validation Configuration
+study_area:
+  upazila: "Godagari"
+  district: "Rajshahi"
+  division: "Rajshahi"
+  country: "Bangladesh"
+  latitude: 24.469
+  longitude: 88.330
+  elevation_m: 20.0
+  crs: "EPSG:32645"
+  soil_profile:
+    name: "Barind Silty Clay Loam"
+    theta_fc: 0.30      # Volumetric water content at field capacity (m3/m3)
+    theta_wp: 0.15      # Volumetric water content at wilting point (m3/m3)
+    p_depletion: 0.50   # Default allowable depletion fraction before stress
+
+weather_service:
+  provider: "NASA_POWER"
+  endpoint: "https://power.larc.nasa.gov/api/temporal/daily/point"
+  community: "AG"
+  parameters:
+    - "T2M_MAX"
+    - "T2M_MIN"
+    - "T2M"
+    - "PRECTOTCORR"
+    - "RH2M"
+    - "WS2M"
+    - "ALLSKY_SFC_SW_DWN"
+  timeout_seconds: 15
+  max_retries: 3
+  backoff_factor: 1.5
+  temporal_range:
+    start_date: "2019-01-01"
+    end_date: "2024-01-01"
+
+irrigation:
+  application_efficiency: 0.70      # Typical surface/furrow irrigation efficiency in Barind
+  target_post_irrigation_depletion_fraction: 0.05  # Slight buffer to prevent instant ponding
+  allow_fallow_irrigation: false    # Strictly prohibits scheduling water outside active crop season
+
+paths:
+  raw_cache_dir: "data/raw"
+  processed_cache_dir: "data/processed"
+  reference_data_dir: "data/reference"
+  simulation_output_dir: "data/simulation"
+  figures_output_dir: "outputs"
+  reports_output_dir: "reports"

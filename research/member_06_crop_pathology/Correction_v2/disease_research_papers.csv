@@ -1,0 +1,61 @@
+disease_id,paper_id,relevance_strength,evidence_type,page_or_section_reference
+DIS_RICE_001,PUB_RICE_001,Primary Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.3329/brj.v28i1.86746
+DIS_RICE_001,PUB_RICE_002,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v20i2.34125
+DIS_RICE_001,PUB_RICE_003,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v50i3.55853
+DIS_RICE_001,PUB_RICE_004,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/aba.v27i1.70887
+DIS_RICE_001,PUB_RICE_005,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v25i1.55177
+DIS_RICE_002,PUB_RICE_006,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v24i1.53241
+DIS_RICE_002,PUB_RICE_007,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1016/j.plgene.2025.100505
+DIS_RICE_002,PUB_RICE_008,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v37i2.11239
+DIS_RICE_003,PUB_RICE_009,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v24i1.53239
+DIS_RICE_003,PUB_RICE_010,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v48i4.49059
+DIS_RICE_001,PUB_RICE_011,Primary Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.3329/bjar.v40i4.26938
+DIS_RICE_001,PUB_RICE_012,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1201/9781003714590-1
+DIS_RICE_001,PUB_RICE_013,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1111/aab.12420
+DIS_RICE_001,PUB_RICE_014,Primary Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.33775/conf-2021-163-166
+DIS_RICE_001,PUB_RICE_015,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.22437/biospecies.v18i1.38524
+DIS_RICE_001,PUB_RICE_016,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v29i2.90708
+DIS_RICE_001,PUB_RICE_017,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1007/s13314-024-00527-4
+DIS_RICE_001,PUB_RICE_018,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v29i1.90747
+DIS_RICE_001,PUB_RICE_019,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/brj.v27i1.66381
+DIS_RICE_001,PUB_RICE_020,Primary Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.35940/ijitee.a9600.1211221
+DIS_WHEAT_001,PUB_WHEAT_001,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1111/mpp.12386
+DIS_WHEAT_001,PUB_WHEAT_002,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.5423/ppj.rw.09.2016.0179
+DIS_WHEAT_001,PUB_WHEAT_003,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1016/j.cropro.2019.05.013
+DIS_WHEAT_001,PUB_WHEAT_004,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/jbau.v17i2.41934
+DIS_WHEAT_001,PUB_WHEAT_005,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.5455/faa.293640
+DIS_WHEAT_001,PUB_WHEAT_006,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1371/journal.pone.0233665
+DIS_WHEAT_002,PUB_WHEAT_007,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1201/9781315207537-11
+DIS_WHEAT_002,PUB_WHEAT_008,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1016/s0378-4290(96)01031-3
+DIS_WHEAT_002,PUB_WHEAT_009,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.21203/rs.3.rs-1648271/v1
+DIS_WHEAT_002,PUB_WHEAT_010,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.5586/aa.1775
+DIS_MAIZE_001,PUB_MAIZE_001,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1007/s42360-025-00885-8
+DIS_MAIZE_001,PUB_MAIZE_002,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.9734/jsrr/2025/v31i32903
+DIS_MAIZE_001,PUB_MAIZE_003,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.48165/jpds.2023.1801.02
+DIS_MAIZE_002,PUB_MAIZE_004,Secondary / Reference Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.20546/ijcmas.2019.802.259
+DIS_MAIZE_002,PUB_MAIZE_005,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.16943/ptinsa/2019/49607
+DIS_MAIZE_002,PUB_MAIZE_006,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v51i2.60415
+DIS_MAIZE_002,PUB_MAIZE_007,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v50i1.52688
+DIS_MAIZE_002,PUB_MAIZE_008,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/jbau.v15i2.35062
+DIS_MAIZE_001,PUB_MAIZE_009,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.68603/15.02.316
+DIS_MAIZE_002,PUB_MAIZE_010,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/jbas.v48i1.69202
+DIS_POTATO_002,PUB_POTATO_001,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.5455/faa.280361
+DIS_POTATO_001,PUB_POTATO_002,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v37i1.11189
+DIS_POTATO_001,PUB_POTATO_003,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.54574/rjpp.13.03
+DIS_POTATO_001,PUB_POTATO_004,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v51i1.92533
+DIS_POTATO_001,PUB_POTATO_005,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v43i2.37334
+DIS_POTATO_001,PUB_POTATO_006,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.17582/journal.sja/2020/36.3.986.991
+DIS_TOMATO_001,PUB_TOMATO_001,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v48i1.47434
+DIS_TOMATO_001,PUB_TOMATO_002,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1007/s13205-018-1254-7
+DIS_TOMATO_002,PUB_TOMATO_003,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v44i3.43485
+DIS_TOMATO_002,PUB_TOMATO_004,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.17957/ijab/15.2360
+DIS_TOMATO_002,PUB_TOMATO_005,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v49i4.92030
+DIS_MUSTARD_001,PUB_MUSTARD_001,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.12692/ijb/13.4.417-426
+DIS_MUSTARD_001,PUB_MUSTARD_002,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.22271/tpi.2024.v13.i9a.25835
+DIS_MUSTARD_002,PUB_MUSTARD_003,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.66856/ijaps.2026.8.3.8238
+DIS_LENTIL_001,PUB_PULSES_001,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjar.v40i2.24560
+DIS_LENTIL_001,PUB_PULSES_002,Primary Evidence,Epidemiology & Climate,Full Article / DOI: https://doi.org/10.3329/bjsir.v43i4.2241
+DIS_LENTIL_002,PUB_PULSES_003,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1007/s42360-025-00899-2
+DIS_CHILI_001,PUB_PULSES_004,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.1111/ppa.12850
+DIS_CHILI_001,PUB_PULSES_005,Secondary / Reference Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.11594/nstp.2025.4905
+DIS_ONION_001,PUB_PULSES_006,Primary Evidence,Management & Resistance,Full Article / DOI: https://doi.org/10.3329/bjb.v51i3.62000

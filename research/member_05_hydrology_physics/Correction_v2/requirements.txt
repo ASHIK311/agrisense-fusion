@@ -1,0 +1,8 @@
+# Member 5 - Scientific Physics & Seasonal Water Balance Validation Framework
+# Target: Python >= 3.10
+numpy>=1.24.0,<2.1.0
+pandas>=2.0.0,<3.0.0
+requests>=2.28.0,<3.0.0
+matplotlib>=3.7.0,<4.0.0
+pyyaml>=6.0
+pytest>=7.0.0

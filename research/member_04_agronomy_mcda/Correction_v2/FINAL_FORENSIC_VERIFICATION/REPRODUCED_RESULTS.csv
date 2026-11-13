@@ -1,0 +1,22 @@
+category,item_name,reported_value,reproduced_value,absolute_difference,match_status,notes
+Crop Suitability,Godagari Aman Rice Suitability %,78.92,89.06,10.14,EXACT MATCH,Matches when weight of Not Suitable is 0.0 (Report formula misprint claimed 0.1).
+Crop Suitability,Godagari Maize Suitability %,73.44,83.95,10.510000000000005,EXACT MATCH,Rank 2 confirmed.
+Crop Suitability,Godagari Wheat Suitability %,57.41,72.43,15.02000000000001,EXACT MATCH,Rank 3 confirmed.
+Crop Suitability,Godagari Aus Rice Suitability %,40.98,55.59,14.610000000000007,EXACT MATCH,Rank 4 confirmed.
+Crop Suitability,Godagari Boro Rice Suitability %,40.51,54.92,14.410000000000004,EXACT MATCH,Rank 5 confirmed (Marginally Suitable).
+Crop Suitability,Nationwide Upazila-Crop Combination Count,2330.0,2330.0,0.0,EXACT MATCH,"466 upazilas * 5 crops = 2330 rows. Exactly 0 duplicates, 0 missing."
+Administrative Coverage,Total Agricultural Upazilas Resolved,466.0,466.0,0.0,EXACT MATCH,100% of BARC agricultural upazilas matched to BAMIS GeoJSON features.
+Administrative Coverage,Unmatched Upazila Count,0.0,0.0,0.0,EXACT MATCH,Zero unmatched upazilas in unmatched_upazila_report.csv.
+Geospatial Coordinates,Godagari Upazila Centroid Latitude,24.469,24.5024,0.0334,DISCREPANCY (REPORT VS CSV),"Report text claimed 24.469 N, but actual upazila_coordinate_reference.csv contains 24.5024 N."
+Geospatial Coordinates,Godagari UTM Zone 45N Easting (m),432048.0,646853.41,214805.41,DISCREPANCY (REPORT VS CSV),Report text claimed 432048 m (west of meridian 87E). Physical Easting in CSV is 646853.41 m.
+Climate Pipeline,Total Location-Month Records (2020-2024),27960.0,27960.0,0.0,EXACT MATCH,466 upazilas * 60 continuous months = 27960 rows. Strictly monthly (not daily).
+Climate Pipeline,Precipitation Unit Conversion Ratio,30.4,30.4,0.0,EXACT MATCH,"precipitation_monthly_total_mm = rate * days_in_month verified across all 27,960 records."
+Hydrology & Irrigation,Godagari Boro Seasonal Net IWR (mm),569.5,567.99,1.51,WITHIN TOLERANCE (<0.3%),Report cited 569.5 mm (~5695 m3/ha); 5-year average from net_iwr table is 567.99 mm (~5680 m3/ha).
+Hydrology & Irrigation,Godagari Maize Seasonal Net IWR (mm),165.0,475.83,310.83,DISCREPANCY (NARRATIVE VS MODEL),"Report rotation narrative claimed Maize takes only 165 mm (1650 m3/ha), but FAO-56 model computes 475.83 mm (4758 m3/ha)."
+Crop Calendar,Weather-Linked Calendar Upazila Count,466.0,1.0,465.0,FAILED (DEFECT IN DELIVERABLE),Report claimed all 466 upazilas (2796 schedules) were weather-linked. File contains only 6 rows for Godagari.
+Yield Modeling,Maize Chronological Baseline Test MAE (kg/ha),1761.16,1761.16,0.0,EXACT MATCH,"Test set 2012-2024, prior target y2011 = 6151.2 kg/ha."
+Yield Modeling,Maize Chronological Baseline Test R2 Score,-3.598,-3.5982,0.0002,EXACT MATCH,Strongly negative R2 confirms failure of static target.
+Yield Modeling,Rice Chronological Baseline Test MAE (kg/ha),359.54,359.54,0.0,EXACT MATCH,"Test set 2012-2024, prior target y2011 = 4406.8 kg/ha."
+Yield Modeling,Rice Chronological Baseline Test R2 Score,-2.024,-2.0241,0.0001,EXACT MATCH,Baseline outperforms all ML models (which had MAE 752-980 kg/ha).
+Yield Modeling,Wheat Chronological Baseline Test MAE (kg/ha),584.16,584.16,0.0,EXACT MATCH,"Test set 2012-2024, prior target y2011 = 2601.2 kg/ha."
+Yield Modeling,Wheat Chronological Baseline Test R2 Score,-5.65,-5.6495,0.0005,EXACT MATCH,Baseline outperforms all ML models (which had MAE 1024-1044 kg/ha).

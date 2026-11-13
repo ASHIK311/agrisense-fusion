@@ -1,0 +1,7 @@
+upazila_name,crop,season,active_growing_months,mean_season_temp_degc,mean_season_max_temp_degc,peak_max_temp_degc,total_season_rainfall_mm,climatic_stress_flag,weather_data_provenance
+Godagari,T. Aman Rice,Kharif-2 (Monsoon),7; 8; 9; 10; 11,27.0,33.0,35.3,886.8,Terminal Drought Risk in Oct/Nov,NASA POWER MERRA-2 Continuous Climatology (100% Coverage)
+Godagari,Boro Rice,Rabi (Winter Irrigated),1; 2; 3; 4; 5,25.4,37.1,43.5,285.2,Extreme Heat Stress in April (>38C),NASA POWER MERRA-2 Continuous Climatology (100% Coverage)
+Godagari,Aus Rice,Kharif-1 (Pre-Monsoon),4; 5; 6; 7,31.1,40.5,43.5,666.6,Favorable Winter Growing Window,NASA POWER MERRA-2 Continuous Climatology (100% Coverage)
+Godagari,Wheat,Rabi (Winter),11; 12; 1; 2; 3,20.6,31.0,39.1,74.9,Favorable Winter Growing Window,NASA POWER MERRA-2 Continuous Climatology (100% Coverage)
+Godagari,Rabi Maize,Rabi (Winter),11; 12; 1; 2; 3; 4,22.5,33.1,43.5,107.9,Favorable Winter Growing Window,NASA POWER MERRA-2 Continuous Climatology (100% Coverage)
+Godagari,Kharif-1 Maize,Kharif-1 (Summer),2; 3; 4; 5; 6,28.3,39.8,43.5,474.2,Extreme Heat Stress in April (>38C),NASA POWER MERRA-2 Continuous Climatology (100% Coverage)

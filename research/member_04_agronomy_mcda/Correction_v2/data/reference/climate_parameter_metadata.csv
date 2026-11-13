@@ -1,0 +1,6 @@
+parameter_id,long_name,unit,spatial_resolution,temporal_resolution,conversion_to_total,source_product,missing_rate
+PRECTOTCORR,Precipitation Corrected (MERRA-2),mm/day,0.5 x 0.625 degrees,Monthly mean daily rate,Multiply by days in month (PRECTOTCORR * days_in_month),NASA POWER MERRA-2 Global Reanalysis Model,0.0%
+T2M,Temperature at 2 Meters,degC,0.5 x 0.625 degrees,Monthly mean temperature,Direct mean observation,NASA POWER MERRA-2 Global Reanalysis Model,0.0%
+T2M_MAX,Maximum Temperature at 2 Meters,degC,0.5 x 0.625 degrees,Monthly mean daily maximum,Direct mean daily peak,NASA POWER MERRA-2 Global Reanalysis Model,0.0%
+T2M_MIN,Minimum Temperature at 2 Meters,degC,0.5 x 0.625 degrees,Monthly mean daily minimum,Direct mean daily trough,NASA POWER MERRA-2 Global Reanalysis Model,0.0%
+ALLSKY_SFC_SW_DWN,All Sky Surface Shortwave Downward Irradiance,MJ/m2/day,0.5 x 0.625 degrees,Monthly mean daily solar insolation,Multiply by days in month for monthly radiant exposure,NASA POWER Satellite/CERES and MERRA-2,6.82% (Prior to July 1983; continuous 2020-2024)

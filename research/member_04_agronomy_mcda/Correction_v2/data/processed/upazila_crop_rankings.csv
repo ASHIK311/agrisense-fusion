@@ -1,0 +1,467 @@
+district_name,upazila_name,total_area_ha,rank_1_crop,rank_1_score,rank_2_crop,rank_2_score,rank_3_crop,rank_3_score,rank_4_crop,rank_4_score,rank_5_crop,rank_5_score,recommended_crop,diversification_alternative
+Bagerhat,Bagerhat,17418.0,Aman Rice,83.0,Boro Rice,62.62,Aus Rice,47.49,Wheat,45.88,Maize,43.01,Aman Rice,Boro Rice
+Bagerhat,Chitalmari,14312.0,Boro Rice,88.72,Aman Rice,60.76,Aus Rice,43.84,Wheat,34.03,Maize,25.57,Boro Rice,Aman Rice
+Bagerhat,Fakirhat,10076.0,Aman Rice,77.66,Boro Rice,51.72,Maize,50.57,Wheat,47.39,Aus Rice,43.06,Aman Rice,Boro Rice
+Bagerhat,Kachua,8531.0,Aman Rice,95.24,Boro Rice,71.34,Aus Rice,56.52,Maize,47.66,Wheat,44.91,Aman Rice,Boro Rice
+Bagerhat,Mollahat,15929.0,Boro Rice,88.65,Aman Rice,51.26,Aus Rice,39.47,Wheat,28.38,Maize,27.69,Boro Rice,Aman Rice
+Bagerhat,Mongla,14423.0,Aman Rice,57.16,Boro Rice,32.44,Aus Rice,30.55,Wheat,3.77,Maize,3.77,Aman Rice,Boro Rice
+Bagerhat,Morelganj,33178.0,Aman Rice,82.6,Boro Rice,68.14,Aus Rice,51.27,Maize,39.5,Wheat,39.1,Aman Rice,Boro Rice
+Bagerhat,Rampal,24442.0,Aman Rice,75.26,Boro Rice,54.21,Aus Rice,43.32,Wheat,27.3,Maize,26.66,Aman Rice,Boro Rice
+Bagerhat,Sarankhola,9966.0,Aman Rice,77.68,Boro Rice,58.84,Aus Rice,42.43,Wheat,40.45,Maize,40.45,Aman Rice,Boro Rice
+Bandarban,Alikadam,23464.0,Maize,4.8,Wheat,3.77,Aman Rice,2.18,Aus Rice,0.8,Boro Rice,0.63,Maize,Wheat
+Bandarban,Bandarban,15346.0,Maize,0.69,Wheat,0.66,Aus Rice,0.53,Boro Rice,0.53,Aman Rice,0.4,Maize,Wheat
+Bandarban,Lama,16464.0,Maize,3.47,Wheat,3.32,Aman Rice,2.28,Aus Rice,2.21,Boro Rice,1.94,Maize,Wheat
+Bandarban,Naikhongchhari,8251.0,Maize,2.39,Wheat,1.79,Boro Rice,1.46,Aus Rice,1.45,Aman Rice,1.11,Maize,Wheat
+Bandarban,Rowangchhari,10274.0,Maize,4.04,Wheat,0.39,Aus Rice,0.25,Boro Rice,0.25,Aman Rice,0.24,Maize,Wheat
+Bandarban,Ruma,7396.0,Maize,3.53,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,Aus Rice
+Bandarban,Thanchi,5598.0,Maize,7.31,Wheat,1.48,Aman Rice,0.87,Aus Rice,0.77,Boro Rice,0.77,Maize,Wheat
+Barguna,Amtali,44170.0,Aman Rice,77.91,Boro Rice,56.8,Aus Rice,56.17,Wheat,25.18,Maize,25.18,Aman Rice,Boro Rice
+Barguna,Bamna,7202.0,Aman Rice,100.0,Boro Rice,99.96,Aus Rice,81.96,Wheat,66.29,Maize,66.29,Aman Rice,Boro Rice
+Barguna,Betagi,11291.0,Aman Rice,99.89,Boro Rice,99.49,Aus Rice,94.58,Wheat,51.43,Maize,51.43,Aman Rice,Boro Rice
+Barguna,Borguna,25277.0,Aman Rice,85.68,Boro Rice,65.84,Aus Rice,65.65,Wheat,38.09,Maize,38.09,Aman Rice,Boro Rice
+Barguna,Patharghata,19623.0,Aman Rice,83.35,Boro Rice,62.61,Aus Rice,44.6,Wheat,37.94,Maize,37.94,Aman Rice,Boro Rice
+Barisal,Agailjhara,12873.0,Boro Rice,85.29,Aus Rice,64.0,Wheat,49.12,Aman Rice,45.82,Maize,25.43,Boro Rice,Aus Rice
+Barisal,Babuganj,10825.0,Aman Rice,98.38,Aus Rice,94.25,Boro Rice,94.25,Maize,87.17,Wheat,79.52,Aman Rice,Aus Rice
+Barisal,Bakerganj,31631.0,Aman Rice,98.2,Boro Rice,97.79,Aus Rice,95.22,Wheat,59.43,Maize,58.55,Aman Rice,Boro Rice
+Barisal,Banaripara,10117.0,Boro Rice,96.59,Aman Rice,85.56,Aus Rice,74.24,Wheat,22.74,Maize,22.55,Boro Rice,Aman Rice
+Barisal,Barisal,19221.0,Boro Rice,97.49,Aus Rice,90.93,Aman Rice,84.75,Wheat,76.04,Maize,72.08,Boro Rice,Aus Rice
+Barisal,Gaurnadi,10472.0,Boro Rice,91.68,Aman Rice,89.07,Aus Rice,87.61,Wheat,76.61,Maize,74.06,Boro Rice,Aman Rice
+Barisal,Hizla,19654.0,Boro Rice,89.22,Wheat,81.09,Aus Rice,73.34,Maize,63.53,Aman Rice,54.77,Boro Rice,Wheat
+Barisal,Mehendiganj,25609.0,Boro Rice,92.99,Aus Rice,84.54,Wheat,83.65,Aman Rice,75.9,Maize,72.66,Boro Rice,Aus Rice
+Barisal,Muladi,18785.0,Boro Rice,89.69,Wheat,86.36,Aus Rice,83.88,Aman Rice,76.59,Maize,74.64,Boro Rice,Wheat
+Barisal,Ujirpur,19532.0,Boro Rice,90.82,Aus Rice,64.91,Aman Rice,60.35,Wheat,44.31,Maize,35.57,Boro Rice,Aus Rice
+Bhola,Bhola,23473.0,Boro Rice,91.02,Wheat,80.45,Aus Rice,78.36,Maize,69.92,Aman Rice,64.38,Boro Rice,Wheat
+Bhola,Burhanuddin,18636.0,Boro Rice,74.77,Aman Rice,66.62,Aus Rice,63.3,Wheat,58.87,Maize,56.17,Boro Rice,Aman Rice
+Bhola,Char Fasson,44682.0,Boro Rice,44.26,Aman Rice,38.09,Aus Rice,30.9,Wheat,29.47,Maize,29.1,Boro Rice,Aman Rice
+Bhola,Daulatkhan,8402.0,Boro Rice,89.69,Wheat,79.11,Aus Rice,75.47,Maize,67.74,Aman Rice,59.96,Boro Rice,Wheat
+Bhola,Lalmohan,21559.0,Boro Rice,80.19,Aus Rice,71.34,Aman Rice,71.19,Maize,62.6,Wheat,55.92,Boro Rice,Aus Rice
+Bhola,Monpura,15398.0,Boro Rice,31.11,Aman Rice,12.76,Wheat,0.53,Aus Rice,0.35,Maize,0.35,Boro Rice,Aman Rice
+Bhola,Tajumuddin,10185.0,Boro Rice,90.86,Aus Rice,80.53,Maize,78.81,Aman Rice,73.43,Wheat,66.03,Boro Rice,Aus Rice
+Bogra,Adamdighi,14616.0,Boro Rice,96.56,Aman Rice,87.65,Aus Rice,63.3,Wheat,42.59,Maize,41.22,Boro Rice,Aman Rice
+Bogra,Bogra,32874.0,Aman Rice,89.38,Boro Rice,89.01,Maize,68.43,Wheat,65.59,Aus Rice,62.88,Aman Rice,Boro Rice
+Bogra,Dhubchachia,14344.0,Aman Rice,95.48,Boro Rice,80.32,Aus Rice,72.24,Maize,53.86,Wheat,53.29,Aman Rice,Boro Rice
+Bogra,Dhunot,20116.0,Boro Rice,93.16,Aman Rice,86.04,Wheat,72.78,Maize,71.2,Aus Rice,70.99,Boro Rice,Aman Rice
+Bogra,Gabtali,19035.0,Boro Rice,96.57,Aman Rice,91.38,Aus Rice,85.1,Wheat,72.58,Maize,67.16,Boro Rice,Aman Rice
+Bogra,Kahalu,21316.0,Aman Rice,98.06,Boro Rice,95.84,Aus Rice,73.8,Maize,60.6,Wheat,60.57,Aman Rice,Boro Rice
+Bogra,Nandigram,24248.0,Boro Rice,97.34,Aman Rice,86.57,Aus Rice,69.62,Wheat,39.64,Maize,39.5,Boro Rice,Aman Rice
+Bogra,Shariakandi,24097.0,Boro Rice,71.21,Wheat,68.8,Aus Rice,65.39,Maize,55.69,Aman Rice,52.79,Boro Rice,Wheat
+Bogra,Sherpur,25380.0,Boro Rice,93.46,Aman Rice,82.12,Aus Rice,64.82,Wheat,58.87,Maize,55.8,Boro Rice,Aman Rice
+Bogra,Shibganj,26490.0,Aman Rice,95.56,Aus Rice,80.46,Maize,71.38,Boro Rice,64.48,Wheat,63.97,Aman Rice,Aus Rice
+Bogra,Sonatala,11152.0,Boro Rice,92.1,Aus Rice,88.91,Aman Rice,86.98,Maize,74.72,Wheat,74.27,Boro Rice,Aus Rice
+Brahmanbaria,Akhaura,8760.0,Boro Rice,87.27,Aus Rice,46.84,Aman Rice,45.44,Wheat,41.35,Maize,33.28,Boro Rice,Aus Rice
+Brahmanbaria,Banchharampur,14565.0,Boro Rice,76.5,Wheat,44.89,Aus Rice,40.61,Maize,35.32,Aman Rice,34.83,Boro Rice,Wheat
+Brahmanbaria,Brahmanbaria,43086.0,Boro Rice,86.98,Aus Rice,48.43,Wheat,47.17,Maize,43.1,Aman Rice,41.76,Boro Rice,Aus Rice
+Brahmanbaria,Kasba,17515.0,Boro Rice,91.5,Wheat,64.09,Aus Rice,61.43,Maize,59.51,Aman Rice,58.09,Boro Rice,Wheat
+Brahmanbaria,Nabinagar,29109.0,Boro Rice,90.46,Wheat,59.78,Aus Rice,50.6,Maize,50.23,Aman Rice,48.81,Boro Rice,Wheat
+Brahmanbaria,Nasirnagar,25821.0,Boro Rice,91.76,Wheat,45.74,Aus Rice,42.27,Maize,33.62,Aman Rice,31.65,Boro Rice,Wheat
+Brahmanbaria,Sarail,18504.0,Boro Rice,85.02,Aus Rice,44.69,Wheat,34.5,Maize,29.92,Aman Rice,28.74,Boro Rice,Aus Rice
+Chandpur,Chandpur,12501.0,Boro Rice,96.86,Wheat,77.64,Aus Rice,71.65,Aman Rice,67.41,Maize,53.75,Boro Rice,Wheat
+Chandpur,Faridganj,15643.0,Boro Rice,88.39,Aman Rice,86.63,Aus Rice,85.17,Maize,83.0,Wheat,81.61,Boro Rice,Aman Rice
+Chandpur,Haimchar,6598.0,Boro Rice,88.95,Wheat,84.54,Aus Rice,72.5,Aman Rice,65.03,Maize,53.38,Boro Rice,Wheat
+Chandpur,Hajiganj,13472.0,Boro Rice,99.43,Aus Rice,64.92,Wheat,61.61,Aman Rice,55.01,Maize,45.18,Boro Rice,Aus Rice
+Chandpur,Kachua,17793.0,Boro Rice,98.25,Aus Rice,76.5,Aman Rice,60.39,Wheat,39.2,Maize,37.76,Boro Rice,Aus Rice
+Chandpur,Matlab,26614.0,Boro Rice,99.15,Aus Rice,63.7,Wheat,62.11,Aman Rice,50.12,Maize,42.77,Boro Rice,Aus Rice
+Chandpur,Shahrasti,11817.0,Boro Rice,98.28,Aus Rice,75.07,Aman Rice,64.64,Wheat,58.54,Maize,51.62,Boro Rice,Aus Rice
+Chittagong,Anwara,9461.0,Boro Rice,88.63,Aus Rice,80.93,Aman Rice,71.27,Maize,58.6,Wheat,50.85,Boro Rice,Aus Rice
+Chittagong,Banskhali,26029.0,Boro Rice,57.04,Aus Rice,51.53,Aman Rice,48.86,Maize,39.96,Wheat,37.77,Boro Rice,Aus Rice
+Chittagong,Boalkhali,6993.0,Maize,91.49,Wheat,90.74,Boro Rice,90.67,Aman Rice,83.91,Aus Rice,77.13,Maize,Wheat
+Chittagong,Chandanais,11366.0,Wheat,42.46,Boro Rice,38.62,Maize,36.84,Aus Rice,30.22,Aman Rice,28.76,Wheat,Boro Rice
+Chittagong,Double Mooring,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Chittagong,Fatikchhari,23648.0,Maize,49.46,Boro Rice,30.5,Wheat,29.49,Aman Rice,28.61,Aus Rice,28.18,Maize,Boro Rice
+Chittagong,Hathazari,12517.0,Boro Rice,55.87,Aus Rice,52.9,Wheat,48.63,Aman Rice,46.02,Maize,40.72,Boro Rice,Aus Rice
+Chittagong,Lohagora,12509.0,Aman Rice,30.52,Maize,29.37,Aus Rice,22.34,Boro Rice,5.69,Wheat,4.25,Aman Rice,Maize
+Chittagong,Mirsharai,22710.0,Boro Rice,60.03,Maize,56.2,Aus Rice,54.49,Aman Rice,54.21,Wheat,52.07,Boro Rice,Maize
+Chittagong,Panchlais,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Chittagong,Patenga,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Chittagong,Patia,11989.0,Boro Rice,62.0,Aman Rice,58.17,Aus Rice,56.28,Maize,55.79,Wheat,51.28,Boro Rice,Aman Rice
+Chittagong,Rangunia,19551.0,Maize,45.98,Boro Rice,41.8,Aman Rice,41.43,Aus Rice,40.46,Wheat,38.82,Maize,Boro Rice
+Chittagong,Rauzan,13884.0,Boro Rice,71.85,Maize,68.6,Aus Rice,64.97,Wheat,64.9,Aman Rice,62.75,Boro Rice,Maize
+Chittagong,Sandwip,27387.0,Boro Rice,65.26,Aman Rice,64.33,Aus Rice,51.58,Maize,46.53,Wheat,33.69,Boro Rice,Aman Rice
+Chittagong,Satkania,16437.0,Boro Rice,52.62,Wheat,49.2,Aus Rice,48.38,Maize,46.66,Aman Rice,45.38,Boro Rice,Wheat
+Chittagong,Sitakunda,9277.0,Aman Rice,53.08,Boro Rice,51.7,Aus Rice,49.63,Maize,48.43,Wheat,44.52,Aman Rice,Boro Rice
+Chuadanga,Alamdanga,27628.0,Aman Rice,93.42,Boro Rice,87.96,Maize,86.03,Wheat,84.92,Aus Rice,66.47,Aman Rice,Boro Rice
+Chuadanga,Chuadanga,23128.0,Aman Rice,91.87,Boro Rice,87.94,Maize,84.55,Wheat,83.49,Aus Rice,66.1,Aman Rice,Boro Rice
+Chuadanga,Damurhuda,25984.0,Boro Rice,88.46,Aman Rice,86.4,Maize,78.34,Wheat,77.07,Aus Rice,65.29,Boro Rice,Aman Rice
+Chuadanga,Jibannagar,15899.0,Aman Rice,89.25,Boro Rice,85.6,Maize,82.94,Wheat,73.8,Aus Rice,58.99,Aman Rice,Boro Rice
+Comilla,Barura,18531.0,Boro Rice,95.08,Wheat,79.55,Maize,73.89,Aus Rice,71.38,Aman Rice,67.63,Boro Rice,Wheat
+Comilla,Brahmanpara,10507.0,Boro Rice,92.6,Aus Rice,67.65,Wheat,64.55,Aman Rice,51.86,Maize,51.83,Boro Rice,Aus Rice
+Comilla,Burichang,12801.0,Boro Rice,96.28,Aman Rice,80.27,Aus Rice,77.56,Wheat,63.83,Maize,62.23,Boro Rice,Aman Rice
+Comilla,Chandina,15592.0,Boro Rice,99.77,Aus Rice,69.59,Aman Rice,39.89,Wheat,36.32,Maize,32.36,Boro Rice,Aus Rice
+Comilla,Chauddagram,21922.0,Boro Rice,96.71,Aman Rice,85.66,Aus Rice,84.54,Maize,79.35,Wheat,71.51,Boro Rice,Aman Rice
+Comilla,Comilla,20572.0,Boro Rice,88.07,Aman Rice,79.75,Aus Rice,77.43,Maize,50.73,Wheat,48.96,Boro Rice,Aman Rice
+Comilla,Daudkandi,39642.0,Boro Rice,89.28,Aus Rice,37.28,Wheat,4.27,Aman Rice,3.21,Maize,3.21,Boro Rice,Aus Rice
+Comilla,Debiduar,18763.0,Boro Rice,95.72,Aus Rice,76.32,Wheat,69.68,Maize,67.85,Aman Rice,66.24,Boro Rice,Aus Rice
+Comilla,Homna,13751.0,Boro Rice,71.34,Aus Rice,12.4,Wheat,6.3,Aman Rice,4.35,Maize,4.35,Boro Rice,Aus Rice
+Comilla,Laksham,33399.0,Boro Rice,100.0,Aus Rice,75.73,Wheat,69.33,Aman Rice,68.92,Maize,67.25,Boro Rice,Aus Rice
+Comilla,Muradnagar,29062.0,Boro Rice,99.17,Aus Rice,66.22,Wheat,41.88,Aman Rice,40.63,Maize,38.97,Boro Rice,Aus Rice
+Comilla,Nangalkot,19270.0,Boro Rice,100.0,Aus Rice,91.38,Aman Rice,90.47,Maize,88.9,Wheat,77.49,Boro Rice,Aus Rice
+Cox'S Bazar,Chakaria,37376.0,Boro Rice,41.7,Aman Rice,39.64,Aus Rice,32.02,Wheat,27.63,Maize,23.21,Boro Rice,Aman Rice
+Cox'S Bazar,Cox'S Bazar,16268.0,Aman Rice,40.89,Boro Rice,40.82,Aus Rice,32.6,Maize,24.44,Wheat,21.97,Aman Rice,Boro Rice
+Cox'S Bazar,Kutubdia,6510.0,Aman Rice,74.34,Boro Rice,63.04,Aus Rice,58.48,Wheat,38.87,Maize,38.6,Aman Rice,Boro Rice
+Cox'S Bazar,Moheshkhali,16123.0,Aman Rice,26.17,Boro Rice,19.8,Maize,11.76,Aus Rice,11.27,Wheat,9.72,Aman Rice,Boro Rice
+Cox'S Bazar,Ramu,15054.0,Wheat,21.61,Boro Rice,20.83,Maize,20.72,Aman Rice,18.06,Aus Rice,17.52,Wheat,Boro Rice
+Cox'S Bazar,Teknaf,13060.0,Aman Rice,12.5,Boro Rice,12.27,Maize,9.78,Wheat,8.3,Aus Rice,7.83,Aman Rice,Boro Rice
+Cox'S Bazar,Ukhia,8255.0,Maize,13.62,Aman Rice,13.59,Aus Rice,11.79,Boro Rice,9.33,Wheat,8.11,Maize,Aman Rice
+Dhaka,Dhaka Metro,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Dhaka,Dhamrai,26383.0,Boro Rice,88.44,Aus Rice,72.07,Wheat,60.58,Maize,51.45,Aman Rice,51.16,Boro Rice,Aus Rice
+Dhaka,Dohar,8868.0,Boro Rice,88.27,Aus Rice,75.61,Wheat,71.27,Maize,61.81,Aman Rice,60.96,Boro Rice,Aus Rice
+Dhaka,Keraniganj,13220.0,Boro Rice,93.18,Aus Rice,66.4,Wheat,37.04,Aman Rice,35.15,Maize,31.99,Boro Rice,Aus Rice
+Dhaka,Nawabganj,19518.0,Boro Rice,96.66,Aus Rice,67.1,Wheat,30.08,Aman Rice,29.4,Maize,22.24,Boro Rice,Aus Rice
+Dhaka,Savar,23408.0,Boro Rice,55.68,Maize,47.87,Aus Rice,47.81,Aman Rice,46.92,Wheat,40.0,Boro Rice,Maize
+Dinajpur,Biral,30976.0,Aman Rice,87.21,Wheat,81.75,Maize,81.54,Aus Rice,55.73,Boro Rice,44.24,Aman Rice,Wheat
+Dinajpur,Birampur,18910.0,Aman Rice,89.91,Aus Rice,79.67,Wheat,73.01,Maize,71.45,Boro Rice,52.87,Aman Rice,Aus Rice
+Dinajpur,Birganj,36694.0,Maize,92.65,Aman Rice,92.02,Wheat,90.39,Aus Rice,71.77,Boro Rice,37.46,Maize,Aman Rice
+Dinajpur,Bochaganj,19851.0,Aman Rice,96.02,Maize,93.44,Wheat,89.13,Aus Rice,56.37,Boro Rice,44.87,Aman Rice,Maize
+Dinajpur,Chirirbandar,27606.0,Aman Rice,92.46,Maize,86.3,Wheat,83.22,Aus Rice,80.67,Boro Rice,50.64,Aman Rice,Maize
+Dinajpur,Dinajpur,29275.0,Aman Rice,85.04,Maize,82.15,Wheat,80.28,Aus Rice,65.8,Boro Rice,38.74,Aman Rice,Maize
+Dinajpur,Fulbari,20705.0,Aman Rice,90.68,Aus Rice,73.84,Maize,71.25,Wheat,70.86,Boro Rice,43.06,Aman Rice,Aus Rice
+Dinajpur,Ghoraghat,13024.0,Aman Rice,77.81,Wheat,68.98,Maize,65.68,Aus Rice,59.83,Boro Rice,42.84,Aman Rice,Wheat
+Dinajpur,Hakimpur,8958.0,Aman Rice,93.34,Aus Rice,78.95,Wheat,59.05,Boro Rice,57.82,Maize,55.86,Aman Rice,Aus Rice
+Dinajpur,Kaharol,17621.0,Maize,91.68,Aman Rice,90.0,Wheat,87.69,Aus Rice,68.94,Boro Rice,40.85,Maize,Aman Rice
+Dinajpur,Khansama,14764.0,Maize,96.67,Aman Rice,96.17,Wheat,95.21,Aus Rice,62.94,Boro Rice,39.48,Maize,Aman Rice
+Dinajpur,Nawabganj,26943.0,Aman Rice,84.53,Maize,72.1,Wheat,68.67,Aus Rice,64.42,Boro Rice,44.14,Aman Rice,Maize
+Dinajpur,Parbatipur,36383.0,Aman Rice,86.64,Maize,79.74,Wheat,76.87,Aus Rice,76.87,Boro Rice,43.18,Aman Rice,Maize
+Faridpur,Alfadanga,10541.0,Boro Rice,93.73,Aman Rice,67.42,Aus Rice,63.6,Wheat,59.6,Maize,31.14,Boro Rice,Aman Rice
+Faridpur,Bhanga,17152.0,Boro Rice,97.17,Aman Rice,67.46,Aus Rice,66.18,Wheat,50.74,Maize,25.12,Boro Rice,Aman Rice
+Faridpur,Boalmari,22787.0,Boro Rice,95.44,Aman Rice,84.23,Aus Rice,72.74,Wheat,69.7,Maize,50.53,Boro Rice,Aman Rice
+Faridpur,Char Bhadrasan,7959.0,Boro Rice,96.55,Wheat,92.84,Aman Rice,77.52,Aus Rice,76.33,Maize,73.82,Boro Rice,Wheat
+Faridpur,Faridpur,31134.0,Boro Rice,91.46,Aman Rice,86.72,Wheat,85.98,Aus Rice,75.48,Maize,72.86,Boro Rice,Aman Rice
+Faridpur,Madhukhali,17784.0,Boro Rice,97.16,Aman Rice,88.49,Aus Rice,75.09,Wheat,69.32,Maize,51.31,Boro Rice,Aman Rice
+Faridpur,Nagarkanda,32375.0,Boro Rice,97.55,Aman Rice,73.09,Aus Rice,69.27,Wheat,55.55,Maize,30.48,Boro Rice,Aman Rice
+Faridpur,Sadarpur,21289.0,Boro Rice,94.8,Wheat,82.38,Aman Rice,79.55,Aus Rice,74.98,Maize,64.75,Boro Rice,Wheat
+Feni,Chhagalnaiya,10594.0,Boro Rice,92.31,Wheat,84.21,Aus Rice,80.99,Maize,79.53,Aman Rice,77.4,Boro Rice,Wheat
+Feni,Daganbhuiya,12365.0,Boro Rice,97.02,Aus Rice,90.47,Aman Rice,84.28,Maize,69.86,Wheat,68.41,Boro Rice,Aus Rice
+Feni,Feni,15591.0,Boro Rice,93.18,Aus Rice,84.41,Maize,83.23,Wheat,79.7,Aman Rice,71.57,Boro Rice,Aus Rice
+Feni,Parshuram,16929.0,Aman Rice,94.72,Maize,80.61,Aus Rice,79.11,Wheat,75.61,Boro Rice,73.55,Aman Rice,Maize
+Feni,Sonagazi,16920.0,Boro Rice,97.7,Aus Rice,92.59,Aman Rice,90.66,Maize,82.71,Wheat,76.94,Boro Rice,Aus Rice
+Gaibandha,Gaibandha,27176.0,Maize,78.61,Aman Rice,78.34,Aus Rice,77.77,Wheat,74.1,Boro Rice,61.43,Maize,Aman Rice
+Gaibandha,Gobindaganj,38365.0,Aman Rice,92.89,Aus Rice,83.41,Maize,79.74,Wheat,73.68,Boro Rice,61.11,Aman Rice,Aus Rice
+Gaibandha,Palashbari,15613.0,Aman Rice,94.11,Maize,90.72,Aus Rice,87.05,Wheat,81.28,Boro Rice,51.04,Aman Rice,Maize
+Gaibandha,Phulchhari,22673.0,Boro Rice,63.7,Wheat,59.19,Aus Rice,52.68,Maize,48.67,Aman Rice,41.56,Boro Rice,Wheat
+Gaibandha,Sadullapur,20103.0,Maize,87.47,Aman Rice,84.8,Wheat,81.44,Aus Rice,74.48,Boro Rice,44.98,Maize,Aman Rice
+Gaibandha,Shaghata,18337.0,Boro Rice,85.6,Aus Rice,79.95,Maize,77.37,Aman Rice,77.31,Wheat,73.03,Boro Rice,Aus Rice
+Gaibandha,Sundarganj,32645.0,Maize,80.6,Wheat,77.71,Aman Rice,77.07,Aus Rice,76.78,Boro Rice,54.26,Maize,Wheat
+Gazipur,Gazipur,37040.0,Boro Rice,51.74,Maize,50.41,Aman Rice,47.8,Aus Rice,44.54,Wheat,37.8,Boro Rice,Maize
+Gazipur,Kaliakoir,27485.0,Boro Rice,59.42,Aman Rice,46.07,Aus Rice,45.86,Maize,45.44,Wheat,44.13,Boro Rice,Aman Rice
+Gazipur,Kaliganj,18738.0,Boro Rice,72.1,Aus Rice,42.81,Aman Rice,33.17,Maize,30.07,Wheat,29.76,Boro Rice,Aus Rice
+Gazipur,Kapasia,31455.0,Maize,53.27,Aman Rice,52.92,Boro Rice,52.85,Wheat,47.28,Aus Rice,42.72,Maize,Aman Rice
+Gazipur,Sripur,43648.0,Aman Rice,51.22,Maize,50.09,Boro Rice,45.7,Aus Rice,40.28,Wheat,39.37,Aman Rice,Maize
+Gopalganj,Gopalganj,32564.0,Boro Rice,90.28,Aus Rice,49.45,Aman Rice,44.27,Wheat,37.51,Maize,22.34,Boro Rice,Aus Rice
+Gopalganj,Kasiani,22945.0,Boro Rice,90.57,Aus Rice,58.78,Aman Rice,56.28,Wheat,49.04,Maize,32.66,Boro Rice,Aus Rice
+Gopalganj,Kotalipara,32462.0,Boro Rice,82.87,Aus Rice,25.56,Wheat,10.72,Aman Rice,8.95,Maize,4.3,Boro Rice,Aus Rice
+Gopalganj,Muksudpur,24352.0,Boro Rice,90.33,Aus Rice,54.96,Aman Rice,42.24,Wheat,36.4,Maize,19.14,Boro Rice,Aus Rice
+Gopalganj,Tungipara,10843.0,Boro Rice,91.09,Aus Rice,47.5,Aman Rice,45.22,Wheat,37.03,Maize,27.19,Boro Rice,Aus Rice
+Habiganj,Ajmiriganj,15951.0,Boro Rice,80.09,Aus Rice,32.24,Wheat,18.59,Maize,9.21,Aman Rice,0.76,Boro Rice,Aus Rice
+Habiganj,Bahubal,22306.0,Aman Rice,71.11,Aus Rice,69.81,Boro Rice,61.93,Wheat,57.78,Maize,47.81,Aman Rice,Aus Rice
+Habiganj,Baniyachang,43255.0,Boro Rice,80.48,Aus Rice,29.47,Wheat,17.51,Maize,9.71,Aman Rice,2.86,Boro Rice,Aus Rice
+Habiganj,Chunarughat,28108.0,Aman Rice,61.05,Maize,54.77,Wheat,53.16,Aus Rice,49.91,Boro Rice,32.09,Aman Rice,Maize
+Habiganj,Habiganj,21965.0,Boro Rice,82.49,Aus Rice,62.78,Wheat,48.12,Aman Rice,42.84,Maize,32.49,Boro Rice,Aus Rice
+Habiganj,Lakhai,17113.0,Boro Rice,81.46,Aus Rice,39.44,Wheat,27.94,Maize,16.9,Aman Rice,7.21,Boro Rice,Aus Rice
+Habiganj,Madhabpur,25382.0,Boro Rice,86.7,Wheat,77.53,Aus Rice,73.51,Aman Rice,73.34,Maize,71.72,Boro Rice,Wheat
+Habiganj,Nabiganj,36185.0,Boro Rice,90.07,Aus Rice,53.92,Aman Rice,44.23,Wheat,39.0,Maize,25.43,Boro Rice,Aus Rice
+Jamalpur,Bakshiganj,18414.0,Wheat,89.43,Maize,81.93,Aman Rice,68.09,Aus Rice,62.34,Boro Rice,53.95,Wheat,Maize
+Jamalpur,Dewanganj,22707.0,Wheat,88.27,Boro Rice,75.07,Maize,74.23,Aus Rice,68.27,Aman Rice,60.88,Wheat,Boro Rice
+Jamalpur,Islampur,26486.0,Wheat,85.64,Boro Rice,84.57,Maize,72.84,Aus Rice,71.96,Aman Rice,70.31,Wheat,Boro Rice
+Jamalpur,Jamalpur,42274.0,Boro Rice,84.88,Aman Rice,83.05,Aus Rice,78.67,Wheat,74.74,Maize,72.7,Boro Rice,Aman Rice
+Jamalpur,Madarganj,22177.0,Wheat,88.37,Boro Rice,78.55,Maize,76.65,Aus Rice,69.47,Aman Rice,64.91,Wheat,Boro Rice
+Jamalpur,Melandaha,20548.0,Boro Rice,92.89,Aus Rice,87.39,Aman Rice,86.55,Wheat,81.62,Maize,74.09,Boro Rice,Aus Rice
+Jamalpur,Sarishabari,21558.0,Boro Rice,92.0,Wheat,85.7,Aus Rice,84.4,Maize,79.06,Aman Rice,78.94,Boro Rice,Wheat
+Jessore,Abhoynagar,16764.0,Boro Rice,83.54,Aman Rice,65.66,Maize,49.65,Aus Rice,46.45,Wheat,44.91,Boro Rice,Aman Rice
+Jessore,Bagherpara,18874.0,Aman Rice,91.17,Boro Rice,89.24,Maize,74.96,Wheat,67.66,Aus Rice,58.14,Aman Rice,Boro Rice
+Jessore,Chaugachha,22584.0,Boro Rice,88.19,Maize,77.55,Aman Rice,73.57,Wheat,59.86,Aus Rice,46.46,Boro Rice,Maize
+Jessore,Jessore,31562.0,Aman Rice,86.84,Boro Rice,86.19,Maize,81.49,Wheat,65.08,Aus Rice,52.21,Aman Rice,Boro Rice
+Jessore,Jhikorgachha,24381.0,Boro Rice,86.5,Maize,83.47,Aman Rice,73.23,Wheat,63.56,Aus Rice,43.37,Boro Rice,Maize
+Jessore,Keshabpur,18799.0,Boro Rice,88.12,Maize,67.76,Aman Rice,66.55,Wheat,50.59,Aus Rice,42.73,Boro Rice,Maize
+Jessore,Manirampur,32496.0,Boro Rice,84.91,Maize,72.12,Aman Rice,69.25,Wheat,52.86,Aus Rice,40.49,Boro Rice,Maize
+Jessore,Sarsa,27899.0,Boro Rice,86.81,Maize,70.21,Aman Rice,64.33,Wheat,51.32,Aus Rice,40.49,Boro Rice,Maize
+Jhalakati,Jhalakati,15737.0,Aman Rice,100.0,Boro Rice,98.22,Aus Rice,94.62,Maize,56.86,Wheat,52.34,Aman Rice,Boro Rice
+Jhalakati,Kathalia,11940.0,Aman Rice,100.0,Boro Rice,100.0,Aus Rice,80.05,Wheat,29.34,Maize,28.98,Aman Rice,Boro Rice
+Jhalakati,Nalchiti,15257.0,Boro Rice,100.0,Aus Rice,99.86,Aman Rice,99.72,Maize,66.55,Wheat,65.93,Boro Rice,Aus Rice
+Jhalakati,Rajapur,12438.0,Aman Rice,100.0,Boro Rice,100.0,Aus Rice,98.99,Maize,62.86,Wheat,60.68,Aman Rice,Boro Rice
+Jhenaidah,Harinakundu,17890.0,Aman Rice,99.88,Maize,94.74,Wheat,88.52,Boro Rice,85.04,Aus Rice,60.07,Aman Rice,Maize
+Jhenaidah,Jhenaidah,36056.0,Aman Rice,91.13,Boro Rice,88.83,Maize,75.16,Wheat,69.26,Aus Rice,57.51,Aman Rice,Boro Rice
+Jhenaidah,Kaliganj,25458.0,Aman Rice,95.19,Boro Rice,87.82,Maize,83.55,Wheat,80.13,Aus Rice,61.04,Aman Rice,Boro Rice
+Jhenaidah,Kotchandpur,11891.0,Aman Rice,94.57,Boro Rice,87.79,Maize,82.98,Wheat,79.37,Aus Rice,62.18,Aman Rice,Boro Rice
+Jhenaidah,Maheshpur,33934.0,Boro Rice,85.64,Maize,74.19,Aman Rice,66.5,Wheat,52.33,Aus Rice,43.44,Boro Rice,Maize
+Jhenaidah,Sailkupa,30065.0,Aman Rice,93.03,Boro Rice,87.35,Wheat,81.23,Maize,81.06,Aus Rice,59.51,Aman Rice,Boro Rice
+Joypurhat,Akkelpur,12438.0,Aman Rice,82.58,Aus Rice,65.85,Wheat,64.99,Boro Rice,57.85,Maize,56.24,Aman Rice,Aus Rice
+Joypurhat,Joypurhat,20723.0,Aman Rice,94.12,Aus Rice,89.37,Wheat,69.73,Maize,68.81,Boro Rice,51.33,Aman Rice,Aus Rice
+Joypurhat,Kalai,14244.0,Aman Rice,94.86,Aus Rice,87.96,Maize,57.99,Boro Rice,57.81,Wheat,55.3,Aman Rice,Aus Rice
+Joypurhat,Khetlal,13426.0,Aman Rice,95.1,Aus Rice,90.5,Maize,60.02,Wheat,57.29,Boro Rice,56.28,Aman Rice,Aus Rice
+Joypurhat,Panchbibi,26149.0,Aman Rice,91.02,Aus Rice,72.7,Wheat,66.27,Maize,65.72,Boro Rice,40.34,Aman Rice,Aus Rice
+Khagrachhari,Dighinala,15586.0,Maize,11.83,Wheat,7.01,Aus Rice,5.25,Boro Rice,4.89,Aman Rice,4.57,Maize,Wheat
+Khagrachhari,Khagrachhari,8570.0,Wheat,9.14,Maize,8.54,Aus Rice,6.85,Boro Rice,6.4,Aman Rice,5.93,Wheat,Maize
+Khagrachhari,Laksmichhari,4600.0,Wheat,4.2,Maize,3.51,Aus Rice,3.36,Boro Rice,3.36,Aman Rice,2.57,Wheat,Maize
+Khagrachhari,Manikchhari,6860.0,Wheat,7.98,Maize,7.05,Aus Rice,6.38,Boro Rice,6.38,Aman Rice,4.79,Wheat,Maize
+Khagrachhari,Matiranga,18655.0,Maize,5.86,Wheat,3.53,Aman Rice,2.26,Aus Rice,2.12,Boro Rice,2.0,Maize,Wheat
+Khagrachhari,Mohalchhari,8492.0,Maize,6.96,Wheat,6.47,Aus Rice,4.87,Boro Rice,4.56,Aman Rice,4.2,Maize,Wheat
+Khagrachhari,Panchhari,9880.0,Maize,7.62,Wheat,6.18,Aus Rice,4.65,Boro Rice,4.36,Aman Rice,4.0,Maize,Wheat
+Khagrachhari,Ramgarh,9732.0,Maize,1.48,Wheat,1.44,Aus Rice,1.06,Boro Rice,1.05,Aman Rice,0.92,Maize,Wheat
+Khulna,Batiaghata,17891.0,Aman Rice,87.33,Boro Rice,68.97,Aus Rice,53.02,Wheat,43.32,Maize,35.12,Aman Rice,Boro Rice
+Khulna,Dacope,22545.0,Aman Rice,41.31,Boro Rice,5.08,Aus Rice,4.09,Wheat,2.04,Maize,1.98,Aman Rice,Boro Rice
+Khulna,Dighalia (Daulathpur),4402.0,Aman Rice,83.21,Boro Rice,75.23,Wheat,53.28,Aus Rice,52.14,Maize,51.3,Aman Rice,Boro Rice
+Khulna,Dumuria,36566.0,Aman Rice,66.25,Boro Rice,63.82,Aus Rice,42.27,Wheat,33.43,Maize,29.63,Aman Rice,Boro Rice
+Khulna,Khulna Metro,2120.0,Aman Rice,100.0,Boro Rice,99.62,Aus Rice,79.62,Wheat,79.62,Maize,63.4,Aman Rice,Boro Rice
+Khulna,Koyra,21145.0,Aman Rice,34.13,Boro Rice,8.06,Aus Rice,7.99,Wheat,0.24,Maize,0.21,Aman Rice,Boro Rice
+Khulna,Paikgachha,32108.0,Aman Rice,46.13,Boro Rice,24.4,Aus Rice,19.92,Wheat,14.27,Maize,13.85,Aman Rice,Boro Rice
+Khulna,Phultala,4798.0,Aman Rice,74.44,Boro Rice,69.51,Wheat,68.37,Maize,62.18,Aus Rice,46.45,Aman Rice,Boro Rice
+Khulna,Rupsha,5431.0,Boro Rice,76.8,Aman Rice,67.56,Aus Rice,47.95,Wheat,47.91,Maize,40.67,Boro Rice,Aman Rice
+Khulna,Terakhada,15997.0,Boro Rice,81.77,Aman Rice,55.78,Aus Rice,37.37,Wheat,18.01,Maize,16.77,Boro Rice,Aman Rice
+Kishoreganj,Ashtagram,25504.0,Boro Rice,80.01,Aus Rice,26.64,Wheat,4.88,Maize,2.85,Aman Rice,0.84,Boro Rice,Aus Rice
+Kishoreganj,Bajitpur,14649.0,Boro Rice,92.14,Aus Rice,72.07,Aman Rice,56.25,Maize,54.28,Wheat,49.91,Boro Rice,Aus Rice
+Kishoreganj,Bhairab,7308.0,Boro Rice,99.26,Wheat,84.34,Aman Rice,79.76,Maize,78.52,Aus Rice,74.74,Boro Rice,Wheat
+Kishoreganj,Hossainpur,9257.0,Maize,87.94,Boro Rice,87.73,Aus Rice,86.21,Aman Rice,85.66,Wheat,81.21,Maize,Boro Rice
+Kishoreganj,Itna,37287.0,Boro Rice,81.02,Aus Rice,22.74,Wheat,6.82,Maize,4.54,Aman Rice,3.75,Boro Rice,Aus Rice
+Kishoreganj,Karimganj,16235.0,Boro Rice,91.99,Aus Rice,72.88,Aman Rice,59.22,Maize,55.14,Wheat,51.75,Boro Rice,Aus Rice
+Kishoreganj,Katiadi,17329.0,Boro Rice,94.62,Aus Rice,82.09,Aman Rice,74.56,Maize,68.77,Wheat,64.77,Boro Rice,Aus Rice
+Kishoreganj,Kishoreganj,12537.0,Boro Rice,95.62,Aus Rice,89.64,Aman Rice,84.74,Maize,83.05,Wheat,72.15,Boro Rice,Aus Rice
+Kishoreganj,Kuliarchar,8068.0,Boro Rice,93.01,Aus Rice,82.94,Maize,80.11,Aman Rice,78.83,Wheat,72.01,Boro Rice,Aus Rice
+Kishoreganj,Mithamoin,19079.0,Boro Rice,81.06,Aus Rice,35.1,Wheat,9.31,Maize,5.75,Aman Rice,5.34,Boro Rice,Aus Rice
+Kishoreganj,Nikli,16545.0,Boro Rice,85.62,Aus Rice,48.71,Aman Rice,18.13,Wheat,16.49,Maize,12.62,Boro Rice,Aus Rice
+Kishoreganj,Pakundia,14944.0,Aman Rice,87.56,Maize,86.84,Boro Rice,86.05,Aus Rice,83.43,Wheat,76.63,Aman Rice,Maize
+Kishoreganj,Tarail,12380.0,Boro Rice,95.28,Aus Rice,73.38,Aman Rice,53.0,Wheat,47.38,Maize,41.3,Boro Rice,Aus Rice
+Kurigram,Bhurungamari,19995.0,Wheat,88.62,Maize,79.83,Aman Rice,74.03,Aus Rice,71.3,Boro Rice,41.33,Wheat,Maize
+Kurigram,Chilmari,10443.0,Aus Rice,62.08,Boro Rice,58.87,Aman Rice,57.42,Wheat,49.47,Maize,43.84,Aus Rice,Boro Rice
+Kurigram,Kurigram,21246.0,Wheat,73.34,Aus Rice,66.63,Maize,66.31,Aman Rice,59.92,Boro Rice,41.17,Wheat,Aus Rice
+Kurigram,Nageshwari,34899.0,Aus Rice,76.21,Aman Rice,75.1,Wheat,73.85,Maize,71.52,Boro Rice,47.52,Aus Rice,Aman Rice
+Kurigram,Phulbari,13559.0,Wheat,84.84,Maize,82.24,Aman Rice,77.75,Aus Rice,76.22,Boro Rice,47.52,Wheat,Maize
+Kurigram,Rajarhat,14230.0,Maize,86.46,Aman Rice,86.36,Aus Rice,80.84,Wheat,77.92,Boro Rice,46.38,Maize,Aman Rice
+Kurigram,Rajibpur (Dhushmara),9178.0,Wheat,65.01,Boro Rice,54.65,Maize,49.65,Aus Rice,45.38,Aman Rice,32.87,Wheat,Boro Rice
+Kurigram,Ruhumari,16942.0,Wheat,77.21,Maize,69.94,Aus Rice,69.44,Aman Rice,52.42,Boro Rice,41.56,Wheat,Maize
+Kurigram,Ulipur,26966.0,Wheat,71.48,Maize,63.62,Aus Rice,62.9,Aman Rice,59.93,Boro Rice,33.46,Wheat,Maize
+Kushtia,Bheramara,10034.0,Aman Rice,89.45,Boro Rice,85.98,Wheat,85.8,Maize,81.97,Aus Rice,60.37,Aman Rice,Boro Rice
+Kushtia,Daulatpur,31853.0,Boro Rice,83.36,Wheat,82.06,Aman Rice,77.04,Maize,73.44,Aus Rice,55.53,Boro Rice,Wheat
+Kushtia,Khoksha,7526.0,Boro Rice,95.8,Aman Rice,87.38,Wheat,67.15,Maize,64.28,Aus Rice,63.81,Boro Rice,Aman Rice
+Kushtia,Kumarkhali,16499.0,Boro Rice,87.12,Aman Rice,79.5,Wheat,73.86,Maize,65.89,Aus Rice,56.4,Boro Rice,Aman Rice
+Kushtia,Kushtia,23293.0,Boro Rice,93.91,Aman Rice,78.86,Aus Rice,66.94,Wheat,61.03,Maize,59.13,Boro Rice,Aman Rice
+Kushtia,Mirpur,26185.0,Boro Rice,88.59,Aman Rice,85.03,Wheat,76.48,Maize,76.19,Aus Rice,65.17,Boro Rice,Aman Rice
+Lakshmipur,Laksmipur,32925.0,Boro Rice,90.15,Wheat,81.53,Aus Rice,77.39,Aman Rice,72.69,Maize,72.4,Boro Rice,Wheat
+Lakshmipur,Raipur,10559.0,Aman Rice,89.36,Aus Rice,87.36,Boro Rice,87.25,Wheat,85.56,Maize,85.28,Aman Rice,Aus Rice
+Lakshmipur,Ramganj,12476.0,Boro Rice,84.46,Aus Rice,75.09,Aman Rice,72.76,Wheat,63.58,Maize,60.66,Boro Rice,Aus Rice
+Lakshmipur,Ramgati,36677.0,Boro Rice,50.96,Wheat,42.34,Aus Rice,40.62,Aman Rice,36.31,Maize,28.5,Boro Rice,Wheat
+Lalmonirhat,Aditmari,17162.0,Maize,86.61,Aman Rice,86.46,Aus Rice,84.77,Wheat,81.96,Boro Rice,48.92,Maize,Aman Rice
+Lalmonirhat,Hatibanda,20151.0,Wheat,90.04,Maize,81.92,Aman Rice,74.14,Aus Rice,67.18,Boro Rice,31.52,Wheat,Maize
+Lalmonirhat,Kaliganj,21246.0,Wheat,89.74,Maize,86.03,Aman Rice,79.14,Aus Rice,71.37,Boro Rice,30.08,Wheat,Maize
+Lalmonirhat,Lalmonirhat,21237.0,Maize,87.45,Wheat,85.61,Aman Rice,82.45,Aus Rice,77.11,Boro Rice,37.64,Maize,Wheat
+Lalmonirhat,Patgram,22188.0,Maize,94.88,Aman Rice,92.71,Aus Rice,85.41,Wheat,85.2,Boro Rice,45.46,Maize,Aman Rice
+Madaripur,Kalkini,22370.0,Boro Rice,95.19,Aus Rice,72.41,Aman Rice,68.49,Wheat,61.04,Maize,47.71,Boro Rice,Aus Rice
+Madaripur,Madaripur,22620.0,Boro Rice,94.09,Aus Rice,70.38,Aman Rice,65.38,Wheat,55.24,Maize,41.73,Boro Rice,Aus Rice
+Madaripur,Rajoir,19824.0,Boro Rice,92.04,Aus Rice,53.54,Aman Rice,45.78,Wheat,30.72,Maize,16.02,Boro Rice,Aus Rice
+Madaripur,Sibchar,22265.0,Boro Rice,93.88,Aus Rice,74.43,Aman Rice,71.18,Wheat,68.55,Maize,49.71,Boro Rice,Aus Rice
+Magura,Magura,32492.0,Boro Rice,93.87,Aman Rice,86.2,Aus Rice,68.6,Maize,64.06,Wheat,63.12,Boro Rice,Aman Rice
+Magura,Mohammadpur,17785.0,Boro Rice,95.17,Aman Rice,76.48,Aus Rice,73.72,Wheat,58.95,Maize,45.87,Boro Rice,Aman Rice
+Magura,Salikha,18797.0,Boro Rice,92.61,Aman Rice,87.02,Maize,62.92,Wheat,62.58,Aus Rice,58.21,Boro Rice,Aman Rice
+Magura,Sripur,13588.0,Boro Rice,91.08,Aman Rice,84.91,Aus Rice,77.73,Wheat,70.28,Maize,68.75,Boro Rice,Aman Rice
+Manikganj,Daulatpur,17472.0,Boro Rice,88.96,Wheat,70.0,Aus Rice,63.4,Aman Rice,62.48,Maize,60.74,Boro Rice,Wheat
+Manikganj,Ghior,11593.0,Boro Rice,94.79,Aus Rice,61.72,Aman Rice,46.62,Wheat,39.46,Maize,17.86,Boro Rice,Aus Rice
+Manikganj,Harirampur,12847.0,Boro Rice,96.22,Aus Rice,67.57,Aman Rice,41.75,Wheat,40.19,Maize,22.86,Boro Rice,Aus Rice
+Manikganj,Manikganj,17897.0,Boro Rice,88.99,Wheat,71.52,Aus Rice,71.38,Aman Rice,65.73,Maize,65.27,Boro Rice,Wheat
+Manikganj,Saturia,11527.0,Boro Rice,83.71,Wheat,79.01,Maize,67.37,Aus Rice,66.06,Aman Rice,60.91,Boro Rice,Wheat
+Manikganj,Sibalay,13164.0,Boro Rice,94.9,Aus Rice,59.54,Aman Rice,52.52,Wheat,47.73,Maize,16.87,Boro Rice,Aus Rice
+Manikganj,Singair,17365.0,Boro Rice,89.63,Aus Rice,74.75,Wheat,66.7,Maize,59.89,Aman Rice,59.08,Boro Rice,Aus Rice
+Meherpur,Gangni,29096.0,Aman Rice,87.9,Boro Rice,86.71,Maize,80.5,Wheat,79.97,Aus Rice,63.77,Aman Rice,Boro Rice
+Meherpur,Meherpur,30483.0,Boro Rice,87.24,Aman Rice,86.38,Maize,79.51,Wheat,78.78,Aus Rice,64.14,Boro Rice,Aman Rice
+Moulvi Bazar,Barlekha,39292.0,Aman Rice,48.87,Wheat,48.65,Maize,46.73,Aus Rice,43.02,Boro Rice,33.51,Aman Rice,Wheat
+Moulvi Bazar,Kamalganj,30580.0,Aman Rice,94.44,Aus Rice,76.83,Maize,53.59,Wheat,44.03,Boro Rice,39.6,Aman Rice,Aus Rice
+Moulvi Bazar,Kulaura,43700.0,Aman Rice,68.71,Maize,63.99,Aus Rice,60.61,Wheat,56.14,Boro Rice,37.49,Aman Rice,Maize
+Moulvi Bazar,Moulvi Bazar,27179.0,Boro Rice,78.99,Aus Rice,69.07,Aman Rice,57.58,Wheat,41.34,Maize,23.52,Boro Rice,Aus Rice
+Moulvi Bazar,Rajnagar,23042.0,Boro Rice,56.58,Aus Rice,51.09,Aman Rice,41.37,Wheat,37.58,Maize,30.11,Boro Rice,Aus Rice
+Moulvi Bazar,Srimangal,32632.0,Aman Rice,74.83,Aus Rice,65.92,Maize,40.08,Boro Rice,38.04,Wheat,32.93,Aman Rice,Aus Rice
+Munshiganj,Gozaria,9257.0,Boro Rice,99.11,Aus Rice,61.0,Wheat,30.15,Maize,23.25,Aman Rice,23.17,Boro Rice,Aus Rice
+Munshiganj,Lohajang,7439.0,Boro Rice,97.82,Aus Rice,68.41,Aman Rice,33.08,Wheat,30.52,Maize,24.71,Boro Rice,Aus Rice
+Munshiganj,Munshiganj,10188.0,Boro Rice,83.28,Wheat,71.74,Aus Rice,67.49,Maize,65.15,Aman Rice,58.3,Boro Rice,Wheat
+Munshiganj,Serajdikhan,15144.0,Boro Rice,92.49,Aus Rice,66.33,Wheat,44.95,Aman Rice,43.08,Maize,40.34,Boro Rice,Aus Rice
+Munshiganj,Srinagar,14888.0,Boro Rice,98.61,Aus Rice,65.84,Aman Rice,22.58,Wheat,21.76,Maize,18.07,Boro Rice,Aus Rice
+Munshiganj,Tongibari,8245.0,Boro Rice,94.28,Aus Rice,64.36,Wheat,34.68,Aman Rice,32.74,Maize,31.46,Boro Rice,Aus Rice
+Mymensingh,Bhaluka,44014.0,Aman Rice,71.85,Boro Rice,66.16,Aus Rice,62.36,Maize,43.15,Wheat,40.89,Aman Rice,Boro Rice
+Mymensingh,Dhobaura,23010.0,Boro Rice,87.81,Aus Rice,76.07,Aman Rice,67.23,Maize,56.48,Wheat,54.99,Boro Rice,Aus Rice
+Mymensingh,Gafargaon,31961.0,Boro Rice,85.57,Aus Rice,80.76,Aman Rice,79.9,Maize,76.39,Wheat,69.93,Boro Rice,Aus Rice
+Mymensingh,Gouripur,22917.0,Boro Rice,86.57,Aus Rice,82.12,Aman Rice,81.56,Wheat,77.59,Maize,74.37,Boro Rice,Aus Rice
+Mymensingh,Haluaghat,31036.0,Boro Rice,76.16,Aman Rice,75.83,Aus Rice,74.98,Maize,69.09,Wheat,64.67,Boro Rice,Aman Rice
+Mymensingh,Ishwarganj,24207.0,Aman Rice,92.78,Maize,88.49,Wheat,84.63,Boro Rice,82.67,Aus Rice,81.3,Aman Rice,Maize
+Mymensingh,Muktagachha,25261.0,Boro Rice,84.49,Aman Rice,83.4,Aus Rice,81.36,Maize,79.0,Wheat,69.94,Boro Rice,Aman Rice
+Mymensingh,Mymensingh,30252.0,Aman Rice,86.98,Maize,81.75,Wheat,80.38,Aus Rice,78.25,Boro Rice,77.97,Aman Rice,Maize
+Mymensingh,Nandail,27147.0,Boro Rice,87.89,Aman Rice,84.08,Aus Rice,83.13,Maize,73.12,Wheat,73.09,Boro Rice,Aman Rice
+Mymensingh,Phulbaria,34554.0,Aman Rice,74.92,Maize,71.8,Boro Rice,71.48,Aus Rice,66.82,Wheat,65.33,Aman Rice,Maize
+Mymensingh,Phulpur,46823.0,Boro Rice,83.57,Aman Rice,78.61,Aus Rice,77.8,Wheat,74.4,Maize,72.92,Boro Rice,Aman Rice
+Mymensingh,Trisal,28144.0,Boro Rice,92.12,Aman Rice,89.26,Aus Rice,87.61,Maize,77.95,Wheat,70.05,Boro Rice,Aman Rice
+Naogaon,Atrai,24325.0,Boro Rice,85.17,Aman Rice,24.5,Aus Rice,23.92,Wheat,18.98,Maize,12.39,Boro Rice,Aman Rice
+Naogaon,Badalgachhi,17548.0,Aman Rice,85.06,Maize,82.74,Wheat,74.42,Aus Rice,64.37,Boro Rice,53.39,Aman Rice,Maize
+Naogaon,Dhamoirhat,26755.0,Aman Rice,81.11,Maize,76.44,Wheat,75.35,Aus Rice,62.43,Boro Rice,37.31,Aman Rice,Maize
+Naogaon,Manda,34635.0,Boro Rice,67.95,Aman Rice,61.55,Maize,60.68,Wheat,53.6,Aus Rice,50.58,Boro Rice,Aman Rice
+Naogaon,Mohadebpur,34742.0,Aman Rice,84.16,Maize,82.31,Wheat,73.75,Aus Rice,59.63,Boro Rice,58.05,Aman Rice,Maize
+Naogaon,Naogaon,23660.0,Boro Rice,82.7,Aman Rice,60.08,Aus Rice,54.35,Wheat,51.65,Maize,50.25,Boro Rice,Aman Rice
+Naogaon,Niamatpur,38739.0,Aman Rice,78.41,Maize,78.22,Wheat,58.68,Aus Rice,49.44,Boro Rice,42.65,Aman Rice,Maize
+Naogaon,Patnitala,32781.0,Aman Rice,72.51,Maize,72.4,Wheat,65.07,Aus Rice,50.07,Boro Rice,35.54,Aman Rice,Maize
+Naogaon,Porsha,22651.0,Aman Rice,68.6,Maize,67.04,Wheat,50.33,Aus Rice,40.42,Boro Rice,39.5,Aman Rice,Maize
+Naogaon,Raninagar,21975.0,Boro Rice,94.11,Aman Rice,73.24,Aus Rice,50.63,Wheat,48.41,Maize,39.48,Boro Rice,Aman Rice
+Naogaon,Shapahar,21600.0,Aman Rice,53.44,Maize,51.31,Wheat,38.47,Aus Rice,33.1,Boro Rice,33.03,Aman Rice,Maize
+Narail,Kalia,24890.0,Boro Rice,79.88,Aman Rice,40.07,Aus Rice,36.33,Wheat,15.54,Maize,10.41,Boro Rice,Aman Rice
+Narail,Lohagara,22672.0,Boro Rice,94.21,Aman Rice,73.22,Aus Rice,66.28,Wheat,58.72,Maize,48.16,Boro Rice,Aman Rice
+Narail,Narail,27229.0,Boro Rice,93.76,Aman Rice,66.95,Aus Rice,52.81,Wheat,42.95,Maize,42.59,Boro Rice,Aman Rice
+Narayanganj,Araihazar,12833.0,Boro Rice,97.94,Aus Rice,70.43,Aman Rice,42.15,Wheat,38.93,Maize,28.47,Boro Rice,Aus Rice
+Narayanganj,Bandar,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Narayanganj,Narayanganj,0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Narayanganj,Rupganj,15195.0,Boro Rice,76.13,Aus Rice,49.9,Aman Rice,31.53,Maize,28.69,Wheat,26.77,Boro Rice,Aus Rice
+Narayanganj,Sonargaon,13624.0,Boro Rice,89.59,Aus Rice,59.76,Wheat,42.63,Aman Rice,38.68,Maize,36.51,Boro Rice,Aus Rice
+Narsingdi,Belabo,9219.0,Boro Rice,77.35,Aman Rice,71.87,Maize,67.2,Wheat,65.81,Aus Rice,65.27,Boro Rice,Aman Rice
+Narsingdi,Manohardi,15139.0,Boro Rice,87.26,Aus Rice,76.63,Aman Rice,76.07,Maize,70.36,Wheat,70.09,Boro Rice,Aus Rice
+Narsingdi,Narsingdi,16695.0,Boro Rice,92.16,Aus Rice,66.51,Wheat,53.04,Aman Rice,51.96,Maize,48.32,Boro Rice,Aus Rice
+Narsingdi,Palas,6423.0,Boro Rice,66.38,Maize,58.83,Wheat,53.93,Aman Rice,53.64,Aus Rice,49.61,Boro Rice,Maize
+Narsingdi,Raipura,23830.0,Boro Rice,94.68,Aus Rice,70.9,Aman Rice,57.08,Wheat,56.83,Maize,49.37,Boro Rice,Aus Rice
+Narsingdi,Sibpur,16254.0,Boro Rice,87.67,Aus Rice,71.57,Aman Rice,66.66,Wheat,62.75,Maize,56.41,Boro Rice,Aus Rice
+Nator,Bagatipara,11471.0,Aman Rice,98.98,Maize,92.75,Boro Rice,83.63,Wheat,81.31,Aus Rice,60.87,Aman Rice,Maize
+Nator,Baraigram,25053.0,Boro Rice,91.74,Aman Rice,71.26,Aus Rice,58.7,Wheat,55.71,Maize,51.13,Boro Rice,Aman Rice
+Nator,Gurudashpur,16371.0,Boro Rice,94.23,Aman Rice,70.51,Aus Rice,51.78,Wheat,43.93,Maize,37.11,Boro Rice,Aman Rice
+Nator,Lalpur,26002.0,Aman Rice,87.86,Maize,78.6,Boro Rice,77.82,Wheat,77.56,Aus Rice,56.63,Aman Rice,Maize
+Nator,Nator,31933.0,Boro Rice,89.14,Aman Rice,70.39,Aus Rice,52.23,Wheat,51.73,Maize,50.5,Boro Rice,Aman Rice
+Nator,Shingra,47730.0,Boro Rice,90.29,Aman Rice,49.29,Aus Rice,37.92,Wheat,29.56,Maize,26.27,Boro Rice,Aman Rice
+Nawabganj,Bholahat,10686.0,Aman Rice,80.24,Maize,52.77,Wheat,50.76,Aus Rice,48.82,Boro Rice,41.55,Aman Rice,Maize
+Nawabganj,Gomastapur,27534.0,Aman Rice,70.78,Maize,64.28,Wheat,50.29,Boro Rice,39.06,Aus Rice,38.23,Aman Rice,Maize
+Nawabganj,Nachol,26131.0,Aman Rice,80.11,Maize,76.69,Wheat,59.12,Aus Rice,43.83,Boro Rice,41.3,Aman Rice,Maize
+Nawabganj,Nawabganj,33562.0,Aman Rice,67.76,Maize,60.68,Wheat,57.37,Aus Rice,38.51,Boro Rice,30.47,Aman Rice,Maize
+Nawabganj,Shibganj,44885.0,Aman Rice,80.3,Maize,72.72,Wheat,62.34,Aus Rice,48.59,Boro Rice,33.84,Aman Rice,Maize
+Netrakona,Atpara,16098.0,Boro Rice,95.58,Aus Rice,80.32,Aman Rice,67.64,Wheat,60.91,Maize,51.67,Boro Rice,Aus Rice
+Netrakona,Barhatta,19369.0,Boro Rice,91.17,Aus Rice,76.36,Aman Rice,54.39,Wheat,50.16,Maize,42.92,Boro Rice,Aus Rice
+Netrakona,Durgapur,24210.0,Boro Rice,87.72,Aus Rice,68.75,Aman Rice,56.36,Wheat,50.49,Maize,46.73,Boro Rice,Aus Rice
+Netrakona,Kalmakanda,34694.0,Boro Rice,81.46,Aus Rice,51.46,Aman Rice,21.13,Wheat,20.29,Maize,19.34,Boro Rice,Aus Rice
+Netrakona,Kendua,24550.0,Boro Rice,90.23,Aus Rice,80.43,Aman Rice,67.29,Wheat,58.2,Maize,53.07,Boro Rice,Aus Rice
+Netrakona,Khaliajuri,20351.0,Boro Rice,80.09,Aus Rice,35.6,Wheat,4.62,Maize,2.22,Aman Rice,0.31,Boro Rice,Aus Rice
+Netrakona,Madan,19888.0,Boro Rice,88.21,Aus Rice,55.45,Aman Rice,25.2,Wheat,25.17,Maize,18.72,Boro Rice,Aus Rice
+Netrakona,Mohanganj,21311.0,Boro Rice,87.28,Aus Rice,56.6,Wheat,33.04,Aman Rice,30.6,Maize,26.01,Boro Rice,Aus Rice
+Netrakona,Netrakona,26582.0,Boro Rice,90.99,Aus Rice,81.73,Aman Rice,72.24,Maize,61.9,Wheat,60.9,Boro Rice,Aus Rice
+Netrakona,Purbadhala,25013.0,Boro Rice,85.66,Aus Rice,79.84,Aman Rice,77.91,Wheat,69.66,Maize,68.55,Boro Rice,Aus Rice
+Nilphamari,Dimla,28087.0,Wheat,85.94,Maize,84.42,Aman Rice,81.23,Aus Rice,74.57,Boro Rice,41.35,Wheat,Maize
+Nilphamari,Domar,20861.0,Maize,86.92,Wheat,83.79,Aman Rice,81.42,Aus Rice,70.81,Boro Rice,33.15,Maize,Wheat
+Nilphamari,Jaldhaka,25247.0,Maize,86.94,Wheat,85.62,Aman Rice,83.06,Aus Rice,74.9,Boro Rice,34.81,Maize,Wheat
+Nilphamari,Kishorganj,23711.0,Maize,91.52,Wheat,89.7,Aman Rice,82.22,Aus Rice,70.82,Boro Rice,23.9,Maize,Wheat
+Nilphamari,Nilphamari,32709.0,Maize,88.53,Aman Rice,85.55,Wheat,84.32,Aus Rice,77.31,Boro Rice,41.0,Maize,Aman Rice
+Nilphamari,Saidpur,10276.0,Aman Rice,89.65,Aus Rice,84.89,Wheat,81.01,Maize,79.89,Boro Rice,44.06,Aman Rice,Aus Rice
+Noakhali,Begumganj,30586.0,Boro Rice,98.07,Aus Rice,76.49,Aman Rice,74.38,Wheat,18.45,Maize,10.69,Boro Rice,Aus Rice
+Noakhali,Chatkhil,8992.0,Boro Rice,97.01,Aus Rice,79.42,Aman Rice,67.62,Maize,56.92,Wheat,54.13,Boro Rice,Aus Rice
+Noakhali,Companiganj,27289.0,Boro Rice,61.22,Aus Rice,58.91,Aman Rice,51.14,Wheat,51.0,Maize,44.5,Boro Rice,Aus Rice
+Noakhali,Hatiya,36277.0,Boro Rice,51.14,Aman Rice,46.04,Aus Rice,40.26,Maize,23.64,Wheat,19.56,Boro Rice,Aman Rice
+Noakhali,Noakhali,67938.0,Boro Rice,57.35,Aus Rice,51.07,Aman Rice,46.73,Wheat,43.23,Maize,36.94,Boro Rice,Aus Rice
+Noakhali,Senbag,12362.0,Boro Rice,94.02,Aus Rice,88.01,Aman Rice,86.72,Maize,65.13,Wheat,61.01,Boro Rice,Aus Rice
+Pabna,Atgharia,14564.0,Boro Rice,89.57,Aman Rice,57.95,Aus Rice,48.09,Wheat,47.0,Maize,37.7,Boro Rice,Aman Rice
+Pabna,Bera,17301.0,Boro Rice,89.34,Aus Rice,47.09,Aman Rice,43.11,Wheat,37.96,Maize,24.84,Boro Rice,Aus Rice
+Pabna,Bhangura,10464.0,Boro Rice,91.36,Aus Rice,47.27,Aman Rice,42.79,Wheat,40.2,Maize,24.44,Boro Rice,Aus Rice
+Pabna,Chatmohar,25590.0,Boro Rice,91.53,Aman Rice,55.58,Aus Rice,47.91,Wheat,47.73,Maize,32.98,Boro Rice,Aman Rice
+Pabna,Faridpur,12357.0,Boro Rice,85.53,Aus Rice,32.4,Aman Rice,17.02,Wheat,15.04,Maize,3.52,Boro Rice,Aus Rice
+Pabna,Ishwardi,19822.0,Boro Rice,87.87,Aman Rice,86.59,Wheat,79.13,Maize,70.89,Aus Rice,54.38,Boro Rice,Aman Rice
+Pabna,Pabna,33706.0,Boro Rice,88.5,Aman Rice,78.2,Wheat,68.9,Maize,59.56,Aus Rice,52.88,Boro Rice,Aman Rice
+Pabna,Santhia,28048.0,Boro Rice,86.04,Aus Rice,46.83,Aman Rice,44.62,Wheat,37.75,Maize,33.36,Boro Rice,Aus Rice
+Pabna,Sujanagar,24725.0,Boro Rice,88.81,Aman Rice,50.76,Aus Rice,46.21,Wheat,45.11,Maize,33.21,Boro Rice,Aman Rice
+Panchagarh,Atwari,20159.0,Maize,94.73,Aman Rice,93.86,Wheat,93.66,Aus Rice,78.02,Boro Rice,36.01,Maize,Aman Rice
+Panchagarh,Boda,26473.0,Maize,94.68,Aman Rice,93.94,Wheat,90.82,Aus Rice,74.59,Boro Rice,41.31,Maize,Aman Rice
+Panchagarh,Debiganj,24051.0,Aman Rice,89.07,Maize,87.98,Wheat,87.62,Aus Rice,72.75,Boro Rice,39.61,Aman Rice,Maize
+Panchagarh,Panchagar,31048.0,Maize,95.21,Wheat,89.82,Aman Rice,86.45,Aus Rice,72.78,Boro Rice,38.67,Maize,Wheat
+Panchagarh,Tetulia,16756.0,Maize,86.11,Wheat,86.1,Aman Rice,77.87,Aus Rice,64.82,Boro Rice,21.27,Maize,Wheat
+Patuakhali,Bauphal,36073.0,Boro Rice,99.19,Aman Rice,98.93,Aus Rice,98.4,Wheat,65.5,Maize,65.24,Boro Rice,Aman Rice
+Patuakhali,Dashmina,16863.0,Aman Rice,94.78,Boro Rice,94.67,Aus Rice,87.16,Wheat,53.42,Maize,50.5,Aman Rice,Boro Rice
+Patuakhali,Galachipa,59752.0,Aman Rice,61.94,Boro Rice,57.14,Aus Rice,52.72,Maize,27.51,Wheat,27.16,Aman Rice,Boro Rice
+Patuakhali,Kalapara,35266.0,Aman Rice,62.69,Boro Rice,41.79,Aus Rice,41.62,Wheat,17.3,Maize,17.3,Aman Rice,Boro Rice
+Patuakhali,Mirzaganj,11999.0,Aman Rice,99.67,Boro Rice,95.92,Aus Rice,89.77,Wheat,42.94,Maize,42.94,Aman Rice,Boro Rice
+Patuakhali,Patuakhali,30210.0,Aman Rice,99.99,Boro Rice,94.98,Aus Rice,94.27,Wheat,60.67,Maize,60.66,Aman Rice,Boro Rice
+Pirojpur,Bhandaria,10415.0,Aman Rice,100.0,Boro Rice,97.65,Aus Rice,77.93,Wheat,55.57,Maize,55.57,Aman Rice,Boro Rice
+Pirojpur,Kawkhali,4816.0,Aman Rice,100.0,Boro Rice,100.0,Aus Rice,93.23,Wheat,45.6,Maize,45.6,Aman Rice,Boro Rice
+Pirojpur,Mathbaria,22887.0,Aman Rice,100.0,Boro Rice,82.61,Aus Rice,62.57,Wheat,46.01,Maize,46.01,Aman Rice,Boro Rice
+Pirojpur,Nazirpur,16670.0,Boro Rice,84.24,Aman Rice,70.56,Aus Rice,52.92,Wheat,21.36,Maize,20.45,Boro Rice,Aman Rice
+Pirojpur,Pirojpur,20299.0,Aman Rice,99.0,Boro Rice,92.42,Aus Rice,71.94,Wheat,43.32,Maize,43.04,Aman Rice,Boro Rice
+Pirojpur,Sarupkati,11555.0,Aman Rice,98.88,Boro Rice,98.74,Aus Rice,82.54,Maize,11.99,Wheat,11.25,Aman Rice,Boro Rice
+Rajbari,Baliakandi,18588.0,Boro Rice,94.84,Aman Rice,80.04,Aus Rice,71.78,Wheat,63.17,Maize,48.85,Boro Rice,Aman Rice
+Rajbari,Goalanda,10200.0,Wheat,93.63,Boro Rice,73.79,Maize,65.44,Aman Rice,61.78,Aus Rice,51.79,Wheat,Boro Rice
+Rajbari,Pangsha,33265.0,Boro Rice,89.8,Aman Rice,88.87,Wheat,81.35,Maize,69.08,Aus Rice,69.04,Boro Rice,Aman Rice
+Rajbari,Rajbari,22250.0,Aman Rice,87.79,Boro Rice,87.45,Wheat,82.42,Aus Rice,75.48,Maize,73.84,Aman Rice,Boro Rice
+Rajshahi,Bagha,13104.0,Wheat,81.73,Maize,80.6,Aman Rice,79.87,Boro Rice,58.03,Aus Rice,45.38,Wheat,Maize
+Rajshahi,Bagmara,28427.0,Boro Rice,82.96,Aman Rice,71.61,Maize,51.59,Aus Rice,50.3,Wheat,46.67,Boro Rice,Aman Rice
+Rajshahi,Boalia (Rajshahi),0.0,Aus Rice,0.0,Aman Rice,0.0,Boro Rice,0.0,Wheat,0.0,Maize,0.0,Aus Rice,Aman Rice
+Rajshahi,Charghat,12694.0,Maize,96.96,Aman Rice,91.41,Wheat,89.16,Boro Rice,65.24,Aus Rice,53.07,Maize,Aman Rice
+Rajshahi,Durgapur,16210.0,Aman Rice,89.59,Maize,81.53,Boro Rice,76.1,Wheat,67.72,Aus Rice,60.09,Aman Rice,Maize
+Rajshahi,Godagari,42227.0,Aman Rice,78.92,Maize,73.44,Wheat,57.41,Aus Rice,40.98,Boro Rice,40.51,Aman Rice,Maize
+Rajshahi,Mohanpur,13145.0,Aman Rice,86.33,Maize,72.81,Boro Rice,68.07,Aus Rice,54.77,Wheat,48.7,Aman Rice,Maize
+Rajshahi,Paba,19740.0,Aman Rice,85.83,Maize,82.52,Wheat,64.2,Boro Rice,59.76,Aus Rice,53.45,Aman Rice,Maize
+Rajshahi,Puthia,15916.0,Aman Rice,91.37,Maize,85.02,Boro Rice,80.9,Wheat,77.64,Aus Rice,60.69,Aman Rice,Maize
+Rajshahi,Tanor,25955.0,Aman Rice,76.44,Maize,74.35,Wheat,56.67,Aus Rice,48.03,Boro Rice,47.71,Aman Rice,Maize
+Rangamati,Baghaichhari,17125.0,Maize,4.67,Wheat,3.97,Aman Rice,2.56,Aus Rice,2.11,Boro Rice,1.98,Maize,Wheat
+Rangamati,Barkal,10313.0,Maize,3.97,Wheat,1.1,Aus Rice,0.84,Boro Rice,0.84,Aman Rice,0.65,Maize,Wheat
+Rangamati,Belaichhari,5737.0,Wheat,1.29,Aus Rice,1.03,Boro Rice,1.03,Maize,1.03,Aman Rice,0.77,Wheat,Aus Rice
+Rangamati,Juraichhari,12070.0,Wheat,0.92,Maize,0.78,Aus Rice,0.69,Boro Rice,0.64,Aman Rice,0.6,Wheat,Maize
+Rangamati,Kaptai,6089.0,Wheat,2.07,Aus Rice,1.69,Boro Rice,1.69,Maize,1.67,Aman Rice,1.29,Wheat,Aus Rice
+Rangamati,Kawkhali (Betbunia),12821.0,Wheat,1.03,Maize,0.94,Aus Rice,0.82,Boro Rice,0.82,Aman Rice,0.62,Wheat,Maize
+Rangamati,Langadu,13626.0,Maize,8.8,Wheat,6.57,Aman Rice,4.11,Aus Rice,3.16,Boro Rice,3.16,Maize,Wheat
+Rangamati,Nannerchar,10433.0,Wheat,3.67,Maize,3.36,Aus Rice,2.94,Boro Rice,2.94,Aman Rice,2.2,Wheat,Maize
+Rangamati,Rajasthali,3620.0,Maize,1.81,Aman Rice,1.54,Wheat,0.81,Boro Rice,0.7,Aus Rice,0.68,Maize,Aman Rice
+Rangamati,Rangamati,8546.0,Wheat,2.52,Maize,2.32,Aus Rice,1.74,Boro Rice,1.74,Aman Rice,1.48,Wheat,Maize
+Rangpur,Badarganj,27290.0,Maize,84.21,Wheat,81.69,Aman Rice,78.16,Aus Rice,69.42,Boro Rice,31.38,Maize,Wheat
+Rangpur,Gangachara,17941.0,Wheat,91.92,Maize,89.86,Aman Rice,81.26,Aus Rice,71.81,Boro Rice,29.97,Wheat,Maize
+Rangpur,Kaunia,12652.0,Wheat,86.68,Maize,85.47,Aman Rice,83.3,Aus Rice,81.4,Boro Rice,49.88,Wheat,Maize
+Rangpur,Mithapukur,44623.0,Maize,88.15,Aman Rice,85.61,Wheat,80.06,Aus Rice,76.96,Boro Rice,39.83,Maize,Aman Rice
+Rangpur,Pirgachha,23080.0,Wheat,84.15,Maize,83.39,Aman Rice,82.23,Aus Rice,79.87,Boro Rice,40.96,Wheat,Maize
+Rangpur,Pirganj,36338.0,Aman Rice,82.01,Maize,81.84,Wheat,77.09,Aus Rice,67.44,Boro Rice,37.99,Aman Rice,Maize
+Rangpur,Rangpur,26764.0,Maize,92.99,Wheat,89.12,Aman Rice,84.33,Aus Rice,74.55,Boro Rice,29.12,Maize,Wheat
+Rangpur,Taraganj,11496.0,Maize,88.87,Aman Rice,88.06,Wheat,85.48,Aus Rice,82.56,Boro Rice,44.65,Maize,Aman Rice
+Satkhira,Asasuni,33920.0,Aman Rice,60.37,Boro Rice,49.24,Aus Rice,28.14,Maize,25.21,Wheat,19.33,Aman Rice,Boro Rice
+Satkhira,Debhata,14584.0,Aman Rice,43.78,Boro Rice,39.1,Maize,20.27,Wheat,18.48,Aus Rice,11.22,Aman Rice,Boro Rice
+Satkhira,Kalaroa,16893.0,Boro Rice,83.29,Maize,82.36,Wheat,68.1,Aman Rice,62.63,Aus Rice,43.25,Boro Rice,Maize
+Satkhira,Kaliganj,25982.0,Aman Rice,58.93,Boro Rice,33.23,Maize,25.06,Aus Rice,22.11,Wheat,21.21,Aman Rice,Boro Rice
+Satkhira,Satkhira,27078.0,Boro Rice,82.43,Maize,58.52,Aman Rice,57.96,Wheat,49.04,Aus Rice,42.14,Boro Rice,Maize
+Satkhira,Shyamnagar,36638.0,Aman Rice,24.62,Boro Rice,1.32,Maize,1.12,Aus Rice,0.97,Wheat,0.97,Aman Rice,Boro Rice
+Satkhira,Tala,26756.0,Boro Rice,77.78,Aman Rice,75.0,Maize,70.79,Wheat,56.5,Aus Rice,42.06,Boro Rice,Aman Rice
+Shariatpur,Bhedarganj,17238.0,Boro Rice,97.39,Aus Rice,65.27,Wheat,61.25,Aman Rice,58.1,Maize,23.84,Boro Rice,Aus Rice
+Shariatpur,Damudya,7412.0,Boro Rice,96.55,Aus Rice,68.6,Aman Rice,61.72,Wheat,50.45,Maize,20.74,Boro Rice,Aus Rice
+Shariatpur,Goshairhat,13523.0,Boro Rice,96.45,Aus Rice,70.67,Aman Rice,69.33,Wheat,60.68,Maize,34.75,Boro Rice,Aus Rice
+Shariatpur,Janjira,17020.0,Boro Rice,87.13,Wheat,72.95,Aus Rice,65.0,Aman Rice,47.5,Maize,43.95,Boro Rice,Wheat
+Shariatpur,Naria,15479.0,Boro Rice,95.21,Aus Rice,68.03,Wheat,58.04,Aman Rice,57.44,Maize,29.63,Boro Rice,Aus Rice
+Shariatpur,Palong (Sadar),11198.0,Boro Rice,95.17,Aus Rice,70.98,Aman Rice,67.16,Wheat,62.65,Maize,37.15,Boro Rice,Aus Rice
+Sherpur,Jhenaigati,19322.0,Aman Rice,87.84,Maize,77.68,Wheat,76.13,Aus Rice,75.78,Boro Rice,45.49,Aman Rice,Maize
+Sherpur,Nakla,15431.0,Boro Rice,89.51,Aman Rice,85.92,Aus Rice,83.52,Wheat,72.94,Maize,71.4,Boro Rice,Aman Rice
+Sherpur,Nalitabari,30638.0,Aman Rice,88.72,Aus Rice,77.03,Boro Rice,65.89,Wheat,64.27,Maize,58.72,Aman Rice,Aus Rice
+Sherpur,Sherpur,32824.0,Wheat,86.76,Maize,82.76,Aman Rice,82.2,Aus Rice,73.59,Boro Rice,72.14,Wheat,Maize
+Sherpur,Sribardi,22620.0,Aman Rice,78.34,Maize,75.5,Wheat,74.5,Aus Rice,66.4,Boro Rice,53.87,Aman Rice,Maize
+Sirajganj,Belkuchi,10083.0,Boro Rice,87.04,Aman Rice,76.83,Wheat,67.86,Maize,62.99,Aus Rice,56.97,Boro Rice,Aman Rice
+Sirajganj,Chauhali,13087.0,Boro Rice,69.4,Aman Rice,34.01,Aus Rice,30.46,Wheat,29.71,Maize,6.89,Boro Rice,Aman Rice
+Sirajganj,Kamarkhanda,7682.0,Boro Rice,94.43,Aman Rice,92.62,Wheat,77.78,Maize,77.49,Aus Rice,70.4,Boro Rice,Aman Rice
+Sirajganj,Kazipur,21130.0,Boro Rice,89.22,Aman Rice,60.37,Wheat,57.86,Aus Rice,55.97,Maize,40.57,Boro Rice,Aman Rice
+Sirajganj,Raiganj,21729.0,Aman Rice,95.05,Boro Rice,89.63,Maize,82.95,Wheat,73.3,Aus Rice,66.59,Aman Rice,Boro Rice
+Sirajganj,Shahzadpur,23227.0,Boro Rice,93.28,Aman Rice,71.54,Wheat,62.46,Aus Rice,61.64,Maize,59.49,Boro Rice,Aman Rice
+Sirajganj,Sirajganj,22676.0,Boro Rice,93.02,Aman Rice,82.0,Wheat,69.53,Maize,63.01,Aus Rice,62.52,Boro Rice,Aman Rice
+Sirajganj,Taras,26806.0,Boro Rice,91.29,Aman Rice,44.67,Aus Rice,34.76,Wheat,32.7,Maize,19.33,Boro Rice,Aman Rice
+Sirajganj,Ullapara,35104.0,Boro Rice,94.23,Aman Rice,80.81,Maize,67.89,Wheat,67.78,Aus Rice,67.18,Boro Rice,Aman Rice
+Sunamganj,Bishambarpur,17677.0,Boro Rice,83.77,Aman Rice,43.7,Aus Rice,40.45,Wheat,40.11,Maize,28.07,Boro Rice,Aman Rice
+Sunamganj,Chhatak,35029.0,Boro Rice,92.46,Aus Rice,55.44,Aman Rice,45.03,Wheat,39.83,Maize,26.48,Boro Rice,Aus Rice
+Sunamganj,Dharmapasha,39274.0,Boro Rice,81.25,Aus Rice,32.78,Wheat,16.58,Aman Rice,10.46,Maize,4.22,Boro Rice,Aus Rice
+Sunamganj,Dirai,37281.0,Boro Rice,84.03,Aus Rice,38.67,Aman Rice,14.11,Wheat,13.47,Maize,7.49,Boro Rice,Aus Rice
+Sunamganj,Dwarabazar,30131.0,Boro Rice,85.84,Aus Rice,55.5,Wheat,51.84,Aman Rice,47.16,Maize,42.77,Boro Rice,Aus Rice
+Sunamganj,Jagannathpur,32131.0,Boro Rice,89.85,Aus Rice,50.47,Aman Rice,35.57,Wheat,28.6,Maize,17.23,Boro Rice,Aus Rice
+Sunamganj,Jamalganj,28545.0,Boro Rice,83.71,Aus Rice,21.64,Wheat,6.98,Aman Rice,5.85,Maize,1.08,Boro Rice,Aus Rice
+Sunamganj,Sulla,22298.0,Boro Rice,81.25,Aus Rice,37.85,Wheat,6.63,Aman Rice,2.45,Maize,1.22,Boro Rice,Aus Rice
+Sunamganj,Sunamganj,52259.0,Boro Rice,89.22,Aus Rice,33.7,Aman Rice,24.7,Wheat,19.56,Maize,3.81,Boro Rice,Aus Rice
+Sunamganj,Tahirpur,22675.0,Boro Rice,74.01,Wheat,27.38,Aus Rice,24.92,Aman Rice,24.5,Maize,19.61,Boro Rice,Wheat
+Sylhet,Balaganj,31018.0,Boro Rice,89.87,Aus Rice,62.56,Aman Rice,44.16,Wheat,34.9,Maize,22.24,Boro Rice,Aus Rice
+Sylhet,Beani Bazar,18048.0,Aus Rice,65.86,Aman Rice,58.32,Boro Rice,49.71,Wheat,49.08,Maize,39.31,Aus Rice,Aman Rice
+Sylhet,Bishwanath,16767.0,Boro Rice,98.58,Aus Rice,84.15,Aman Rice,77.21,Wheat,60.69,Maize,39.93,Boro Rice,Aus Rice
+Sylhet,Companiganj,28564.0,Boro Rice,78.99,Aus Rice,45.01,Aman Rice,23.71,Wheat,23.51,Maize,22.09,Boro Rice,Aus Rice
+Sylhet,Fenchuganj,8637.0,Boro Rice,47.89,Aus Rice,42.4,Aman Rice,38.42,Wheat,34.32,Maize,29.09,Boro Rice,Aus Rice
+Sylhet,Golapganj,16177.0,Aman Rice,65.43,Aus Rice,62.83,Boro Rice,59.88,Wheat,59.84,Maize,56.44,Aman Rice,Aus Rice
+Sylhet,Gowainghat,44572.0,Boro Rice,76.96,Aus Rice,41.25,Wheat,35.33,Maize,32.91,Aman Rice,32.32,Boro Rice,Aus Rice
+Sylhet,Jaintapur,17040.0,Boro Rice,64.59,Aman Rice,48.28,Aus Rice,46.42,Wheat,45.07,Maize,40.58,Boro Rice,Aman Rice
+Sylhet,Kanaighat,29913.0,Boro Rice,53.12,Aus Rice,50.48,Aman Rice,46.66,Wheat,40.1,Maize,34.53,Boro Rice,Aus Rice
+Sylhet,Sylhet,36789.0,Boro Rice,80.46,Aus Rice,62.22,Aman Rice,58.58,Wheat,51.63,Maize,45.08,Boro Rice,Aus Rice
+Sylhet,Zakiganj,19280.0,Aus Rice,61.95,Aman Rice,54.56,Boro Rice,49.41,Wheat,44.04,Maize,36.86,Aus Rice,Aman Rice
+Tangail,Basail,13097.0,Boro Rice,99.86,Aus Rice,73.28,Aman Rice,64.42,Wheat,62.05,Maize,47.76,Boro Rice,Aus Rice
+Tangail,Bhuapur,16927.0,Boro Rice,92.52,Wheat,85.54,Maize,73.46,Aman Rice,71.48,Aus Rice,55.27,Boro Rice,Wheat
+Tangail,Delduar,14015.0,Boro Rice,99.02,Aman Rice,86.13,Wheat,84.69,Maize,76.75,Aus Rice,67.05,Boro Rice,Aman Rice
+Tangail,Ghatail,40940.0,Boro Rice,70.36,Aman Rice,67.42,Wheat,63.7,Maize,62.4,Aus Rice,58.02,Boro Rice,Aman Rice
+Tangail,Gopalpur,17067.0,Boro Rice,94.79,Aus Rice,82.82,Aman Rice,80.66,Wheat,75.91,Maize,69.06,Boro Rice,Aus Rice
+Tangail,Kalihati,22790.0,Boro Rice,97.66,Wheat,82.5,Aman Rice,78.67,Maize,73.74,Aus Rice,70.08,Boro Rice,Wheat
+Tangail,Madhupur,42777.0,Aman Rice,78.53,Boro Rice,73.72,Maize,71.03,Aus Rice,64.1,Wheat,63.06,Aman Rice,Boro Rice
+Tangail,Mirzapur,30416.0,Boro Rice,81.06,Aus Rice,56.25,Aman Rice,53.78,Wheat,49.49,Maize,44.05,Boro Rice,Aus Rice
+Tangail,Nagarpur,19458.0,Boro Rice,94.5,Wheat,85.49,Aman Rice,80.15,Maize,77.7,Aus Rice,64.53,Boro Rice,Wheat
+Tangail,Shakhipur,40930.0,Aman Rice,69.81,Boro Rice,69.75,Maize,60.5,Wheat,56.14,Aus Rice,51.37,Aman Rice,Boro Rice
+Tangail,Tangail,23037.0,Boro Rice,97.43,Wheat,87.04,Aman Rice,79.89,Maize,75.45,Aus Rice,60.51,Boro Rice,Wheat
+Thakurgaon,Baliadangi,25565.0,Aman Rice,98.16,Wheat,94.6,Maize,90.54,Aus Rice,83.14,Boro Rice,47.36,Aman Rice,Wheat
+Thakurgaon,Haripur,18067.0,Aman Rice,92.26,Maize,89.12,Wheat,84.49,Aus Rice,74.55,Boro Rice,42.1,Aman Rice,Maize
+Thakurgaon,Pirganj,30650.0,Aman Rice,84.98,Maize,80.96,Wheat,80.64,Aus Rice,65.71,Boro Rice,38.3,Aman Rice,Maize
+Thakurgaon,Ranisonkail,27352.0,Wheat,85.36,Aman Rice,82.55,Maize,80.3,Aus Rice,69.18,Boro Rice,34.58,Wheat,Aman Rice
+Thakurgaon,Thakurgaon,60283.0,Wheat,92.15,Maize,91.29,Aman Rice,90.25,Aus Rice,72.69,Boro Rice,37.19,Wheat,Maize

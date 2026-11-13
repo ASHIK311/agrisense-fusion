@@ -1,0 +1,9 @@
+# Pinned Dependencies for Member 4 Correction_v2
+# Field Shift: Adapting Farms with NASA Data (AgriSense Fusion)
+# NASA Space Apps Challenge 2026
+
+pandas>=2.0.0,<3.1.0
+numpy>=1.24.0,<2.5.0
+scipy>=1.10.0,<1.16.0
+pyyaml>=6.0,<6.1
+shapely>=2.0.0,<2.1.0

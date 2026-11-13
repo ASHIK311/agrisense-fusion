@@ -1,0 +1,10 @@
+crop,model_name,features_used,validation_strategy,train_samples,test_samples,mae_kg_per_ha,rmse_kg_per_ha,r2_score,beats_baseline,operational_verdict
+Maize,Last Training Year Baseline (2011),Prior target yield (yt = y2011),Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,1761.16,1990.9,-3.598,False,BENCHMARK BASELINE (Lowest Error)
+Maize,Linear Regression,"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,2209.08,2489.29,-6.189,False,REJECTED (Higher error than baseline)
+Maize,Random Forest Regressor (n=200),"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,3362.09,3448.98,-12.8,False,REJECTED (Severe tree under-prediction of technological growth)
+Rice,Last Training Year Baseline (2011),Prior target yield (yt = y2011),Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,359.54,439.47,-2.024,False,BENCHMARK BASELINE (Lowest Error)
+Rice,Linear Regression,"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,752.56,868.58,-10.813,False,REJECTED (2.1x higher error than naive baseline)
+Rice,Random Forest Regressor (n=200),"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,980.93,1026.81,-15.509,False,REJECTED (2.7x higher error than naive baseline)
+Wheat,Last Training Year Baseline (2011),Prior target yield (yt = y2011),Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,584.16,633.76,-5.65,False,BENCHMARK BASELINE (Lowest Error)
+Wheat,Linear Regression,"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,1024.25,1063.07,-17.71,False,REJECTED (1.8x higher error than naive baseline)
+Wheat,Random Forest Regressor (n=200),"Annual Mean Rain, Tmean, Tmax, Tmin",Chronological Holdout (1981-2011 Train / 2012-2024 Test),31,13,1044.67,1072.4,-18.04,False,REJECTED (1.8x higher error than naive baseline)

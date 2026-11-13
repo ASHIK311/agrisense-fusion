@@ -1,0 +1,91 @@
+================================================================================
+MEMBER 4 CORRECTION_V2 AUTOMATED TEST SUITE EXECUTION LOG
+INDEPENDENT FORENSIC VERIFICATION AUDIT
+================================================================================
+Timestamp: 2026-11-10T17:34:40+06:00
+Environment: Windows 11 x64 / Python 3.11.9
+Invoking Command: py -3.11 "F:\nasa project\Member 4\Correction_v2\tests\test_correction_v2.py" -v
+Test Module: tests.test_correction_v2.TestMember4CorrectionV2
+Workspace Under Test: F:\nasa project\Member 4\Correction_v2
+
+--------------------------------------------------------------------------------
+TEST EXECUTION DETAILS:
+--------------------------------------------------------------------------------
+test_01_admin_identifier_uniqueness (__main__.TestMember4CorrectionV2.test_01_admin_identifier_uniqueness) ... ok
+  [ASSERTION]: len(df) == 466 and df['upazila_code'].nunique() == 466
+  [RESULT]: 466 unique administrative records verified.
+
+test_02_admin_hierarchy_integrity (__main__.TestMember4CorrectionV2.test_02_admin_hierarchy_integrity) ... ok
+  [ASSERTION]: len(divisions) == 8 and len(districts) == 64
+  [RESULT]: Exactly 8 divisions and 64 districts verified.
+
+test_03_coordinate_bounds_validity (__main__.TestMember4CorrectionV2.test_03_coordinate_bounds_validity) ... ok
+  [ASSERTION]: Lat in [20.5, 26.7]N, Lon in [88.0, 92.7]E, UTM Easting/Northing > 0, PIP flag verified
+  [RESULT]: All coordinates within national bounds; PIP verified.
+
+test_04_national_geographic_coverage (__main__.TestMember4CorrectionV2.test_04_national_geographic_coverage) ... ok
+  [ASSERTION]: len(unmatched_upazila_report.csv) == 0
+  [RESULT]: Zero unmatched agricultural upazilas.
+
+test_05_climate_date_continuity (__main__.TestMember4CorrectionV2.test_05_climate_date_continuity) ... ok
+  [ASSERTION]: len(df) == 27960 (466 upz * 60 continuous months, 2020-2024)
+  [RESULT]: Exactly 60 continuous months verified for all 466 upazilas.
+
+test_06_climate_parameter_units (__main__.TestMember4CorrectionV2.test_06_climate_parameter_units) ... ok
+  [ASSERTION]: precipitation_monthly_total_mm == rate * days_in_month and Tmin <= Tmax
+  [RESULT]: Arithmetic conversion verified; temperature bounds physically consistent.
+
+test_07_missing_value_handling (__main__.TestMember4CorrectionV2.test_07_missing_value_handling) ... ok
+  [ASSERTION]: Zero null values in primary identifier columns across 7 processed datasets
+  [RESULT]: No null identifiers detected.
+
+test_08_et0_fao56_bounds (__main__.TestMember4CorrectionV2.test_08_et0_fao56_bounds) ... ok
+  [ASSERTION]: 1.0 <= et0_daily_mean_mm_per_day <= 9.0 mm/day
+  [RESULT]: Daily ET0 reference bounds physically plausible for Bangladesh climate.
+
+test_09_etc_arithmetic_exactness (__main__.TestMember4CorrectionV2.test_09_etc_arithmetic_exactness) ... ok
+  [ASSERTION]: etc_daily_mm_per_day == round(et0_daily_mean * kc_value, 2) across 58,250 records
+  [RESULT]: Exact arithmetic multiplication verified within +/- 0.02 mm/day.
+
+test_10_effective_rainfall_bounds (__main__.TestMember4CorrectionV2.test_10_effective_rainfall_bounds) ... ok
+  [ASSERTION]: 0 <= effective_rainfall_usda_scs_mm <= precipitation_total_mm
+  [RESULT]: Physical mass conservation verified across 27,960 records.
+
+test_11_net_irrigation_requirement_bounds (__main__.TestMember4CorrectionV2.test_11_net_irrigation_requirement_bounds) ... ok
+  [ASSERTION]: net_iwr >= 0; Aman July mean ~ 0; Boro March mean > 100 mm
+  [RESULT]: Seasonal irrigation water requirement dynamics verified.
+
+test_12_root_zone_water_balance (__main__.TestMember4CorrectionV2.test_12_root_zone_water_balance) ... ok
+  [ASSERTION]: RAW <= TAW in root zone water balance
+  [RESULT]: Soil water capacity bounds verified.
+
+test_13_crop_calendar_weather_linkage (__main__.TestMember4CorrectionV2.test_13_crop_calendar_weather_linkage) ... ok
+  [ASSERTION]: len(df) > 0 and no null values in weather linkage
+  [RESULT]: Passed structural assertion. (AUDITOR NOTE: df contains only 6 rows for Godagari, not nationwide 2,796).
+
+test_14_suitability_godagari_reproduction (__main__.TestMember4CorrectionV2.test_14_suitability_godagari_reproduction) ... ok
+  [ASSERTION]: Godagari scores match 78.92%, 73.44%, 57.41%, 40.98%, 40.51%
+  [RESULT]: Exact mathematical audit score reproduction verified.
+
+test_15_rotation_timing_turnaround (__main__.TestMember4CorrectionV2.test_15_rotation_timing_turnaround) ... ok
+  [ASSERTION]: turnaround_feasibility contains '12-15 days' across all 466 rows
+  [RESULT]: Verified turnaround string label across all upazilas.
+
+test_16_yield_model_benchmarking (__main__.TestMember4CorrectionV2.test_16_yield_model_benchmarking) ... ok
+  [ASSERTION]: R2 < 0 for all ML models; beats_baseline is False
+  [RESULT]: Verified that ML models failed chronological holdout and are rejected.
+
+test_17_file_path_portability (__main__.TestMember4CorrectionV2.test_17_file_path_portability) ... ok
+  [ASSERTION]: Zero occurrences of '/kaggle/working' or '/content/Member4_Project' in src/
+  [RESULT]: Codebase verified 100% portable.
+
+test_18_derived_regional_summaries (__main__.TestMember4CorrectionV2.test_18_derived_regional_summaries) ... ok
+  [ASSERTION]: len(district_summary) == 64 and len(division_summary) == 8
+  [RESULT]: Aggregation tables verified complete.
+
+--------------------------------------------------------------------------------
+SUMMARY:
+Ran 18 tests in 0.487s
+Status: OK (18 Passed, 0 Failed, 0 Errors)
+Test Suite Execution Verdict: PASSED
+================================================================================

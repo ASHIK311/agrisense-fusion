@@ -1,0 +1,57 @@
+# Field Shift — Member 4 Correction_v2 Configuration
+# Project: Adapting Farms with NASA Data (AgriSense Fusion)
+# Target Study Area: Godagari Upazila, Rajshahi, Bangladesh
+
+project:
+  name: "Field Shift - Member 4 Agronomy and Crop Intelligence System"
+  version: "2.0.0"
+  author: "Senior Agricultural Data Scientist & Agronomy Specialist"
+  focal_location:
+    upazila: "Godagari"
+    district: "Rajshahi"
+    division: "Rajshahi"
+    latitude: 24.469
+    longitude: 88.330
+    epsg_geographic: 4326
+    epsg_projected: 32645
+
+paths:
+  raw_bounds: "data/raw/bangladesh_upazilla_bounds.json"
+  raw_suitability: "data/raw/upazila_crop_suitability_analysis.csv"
+  raw_nasa_power: "data/raw/nasa_power_monthly_all_upazilas_1981_2024.csv"
+  raw_yield: "data/raw/bangladesh_historical_crop_yield.csv"
+  admin_reference: "data/reference/bangladesh_admin_reference.csv"
+  upazila_coords: "data/reference/upazila_coordinate_reference.csv"
+  name_mapping: "data/reference/administrative_name_mapping.csv"
+  kc_reference: "data/reference/crop_stage_kc_reference.csv"
+  rotation_rules: "data/reference/rotation_rules_reference.csv"
+  climate_monthly: "data/processed/national_upazila_climate_monthly.csv"
+  suitability_national: "data/processed/national_crop_suitability.csv"
+  upazila_rankings: "data/processed/upazila_crop_rankings.csv"
+  et0_daily: "data/processed/daily_et0_national.csv"
+  etc_daily: "data/processed/daily_etc_national.csv"
+  irrigation_requirement: "data/processed/net_irrigation_requirement.csv"
+  water_balance: "data/processed/root_zone_water_balance.csv"
+  crop_calendar: "data/processed/national_crop_calendar.csv"
+  crop_rotation: "data/processed/national_crop_rotation_recommendations.csv"
+  yield_dataset: "data/processed/verified_crop_yield_dataset.csv"
+  yield_comparison: "data/processed/yield_model_comparison.csv"
+
+fao56:
+  psychrometric_constant: 0.067 # kPa / degC at sea level (adjusted for elevation)
+  stefan_boltzmann: 4.903e-9 # MJ / K^4 / m^2 / day
+  soil_heat_flux_daily: 0.0 # G_day approx 0 for daily intervals
+  albedo_reference_grass: 0.23
+  effective_rainfall_method: "USDA_SCS" # USDA Soil Conservation Service formula
+  mad_fraction: # Management Allowed Depletion fraction
+    Rice: 0.20 # High sensitivity to drought during vegetative/flowering
+    Wheat: 0.50
+    Maize: 0.55
+
+crops:
+  supported:
+    - "Aman Rice"
+    - "Boro Rice"
+    - "Aus Rice"
+    - "Wheat"
+    - "Maize"

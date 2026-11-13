@@ -1,0 +1,3 @@
+district_barc,upazila_barc,candidate_1,score_1,candidate_2,score_2,resolution
+CHANDPUR,Matlab,Matlab Uttar,0.706,Matlab Dakshin,0.632,Assigned to Matlab Uttar (Highest Score)
+KHULNA,Dighalia (Daulathpur),Daulatpur,0.667,Dighalia,0.615,Assigned to Daulatpur (Highest Score)

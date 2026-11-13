@@ -1,0 +1,8 @@
+event_id,date,crop_id,growth_stage,day_since_planting,depletion_before_mm,raw_threshold_mm,taw_mm,net_depth_mm,gross_depth_mm,application_efficiency,post_irrigation_depletion_mm,estimated_pumping_hours_per_ha,trigger_reason
+IRR-WHE-001,2022-12-05,wheat,initial,15,16.55,16.5,30.0,15.05,21.5,0.7,1.5,4.3,Root-zone depletion (16.6 mm) exceeded RAW threshold (16.5 mm)
+IRR-WHE-002,2023-01-05,wheat,development,46,46.47,45.13,82.05,42.37,60.53,0.7,4.1,12.0,Root-zone depletion (46.5 mm) exceeded RAW threshold (45.1 mm)
+IRR-WHE-003,2023-01-20,wheat,mid_season,61,52.09,49.5,90.0,47.59,67.99,0.7,4.5,13.5,Root-zone depletion (52.1 mm) exceeded RAW threshold (49.5 mm)
+IRR-WHE-004,2023-02-02,wheat,mid_season,74,53.08,49.5,90.0,48.58,69.4,0.7,4.5,13.8,Root-zone depletion (53.1 mm) exceeded RAW threshold (49.5 mm)
+IRR-WHE-005,2023-02-12,wheat,mid_season,84,54.85,49.5,90.0,50.35,71.93,0.7,4.5,14.3,Root-zone depletion (54.9 mm) exceeded RAW threshold (49.5 mm)
+IRR-WHE-006,2023-02-23,wheat,late_season,95,54.95,49.5,90.0,50.45,72.07,0.7,4.5,14.3,Root-zone depletion (55.0 mm) exceeded RAW threshold (49.5 mm)
+IRR-WHE-007,2023-03-07,wheat,late_season,107,50.94,49.5,90.0,46.44,66.34,0.7,4.5,13.2,Root-zone depletion (50.9 mm) exceeded RAW threshold (49.5 mm)
