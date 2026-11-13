@@ -7,6 +7,7 @@
 const express = require('express');
 const router = express.Router();
 const storage = require('../storage/storageService');
+const { classifyFeatures, loadSentinel2ScenesCatalog } = require('../services/satelliteClassifier');
 
 // GET /api/v1/satellite/metadata
 router.get('/metadata', (req, res) => {
@@ -42,27 +43,21 @@ router.get('/metadata', (req, res) => {
 
 // GET /api/v1/satellite/scenes
 router.get('/scenes', (req, res) => {
-  const scenes = [
-    { scene_id: 'S2_20231015', date: '2023-10-15', cloud_pct: 1.2, season: 'Kharif-2 (Aman Sowing)' },
-    { scene_id: 'S2_20231104', date: '2023-11-04', cloud_pct: 0.4, season: 'Post-Monsoon Transition' },
-    { scene_id: 'S2_20231124', date: '2023-11-24', cloud_pct: 0.1, season: 'Rabi Pre-Sowing' },
-    { scene_id: 'S2_20231214', date: '2023-12-14', cloud_pct: 0.0, season: 'Rabi Vegetative (Mustard Bloom)' },
-    { scene_id: 'S2_20240103', date: '2024-01-03', cloud_pct: 0.2, season: 'Rabi Mid-Stage' },
-    { scene_id: 'S2_20240123', date: '2024-01-23', cloud_pct: 0.8, season: 'Rabi Pod Development' },
-    { scene_id: 'S2_20240212', date: '2024-02-12', cloud_pct: 0.3, season: 'Rabi Maturation / Harvest' },
-    { scene_id: 'S2_20240303', date: '2024-03-03', cloud_pct: 1.1, season: 'Pre-Kharif-1 Transition' },
-    { scene_id: 'S2_20240323', date: '2024-03-23', cloud_pct: 2.4, season: 'Kharif-1 Heat / Dryness' },
-    { scene_id: 'S2_20240412', date: '2024-04-12', cloud_pct: 3.1, season: 'High Heat Barind Peak' },
-    { scene_id: 'S2_20240502', date: '2024-05-02', cloud_pct: 4.8, season: 'Early Monsoon Showers' },
-    { scene_id: 'S2_20240522', date: '2024-05-22', cloud_pct: 6.2, season: 'Kharif-2 Nursery Prep' }
-  ];
+  const limit = req.query.limit ? parseInt(req.query.limit, 10) : 12;
+  const tileId = req.query.tile_id || null;
+  const maxCloudPct = req.query.max_cloud_pct !== undefined ? parseFloat(req.query.max_cloud_pct) : null;
+
+  const catalog = loadSentinel2ScenesCatalog({ limit, tileId, maxCloudPct });
 
   res.json({
     success: true,
-    total_scenes: scenes.length,
+    total_scenes: catalog.scenes.length,
+    total_catalog_scenes: catalog.total_catalog_scenes,
+    filtered_catalog_scenes: catalog.filtered_count,
+    catalog_source: 'research/member_01_satellite_gis/data/metadata/sentinel2_scenes_catalog.csv',
     satellite: 'Sentinel-2 MSI Level-2A BOA Reflectance',
     resolution_m: 10,
-    scenes
+    scenes: catalog.scenes
   });
 });
 
@@ -118,10 +113,10 @@ router.post('/classify-crop', (req, res) => {
 router.post('/classify', async (req, res) => {
   const { features, parcel_id = null } = req.body;
 
-  if (!features || !Array.isArray(features) || features.length !== 15) {
+  if (!features || !Array.isArray(features) || (features.length !== 15 && features.length !== 21) || features.some((v) => !Number.isFinite(Number(v)))) {
     return res.status(400).json({
       success: false,
-      error: 'Invalid feature vector. Member 1 requires exactly 15 multi-temporal features.',
+      error: 'Invalid feature vector. Member 1 requires 15 or 21 finite multi-temporal numeric features.',
       expected_features: [
         'Blue_B02', 'Green_B03', 'Red_B04', 'NIR_B08', 'SWIR1_B11',
         'NDVI_Rabi', 'NDWI_McFeeters', 'NDMI_Moisture', 'EVI_Rabi', 'Delta_NDVI_Kharif_Rabi',
@@ -130,12 +125,13 @@ router.post('/classify', async (req, res) => {
     });
   }
 
-  // Attempt to query live FastAPI microservice on port 8000
+  // Attempt to query live FastAPI microservice on port 8000 (bounded fast timeout)
   try {
     const response = await fetch('http://127.0.0.1:8000/api/v1/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ features })
+      body: JSON.stringify({ features }),
+      signal: AbortSignal.timeout(400)
     });
     if (response.ok) {
       const data = await response.json();
@@ -147,53 +143,34 @@ router.post('/classify', async (req, res) => {
       });
     }
   } catch (err) {
-    // FastAPI microservice not actively running on port 8000; execute validated heuristic classifier
+    // FastAPI microservice not actively running on port 8000; execute serialized Member 1 RF ensemble
   }
 
-  // Rule-based high-fidelity fallback classifier replicating Member 1 decision tree:
-  const [b2, b3, b4, b8, b11, ndvi, ndwi, ndmi, evi] = features;
-
-  let classId = 0;
-  let classLabel = 'Cropland';
-  let probs = { Cropland: 0.88, Tree_Cover: 0.08, Permanent_Water: 0.01, Built_Up: 0.03 };
-
-  if (ndwi > 0.0 || (b8 < b3 && b8 < b4)) {
-    classId = 2;
-    classLabel = 'Permanent_Water';
-    probs = { Cropland: 0.02, Tree_Cover: 0.02, Permanent_Water: 0.94, Built_Up: 0.02 };
-  } else if (ndvi > 0.65 && ndmi > 0.25 && b8 > 0.35) {
-    classId = 1;
-    classLabel = 'Tree_Cover';
-    probs = { Cropland: 0.12, Tree_Cover: 0.82, Permanent_Water: 0.01, Built_Up: 0.05 };
-  } else if (ndvi < 0.25 && b11 > 0.22 && (b4 > 0.12 || b2 > 0.10)) {
-    classId = 3;
-    classLabel = 'Built_Up';
-    probs = { Cropland: 0.10, Tree_Cover: 0.05, Permanent_Water: 0.01, Built_Up: 0.84 };
-  } else {
-    classId = 0;
-    classLabel = 'Cropland';
-    probs = { Cropland: 0.89, Tree_Cover: 0.06, Permanent_Water: 0.01, Built_Up: 0.04 };
-  }
+  const rfResult = classifyFeatures(features);
 
   res.json({
     success: true,
-    source: 'MEMBER_1_HEURISTIC_15FEAT_DEMO_FALLBACK',
+    source: 'MEMBER_1_RANDOM_FOREST_ENSEMBLE_ENGINE',
     parcel_id,
     prediction: {
-      class_id: classId,
-      class_label: classLabel,
-      confidence: probs[classLabel],
-      class_probabilities: probs
+      class_id: rfResult.class_id,
+      class_label: rfResult.class_label,
+      confidence: rfResult.confidence,
+      class_probabilities: rfResult.class_probabilities
     },
+    derived_indices: rfResult.derived_indices,
     provenance: {
-      runtime_inference_mode: 'Heuristic 15-feature spectral API demo fallback (matches UI/API 15-feature vector contract)',
+      runtime_inference_mode: `Serialized Random Forest Decision-Tree Ensemble (${rfResult.trees_evaluated}/${rfResult.total_trained_trees} trees, depth <= ${rfResult.max_depth_exported}) exported from ${rfResult.source_artifact}`,
+      model_name: rfResult.model_name,
+      feature_count: rfResult.feature_count,
+      trees_evaluated: rfResult.trees_evaluated,
       production_model_name: 'RandomForest_21Feat_Deep',
       production_block_c_accuracy_ref: 85.77,
       production_block_c_macro_f1_ref: 0.8257,
       comparison_15feat_block_c_rf_ref: 85.28,
       pure_interior_accuracy_ref: 90.64,
       boundary_mixed_accuracy_ref: 75.92,
-      note: 'Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Runtime endpoint runs deterministic 15-feature demo rules rather than offline serialized 21-feature RandomForest_21Feat_Deep weights.'
+      note: 'Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Runtime endpoint evaluates real decision-tree splits exported from Member 1 scikit-learn Random Forest weights (no if-else heuristic).'
     }
   });
 });
