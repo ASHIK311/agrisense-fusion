@@ -1,0 +1,63 @@
+name: AgriSense Fusion CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-and-science-tests:
+    name: Backend, FAO-56 Parity & RAG Benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Run 88 automated Node.js tests
+        run: npm test
+
+      - name: Run offline Category A RAG benchmark
+        run: node server/tests/run_rag_benchmark.js
+
+      - name: Setup Python 3.11 & check script syntax
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile Python pipelines & adapters
+        run: |
+          python -m py_compile \
+            server/adapters/ingest_all.py \
+            generate_fao56_benchmark.py \
+            audit_phase0.py \
+            scripts/download_dataset.py
+
+  frontend-build:
+    name: Frontend Vite Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm --prefix frontend ci
+
+      - name: Build production Vite bundle
+        run: npm --prefix frontend run build
