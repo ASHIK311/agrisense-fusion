@@ -23,7 +23,7 @@ jobs:
       - name: Install backend dependencies
         run: npm ci
 
-      - name: Run 93 automated Node.js tests
+      - name: Run 94 automated Node.js tests
         run: npm test
 
       - name: Run offline Category A RAG benchmark

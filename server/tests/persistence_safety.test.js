@@ -220,4 +220,82 @@ test('Storage Service Persistence Safety & Backup Recovery Suite', async (t) => 
     assert.ok(Array.isArray(joined) && joined.length >= 2, 'SQLite JOIN query must return Barind plots');
     assert.strictEqual(joined[0].district, 'Rajshahi');
   });
+
+  await t.test('09. Automatic SQLite schema migration upgrades legacy global event_id UNIQUE table to composite UNIQUE(device_id, event_id)', () => {
+    const crypto = require('crypto');
+    const os = require('os');
+    const { DatabaseSync } = require('node:sqlite');
+
+    const LEGACY_STORE = path.join(TEST_DIR, 'legacy_schema_store.json');
+    const storeHash = crypto.createHash('sha1').update(path.resolve(LEGACY_STORE)).digest('hex').slice(0, 12);
+    const legacySqlitePath = path.join(os.tmpdir(), `agrisense-store-${storeHash}.sqlite`);
+
+    // Create a legacy SQLite database containing the old global event_id TEXT UNIQUE schema
+    const seedState = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/store.json'), 'utf-8'));
+    seedState.readings = [
+      {
+        id: 1,
+        device_id: 'esp32-node-raj-01',
+        field_id: 'field-godagari-a',
+        event_id: 'evt-legacy-shared-99',
+        observed_at: '2026-11-01T00:00:00.000Z',
+        received_at: '2026-11-01T00:00:01.000Z',
+        soil_moisture_vwc: 0.24,
+        is_simulated: true
+      }
+    ];
+    fs.writeFileSync(LEGACY_STORE, JSON.stringify(seedState, null, 2), 'utf-8');
+
+    const legacyDb = new DatabaseSync(legacySqlitePath);
+    legacyDb.exec(`
+      CREATE TABLE sensor_readings (
+        id INTEGER PRIMARY KEY,
+        device_id TEXT NOT NULL,
+        field_id TEXT,
+        event_id TEXT UNIQUE,
+        observed_at TEXT,
+        received_at TEXT,
+        soil_moisture_vwc REAL,
+        soil_temp_c REAL,
+        air_temp_c REAL,
+        relative_humidity_pct REAL,
+        soil_ph REAL,
+        quality_status TEXT,
+        calibration_status TEXT DEFAULT 'UNCALIBRATED',
+        is_simulated INTEGER NOT NULL DEFAULT 1,
+        payload_json TEXT NOT NULL
+      );
+    `);
+    legacyDb.prepare(
+      'INSERT INTO sensor_readings (id, device_id, field_id, event_id, soil_moisture_vwc, payload_json) VALUES (?, ?, ?, ?, ?, ?)'
+    ).run(1, 'esp32-node-raj-01', 'field-godagari-a', 'evt-legacy-shared-99', 0.24, JSON.stringify(seedState.readings[0]));
+    legacyDb.close();
+
+    // Opening StorageService on the legacy DB must automatically migrate to UNIQUE(device_id, event_id)
+    const migrated = new StorageService(LEGACY_STORE);
+    const schemaRow = migrated.querySqlite(
+      "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'sensor_readings'"
+    )[0];
+    assert.match(schemaRow.sql, /UNIQUE\s*\(\s*device_id\s*,\s*event_id\s*\)/i);
+
+    // Second device reusing the same event_id must NOT overwrite device 1's row
+    migrated.addReading({
+      device_id: 'esp32-node-raj-02',
+      field_id: 'field-godagari-a',
+      event_id: 'evt-legacy-shared-99',
+      observed_at: '2026-11-01T01:00:00.000Z',
+      soil_moisture_vwc: 0.27,
+      is_simulated: true
+    });
+
+    const rows = migrated.querySqlite(
+      'SELECT device_id, event_id, soil_moisture_vwc FROM sensor_readings WHERE event_id = ? ORDER BY device_id ASC',
+      ['evt-legacy-shared-99']
+    );
+    assert.strictEqual(rows.length, 2, 'Both devices must coexist after migrating from legacy global UNIQUE schema');
+    assert.strictEqual(rows[0].device_id, 'esp32-node-raj-01');
+    assert.strictEqual(rows[1].device_id, 'esp32-node-raj-02');
+    assert.strictEqual(migrated.hasEventId('evt-legacy-shared-99', 'esp32-node-raj-01'), true);
+    assert.strictEqual(migrated.hasEventId('evt-legacy-shared-99', 'esp32-node-raj-02'), true);
+  });
 });

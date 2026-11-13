@@ -361,6 +361,49 @@ class StorageService {
         payload_json TEXT NOT NULL
       );
     `);
+
+    // Upgrade legacy sensor_readings table (event_id TEXT UNIQUE) to composite UNIQUE(device_id, event_id)
+    const srMeta = this.db.prepare(
+      "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'sensor_readings'"
+    ).get();
+    if (srMeta?.sql && !/UNIQUE\s*\(\s*device_id\s*,\s*event_id\s*\)/i.test(srMeta.sql)) {
+      this.db.exec('BEGIN IMMEDIATE;');
+      try {
+        this.db.exec(`
+          CREATE TABLE sensor_readings_v2 (
+            id INTEGER PRIMARY KEY,
+            device_id TEXT NOT NULL,
+            field_id TEXT,
+            event_id TEXT,
+            observed_at TEXT,
+            received_at TEXT,
+            soil_moisture_vwc REAL,
+            soil_temp_c REAL,
+            air_temp_c REAL,
+            relative_humidity_pct REAL,
+            soil_ph REAL,
+            quality_status TEXT,
+            calibration_status TEXT DEFAULT 'UNCALIBRATED',
+            is_simulated INTEGER NOT NULL DEFAULT 1,
+            payload_json TEXT NOT NULL,
+            UNIQUE(device_id, event_id)
+          );
+          INSERT INTO sensor_readings_v2
+          SELECT id, device_id, field_id, event_id, observed_at, received_at,
+                 soil_moisture_vwc, soil_temp_c, air_temp_c, relative_humidity_pct,
+                 soil_ph, quality_status, calibration_status, is_simulated, payload_json
+          FROM sensor_readings;
+          DROP TABLE sensor_readings;
+          ALTER TABLE sensor_readings_v2 RENAME TO sensor_readings;
+          CREATE INDEX IF NOT EXISTS idx_readings_field ON sensor_readings(field_id, id DESC);
+          CREATE INDEX IF NOT EXISTS idx_readings_event ON sensor_readings(device_id, event_id);
+        `);
+        this.db.exec('COMMIT;');
+      } catch (migErr) {
+        try { this.db.exec('ROLLBACK;'); } catch (_) {}
+        throw migErr;
+      }
+    }
   }
 
   syncStateToSqlite() {
