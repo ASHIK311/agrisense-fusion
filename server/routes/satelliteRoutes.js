@@ -7,12 +7,18 @@
 const express = require('express');
 const router = express.Router();
 const storage = require('../storage/storageService');
-const { classifyFeatures, loadSentinel2ScenesCatalog } = require('../services/satelliteClassifier');
+const { classifyFeatures, getRuntimeHoldoutEvaluation, loadSentinel2ScenesCatalog } = require('../services/satelliteClassifier');
 
 // GET /api/v1/satellite/metadata
 router.get('/metadata', (req, res) => {
   const metadata = storage.getSatelliteMetadata();
   const perf = metadata?.verified_performance || {};
+  const holdoutEval = getRuntimeHoldoutEvaluation();
+  const f21 = holdoutEval?.full_21feat;
+  const r21 = holdoutEval?.runtime_21feat;
+  const f15 = holdoutEval?.full_15feat;
+  const r15 = holdoutEval?.runtime_15feat;
+
   res.json({
     success: true,
     metadata: {
@@ -21,40 +27,50 @@ router.get('/metadata', (req, res) => {
       spatial_cv_accuracy: perf.spatial_cv_accuracy || '84.63% +/- 3.81%',
       spatial_cv_macro_f1: perf.spatial_cv_macro_f1 || '0.8342 +/- 0.0194',
       spatial_cv_balanced_accuracy: perf.spatial_cv_balanced_accuracy || '84.37% +/- 1.16%',
-      block_c_holdout_overall_accuracy: perf.block_c_holdout_overall_accuracy || 85.77,
-      block_c_balanced_accuracy: perf.block_c_balanced_accuracy || 84.02,
-      block_c_macro_f1: perf.block_c_macro_f1 || 0.8257,
-      block_c_pure_interior_accuracy: perf.block_c_pure_interior_accuracy || 90.64,
-      block_c_boundary_mixed_accuracy: perf.block_c_boundary_mixed_accuracy || 75.92,
+      block_c_holdout_overall_accuracy: f21?.block_c_overall_accuracy ?? perf.block_c_holdout_overall_accuracy ?? 85.77,
+      block_c_balanced_accuracy: f21?.block_c_balanced_accuracy ?? perf.block_c_balanced_accuracy ?? 84.02,
+      block_c_macro_f1: f21?.block_c_macro_f1 ?? perf.block_c_macro_f1 ?? 0.8257,
+      block_c_pure_interior_accuracy: f21?.block_c_pure_interior_accuracy ?? perf.block_c_pure_interior_accuracy ?? 90.64,
+      block_c_boundary_mixed_accuracy: f21?.block_c_mixed_boundary_accuracy ?? perf.block_c_boundary_mixed_accuracy ?? 75.92,
       ...metadata,
-      runtime_exported_subset: {
-        artifact: 'server/data/satellite_rf_ensemble.json',
-        rf_21feat_subset: {
-          trees_exported: 35,
-          total_trained_trees: 250,
-          max_depth_exported: 9,
-          block_c_holdout_overall_accuracy: 85.47,
-          block_c_balanced_accuracy: 83.75,
-          block_c_macro_f1: 0.8229,
-          block_c_pure_interior_accuracy: 89.96,
-          block_c_boundary_mixed_accuracy: 76.37,
-          agreement_with_full_250tree_pkl_pct: 97.0
-        },
-        rf_15feat_subset: {
-          trees_exported: 35,
-          total_trained_trees: 180,
-          max_depth_exported: 9,
-          block_c_holdout_overall_accuracy: 83.98,
-          block_c_balanced_accuracy: 82.70,
-          block_c_macro_f1: 0.8105,
-          block_c_pure_interior_accuracy: 88.34,
-          block_c_boundary_mixed_accuracy: 75.16,
-          agreement_with_full_180tree_pkl_pct: 96.4
-        }
-      },
+      runtime_exported_subset: holdoutEval
+        ? {
+            artifact: 'server/data/satellite_rf_ensemble.json',
+            evaluation_evidence_csv: holdoutEval.source_csv,
+            summary_csv: holdoutEval.summary_csv,
+            rf_21feat_subset: {
+              trees_exported: r21.trees_exported,
+              total_trained_trees: r21.total_trained_trees,
+              max_depth_exported: r21.max_depth_exported,
+              n_holdout: r21.n_holdout,
+              n_correct: r21.n_correct,
+              block_c_holdout_overall_accuracy: r21.block_c_overall_accuracy,
+              block_c_balanced_accuracy: r21.block_c_balanced_accuracy,
+              block_c_macro_f1: r21.block_c_macro_f1,
+              block_c_pure_interior_accuracy: r21.block_c_pure_interior_accuracy,
+              block_c_boundary_mixed_accuracy: r21.block_c_mixed_boundary_accuracy,
+              agreement_with_full_250tree_pkl_pct: r21.agreement_with_full_pkl_pct
+            },
+            rf_15feat_subset: {
+              trees_exported: r15.trees_exported,
+              total_trained_trees: r15.total_trained_trees,
+              max_depth_exported: r15.max_depth_exported,
+              n_holdout: r15.n_holdout,
+              n_correct: r15.n_correct,
+              block_c_holdout_overall_accuracy: r15.block_c_overall_accuracy,
+              block_c_balanced_accuracy: r15.block_c_balanced_accuracy,
+              block_c_macro_f1: r15.block_c_macro_f1,
+              block_c_pure_interior_accuracy: r15.block_c_pure_interior_accuracy,
+              block_c_boundary_mixed_accuracy: r15.block_c_mixed_boundary_accuracy,
+              agreement_with_full_180tree_pkl_pct: r15.agreement_with_full_pkl_pct
+            }
+          }
+        : null,
       validation_disclosures: {
         production_model: 'RandomForest_21Feat_Deep (21 multi-temporal Sentinel-2 spectral, textural & seasonal features)',
-        runtime_vs_offline_model_scope: '85.77% Block C overall accuracy (84.02% balanced, 0.8257 Macro-F1) applies to the offline full 250-tree optimized_model.pkl (85.28% for the full 180-tree final_model.pkl). The live Node.js endpoint (/api/v1/satellite/classify) evaluates a compact 35-tree (max_depth=9) subset (35/250 for 21-feat achieving 85.47% Block C overall / 97.00% agreement; 35/180 for 15-feat achieving 83.98% Block C overall / 96.40% agreement).',
+        runtime_vs_offline_model_scope: holdoutEval
+          ? `${f21.block_c_overall_accuracy}% Block C overall accuracy (${f21.block_c_balanced_accuracy}% balanced, ${f21.block_c_macro_f1} Macro-F1) applies to the offline full ${f21.total_trained_trees}-tree optimized_model.pkl (${f15.block_c_overall_accuracy}% for the full ${f15.total_trained_trees}-tree final_model.pkl). The live Node.js endpoint evaluates a ${r21.trees_exported}-tree (max_depth=${r21.max_depth_exported}) subset computed from ${holdoutEval.source_csv} (${r21.trees_exported}/${r21.total_trained_trees} for 21-feat: ${r21.block_c_overall_accuracy}% Block C / ${r21.agreement_with_full_pkl_pct}% full-.pkl agreement; ${r15.trees_exported}/${r15.total_trained_trees} for 15-feat: ${r15.block_c_overall_accuracy}% Block C / ${r15.agreement_with_full_pkl_pct}% full-.pkl agreement).`
+          : null,
         spatial_cv_method: '5-Fold Spatial Block Cross-Validation: 84.63% +/- 3.81% accuracy (N=20,000; Macro-F1: 0.8342 +/- 0.0194; Balanced Accuracy: 84.37% +/- 1.16%)',
         spatial_buffer_status: 'No inter-block geographic buffer was applied between contiguous latitudinal training and validation blocks; spatial proximity is explicitly acknowledged.',
         holdout_status: 'Block C (85.77% overall; 5,146/6,000; Balanced Acc: 84.02%; Macro-F1: 0.8257; Pure Interior: 90.64% [3,639/4,015]; Mixed Boundary: 75.92% [1,507/1,985]) is a southern latitudinal development holdout partition, not an untouched external landscape test.',
@@ -194,13 +210,10 @@ router.post('/classify', async (req, res) => {
       max_depth_exported: rfResult.max_depth_exported,
       runtime_subset_metrics: rfResult.runtime_subset_metrics,
       offline_full_model_metrics: rfResult.offline_full_model_metrics,
+      evaluation_evidence_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_predictions.csv',
+      summary_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_summary.csv',
       production_model_name: 'RandomForest_21Feat_Deep',
-      production_block_c_accuracy_ref: 85.77,
-      production_block_c_macro_f1_ref: 0.8257,
-      comparison_15feat_block_c_rf_ref: 85.28,
-      pure_interior_accuracy_ref: 90.64,
-      boundary_mixed_accuracy_ref: 75.92,
-      note: 'Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Live endpoint evaluates a compact 35-tree (max_depth=9) exported subset (35/250 for 21-feat: 85.47% Block C / 97.00% agreement; 35/180 for 15-feat: 83.98% Block C / 96.40% agreement), whereas 85.77% applies to the offline full 250-tree optimized_model.pkl.'
+      note: `Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Live endpoint evaluates ${rfResult.trees_evaluated}/${rfResult.total_trained_trees} trees (max_depth=${rfResult.max_depth_exported}) with metrics computed dynamically from Block C holdout CSV (${rfResult.runtime_subset_metrics?.block_c_overall_accuracy}% runtime subset vs. ${rfResult.offline_full_model_metrics?.block_c_overall_accuracy}% offline full ${rfResult.total_trained_trees}-tree .pkl).`
     }
   });
 });

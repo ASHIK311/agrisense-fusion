@@ -40,7 +40,11 @@ jobs:
             server/adapters/ingest_all.py \
             generate_fao56_benchmark.py \
             audit_phase0.py \
-            scripts/download_dataset.py
+            scripts/download_dataset.py \
+            research/member_01_satellite_gis/scripts/evaluate_runtime_subset.py
+
+      - name: Verify Block C holdout 35-tree subset evaluation CSV & vectors
+        run: python research/member_01_satellite_gis/scripts/evaluate_runtime_subset.py --verify-csv
 
   frontend-build:
     name: Frontend Vite Production Build

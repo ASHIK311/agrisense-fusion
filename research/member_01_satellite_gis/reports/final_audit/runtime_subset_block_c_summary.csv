@@ -1,0 +1,5 @@
+model_variant,feature_count,trees_evaluated,total_trained_trees,max_depth,n_holdout,n_correct,overall_accuracy_pct,balanced_accuracy_pct,macro_f1,pure_n,pure_correct,pure_accuracy_pct,mixed_n,mixed_correct,mixed_accuracy_pct,full_pkl_agreement_count,full_pkl_agreement_pct
+Full_21Feat_250Trees,21,250,250,full,6000,5146,85.77,84.02,0.8257,4015,3639,90.64,1985,1507,75.92,6000,100.0
+Runtime_21Feat_35Trees_d9,21,35,250,9,6000,5128,85.47,83.75,0.8229,4015,3612,89.96,1985,1516,76.37,5820,97.0
+Full_15Feat_180Trees,15,180,180,full,6000,5117,85.28,83.63,0.8211,4015,3616,90.06,1985,1501,75.62,6000,100.0
+Runtime_15Feat_35Trees_d9,15,35,180,9,6000,5039,83.98,82.7,0.8105,4015,3547,88.34,1985,1492,75.16,5784,96.4

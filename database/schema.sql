@@ -156,8 +156,10 @@ CREATE TABLE IF NOT EXISTS satellite_classifications (
   confidence NUMERIC(6,4) NOT NULL,
   class_probabilities JSONB NOT NULL DEFAULT '{}'::jsonb,
   feature_vector JSONB NOT NULL DEFAULT '[]'::jsonb,
-  model_version TEXT NOT NULL DEFAULT 'RandomForestClassifier_15Feat_Optimized',
+  model_version TEXT NOT NULL DEFAULT 'RandomForest_21Feat_Deep',
+  runtime_subset_version TEXT DEFAULT 'RandomForest_21Feat_Deep_RuntimeEnsemble',
   holdout_accuracy_ref NUMERIC(5,2) DEFAULT 85.77,
+  runtime_subset_holdout_accuracy_ref NUMERIC(5,2) DEFAULT 85.47,
   pure_interior_accuracy_ref NUMERIC(5,2) DEFAULT 90.64,
   boundary_mixed_accuracy_ref NUMERIC(5,2) DEFAULT 75.92,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()

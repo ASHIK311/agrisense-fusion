@@ -19,9 +19,20 @@ const SCENES_CATALOG_PATH = path.join(
   'metadata',
   'sentinel2_scenes_catalog.csv'
 );
+const PREDICTIONS_CSV_PATH = path.join(
+  __dirname,
+  '..',
+  '..',
+  'research',
+  'member_01_satellite_gis',
+  'reports',
+  'final_audit',
+  'runtime_subset_block_c_predictions.csv'
+);
 
 let cachedEnsemble = null;
 let cachedCatalog = null;
+let cachedHoldoutEval = null;
 
 function getEnsemble() {
   if (!cachedEnsemble) {
@@ -129,7 +140,13 @@ function classifyFeatures(features) {
     classProbabilities[classOrder[i]] = Math.round(avgProbs[i] * 10000) / 10000;
   }
 
+  const evalStats = getRuntimeHoldoutEvaluation();
   const is21 = numeric.length === 21;
+  const runtimeKey = is21 ? 'runtime_21feat' : 'runtime_15feat';
+  const fullKey = is21 ? 'full_21feat' : 'full_15feat';
+  const rMetrics = evalStats?.[runtimeKey] || null;
+  const fMetrics = evalStats?.[fullKey] || null;
+
   return {
     class_id: bestIdx,
     class_label: classOrder[bestIdx],
@@ -141,42 +158,161 @@ function classifyFeatures(features) {
     model_name: spec.model_name,
     source_artifact: spec.source_artifact,
     feature_count: spec.feature_count,
-    runtime_subset_metrics: is21
+    runtime_subset_metrics: rMetrics
       ? {
-          block_c_overall_accuracy: 85.47,
-          block_c_balanced_accuracy: 83.75,
-          block_c_macro_f1: 0.8229,
-          block_c_pure_interior_accuracy: 89.96,
-          block_c_mixed_boundary_accuracy: 76.37,
-          agreement_with_full_pkl_pct: 97.0
+          n_holdout: rMetrics.n_holdout,
+          n_correct: rMetrics.n_correct,
+          block_c_overall_accuracy: rMetrics.block_c_overall_accuracy,
+          block_c_balanced_accuracy: rMetrics.block_c_balanced_accuracy,
+          block_c_macro_f1: rMetrics.block_c_macro_f1,
+          block_c_pure_interior_accuracy: rMetrics.block_c_pure_interior_accuracy,
+          block_c_mixed_boundary_accuracy: rMetrics.block_c_mixed_boundary_accuracy,
+          agreement_with_full_pkl_count: rMetrics.agreement_with_full_pkl_count,
+          agreement_with_full_pkl_pct: rMetrics.agreement_with_full_pkl_pct,
+          computed_from_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_predictions.csv'
         }
-      : {
-          block_c_overall_accuracy: 83.98,
-          block_c_balanced_accuracy: 82.70,
-          block_c_macro_f1: 0.8105,
-          block_c_pure_interior_accuracy: 88.34,
-          block_c_mixed_boundary_accuracy: 75.16,
-          agreement_with_full_pkl_pct: 96.4
-        },
-    offline_full_model_metrics: is21
+      : null,
+    offline_full_model_metrics: fMetrics
       ? {
-          total_trees: 250,
-          block_c_overall_accuracy: 85.77,
-          block_c_balanced_accuracy: 84.02,
-          block_c_macro_f1: 0.8257,
-          block_c_pure_interior_accuracy: 90.64,
-          block_c_mixed_boundary_accuracy: 75.92
+          total_trees: spec.total_trained_trees,
+          n_holdout: fMetrics.n_holdout,
+          n_correct: fMetrics.n_correct,
+          block_c_overall_accuracy: fMetrics.block_c_overall_accuracy,
+          block_c_balanced_accuracy: fMetrics.block_c_balanced_accuracy,
+          block_c_macro_f1: fMetrics.block_c_macro_f1,
+          block_c_pure_interior_accuracy: fMetrics.block_c_pure_interior_accuracy,
+          block_c_mixed_boundary_accuracy: fMetrics.block_c_mixed_boundary_accuracy,
+          computed_from_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_predictions.csv'
         }
-      : {
-          total_trees: 180,
-          block_c_overall_accuracy: 85.28,
-          block_c_balanced_accuracy: 83.63,
-          block_c_macro_f1: 0.8211,
-          block_c_pure_interior_accuracy: 90.06,
-          block_c_mixed_boundary_accuracy: 75.62
-        },
+      : null,
     derived_indices: deriveConcurrentIndices(numeric[0], numeric[1], numeric[2], numeric[3], numeric[4])
   };
+}
+
+function computeHoldoutMetrics(rows, predColIdx, refColIdx, yTrueIdx, isPureIdx) {
+  const round2 = (v) => Math.round(v * 100) / 100;
+  const round4 = (v) => Math.round(v * 10000) / 10000;
+  const nTotal = rows.length;
+  let nCorrect = 0;
+  let pureN = 0;
+  let pureCorrect = 0;
+  let mixedN = 0;
+  let mixedCorrect = 0;
+  let agreeCount = 0;
+
+  const tp = [0, 0, 0, 0];
+  const fp = [0, 0, 0, 0];
+  const support = [0, 0, 0, 0];
+
+  for (let i = 0; i < nTotal; i += 1) {
+    const r = rows[i];
+    const yTrue = r[yTrueIdx];
+    const yPred = r[predColIdx];
+    const yRef = r[refColIdx];
+    const isPure = r[isPureIdx] === 1;
+
+    support[yTrue] += 1;
+    if (yTrue === yPred) {
+      tp[yTrue] += 1;
+      nCorrect += 1;
+    } else {
+      fp[yPred] += 1;
+    }
+
+    if (isPure) {
+      pureN += 1;
+      if (yTrue === yPred) pureCorrect += 1;
+    } else {
+      mixedN += 1;
+      if (yTrue === yPred) mixedCorrect += 1;
+    }
+
+    if (yPred === yRef) agreeCount += 1;
+  }
+
+  let recallSum = 0;
+  let f1Sum = 0;
+  for (let c = 0; c < 4; c += 1) {
+    const rec = support[c] > 0 ? tp[c] / support[c] : 0;
+    const prec = tp[c] + fp[c] > 0 ? tp[c] / (tp[c] + fp[c]) : 0;
+    const f1 = prec + rec > 0 ? (2 * prec * rec) / (prec + rec) : 0;
+    recallSum += rec;
+    f1Sum += f1;
+  }
+
+  return {
+    n_holdout: nTotal,
+    n_correct: nCorrect,
+    block_c_overall_accuracy: round2((nCorrect / nTotal) * 100),
+    block_c_balanced_accuracy: round2((recallSum / 4) * 100),
+    block_c_macro_f1: round4(f1Sum / 4),
+    pure_n: pureN,
+    pure_correct: pureCorrect,
+    block_c_pure_interior_accuracy: round2((pureCorrect / pureN) * 100),
+    mixed_n: mixedN,
+    mixed_correct: mixedCorrect,
+    block_c_mixed_boundary_accuracy: round2((mixedCorrect / mixedN) * 100),
+    agreement_with_full_pkl_count: agreeCount,
+    agreement_with_full_pkl_pct: round2((agreeCount / nTotal) * 100)
+  };
+}
+
+/**
+ * Dynamically computes full-model vs. 35-tree runtime subset holdout metrics
+ * directly from the committed 6,000-row Block C evaluation CSV.
+ */
+function getRuntimeHoldoutEvaluation() {
+  if (cachedHoldoutEval) return cachedHoldoutEval;
+  if (!fs.existsSync(PREDICTIONS_CSV_PATH)) return null;
+
+  const content = fs.readFileSync(PREDICTIONS_CSV_PATH, 'utf-8');
+  const lines = content.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  if (lines.length <= 1) return null;
+
+  const headers = lines[0].split(',').map((h) => h.trim());
+  const idxIsPure = headers.indexOf('is_pure');
+  const idxYTrue = headers.indexOf('y_true');
+  const idxFull21 = headers.indexOf('pred_full_21feat_250t');
+  const idxRun21 = headers.indexOf('pred_runtime_21feat_35t');
+  const idxFull15 = headers.indexOf('pred_full_15feat_180t');
+  const idxRun15 = headers.indexOf('pred_runtime_15feat_35t');
+
+  const rows = [];
+  for (let i = 1; i < lines.length; i += 1) {
+    const cols = lines[i].split(',').map((v) => parseInt(v, 10));
+    if (cols.length >= 9 && !Number.isNaN(cols[idxYTrue])) {
+      rows.push(cols);
+    }
+  }
+  if (rows.length === 0) return null;
+
+  const ensemble = getEnsemble();
+  cachedHoldoutEval = {
+    source_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_predictions.csv',
+    summary_csv: 'research/member_01_satellite_gis/reports/final_audit/runtime_subset_block_c_summary.csv',
+    n_holdout: rows.length,
+    full_21feat: {
+      total_trained_trees: ensemble.rf_21feat?.total_trained_trees || 250,
+      ...computeHoldoutMetrics(rows, idxFull21, idxFull21, idxYTrue, idxIsPure)
+    },
+    runtime_21feat: {
+      trees_exported: ensemble.rf_21feat?.trees_exported || 35,
+      total_trained_trees: ensemble.rf_21feat?.total_trained_trees || 250,
+      max_depth_exported: ensemble.rf_21feat?.max_depth_exported || 9,
+      ...computeHoldoutMetrics(rows, idxRun21, idxFull21, idxYTrue, idxIsPure)
+    },
+    full_15feat: {
+      total_trained_trees: ensemble.rf_15feat?.total_trained_trees || 180,
+      ...computeHoldoutMetrics(rows, idxFull15, idxFull15, idxYTrue, idxIsPure)
+    },
+    runtime_15feat: {
+      trees_exported: ensemble.rf_15feat?.trees_exported || 35,
+      total_trained_trees: ensemble.rf_15feat?.total_trained_trees || 180,
+      max_depth_exported: ensemble.rf_15feat?.max_depth_exported || 9,
+      ...computeHoldoutMetrics(rows, idxRun15, idxFull15, idxYTrue, idxIsPure)
+    }
+  };
+  return cachedHoldoutEval;
 }
 
 function mapBangladeshSeason(monthNum) {
@@ -255,7 +391,9 @@ function loadSentinel2ScenesCatalog({ limit = 12, tileId = null, maxCloudPct = n
 module.exports = {
   classifyFeatures,
   deriveConcurrentIndices,
+  getRuntimeHoldoutEvaluation,
   loadSentinel2ScenesCatalog,
   ENSEMBLE_PATH,
+  PREDICTIONS_CSV_PATH,
   SCENES_CATALOG_PATH
 };

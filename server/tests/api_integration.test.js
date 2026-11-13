@@ -221,6 +221,41 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
     assert.equal(waterRes.status, 200);
     assert.equal(waterRes.body.prediction.class_label, 'Permanent_Water');
     assert.ok(waterRes.body.prediction.confidence > 0.85);
+
+    // Genuine 21-feature Random Forest inference check + Block C holdout sample vector parity
+    const fs = require('fs');
+    const path = require('path');
+    const { classifyFeatures } = require('../services/satelliteClassifier');
+    const sampleBundlePath = path.join(
+      __dirname,
+      '../../research/member_01_satellite_gis/reports/final_audit/block_c_holdout_sample_vectors.json'
+    );
+    const sampleBundle = JSON.parse(fs.readFileSync(sampleBundlePath, 'utf-8'));
+    assert.equal(sampleBundle.samples.length, 40);
+
+    const sample21 = sampleBundle.samples[0];
+    const res21 = await request('/api/v1/satellite/classify', {
+      method: 'POST',
+      body: JSON.stringify({ features: sample21.features_21, parcel_id: 'block-c-holdout-21' })
+    });
+    assert.equal(res21.status, 200);
+    assert.equal(res21.body.source, 'MEMBER_1_RANDOM_FOREST_ENSEMBLE_ENGINE');
+    assert.equal(res21.body.prediction.class_id, sample21.pred_runtime_21);
+    assert.equal(res21.body.provenance?.feature_count, 21);
+    assert.equal(res21.body.provenance?.model_name, 'RandomForest_21Feat_Deep_RuntimeEnsemble');
+    assert.equal(res21.body.provenance?.trees_evaluated, 35);
+    assert.equal(res21.body.provenance?.total_trained_trees, 250);
+    assert.equal(res21.body.provenance?.runtime_subset_metrics?.block_c_overall_accuracy, 85.47);
+    assert.equal(res21.body.provenance?.runtime_subset_metrics?.agreement_with_full_pkl_pct, 97);
+    assert.equal(res21.body.provenance?.offline_full_model_metrics?.block_c_overall_accuracy, 85.77);
+
+    // Cross-check all 40 real Block C holdout sample vectors against Python evaluation output
+    for (const vec of sampleBundle.samples) {
+      const pred21 = classifyFeatures(vec.features_21);
+      const pred15 = classifyFeatures(vec.features_15);
+      assert.equal(pred21.class_id, vec.pred_runtime_21);
+      assert.equal(pred15.class_id, vec.pred_runtime_15);
+    }
   });
 
   test('12. GET /api/v1/agronomy/suitability returns BARC AEZ 26 crop ratings', async () => {

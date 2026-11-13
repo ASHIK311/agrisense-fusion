@@ -69,7 +69,7 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 | **Sentinel-2 Scene Index** | **`407` indexed scenes (`374` `<=15%` cloud)** | Metadata CSV index (`GET /api/v1/satellite/scenes`); raw GeoTIFF rasters hosted on Hugging Face |
 | **Local Persistence Engine** | **9 SQLite WAL tables + Atomic JSON `.bak`** | Built-in `node:sqlite` (`DatabaseSync`, experimental in Node 22) + crash-safe JSON mirror |
 | **Spatial 5-Fold CV** | **`84.63% ± 3.81%` (`N=20,000`)** | `RandomForest_21Feat_Deep` (`4` broad LULC classes) |
-| **NASA POWER Daily Series** | **`1,827` rows (`2019–2024`) + Live API** | `-999` null guard + `Tmax >= 35°C` compound risk rule |
+| **NASA POWER Daily Series** | **`1,827` rows (`2019–2024`) + Live API** | `-999` null guard + `Tmax >= 35.0°C, RH <= 50.0%, Rain <= 1.0 mm` compound rule |
 | **Node–Python Physics Parity** | **`4 / 4` Godagari seasonal profiles** | Exact `ET₀` parity (`7.49`, `2.41`, `2.94`, `3.80 mm/day`) |
 | **Bilingual RAG Benchmark** | **`30/30` tool & disclosure (`81.82%` Hit@4)** | `87` curated chunks (`v2.1.2`), `12.99 ms` mean latency |
 | **Pathology Literature Base** | **`17` diseases · `60` DOI papers** | `48` full-text, `5` abstract, `7` metadata confirmed |
