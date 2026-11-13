@@ -27,8 +27,34 @@ router.get('/metadata', (req, res) => {
       block_c_pure_interior_accuracy: perf.block_c_pure_interior_accuracy || 90.64,
       block_c_boundary_mixed_accuracy: perf.block_c_boundary_mixed_accuracy || 75.92,
       ...metadata,
+      runtime_exported_subset: {
+        artifact: 'server/data/satellite_rf_ensemble.json',
+        rf_21feat_subset: {
+          trees_exported: 35,
+          total_trained_trees: 250,
+          max_depth_exported: 9,
+          block_c_holdout_overall_accuracy: 85.47,
+          block_c_balanced_accuracy: 83.75,
+          block_c_macro_f1: 0.8229,
+          block_c_pure_interior_accuracy: 89.96,
+          block_c_boundary_mixed_accuracy: 76.37,
+          agreement_with_full_250tree_pkl_pct: 97.0
+        },
+        rf_15feat_subset: {
+          trees_exported: 35,
+          total_trained_trees: 180,
+          max_depth_exported: 9,
+          block_c_holdout_overall_accuracy: 83.98,
+          block_c_balanced_accuracy: 82.70,
+          block_c_macro_f1: 0.8105,
+          block_c_pure_interior_accuracy: 88.34,
+          block_c_boundary_mixed_accuracy: 75.16,
+          agreement_with_full_180tree_pkl_pct: 96.4
+        }
+      },
       validation_disclosures: {
         production_model: 'RandomForest_21Feat_Deep (21 multi-temporal Sentinel-2 spectral, textural & seasonal features)',
+        runtime_vs_offline_model_scope: '85.77% Block C overall accuracy (84.02% balanced, 0.8257 Macro-F1) applies to the offline full 250-tree optimized_model.pkl (85.28% for the full 180-tree final_model.pkl). The live Node.js endpoint (/api/v1/satellite/classify) evaluates a compact 35-tree (max_depth=9) subset (35/250 for 21-feat achieving 85.47% Block C overall / 97.00% agreement; 35/180 for 15-feat achieving 83.98% Block C overall / 96.40% agreement).',
         spatial_cv_method: '5-Fold Spatial Block Cross-Validation: 84.63% +/- 3.81% accuracy (N=20,000; Macro-F1: 0.8342 +/- 0.0194; Balanced Accuracy: 84.37% +/- 1.16%)',
         spatial_buffer_status: 'No inter-block geographic buffer was applied between contiguous latitudinal training and validation blocks; spatial proximity is explicitly acknowledged.',
         holdout_status: 'Block C (85.77% overall; 5,146/6,000; Balanced Acc: 84.02%; Macro-F1: 0.8257; Pure Interior: 90.64% [3,639/4,015]; Mixed Boundary: 75.92% [1,507/1,985]) is a southern latitudinal development holdout partition, not an untouched external landscape test.',
@@ -164,13 +190,17 @@ router.post('/classify', async (req, res) => {
       model_name: rfResult.model_name,
       feature_count: rfResult.feature_count,
       trees_evaluated: rfResult.trees_evaluated,
+      total_trained_trees: rfResult.total_trained_trees,
+      max_depth_exported: rfResult.max_depth_exported,
+      runtime_subset_metrics: rfResult.runtime_subset_metrics,
+      offline_full_model_metrics: rfResult.offline_full_model_metrics,
       production_model_name: 'RandomForest_21Feat_Deep',
       production_block_c_accuracy_ref: 85.77,
       production_block_c_macro_f1_ref: 0.8257,
       comparison_15feat_block_c_rf_ref: 85.28,
       pure_interior_accuracy_ref: 90.64,
       boundary_mixed_accuracy_ref: 75.92,
-      note: 'Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Runtime endpoint evaluates real decision-tree splits exported from Member 1 scikit-learn Random Forest weights (no if-else heuristic).'
+      note: 'Field-level crop species differentiation is blocked (HTTP 422) pending DAE cadastral polygons. Live endpoint evaluates a compact 35-tree (max_depth=9) exported subset (35/250 for 21-feat: 85.47% Block C / 97.00% agreement; 35/180 for 15-feat: 83.98% Block C / 96.40% agreement), whereas 85.77% applies to the offline full 250-tree optimized_model.pkl.'
     }
   });
 });

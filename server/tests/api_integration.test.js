@@ -183,6 +183,10 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
     assert.equal(res.body.success, true);
     assert.equal(res.body.metadata.verified_performance.block_c_holdout_overall_accuracy, 85.77);
     assert.equal(res.body.metadata.verified_performance.block_c_pure_interior_accuracy, 90.64);
+    assert.equal(res.body.metadata.runtime_exported_subset?.rf_21feat_subset?.trees_exported, 35);
+    assert.equal(res.body.metadata.runtime_exported_subset?.rf_21feat_subset?.total_trained_trees, 250);
+    assert.equal(res.body.metadata.runtime_exported_subset?.rf_21feat_subset?.block_c_holdout_overall_accuracy, 85.47);
+    assert.equal(res.body.metadata.runtime_exported_subset?.rf_15feat_subset?.block_c_holdout_overall_accuracy, 83.98);
   });
 
   test('11. POST /api/v1/satellite/classify executes serialized Random Forest ensemble (15-feat & 21-feat)', async () => {
@@ -200,7 +204,9 @@ describe('AgriSense Fusion Core API v1 Integration Suite', () => {
     assert.ok(res.body.source === 'MEMBER_1_RANDOM_FOREST_ENSEMBLE_ENGINE' || res.body.source === 'MEMBER_1_FASTAPI_LIVE');
     assert.equal(res.body.prediction.class_label, 'Cropland');
     assert.ok(res.body.prediction.confidence > 0.5);
-    assert.ok(res.body.provenance?.trees_evaluated >= 30);
+    assert.equal(res.body.provenance?.trees_evaluated, 35);
+    assert.equal(res.body.provenance?.total_trained_trees, 180);
+    assert.equal(res.body.provenance?.runtime_subset_metrics?.block_c_overall_accuracy, 83.98);
 
     // Permanent water vector check through trained decision trees
     const waterFeatures = [

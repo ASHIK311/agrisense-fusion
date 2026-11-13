@@ -27,7 +27,7 @@ jobs:
         run: npm test
 
       - name: Run offline Category A RAG benchmark
-        run: node server/tests/run_rag_benchmark.js
+        run: node --no-warnings=ExperimentalWarning server/tests/run_rag_benchmark.js
 
       - name: Setup Python 3.11 & check script syntax
         uses: actions/setup-python@v5

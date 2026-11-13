@@ -50,7 +50,7 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 * Generic agricultural chatbots hallucinate irrigation advice and crop numbers without hydrological grounding or provenance.
 
 **AgriSense Fusion** transforms multi-agency Earth observations into **honest, physics-grounded crop decisions**:
-1. **Satellite LULC Classification (`RandomForest_21Feat_Deep` & `final_model` Ensemble):** Multi-temporal Sentinel-2 L2A catalog (`407` indexed scenes across tiles `45RXH`/`45QXG` + `12` GeoTIFF acquisitions) with live serialized decision-tree ensemble inference classifying 4 broad land-cover classes and explicit scientific gates (`HTTP 422` against unvalidated species overclaims).
+1. **Satellite LULC Classification (`RandomForest_21Feat_Deep` & `final_model` Ensemble):** Multi-temporal Sentinel-2 L2A metadata index (`407` catalog scenes across tiles `45RXH`/`45QXG`; raw GeoTIFF rasters hosted on Hugging Face) with live Node.js decision-tree inference evaluating a compact **`35`-tree (`max_depth=9`) runtime subset** (`35/250` trees for 21-feat achieving **`85.47%`** Block C holdout, and `35/180` trees for 15-feat achieving **`83.98%`**; vs. **`85.77%`** for the offline full `250`-tree `optimized_model.pkl`) and explicit scientific gates (`HTTP 422` against unvalidated species overclaims).
 2. **FAO-56 Penman-Monteith Physics Engine:** Cross-language parity verified (`Node.js` ↔ `Python` across 4 seasonal Barind vectors) with canonical Silty Clay Loam root-zone defaults (`79.0 mm` TAW, `39.5 mm` RAW).
 3. **Crop-Rotation MCDA Decision Explorer:** Dynamic 4-slider Multi-Criteria Decision Analysis (*Water Conservation, Soil Health, Heat Resilience, Farmer Profit*) comparing alternative sequences (e.g., *Lentil → Aus Rice → T. Aman*, *Mustard → Mungbean → T. Aman*) against conventional baselines.
 4. **3D Stratigraphic & Dual-Canopy WebGL Digital Twin:** Interactive Three.js terrain strata synchronized pixel-for-pixel with Leaflet Sentinel-2 parcel polygons.
@@ -64,7 +64,10 @@ In the drought-stressed **High Barind Tract of Northern Bangladesh** (*Godagari 
 |---|---|---|
 | **Automated Test Suite** | **`91 / 91` passed (`0` failed)** | `npm test` across 7 suites (`~3.9s`, includes SQLite + RF ensemble) |
 | **Live E2E Workflow Audit** | **`11 / 11` workflows + `3` gates** | `node server/tests/live_workflow_audit.js` |
-| **LULC Classifier Holdout** | **`85.77%` Block C overall (`N=6,000`)** | `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior |
+| **LULC Holdout (Offline Full `.pkl`)** | **`85.77%` Block C overall (`N=6,000`)** | Full `optimized_model.pkl` (`250` trees, full depth): `84.02%` bal. acc · `0.8257` Macro-F1 · `90.64%` interior (`85.28%` for full `180`-tree 15-feat) |
+| **LULC Live Endpoint (`35`-Tree Subset)** | **`85.47%` (21-feat) · `83.98%` (15-feat)** | `POST /api/v1/satellite/classify` runs `35/250` (21-feat) & `35/180` (15-feat) trees (`max_depth=9`, `97.00%` / `96.40%` agreement with full `.pkl`) |
+| **Sentinel-2 Scene Index** | **`407` indexed scenes (`374` `<=15%` cloud)** | Metadata CSV index (`GET /api/v1/satellite/scenes`); raw GeoTIFF rasters hosted on Hugging Face |
+| **Local Persistence Engine** | **9 SQLite WAL tables + Atomic JSON `.bak`** | Built-in `node:sqlite` (`DatabaseSync`, experimental in Node 22) + crash-safe JSON mirror |
 | **Spatial 5-Fold CV** | **`84.63% ± 3.81%` (`N=20,000`)** | `RandomForest_21Feat_Deep` (`4` broad LULC classes) |
 | **NASA POWER Daily Series** | **`1,827` rows (`2019–2024`) + Live API** | `-999` null guard + `Tmax >= 35°C` compound risk rule |
 | **Node–Python Physics Parity** | **`4 / 4` Godagari seasonal profiles** | Exact `ET₀` parity (`7.49`, `2.41`, `2.94`, `3.80 mm/day`) |

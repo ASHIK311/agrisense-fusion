@@ -129,6 +129,7 @@ function classifyFeatures(features) {
     classProbabilities[classOrder[i]] = Math.round(avgProbs[i] * 10000) / 10000;
   }
 
+  const is21 = numeric.length === 21;
   return {
     class_id: bestIdx,
     class_label: classOrder[bestIdx],
@@ -140,6 +141,40 @@ function classifyFeatures(features) {
     model_name: spec.model_name,
     source_artifact: spec.source_artifact,
     feature_count: spec.feature_count,
+    runtime_subset_metrics: is21
+      ? {
+          block_c_overall_accuracy: 85.47,
+          block_c_balanced_accuracy: 83.75,
+          block_c_macro_f1: 0.8229,
+          block_c_pure_interior_accuracy: 89.96,
+          block_c_mixed_boundary_accuracy: 76.37,
+          agreement_with_full_pkl_pct: 97.0
+        }
+      : {
+          block_c_overall_accuracy: 83.98,
+          block_c_balanced_accuracy: 82.70,
+          block_c_macro_f1: 0.8105,
+          block_c_pure_interior_accuracy: 88.34,
+          block_c_mixed_boundary_accuracy: 75.16,
+          agreement_with_full_pkl_pct: 96.4
+        },
+    offline_full_model_metrics: is21
+      ? {
+          total_trees: 250,
+          block_c_overall_accuracy: 85.77,
+          block_c_balanced_accuracy: 84.02,
+          block_c_macro_f1: 0.8257,
+          block_c_pure_interior_accuracy: 90.64,
+          block_c_mixed_boundary_accuracy: 75.92
+        }
+      : {
+          total_trees: 180,
+          block_c_overall_accuracy: 85.28,
+          block_c_balanced_accuracy: 83.63,
+          block_c_macro_f1: 0.8211,
+          block_c_pure_interior_accuracy: 90.06,
+          block_c_mixed_boundary_accuracy: 75.62
+        },
     derived_indices: deriveConcurrentIndices(numeric[0], numeric[1], numeric[2], numeric[3], numeric[4])
   };
 }

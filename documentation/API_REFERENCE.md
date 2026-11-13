@@ -39,8 +39,9 @@ _Updated November 13, 2026 (`v2.1.0-competition-verified`). Base URL: `http://lo
 | `GET` | `/api/v1/weather/history` | None | Returns historical NASA POWER Godagari daily rows (`1,827` records `2019–2024`; `34.8 km` ESE Rajshahi station anchor). |
 | `GET` | `/api/v1/weather/risk` | None | Evaluates Member 2 compound heat-dryness hazard (`Tmax >= 35°C`, `Rain == 0`) guarding `-999`/`null` sentinels as `INSUFFICIENT_DATA`. |
 | `GET` | `/api/v1/weather/forecast` | None | **Intentional Gate (`HTTP 501 NOT_IMPLEMENTED`):** Live NWP forecasting not fabricated. |
-| `GET` | `/api/v1/satellite/metadata` | None | Returns reconciled `RandomForest_21Feat_Deep` performance (`85.77%` Block C holdout, `84.63% ± 3.81%` spatial CV, `N=6,000`). |
-| `POST` | `/api/v1/satellite/classify` | None | Runs offline 15-feature heuristic demo fallback LULC prediction across 4 classes. |
+| `GET` | `/api/v1/satellite/metadata` | None | Returns offline full `.pkl` metrics (`85.77%` Block C, `250` trees) alongside `runtime_exported_subset` (`35/250` trees: `85.47%`; `35/180` trees: `83.98%`). |
+| `GET` | `/api/v1/satellite/scenes` | None | Serves Sentinel-2 L2A scene metadata index (`407` scenes, `374` `<=15%` cloud) from CSV (`sentinel2_scenes_catalog.csv`). |
+| `POST` | `/api/v1/satellite/classify` | None | Evaluates exported `35`-tree (`max_depth=9`) Random Forest subset (`35/250` for 21-feat: `85.47%` Block C; `35/180` for 15-feat: `83.98%` Block C; vs. `85.77%` full `250`-tree offline `.pkl`). |
 | `POST` | `/api/v1/satellite/indices` | None | Computes NDVI, NDWI, EVI, SAVI, and BSI safely guarding zero denominators. |
 | `POST` | `/api/v1/satellite/classify-crop` | None | **Intentional Gate (`HTTP 422 BLOCKED`):** Crop-species classification disabled pending DAE cadastral polygons. |
 | `GET` | `/api/v1/groundwater` | Optional | Returns regional drawdown readings (`SYNTHETIC_REGIONAL_PROXY`, `is_simulated: true`, `has_physical_piezometers: false`, `0.65 m/yr` decline). |
